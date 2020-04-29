@@ -6,14 +6,16 @@
  ************************************************************************/
 
 #include<iostream>
-#include<string.h>
+#include<cstdio>
+#include<cstring>
 using namespace std;
 int main (){
-    char s1[10001],  s2[1001];
-    int l1 = strlen(s1), l2 = strlen(s2);
+    char s1[1005],  s2[1005];
     int cnt = 0;
-    cin >> s1 >> s2;
-    for( int i = 0; i < l2 - l1; i++ ){
+    fgets(s1, 1005, stdin);
+    fgets(s2, 1005, stdin);
+    int l1 = strlen(s1), l2 = strlen(s2);
+    for( int i = 0; i <= l1 - l2; i++ ){
         if( strncmp( s2, &s1[i], l2 ) == 0 ){
             cnt++;
         }

@@ -11,25 +11,23 @@
 #include<cstring>
 #include<cmath>
 using namespace std;
-int a[11] = {0};
-int res[100005];
+int a[1000005], n;
+int f( long long sum, int cnt ){
+    if( sum >= n ) return cnt;
+    
+    return f( sum + a[ sum+1 ] , cnt + 1);
+}
+
+
 int main (){
-    int k, m, tag = 1;
-    cin >> k >> m;
-    for( int i = 0; i < 10; i++ ){
+    int cnt = 0;
+    cin >> n;
+    for( int  i = 1; i <= n; i++ ){
         cin >> a[i];
     }
-    for( int i = 1; i < 11; i++ ){
-        res[i] = i % m ;
-    }
-    for( int i = 11; i <= k; i++){
-        tag = 10;
-        for( int j = i - 10 ; j < i ; j++ ){
-            res[i] += a[tag] * res[j] % m;  
-            tag--;
-        }
-        cout << i << " " << res[i] << endl;
-    }
-    cout << res[k];
+    cnt = f( 0, 0 );
+    cout << cnt;
+
+
     return 0;
 }

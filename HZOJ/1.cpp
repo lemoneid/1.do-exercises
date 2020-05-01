@@ -1,25 +1,24 @@
-/*************************************************************************
-	> File Name: 1.cpp
-	> Author: weier 
-	> Mail: 1931248856@qq.com
-	> Created Time: 2020年04月29日 星期三 16时24分33秒
- ************************************************************************/
 #include <iostream>
-#include <cstdio>
-#include <cstring>
+#include <algorithm>
 using namespace std;
 
+bool cmp(int a, int b) {
+    return a > b;
+}
+
 int main() {
-    char s1[1005], s2[1005];
-    fgets(s1, 1005, stdin);
-    fgets(s2, 1005,stdin);
-    int ans = 0;
-    int l1 = strlen(s1), l2 = strlen(s2);
-    for (int i = 0; i <= l1 - l2; i++) {
-        if (strncmp(s2, &s1[i], l2) == 0) {
-            ans++;
-        }
+    int n, l1, r1, l2, r2, num[10005] = {0};
+    cin >> n >> l1 >> r1 >> l2 >> r2;
+    for (int i = 0; i < n; i++) {
+        cin >> num[i];
     }
-    cout << ans << endl;
+    sort(num + l1 - 1, num + r1);
+    sort(num + l2 - 1, num + r2, cmp);
+    for (int i = 0; i < n; i++) {
+        if (i) {
+            cout << " ";
+        }
+        cout << num[i];
+    }
     return 0;
 }

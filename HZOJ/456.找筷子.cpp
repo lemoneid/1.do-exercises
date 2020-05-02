@@ -11,21 +11,16 @@
 #include<algorithm>
 #include<cstring>
 #include<cmath>
-#include <stdlib.h>
 using namespace std;
-typedef struct node{
-    int number;
-    struct node *next;
-} Node;
 
-Node  *create_node( int new_number){
-    Node *temp_node;
-    temp_node = (Node *) malloc ( sizeof(Node));
-    temp_node -> number = new_number;
-    temp_node->next = NULL;
-    return temp_node;
-}
-
-int main() {
+int main (){
+    int a[1000005];
+    int n, x = 0, temp;
+    cin >> n;
+    for( int i = 0; i < n; i++ ){
+        cin >> temp;
+        x ^= temp;
+    }
+    cout <<  x;
     return 0;
 }

@@ -11,21 +11,23 @@
 #include<algorithm>
 #include<cstring>
 #include<cmath>
-#include <stdlib.h>
 using namespace std;
-typedef struct node{
-    int number;
-    struct node *next;
-} Node;
 
-Node  *create_node( int new_number){
-    Node *temp_node;
-    temp_node = (Node *) malloc ( sizeof(Node));
-    temp_node -> number = new_number;
-    temp_node->next = NULL;
-    return temp_node;
-}
-
-int main() {
+int main (){
+    int x, n, sum = 0;
+    cin >> x >> n;
+    while( x < 6 && n > 0 ){
+        sum++;
+        n--;
+        x++;
+    }
+    n -= 2;
+    if( n > 0 ){
+        sum = sum + n / 7 * 5 + n % 7;
+        if( n % 7 == 6 ){
+            sum--;
+        }
+    }
+    cout << sum * 2;
     return 0;
 }

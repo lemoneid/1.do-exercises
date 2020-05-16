@@ -6,17 +6,20 @@
  ************************************************************************/
 
 #include<cstdio>
-
-int gcd(int a, int b, int *x, int *y) {
-    if (!b) {
-        *x = 1, *y = 0;
-        return 0;
-    }
-    int xx, yy, ret = gcd(a, b, &xx, &yy);
-    
+#include<algorithm>
+#define DEBUG
+#ifdef DEBUG
+#define log(frm, args...) {\
+    printf("[%s : %d]%s", __func__, __LINE__,#args);\
+    printf(frm,##args);\
+    printf("\n");\
 }
+
+#else
+#define log(frm, args...)
+#endif
 
 int main() {
-    
-    return 0;
+    log("Hello world");
 }
+

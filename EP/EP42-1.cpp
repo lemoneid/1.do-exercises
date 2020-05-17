@@ -7,40 +7,37 @@
 
 #include <iostream>
 #include <inttypes.h>
+#include "words.txt"
 using namespace std;
-
-char str[16347];
-
-int64_t Triangle(int n) {
+inline int64_t Triangle(int n) {
     return n * (n + 1) / 2;
-}
-
-int64_t str_to_sum(char *str) {
-    int64_t i = 0, sum = 0;
-    while(str[i]){
-        sum += Triangle(str[i] - '0');
-    } 
 }
 
 int binary_search(int64_t (*func)(int), int l, int r, int x) {
     if (l > r) return 0;
-    int mid = (l + r) >> 1;
-    if (func(mid) == x) return mid;
-    else if (func(mid) < x) l = mid + 1;
-    else r = mid - 1;
-    return binary_search(func, l, r, x);
+    int head = l, tail = r, mid;
+    while (head <= tail) {
+        mid = (head + tail) >> 1;
+        if (func(mid) == x) return 1;
+        else if (func(mid) < x) head = mid + 1;
+        else tail = mid - 1;
+    }
+    return 0;
 }
 
-int is_val(int64_t x) {
-    if(binary_search(Triangle, 1, 40, x)) return 1;
+int is_val(const char *str) {
+    int x = 0;
+    for (int i = 0; str[i]; ++i) {
+        x += str[i] - 'A' + 1;
+    }
+    if(binary_search(Triangle, 1, x, x)) return 1;
     return 0;
 }
 
 int main() {
-    int cnt = 0;
-    while("%s", str)) {
-        cout << str;
-        if (is_val(str_to_sum(str))) cnt++;
+    int n = sizeof(str) / 100, cnt = 0;
+    for (int i = 0; i < n; ++i) {
+        cnt +=(is_val(str[i]));
     }
     cout << cnt;
 }

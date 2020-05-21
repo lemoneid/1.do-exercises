@@ -1,25 +1,29 @@
 /*************************************************************************
-	> File Name: test.cpp
-	> Author: weier 
-	> Mail: 1931248856@qq.com 
-	> Created Time: Sun 03 May 2020 02:19:28 PM CST
+    > File Name: test.cpp
+    > Author: weier 
+    > Mail: 1931248856@qq.com 
+    > Created Time: Sun 03 May 2020 02:19:28 PM CST
  ************************************************************************/
 
 #include<cstdio>
+#include<iostream>
 #include<algorithm>
-#define DEBUG
-#ifdef DEBUG
-#define log(frm, args...) {\
-    printf("[%s : %d]%s", __func__, __LINE__,#args);\
-    printf(frm,##args);\
-    printf("\n");\
-}
-
-#else
-#define log(frm, args...)
-#endif
+using namespace std;
+typedef struct Data {
+    int x, y;
+} Data;
 
 int main() {
-    log("Hello world");
+    int  *p1;
+    char *p2;
+    printf("%p %p\n", p1, p1 + 1);
+    printf("%p %p\n", p2, p2 + 1);
+    Data a[2] = { {0,1}, {2,3} };
+    Data *p = a;
+    printf("%d\n", (*(a + 1)).x);
+    printf("%d\n", (*(p + 1)).x);
+    printf("%d\n", (p + 1)->x);
+    printf("%d\n", (a + 1)->x);
+    printf("%d\n", p[1].x);
 }
 

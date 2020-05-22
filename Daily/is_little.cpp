@@ -7,6 +7,13 @@
 
 #include<cstdio>
 int main() {
+    int a = 321;
+    printf("%d\n", ((char *)&a)[0]);
+    printf("%d\n", ((char *)&a)[1]);
+    printf("%d\n", ((char *)&a)[2]);
+    printf("hellow 123 \n ");
+    for (int i = 0; i < 4; ++i) 
+        printf(" %d = %d\n", i, ((char *)&a)[i]);
     
 }
 

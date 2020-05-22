@@ -6,7 +6,20 @@
  ************************************************************************/
 
 #include<cstdio>
+#include<algorithm>
+#define DEBUG
+#ifdef DEBUG
+#define log(frm, args...) {\
+    printf("[%s : %d]%s", __func__, __LINE__,#args);\
+    printf(frm,##args);\
+    printf("\n");\
+}
+
+#else
+#define log(frm, args...)
+#endif
+
 int main() {
-    
+    log("Hello world");
 }
 

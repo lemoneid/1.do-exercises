@@ -25,7 +25,7 @@ void init_prime() {
 int main() {
     init_prime();
     for (int i = 2; i < 100; ++i) {
-        cout << i << " = "<< prime[i] << " " << endl;
+        cout << "prime " << i << " = "<< prime[i] << " " << endl;
     }
     cout << endl;
     return 0;

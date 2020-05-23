@@ -2,23 +2,19 @@
 #include <algorithm>
 using namespace std;
 
-bool cmp(int a, int b) {
-    return a > b;
+#define out(frm) {\
+    printf("%s = %p\n", #frm,frm);\
 }
 
 int main() {
-    int n, l1, r1, l2, r2, num[10005] = {0};
-    cin >> n >> l1 >> r1 >> l2 >> r2;
-    for (int i = 0; i < n; i++) {
-        cin >> num[i];
+    int **a = (int **) malloc (sizeof(int **) * 10);
+    for (int i = 0; i < 10; ++i) {
+        a[i] = (int *) malloc (sizeof(int *) * 3);
     }
-    sort(num + l1 - 1, num + r1);
-    sort(num + l2 - 1, num + r2, cmp);
-    for (int i = 0; i < n; i++) {
-        if (i) {
-            cout << " ";
-        }
-        cout << num[i];
-    }
+
+    out(a);
+    out(a[0]);
+    out(a[1]);
+
     return 0;
 }

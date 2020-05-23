@@ -21,5 +21,13 @@
 
 int main() {
     log("Hello world");
+<<<<<<< HEAD
+=======
+    int n = 1;
+    int *p = &n;
+    int* a, b;
+    printf("%ld %ld\n", sizeof(a), sizeof(b));
+    printf("&p = %p , p = %p\n", &p, p);
+>>>>>>> b629448bdd4ef9bf9d3b1ae865ab176f2068303f
 }
 

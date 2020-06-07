@@ -23,7 +23,7 @@ void get_num(int a, int b, Tuple *temp) {
     while (a != 1) {
         int p_num = 0, pre = prime[a];
         while ( a % pre == 0) ++p_num, a /= pre;
-        temp[id].p = pre, temp[id], a = p_num * b;
+        temp[id].p = pre, temp[id].a = p_num * b;
         ++id;
     }
     return ;

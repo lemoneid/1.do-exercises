@@ -1,15 +1,17 @@
 /*************************************************************************
-	> File Name: test.cpp
+	> File Name: EP40.cpp
 	> Author: weier 
 	> Mail: 1931248856@qq.com
-	> Created Time: 2020年06月06日 星期六 18时38分51秒
+	> Created Time: 2020年06月07日 星期日 16时52分41秒
  ************************************************************************/
 
 #include <iostream>
 #include <algorithm>
 using namespace std;
 
+int begin_num;
+
 int main() {
-    cout << "failed\n";
+    
     return 0;
 }

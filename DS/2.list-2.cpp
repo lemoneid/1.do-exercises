@@ -123,7 +123,7 @@ void output(List *l, int op, int ind) {
     if (op == 3){ 
         cout << endl;
         return ;}
-    if (op == 2 || ind < 0) space = 5;
+    //if (op == 2 || ind < 0) space = 5;
     for (int i = 0; i < space; ++i) cout << " ";
     cout << "^" << endl;
     for (int i = 0; i < space; ++i) cout << " ";

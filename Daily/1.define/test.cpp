@@ -7,23 +7,13 @@
 
 #include <iostream>
 #include <algorithm>
+#include <header1.h>
+#include <header2.h>
 using namespace std;
 
-void func(int);
-int add(int, int);
-
 int main() {
-    cout << add(3, 5) << endl;
+    funcA(5);
+    funcC(6, 7);
     return 0;
-}
-void func(int n) {
-    if (n == 0) return;
-    cout << "func A: " << n << endl;
-    
-    return ;
-}
-
-int add(int a, int b) {
-    return a + b;
 }
 

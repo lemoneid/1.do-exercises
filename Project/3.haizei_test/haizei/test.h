@@ -7,6 +7,7 @@
 
 #ifndef _TEST_H
 #define _TEST_H
+#include <haizei/linklist.h>
 
 #define COLOR(a, b) "\033[" #b "m" a"\033[0m"
 #define COLOR_HL(a, b) "\033[1;" #b "m" a"\033[0m"
@@ -64,13 +65,20 @@
     } \
     void a##_haizei_##b()
 
+#define EXPECT_EQ(a, b) EXPECT(a, b, ==)
+#define EXPECT_NE(a, b) EXPECT(a, b, !=)
+#define EXPECT_LT(a, b) EXPECT(a, b, <)
+#define EXPECT_GT(a, b) EXPECT(a, b, >)
+#define EXPECT_LE(a, b) EXPECT(a, b, <=)
+#define EXPECT_GE(a, b) EXPECT(a, b, >=)
+
 typedef void (*TestFuncT)();
 
-
-typedef struct function {
+struct Function {
     TestFuncT func;
     const char *str;
-} Function;
+    struct LinkNode p;
+};
 
 struct FunctionInfo {
     int total, success;
@@ -81,28 +89,4 @@ extern struct FunctionInfo htest_info;
 int RUN_ALL_TESTS();
 void add_function(TestFuncT, const char *);
 
-
-extern int success, total;
-
-#define EXPECT_EQ(a, b) {\
-    EXPECT(a, b, ==)\
-    }
-
-#define EXPECT_NE(a, b) {\
-    EXPECT(a, b, !=)\
-    }
-
-#define EXPECT_LT(a, b) {\
-    }
-#define EXPECT_GT(a, b) {\
-    EXPECT(a, b, >)\
-    }
-
-#define EXPECT_LE(a, b) {\
-    EXPECT(a, b, <=)\
-    }
-
-#define EXPECT_GE(a, b) {\
-    EXPECT(a, b, >=)\
-    }
 #endif

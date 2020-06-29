@@ -23,7 +23,7 @@ void in_order(Node *);
 void post_order(Node *);
 void clear(Node *);
 Node *create_tree(string str) {
-    Node *root, *current;
+    Node *root = NULL, *current = NULL;
     stack<Node*> s;
     int flag = 0, i = 0;
     char c = str[0];

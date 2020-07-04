@@ -50,7 +50,6 @@ Node *create_tree(string str) {
                 }
             } break;
         }
-        if (i >= str.size()) break;
         c = str[++i];
     }
     while (!s.empty()) s.pop();

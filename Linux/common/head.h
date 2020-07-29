@@ -7,6 +7,13 @@
 
 #ifndef _HEAD_H
 #define _HEAD_H
+
+#include <dirent.h>
+#include <string.h>
+#include <grp.h>
+#include <pwd.h>
+#include <time.h>
+#include "head.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -22,4 +29,5 @@
 #define DBG(fmt, args...);
 #endif
 
-DBG("In while");
+#endif
+//DBG("In while");

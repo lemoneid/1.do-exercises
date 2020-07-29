@@ -4,7 +4,18 @@
 	> Mail: 1931248856@qq.com
 	> Created Time: 2020年07月25日 星期六 19时03分32秒
  ************************************************************************/
-#include "head.h"
+#include <stdio.h>
+#include <unistd.h>
+#include <stdlib.h>
+#include <dirent.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <unistd.h>
+#include <string.h>
+#include <grp.h>
+#include <pwd.h>
+#include <time.h>
+
 void do_ls(char *);
 void show_info(char *, struct stat *);
 int  l_flag = 0, a_flag = 0;
@@ -18,7 +29,7 @@ void sort(int n) {
     for (int i = 0; i < n - 1; ++i) {
         int ind = i;
         for (int j = i + 1; j < n; ++j) {
-            if (strcmp(info[j].filename, info[ind].filename) < 0) ind = j;
+            if (strcmp(info[j].filename + 6, info[ind].filename + 6) < 0) ind = j;
         }
         char temp1[20] = {0}, temp2[100] = {0};
         strcpy(temp1, info[i].filename);
@@ -32,10 +43,14 @@ void sort(int n) {
     return ;
 }
 
-void showout(int n, char *dir) {
+void showout(int n, char *dir, int flag) {
     printf("\33[31;1m%s:\033[0m\n", dir);
     for (int i = 0; i < n; ++i) {
-        printf("%s %s\n", info[i].other, info[i].filename);
+        if (flag) {
+            printf("%s ", info[i].other);
+        }
+        printf("%s", info[i].filename);
+        printf("\n");
     }
     return ;
 }
@@ -63,10 +78,8 @@ int main(int argc, char **argv) {
                 exit(1);
         }
     }
-    DBG(GREEN"<Debug>"NONE" : optind = %d\n", opt);
     int flag  = 0;
     if (argc == 1) {
-
         do_ls(".");
     } else {
         while (--argc) {
@@ -91,23 +104,23 @@ void do_ls(char *dir) {
     }
     while ((direntp = readdir(dirp)) != NULL) {
         if ((a_flag == 0) && (direntp->d_name[0] == '.')) continue;
-        if (l_flag == 0) {
-            printf("%s ", direntp->d_name);
+        struct stat st;
+        char filename[100] = {0};
+        strcpy(filename, dir);
+        strcat(strcat(filename, "/"), direntp->d_name);
+        if (lstat(filename, &st) < 0) {
+            perror(direntp->d_name);
+            exit(1);
         } else {
-            struct stat st;
-            char filename[100] = {0};
-            strcpy(filename, dir);
-            strcat(strcat(filename, "/"), direntp->d_name);
-            if (lstat(filename, &st) < 0) {
-                perror(direntp->d_name);
-                exit(1);
-            } else {
-                show_info(direntp->d_name, &st);
-            }
+            show_info(direntp->d_name, &st);
         }
     }
     sort(info_size);
-    showout(info_size, dir);
+    if (l_flag == 0) {
+        showout(info_size, dir, 0);
+    } else {
+        showout(info_size, dir, 1);
+    }
     closedir(dirp);
     clear(info_size);
     printf("\n");
@@ -149,7 +162,7 @@ void show_info(char *filename, struct stat *st) {
     }else if(modestr[3] == 'x'){
         sprintf(info[info_size].filename,"\033[32;1m%s\033[0m", filename);
     } else {
-        sprintf(info[info_size].filename,"%s", filename);
+        sprintf(info[info_size].filename,"\033[37;0m%s\033[0m", filename);
     }   
     info_size++;
 }

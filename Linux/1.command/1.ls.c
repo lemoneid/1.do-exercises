@@ -10,7 +10,7 @@
 #define MAXNAME 512
 #define MAXFILE 1024
 
-int ba_c, fg_c;
+int bg_c, fg_c;
 
 char *uid_to_name(uid_t);
 char *gid_to_name(gid_t);
@@ -19,7 +19,7 @@ void show_info(char *, struct stat *);
 int  l_flag = 0, a_flag = 0;
 
 int main(int argc, char **argv) {
-    int opt, optind = 0;
+    int opt;
     while ((opt = getopt(argc, argv, "la")) != -1) {
         switch (opt) {
             case 'l':
@@ -33,10 +33,10 @@ int main(int argc, char **argv) {
                 exit(1);
         }
     }
-    DBG(GREEN"<Debug>"NONE" : optind = %d\n", opt);
+    DBG(GREEN"<Debug>"NONE" : optind = %d\n", optind);
     argc -= optind;
     argv += optind; 
-    if (argc == 1) {
+    if (argc == 0) {
         do_ls(".");
     } else {
         while (argc--) {
@@ -50,11 +50,19 @@ int main(int argc, char **argv) {
 int cmp_name(const void* _a, const void* _b) {
     char *a = (char *)_a;
     char *b = (char *)_b;
+    for (int i = 0; i < strlen(a); ++i) {
+        a[i] =tolower(a[i]);
+    }
+    for (int i = 0; i < strlen(b); ++i) {
+        b[i] =tolower(b[i]);
+    }
+
     return strcmp(a, b) < 0;
 }
 
 void update_color(mode_t mode) {
-    bg_c = 0, fg_c = 0;
+    bg_c = 0;
+    fg_c = 0;
     if (mode & (S_IWGRP | S_IXUSR | S_IXOTH)) fg_c = 32;
     //if (mode & 0111)
     switch (mode & S_IFMT) {
@@ -67,8 +75,86 @@ void update_color(mode_t mode) {
     }
 }
 
+void size_window(char *name[MAXNAME], int cnt, int *row, int *col) {
+    struct winsize size;
+    int len[cnt + 5], max_len = 0, total_len = 0;
+    memset(len, 0, sizeof(len));
+    if (ioctl(STDOUT_FILENO, TIOCGWINSZ, &size) < 0) {
+        perror("ioctrl()");
+        exit(1);
+    }
+    DBG(GREEN"<Debug>"NONE": win.row = %d, win.col = %d\n", size.ws_row, size.ws_col);
+    for (int i = 0; i < cnt; ++i) {
+        len[i] = strlen(name[i]);
+        if (max_len < len[i]) max_len = len[i];
+        // + 1;
+        total_len += len[i] + 2;
+    }
+
+    if (max_len + 1 >= size.ws_col) {
+        *row = cnt;
+        *col = 1;
+        return ;
+    } 
+
+    if (total_len <= size.ws_col) {
+        *row = 1;
+        *col = cnt;
+        return ;
+    }
+    int try_begin = 0;
+    for (int i = 0, tmp = 0; i < cnt; ++i) {
+        tmp += (len[i] + 1);
+        if (tmp >= size.ws_col) {
+            try_begin = i;
+            break;
+        }
+    }
+    
+    for (int i = try_begin; ;i--) {
+        DBG("i = %d\n", i);
+        int *wide = (int *)malloc(sizeof(int) * i);
+        memset(wide, 0, 0);
+        *row = ceil(cnt / i);
+        int sum = 0;
+        for (int x = 0; x < i; x++) {
+            for (int y  = x * *row; y < (x + 1) * *row && y < cnt; y++) {
+                if (wide[x] < len[y]) wide[x] = len[y];
+            }
+            sum +=(wide[x] + 1);
+        }
+        if (sum > size.ws_col) continue;
+        if (sum <= size.ws_col) {
+            *col = i;
+            break;
+        }
+    }
+
+    return ;
+}
+
+void show_files(char *name[MAXNAME], int cnt, int row, int col) {
+    int wide[cnt + 5];
+    memset(wide, 0, sizeof (len));
+    struct stat tmp_st;
+    for (int i = 0; i < col; ++i) {
+        for (int j = (i * row); j < (i + 1) * row && j < cnt; j++) {
+            int temp = strlen(name[j]);
+            if (wide[i] < temp) wide[i] = temp;
+        }
+    }
+
+    for (int i = 0; j < row; ++i) {
+        for (int j = i; j < i + (row * col) && j < cnt; j += row) {
+            lstat(names[j], &tmp_st);
+            update_color(tmp_st);
+            printf("\0333[%d;%dm%s\033[0m",fg_c, bg_c, names[j]);
+        }
+    }
+    return ;
+}
+
 void do_ls(char *dir) {
-    //info_size = 0;
     DIR *dirp = NULL;
     struct dirent *direntp;
     if ((dirp = opendir(dir)) == NULL) {
@@ -99,11 +185,13 @@ void do_ls(char *dir) {
         for (int i  = 0; i < cnt; ++i) {
             struct stat temp_st;
             lstat(names[i], &temp_st);
-            show_info(names[i], temp_st);
+            show_info(names[i], &temp_st);
         }
     } else {
         for (int i = 0; i < cnt; ++i) {
-            printf("%s ", names[i]);
+            int row, col;
+            size_window(names, cnt, &row, &col);
+            DBG(GREEN"<Debug>"NONE "row = %d , col = %d", row, col);
         }
     }
     closedir(dirp);

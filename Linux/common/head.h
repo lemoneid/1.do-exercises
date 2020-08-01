@@ -22,6 +22,8 @@
 #include <fcntl.h>
 #include <unistd.h>
 #include "color.h"
+#include <sys/ioctl.h>
+#include <sys/wait.h>
 
 #ifdef _D
 #define DBG(fmt, args...); printf(fmt, ##args);

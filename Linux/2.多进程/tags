@@ -1,0 +1,21 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+Num	3.add.c	/^struct Num {$/;"	s	file:
+filename	2.multi_process-2.c	10;"	d	file:
+filename	2.multi_process.c	10;"	d	file:
+m_flag	2.multi_process-2.c	/^int m_flag = 0;$/;"	v
+m_flag	2.multi_process.c	/^int m_flag = 0;$/;"	v
+main	1.fork.c	/^int main() {$/;"	f
+main	2.multi_process-2.c	/^int main(int argc, char **argv) {$/;"	f
+main	2.multi_process.c	/^int main(int argc, char **argv) {$/;"	f
+main	3.add.c	/^int main(int argc, char ** argv) {$/;"	f
+main	create_child.c	/^int main(int argc, char **argv) {$/;"	f
+main	test.c	/^int main(int argc, char **argv) {$/;"	f
+now	3.add.c	/^    int now, sum;$/;"	m	struct:Num	file:
+num_file	3.add.c	/^char num_file[] = ".\/.num";$/;"	v
+set_num	3.add.c	/^void set_num(struct Num *num) {$/;"	f
+sum	3.add.c	/^    int now, sum;$/;"	m	struct:Num	file:

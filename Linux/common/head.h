@@ -8,6 +8,7 @@
 #ifndef _HEAD_H
 #define _HEAD_H
 
+#include <math.h>
 #include <dirent.h>
 #include <string.h>
 #include <grp.h>
@@ -24,6 +25,16 @@
 #include "color.h"
 #include <sys/ioctl.h>
 #include <sys/wait.h>
+#include <pthread.h>
+#include <sys/file.h>
+#include <sys/types.h>
+#include <sys/ipc.h>
+#include <sys/shm.h>
+#include <sys/shm.h>
+#include <signal.h>
+#include <errno.h>
+#include <ctype.h>
+
 
 #ifdef _D
 #define DBG(fmt, args...); printf(fmt, ##args);

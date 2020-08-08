@@ -75,7 +75,7 @@ void update_color(mode_t mode) {
     }
 }
 
-void size_window(char *name[MAXNAME], int cnt, int *row, int *col) {
+void size_window(char *name[MAXNAME + 5], int cnt, int *row, int *col) {
     struct winsize size;
     int len[cnt + 5], max_len = 0, total_len = 0;
     memset(len, 0, sizeof(len));
@@ -133,9 +133,9 @@ void size_window(char *name[MAXNAME], int cnt, int *row, int *col) {
     return ;
 }
 
-void show_files(char *name[MAXNAME], int cnt, int row, int col) {
+void show_files(char *name[MAXNAME + 5], int cnt, int row, int col) {
     int wide[cnt + 5];
-    memset(wide, 0, sizeof (len));
+    memset(wide, 0, sizeof (wide));
     struct stat tmp_st;
     for (int i = 0; i < col; ++i) {
         for (int j = (i * row); j < (i + 1) * row && j < cnt; j++) {
@@ -144,11 +144,11 @@ void show_files(char *name[MAXNAME], int cnt, int row, int col) {
         }
     }
 
-    for (int i = 0; j < row; ++i) {
+    for (int i = 0; i < row; ++i) {
         for (int j = i; j < i + (row * col) && j < cnt; j += row) {
-            lstat(names[j], &tmp_st);
-            update_color(tmp_st);
-            printf("\0333[%d;%dm%s\033[0m",fg_c, bg_c, names[j]);
+            lstat(name[j], &tmp_st);
+            update_color(tmp_st.st_mode);
+            printf("\0333[%d;%dm%s\033[0m",fg_c, bg_c, name[j]);
         }
     }
     return ;
@@ -243,7 +243,7 @@ void show_info(char *filename, struct stat *st) {
 char *uid_to_name(uid_t uid) {
     struct passwd *pw_ptr;
     static char tmpstr[10] = {0};
-    if ((pw_ptr == getpwuid(uid)) == NULL) {
+    if ((pw_ptr = getpwuid(uid)) == NULL) {
         sprintf(tmpstr, "%d", uid);
         return tmpstr;
     } else {
@@ -254,7 +254,7 @@ char *uid_to_name(uid_t uid) {
 char *gid_to_name(gid_t gid) {
     struct group *gr_ptr;
     static char tmpstr[10] = {0};
-    if ((gr_ptr == getgrgid(gid)) == NULL) {
+    if ((gr_ptr = getgrgid(gid)) == NULL) {
         sprintf(tmpstr,"%d", gid);
     } else {
         return gr_ptr->gr_name;

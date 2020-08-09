@@ -8,6 +8,9 @@
 #ifndef _HEAD_H
 #define _HEAD_H
 
+#include "color.h"
+#include "common.h"
+
 #include <math.h>
 #include <dirent.h>
 #include <string.h>
@@ -22,7 +25,6 @@
 #include <sys/stat.h>
 #include <fcntl.h>
 #include <unistd.h>
-#include "color.h"
 #include <sys/ioctl.h>
 #include <sys/wait.h>
 #include <pthread.h>
@@ -34,6 +36,9 @@
 #include <signal.h>
 #include <errno.h>
 #include <ctype.h>
+#include <sys/types.h>          /* See NOTES */
+#include <sys/socket.h>
+#include <arpa/inet.h>
 
 
 #ifdef _D

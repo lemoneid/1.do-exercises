@@ -9,7 +9,15 @@
 
 void *do_chat(void *arg) {
     int fd;
+    char ip[20] = {0};
+    struct User user;
     fd = *(int *)arg;
+    struct sockaddr_in client;
+    bzero(&client, sizeof(client));
+    socklen_t len = sizeof(client);
+    getpeername(fd, (struct sockaddr *)&client, &len);
+    strcpy(ip, inet_ntoa(client.sin_addr));
+    get_info("../common/names", &user, ip);
     while (1) {
         ssize_t nrecv;
         char buff[512];
@@ -17,7 +25,7 @@ void *do_chat(void *arg) {
             close(fd);
             return NULL;
         }
-        printf("Recv : %s\n", buff);
+        printf(BLUE"%s"NONE" : %s\n", user.name, buff);
         send(fd, buff, strlen(buff), 0);
     }
 }
@@ -43,6 +51,10 @@ int main(int argc, char **argv) {
             exit(1);
         }
         pthread_create(&tid, NULL, do_chat, (void *)&newfd);
+        //多线程，内存共享，传地址，保证使用前，地址不会被修改;
+        //newfd有风险，-->缓冲池,连接池; 并行
+        // -->对 fd 加锁; 串行
+        usleep(50);
     }
 
     return 0;

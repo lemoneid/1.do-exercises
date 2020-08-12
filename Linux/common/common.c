@@ -10,6 +10,50 @@
 #include "head.h"
 char conf_value_ans[512] = {0};
 
+void get_info(const char *names, struct User *user, char *ip) {
+    FILE *fp = NULL;
+    char *line = NULL, *sub = NULL;
+    ssize_t nread, len;
+    if (names == NULL || user == NULL || ip == NULL) {
+        errno = EINVAL;
+        return ;
+    }
+    if ((fp = fopen(names, "r")) == NULL) {
+        errno = EINVAL;
+        return ;
+    }
+
+    strcpy(user->ip, ip);
+    while ((nread = getline(&line, &len, fp)) != -1) {
+        if ((sub = strstr(line, ip)) == NULL) {
+            continue;;
+        }
+        int len0 = 0, len1 = 0, len2 = 0;
+        
+        while (line[len0] == ' ') len0++;
+        len1 = len0;
+        while (line[len1] != ' ') len1++;
+        strncpy(user->id, line + len0, len1);
+        while (line[len1] != ':') len1++;
+
+        DBG(RED"<get_info>"NONE " len1 = %d, id = %s", len1,user->id);
+        len2 = len1 + 1;
+        while (line[len2] == ' ') len2++;
+        len1 = len2;
+        while (line[len2] != ' ') len2++;
+        strncpy(user->name, line + len1, len2 - len1);
+        DBG(RED"<get_info>"NONE " len2 = %d, name = %s", len2,user->name);
+        while (line[len2] != ':') len2++;
+        break;
+    }
+    if (sub == NULL) {
+        strcpy(user->name, "Unkown");
+    }
+    free(line);
+    fclose(fp);
+    return ;
+}
+
 char *get_conf(const char *conf, char *key) {
     FILE *fp = NULL; 
     char *line = NULL, *sub = NULL;
@@ -66,6 +110,11 @@ int socket_create(int port) {
     if ((sockfd = socket(AF_INET, SOCK_STREAM, 0)) < 0) {
         return -1;
     }
+    int val = 1;
+    if (setsockopt(sockfd, SOL_SOCKET, SO_REUSEADDR, &val, sizeof(int)) < 0) {
+        return -1;
+    }
+
     struct sockaddr_in server;
     server.sin_family = AF_INET;
     server.sin_port = htons(port);

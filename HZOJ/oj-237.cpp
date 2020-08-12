@@ -9,10 +9,10 @@
 #include <algorithm>
 using namespace std;
 
-int n, m, num[15], cnt = 1, mark[15];
+int n, num[15], cnt = 1, mark[15];
 
 void p() {
-    for (int i = 1; i <= m; ++i) {
+    for (int i = 1; i <= n; ++i) {
         i != 1 && cout << " ";
         cout << num[i];
     }
@@ -37,7 +37,7 @@ void func(int left) {
 }
 
 int main() {
-    cin >> n >> m;
-    func(m);
+    cin >> n;
+    func(n);
     return 0;
 }

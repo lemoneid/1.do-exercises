@@ -1,0 +1,250 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+BLACK	common/color.h	10;"	d
+BLINK	common/color.h	28;"	d
+BLUE	1.command/test_ls.cpp	21;"	d	file:
+BLUE	common/color.h	18;"	d
+BOLD	common/color.h	26;"	d
+BROWN	1.command/test_ls.cpp	19;"	d	file:
+BROWN	common/color.h	16;"	d
+BUFFER	1.command/cp.c	16;"	d	file:
+BUFFSIZE	4.IPC/7.thread_pool/test.c	13;"	d	file:
+BUFFSIZE	4.IPC/thread_pool/test.c	13;"	d	file:
+CLEAR	common/color.h	31;"	d
+CLRLINE	common/color.h	32;"	d
+COPYMODE	1.command/cp.c	15;"	d	file:
+CYAN	common/color.h	22;"	d
+DBG	common/head.h	45;"	d
+DBG	common/head.h	47;"	d
+Data	4.IPC/2.shm_print.c	/^struct Data {$/;"	s	file:
+Data	4.IPC/3.signal.c	/^struct Data {$/;"	s	file:
+GRAY	common/color.h	24;"	d
+GREEN	common/color.h	14;"	d
+HIDE	common/color.h	30;"	d
+INS	3.多线程/3.pthread_add.c	11;"	d	file:
+INS	test/3.pthread_add.c	11;"	d	file:
+L_BLACK	common/color.h	11;"	d
+L_BLUE	common/color.h	19;"	d
+L_CYAN	common/color.h	23;"	d
+L_GREEN	common/color.h	15;"	d
+L_PINK	common/color.h	21;"	d
+L_RED	common/color.h	13;"	d
+MAXFILE	1.command/1.ls.c	11;"	d	file:
+MAXNAME	1.command/1.ls.c	10;"	d	file:
+MAX_BUFFER	1.command/3.cp.c	9;"	d	file:
+MAX_EVENTS	5.IO/epoll.c	1;"	d	file:
+Message	4.IPC/4.shm_chat/chat.h	/^struct Message {$/;"	s
+Message	4.IPC/5.shm_chatv2/chat.h	/^struct Message {$/;"	s
+NONE	1.command/test_ls.cpp	20;"	d	file:
+NONE	common/color.h	9;"	d
+Num	2.多进程/3.add.c	/^struct Num {$/;"	s	file:
+Num	4.IPC/1.shm_add.c	/^struct Num {$/;"	s	file:
+PINK	common/color.h	20;"	d
+RED	common/color.h	12;"	d
+REVERSE	common/color.h	29;"	d
+SIZE	4.IPC/7.thread_pool/test.c	11;"	d	file:
+SIZE	4.IPC/thread_pool/test.c	11;"	d	file:
+THREADNUM	4.IPC/7.thread_pool/test.c	12;"	d	file:
+THREADNUM	4.IPC/thread_pool/test.c	12;"	d	file:
+UNDERLINE	common/color.h	27;"	d
+WHITE	common/color.h	25;"	d
+YELLOW	common/color.h	17;"	d
+_CHAT_H	4.IPC/4.shm_chat/chat.h	9;"	d
+_CHAT_H	4.IPC/5.shm_chatv2/chat.h	9;"	d
+_COLOR_H_	common/color.h	8;"	d
+_COMMON_H	common/common.h	9;"	d
+_HEAD_H	common/head.h	9;"	d
+_MY_POPEN_H	4.IPC/6.pipe/my_popen.h	9;"	d
+_THREAD_POOL_H	4.IPC/7.thread_pool/thread_pool.h	9;"	d
+_THREAD_POOL_H	4.IPC/thread_pool/thread_pool.h	9;"	d
+a_flag	1.command/1.ls.c	/^int  l_flag = 0, a_flag = 0;$/;"	v
+a_flag	1.command/ls-3.c	/^int  l_flag = 0, a_flag = 0;$/;"	v
+a_flag	1.command/ls.c	/^int  l_flag = 0, a_flag = 0;$/;"	v
+add	3.多线程/3.pthread_add.c	/^void *add(void *arg) {$/;"	f
+add	test/3.pthread_add.c	/^void *add(void *arg) {$/;"	f
+bg_c	1.command/1.ls.c	/^int bg_c, fg_c;$/;"	v
+childpid	4.IPC/6.pipe/my_popen.c	/^static pid_t *childpid = NULL;$/;"	v	file:
+clear	1.command/ls-3.c	/^void clear(int info_size) {$/;"	f
+clear	1.command/ls.c	/^void clear(int info_size) {$/;"	f
+cmp_name	1.command/1.ls.c	/^int cmp_name(const void* _a, const void* _b) {$/;"	f
+cnt	4.IPC/7.thread_pool/thread_pool.h	/^    int cnt;$/;"	m	struct:task_queue
+cnt	4.IPC/thread_pool/thread_pool.h	/^    int cnt;$/;"	m	struct:task_queue
+comp	1.command/test_ls.cpp	/^int comp(const void *a, const void *b){$/;"	f
+cond	4.IPC/5.shm_chatv2/chat.h	/^    pthread_cond_t cond;$/;"	m	struct:Message
+cond	4.IPC/7.thread_pool/thread_pool.h	/^    pthread_cond_t cond;$/;"	m	struct:task_queue
+cond	4.IPC/thread_pool/thread_pool.h	/^    pthread_cond_t cond;$/;"	m	struct:task_queue
+conf_value_ans	common/common.c	/^char conf_value_ans[512] = {0};$/;"	v
+conn_sock	5.IO/epoll.c	/^int listen_sock, conn_sock, nfds, epollfd;$/;"	v
+copy	1.command/cp.c	/^void copy(int fd_in, int fd_out) {$/;"	f
+data	4.IPC/7.thread_pool/thread_pool.h	/^    char **data;$/;"	m	struct:task_queue
+data	4.IPC/thread_pool/thread_pool.h	/^    char **data;$/;"	m	struct:task_queue
+do_add	2.多进程/3.add-2.c	/^void do_add(int max, int x) {$/;"	f
+do_add	2.多进程/3.add.c	/^void do_add(int max, int x) {$/;"	f
+do_add	4.IPC/1.shm_add.c	/^void do_add(int max, int x) {$/;"	f
+do_chat	6.socket/server.c	/^void *do_chat(void *arg) {$/;"	f
+do_ls	1.command/1.ls.c	/^void do_ls(char *dir) {$/;"	f
+do_ls	1.command/ls-2.cpp	/^void do_ls(char dirname[]){$/;"	f
+do_ls	1.command/ls-3.c	/^void do_ls(char *dir) {$/;"	f
+do_ls	1.command/ls.c	/^void do_ls(char *dir) {$/;"	f
+do_ls	1.command/test_ls.cpp	/^void do_ls(char *dirname, int gon){$/;"	f
+do_print	4.IPC/2.shm_print.c	/^void do_print() {$/;"	f
+do_print	4.IPC/3.signal.c	/^void *do_print(int signum) {$/;"	f
+dostat	1.command/ls-2.cpp	/^void dostat( char *filename ,char dirname[]){$/;"	f
+dostat	1.command/test_ls.cpp	/^void dostat( char *filename ,char dirname[],int gon){$/;"	f
+epollfd	5.IO/epoll.c	/^int listen_sock, conn_sock, nfds, epollfd;$/;"	v
+ev	5.IO/epoll.c	/^struct epoll_event ev, events[MAX_EVENTS];$/;"	v	typeref:struct:epoll_event
+events	5.IO/epoll.c	/^struct epoll_event ev, events[MAX_EVENTS];$/;"	v	typeref:struct:
+fg_c	1.command/1.ls.c	/^int bg_c, fg_c;$/;"	v
+filename	1.command/ls-3.c	/^    char filename[255];$/;"	m	struct:info	file:
+filename	1.command/ls.c	/^    char filename[255];$/;"	m	struct:info	file:
+filename	2.多进程/2.multi_process-2.c	10;"	d	file:
+filename	2.多进程/2.multi_process.c	10;"	d	file:
+get_conf	common/common.c	/^char *get_conf(const char *conf, char *key) {$/;"	f
+get_num	2.多进程/3.add-2.c	/^size_t get_num(int *now, int *sum) {$/;"	f
+get_num	2.多进程/3.add.c	/^size_t get_num(struct Num *num) {$/;"	f
+gid_to_name	1.command/1.ls.c	/^char *gid_to_name(gid_t gid) {$/;"	f
+gid_to_name	1.command/ls-2.cpp	/^char* gid_to_name(gid_t gid){$/;"	f
+gid_to_name	1.command/test_ls.cpp	/^char* gid_to_name(gid_t gid){$/;"	f
+handle_error	5.IO/mmap.c	14;"	d	file:
+head	4.IPC/7.thread_pool/thread_pool.h	/^    int head;$/;"	m	struct:task_queue
+head	4.IPC/thread_pool/thread_pool.h	/^    int head;$/;"	m	struct:task_queue
+info	1.command/ls-3.c	/^struct info {$/;"	s	file:
+info	1.command/ls-3.c	/^} info[10000];$/;"	v	typeref:struct:info
+info	1.command/ls.c	/^struct info {$/;"	s	file:
+info	1.command/ls.c	/^} info[10000];$/;"	v	typeref:struct:info
+info_size	1.command/ls-3.c	/^int info_size = 0;$/;"	v
+info_size	1.command/ls.c	/^int info_size = 0;$/;"	v
+l_flag	1.command/1.ls.c	/^int  l_flag = 0, a_flag = 0;$/;"	v
+l_flag	1.command/ls-3.c	/^int  l_flag = 0, a_flag = 0;$/;"	v
+l_flag	1.command/ls.c	/^int  l_flag = 0, a_flag = 0;$/;"	v
+listen_sock	5.IO/epoll.c	/^int listen_sock, conn_sock, nfds, epollfd;$/;"	v
+lock_file	2.多进程/3.add-2.c	/^char lock_file[] = ".\/.lock";$/;"	v
+lock_file	2.多进程/3.add.c	/^char lock_file[] = ".\/.lock";$/;"	v
+m_flag	2.多进程/2.multi_process-2.c	/^int m_flag = 0;$/;"	v
+m_flag	2.多进程/2.multi_process.c	/^int m_flag = 0;$/;"	v
+m_pclose	4.IPC/6.pipe/my_popen.c	/^int m_pclose(FILE *fp) {$/;"	f
+m_popen	4.IPC/6.pipe/my_popen.c	/^FILE *m_popen(const char *cmd, const char *type) {$/;"	f
+main	1.command/1.ls.c	/^int main(int argc, char **argv) {$/;"	f
+main	1.command/2.cat.c	/^int main(int argc, char **argv) {$/;"	f
+main	1.command/3.cp.c	/^int main(int argc, char ** argv) {$/;"	f
+main	1.command/cat.c	/^int main(int argc, char **argv) {$/;"	f
+main	1.command/cp.c	/^int main(int argc, char **argv) {$/;"	f
+main	1.command/ls-2.cpp	/^int main(int ac, char *av[]){$/;"	f
+main	1.command/ls-3.c	/^int main(int argc, char **argv) {$/;"	f
+main	1.command/ls.c	/^int main(int argc, char **argv) {$/;"	f
+main	1.command/test/1.c	/^int main(){$/;"	f
+main	1.command/test_ls.cpp	/^int main(int ac,char *av[]){$/;"	f
+main	2.多进程/1.fork.c	/^int main() {$/;"	f
+main	2.多进程/2.multi_process-2.c	/^int main(int argc, char **argv) {$/;"	f
+main	2.多进程/2.multi_process.c	/^int main(int argc, char **argv) {$/;"	f
+main	2.多进程/3.add-2.c	/^int main(int argc, char ** argv) {$/;"	f
+main	2.多进程/3.add.c	/^int main(int argc, char ** argv) {$/;"	f
+main	2.多进程/create_child.c	/^int main(int argc, char **argv) {$/;"	f
+main	2.多进程/test.c	/^int main(int argc, char **argv) {$/;"	f
+main	3.多线程/1.thread.c	/^int main(int argc, char **argv) {$/;"	f
+main	3.多线程/3.pthread_add.c	/^int main(int argc, char **argv) {$/;"	f
+main	4.IPC/1.shm_add.c	/^int main(int argc, char **argv) {$/;"	f
+main	4.IPC/2.shm_print.c	/^int main(int argc, char **argv) {$/;"	f
+main	4.IPC/3.signal.c	/^int main(int argc, char **argv) {$/;"	f
+main	4.IPC/4.shm_chat/1.server.c	/^int main() {$/;"	f
+main	4.IPC/4.shm_chat/2.client.c	/^int main(int argc, char **argv) {$/;"	f
+main	4.IPC/5.shm_chatv2/1.server.c	/^int main() {$/;"	f
+main	4.IPC/5.shm_chatv2/2.client.c	/^int main(int argc, char **argv) {$/;"	f
+main	4.IPC/6.pipe/1.pipe.c	/^int main() {$/;"	f
+main	4.IPC/6.pipe/2.popen.c	/^int main() {$/;"	f
+main	4.IPC/6.pipe/test.c	/^int main() {$/;"	f
+main	4.IPC/7.thread_pool/test.c	/^int main() {$/;"	f
+main	4.IPC/thread_pool/test.c	/^int main() {$/;"	f
+main	5.IO/mmap.c	/^main(int argc, char *argv[])$/;"	f
+main	5.IO/test-1.c	/^int main(void){$/;"	f
+main	5.IO/test.c	/^int main() {$/;"	f
+main	6.socket/client.c	/^int main(int argc, char **argv) {$/;"	f
+main	6.socket/server.c	/^int main(int argc, char **argv) {$/;"	f
+main	common/test.c	/^int main() {$/;"	f
+main	test/3.pthread_add.c	/^int main(int argc, char **argv) {$/;"	f
+make_block	common/common.c	/^int make_block(int fd) {$/;"	f
+make_non_block	common/common.c	/^int make_non_block(int fd) {$/;"	f
+max	4.IPC/6.pipe/my_popen.c	/^static int max;$/;"	v	file:
+mode_to_letters	1.command/ls-2.cpp	/^void mode_to_letters(int mode, char str[]){$/;"	f
+mode_to_letters	1.command/test_ls.cpp	/^void mode_to_letters(int mode, char str[]){$/;"	f
+mode_to_str	1.command/1.ls.c	/^void mode_to_str(mode_t mode, char *modestr) {$/;"	f
+msg	4.IPC/4.shm_chat/chat.h	/^    char msg[1024];$/;"	m	struct:Message
+msg	4.IPC/5.shm_chatv2/chat.h	/^    char msg[1024];$/;"	m	struct:Message
+mutex	3.多线程/3.pthread_add.c	/^pthread_mutex_t mutex = PTHREAD_MUTEX_INITIALIZER;$/;"	v
+mutex	4.IPC/1.shm_add.c	/^    pthread_mutex_t mutex;$/;"	m	struct:Num	file:
+mutex	4.IPC/2.shm_print.c	/^    pthread_mutex_t mutex;$/;"	m	struct:Data	file:
+mutex	4.IPC/3.signal.c	/^    pthread_mutex_t mutex;$/;"	m	struct:Data	file:
+mutex	4.IPC/4.shm_chat/chat.h	/^    pthread_mutex_t mutex;$/;"	m	struct:Message
+mutex	4.IPC/5.shm_chatv2/chat.h	/^    pthread_mutex_t mutex;$/;"	m	struct:Message
+mutex	4.IPC/7.thread_pool/thread_pool.h	/^    pthread_mutex_t mutex;$/;"	m	struct:task_queue
+mutex	4.IPC/thread_pool/thread_pool.h	/^    pthread_mutex_t mutex;$/;"	m	struct:task_queue
+mutex	test/3.pthread_add.c	/^pthread_mutex_t mutex = PTHREAD_MUTEX_INITIALIZER;$/;"	v
+name	4.IPC/4.shm_chat/chat.h	/^    char name[20];$/;"	m	struct:Message
+name	4.IPC/5.shm_chatv2/chat.h	/^    char name[20];$/;"	m	struct:Message
+nfds	5.IO/epoll.c	/^int listen_sock, conn_sock, nfds, epollfd;$/;"	v
+now	2.多进程/3.add.c	/^    int now, sum;$/;"	m	struct:Num	file:
+now	3.多线程/3.pthread_add.c	/^int now = 1, sum = 0;$/;"	v
+now	4.IPC/1.shm_add.c	/^    int now, sum;$/;"	m	struct:Num	file:
+now	test/3.pthread_add.c	/^int now = 1, sum = 0;$/;"	v
+num_file	2.多进程/3.add-2.c	/^char num_file[] = ".\/.num";$/;"	v
+num_file	2.多进程/3.add.c	/^char num_file[] = ".\/.num";$/;"	v
+other	1.command/ls-3.c	/^    char other[4000];$/;"	m	struct:info	file:
+other	1.command/ls.c	/^    char other[4000];$/;"	m	struct:info	file:
+pid	4.IPC/4.shm_chat/chat.h	/^    pid_t pid;$/;"	m	struct:Message
+print	3.多线程/1.thread.c	/^void *print(void *arg) {$/;"	f
+print	4.IPC/4.shm_chat/1.server.c	/^void *print(int signum) {$/;"	f
+print	4.IPC/5.shm_chatv2/1.server.c	/^void *print(int signum) {$/;"	f
+read_file	1.command/2.cat.c	/^void read_file(char *pathname) {$/;"	f
+read_file	1.command/cat.c	/^void read_file(char *pathname) {$/;"	f
+set_num	2.多进程/3.add-2.c	/^size_t set_num(int now, int sum) {$/;"	f
+set_num	2.多进程/3.add.c	/^size_t set_num(struct Num *num) {$/;"	f
+share_memory	4.IPC/1.shm_add.c	/^struct Num *share_memory;$/;"	v	typeref:struct:Num
+share_memory	4.IPC/2.shm_print.c	/^struct Data *share_memory;$/;"	v	typeref:struct:Data
+share_memory	4.IPC/3.signal.c	/^struct Data *share_memory;$/;"	v	typeref:struct:Data
+share_memory	4.IPC/4.shm_chat/1.server.c	/^struct Message *share_memory = NULL;$/;"	v	typeref:struct:Message
+share_memory	4.IPC/4.shm_chat/2.client.c	/^struct Message *share_memory = NULL;$/;"	v	typeref:struct:Message
+share_memory	4.IPC/5.shm_chatv2/1.server.c	/^struct Message *share_memory = NULL;$/;"	v	typeref:struct:Message
+share_memory	4.IPC/5.shm_chatv2/2.client.c	/^struct Message *share_memory = NULL;$/;"	v	typeref:struct:Message
+show_files	1.command/1.ls.c	/^void show_files(char *name[MAXNAME + 5], int cnt, int row, int col) {$/;"	f
+show_info	1.command/1.ls.c	/^void show_info(char *filename, struct stat *st) {$/;"	f
+show_info	1.command/ls-3.c	/^void show_info(char *filename, struct stat *st) {$/;"	f
+show_info	1.command/ls.c	/^void show_info(char *filename, struct stat *st) {$/;"	f
+show_stat_info	1.command/ls-2.cpp	/^void show_stat_info(char *filename, struct stat *info_p){$/;"	f
+show_stat_info	1.command/test_ls.cpp	/^void show_stat_info(char *filename, struct stat *info_p,int gon){$/;"	f
+showout	1.command/ls-3.c	/^void showout(int n, char *dir, int flag) {$/;"	f
+showout	1.command/ls.c	/^void showout(int n, char *dir) {$/;"	f
+size	4.IPC/7.thread_pool/thread_pool.h	/^    int size;$/;"	m	struct:task_queue
+size	4.IPC/thread_pool/thread_pool.h	/^    int size;$/;"	m	struct:task_queue
+size_window	1.command/1.ls.c	/^void size_window(char *name[MAXNAME + 5], int cnt, int *row, int *col) {$/;"	f
+socket_connect	common/common.c	/^int socket_connect(char *ip, int port) {$/;"	f
+socket_create	common/common.c	/^int socket_create(int port) {$/;"	f
+sort	1.command/ls-3.c	/^void sort(int n) {$/;"	f
+sort	1.command/ls.c	/^void sort(int n) {$/;"	f
+str	4.IPC/2.shm_print.c	/^    char str[1000];$/;"	m	struct:Data	file:
+str	4.IPC/3.signal.c	/^    char str[1000];$/;"	m	struct:Data	file:
+sum	2.多进程/3.add.c	/^    int now, sum;$/;"	m	struct:Num	file:
+sum	3.多线程/3.pthread_add.c	/^int now = 1, sum = 0;$/;"	v
+sum	4.IPC/1.shm_add.c	/^    int now, sum;$/;"	m	struct:Num	file:
+sum	test/3.pthread_add.c	/^int now = 1, sum = 0;$/;"	v
+tail	4.IPC/7.thread_pool/thread_pool.h	/^    int tail;$/;"	m	struct:task_queue
+tail	4.IPC/thread_pool/thread_pool.h	/^    int tail;$/;"	m	struct:task_queue
+task_queue	4.IPC/7.thread_pool/thread_pool.h	/^struct task_queue {$/;"	s
+task_queue	4.IPC/thread_pool/thread_pool.h	/^struct task_queue {$/;"	s
+task_queue_clear	4.IPC/7.thread_pool/thread_pool.c	/^void task_queue_clear(struct task_queue *taskQueue) {$/;"	f
+task_queue_clear	4.IPC/thread_pool/thread_pool.c	/^void task_queue_clear(struct task_queue *taskQueue) {$/;"	f
+task_queue_init	4.IPC/7.thread_pool/thread_pool.c	/^struct task_queue * task_queue_init(struct task_queue *taskQueue, int size) {$/;"	f
+task_queue_init	4.IPC/thread_pool/thread_pool.c	/^struct task_queue * task_queue_init(struct task_queue *taskQueue, int size) {$/;"	f
+task_queue_pop	4.IPC/7.thread_pool/thread_pool.c	/^char *task_queue_pop(struct task_queue *taskQueue) {$/;"	f
+task_queue_pop	4.IPC/thread_pool/thread_pool.c	/^char *task_queue_pop(struct task_queue *taskQueue) {$/;"	f
+task_queue_push	4.IPC/7.thread_pool/thread_pool.c	/^int task_queue_push(struct task_queue *taskQueue, char *str) {$/;"	f
+task_queue_push	4.IPC/thread_pool/thread_pool.c	/^int task_queue_push(struct task_queue *taskQueue, char *str) {$/;"	f
+thread_run	4.IPC/7.thread_pool/thread_pool.c	/^void *thread_run(void *arg) {$/;"	f
+thread_run	4.IPC/thread_pool/thread_pool.c	/^void *thread_run(void *arg) {$/;"	f
+uid_to_name	1.command/1.ls.c	/^char *uid_to_name(uid_t uid) {$/;"	f
+uid_to_name	1.command/ls-2.cpp	/^char* uid_to_name(uid_t uid){$/;"	f
+uid_to_name	1.command/test_ls.cpp	/^char* uid_to_name(uid_t uid){$/;"	f
+update_color	1.command/1.ls.c	/^void update_color(mode_t mode) {$/;"	f

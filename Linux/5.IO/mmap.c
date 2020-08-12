@@ -40,6 +40,7 @@ main(int argc, char *argv[])
     pa_offset = offset & ~(sysconf(_SC_PAGE_SIZE) - 1);
         /* offset for mmap() must be page aligned */
 
+    //printf("\npa_offset: %ld", pa_offset);
     if (offset >= sb.st_size) {
         fprintf(stderr, "offset is past end of file\n");
         exit(EXIT_FAILURE);
@@ -68,6 +69,9 @@ main(int argc, char *argv[])
         fprintf(stderr, "partial write");
         exit(EXIT_FAILURE);
     }
+    
+    printf("\npa_offset: %ld len = %ld\n",pa_offset,length + offset- pa_offset);
+    printf("\naddr = %p, pa_offset = %ld",addr,pa_offset);
 
     munmap(addr, length + offset - pa_offset);
     close(fd);

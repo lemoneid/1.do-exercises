@@ -8,7 +8,7 @@
 #include "head.h"
 #include "thread_pool.h"
 
-#define SIZE 5 
+#define SIZE 10 
 #define THREADNUM 5 
 #define BUFFSIZE 512
 
@@ -16,38 +16,30 @@ int main() {
     pthread_t tid[THREADNUM];
     struct task_queue taskQueue;
     taskQueue = *task_queue_init(&taskQueue, SIZE);
-    DBG(GREEN"<Debug>"NONE " :head = %d. tail = %d, cnt = %d, size = %d\n", taskQueue.head, taskQueue.tail ,taskQueue.cnt, taskQueue.size);
     
+   char buff[SIZE][BUFFSIZE] = {0};
     for (int i = 0; i < THREADNUM; ++i) {
          int id =  pthread_create(&tid[i], NULL, thread_run, (void *)&taskQueue);
         //DBG(GREEN"<Debug>"NONE " : Created = %d\n", id);
     }
         DBG(GREEN"<Debug>"NONE " : Created success\n");
 
+    int sub = 0;
+
+    //压力测试
     while (1) {
         FILE *fp = fopen("./thread_pool.c", "r");
         if (fp == NULL) {
             perror("fopen()");
             exit(1);
         }
-
-        char buff[BUFFSIZE] = {0};
-        
-        while (fgets(buff, BUFFSIZE, fp) != NULL) {
-            task_queue_push(&taskQueue, buff);
-            memset(buff, 0, sizeof(buff));
-            usleep(1);
+        while (fgets(buff[sub], BUFFSIZE, fp) != NULL) {
+            task_queue_push(&taskQueue, buff[sub]);
+            if (++sub >= SIZE) {
+                sub = 0;
+            }
         }
-        
         fclose(fp);
-        //break;
-        /*
-        scanf("%[^\n]s", buff);
-        getchar();
-        DBG(GREEN"<stdin>"NONE "before : %s\n", buff);
-        task_queue_push(&taskQueue, buff);
-        DBG(GREEN"<stdin>"NONE "after : %s\n", buff);
-        */
     }
     //task_queue_clear(&taskQueue);
     for (int i = 0; i < THREADNUM; ++i) {

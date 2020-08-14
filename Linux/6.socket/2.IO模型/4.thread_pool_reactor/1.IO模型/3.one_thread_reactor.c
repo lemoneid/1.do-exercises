@@ -1,9 +1,9 @@
 /*************************************************************************
-> File Name: test.c
-> Author: weier 
-> Mail: 1931248856@qq.com 
-> Created Time: Wed 12 Aug 2020 04:43:41 PM CST
-************************************************************************/
+	> File Name: 3.one_thread_reactor.c
+	> Author: suyelu 
+	> Mail: suyelu@126.com
+	> Created Time: Wed 12 Aug 2020 04:10:08 PM CST
+ ************************************************************************/
 
 #include "head.h"
 #define MAX 10
@@ -15,8 +15,6 @@ int main(int argc, char **argv) {
         exit(1);
     }
     int server_listen, sockfd, port, epollfd;
-    ssize_t nrecv;
-    // 0 有问题,fd自动分配是尽可能小的
     int fd[MAXUSER] = {0};
     port = atoi(argv[1]);
     if ((server_listen = socket_create(port)) < 0) {
@@ -24,7 +22,6 @@ int main(int argc, char **argv) {
         exit(1);
     }
 
-    //epoll实例， ->反应堆
     if ((epollfd = epoll_create(1)) < 0) {
         perror("epoll_create()");
         exit(1);
@@ -39,7 +36,7 @@ int main(int argc, char **argv) {
         perror("epoll_ctl()");
         exit(1);
     }
-
+    
     while (1) {
         int nfds = epoll_wait(epollfd, events, MAX, -1);
         if (nfds < 0) {
@@ -53,45 +50,35 @@ int main(int argc, char **argv) {
                     exit(1);
                 }
                 fd[sockfd] = sockfd;
-                ev.events = EPOLLIN | EPOLLET;
+                ev.events = EPOLLIN;
                 ev.data.fd = sockfd;
                 if (epoll_ctl(epollfd, EPOLL_CTL_ADD, sockfd, &ev) < 0) {
                     perror("epoll_ctl()");
                     exit(1);
                 }
             } else {
-                char buff[512] = {0};
                 if (events[i].events & EPOLLIN) {
-                    nrecv = recv(events[i].data.fd, buff, sizeof(buff), 0);
-                    // nrecv == 0 socket断开, man-RETURNVALUE
-                    if (nrecv < 0) {
-                        perror("recv()");
-                        exit(1);
-                    } else if (nrecv == 0) {
-                        printf(RED"<fd = %d>"NONE" is logout\n", events[i].data.fd);
-                        if (epoll_ctl(epollfd, EPOLL_CTL_DEL, events[i].data.fd, NULL) < 0) {
-                            perror("epoll_ctl()");
-                            exit(1);
-                        }
+                    char buff[512] = {0};
+                    int nrecv = recv(events[i].data.fd, buff, sizeof(buff), 0);
+                    printf("recv : %s\n", buff);
+                    if (nrecv <= 0) {
+                        epoll_ctl(epollfd, EPOLL_CTL_DEL, events[i].data.fd, NULL);
+                        DBG("events[i].data.fd_1 = %d\n", events[i].data.fd);
                         close(events[i].data.fd);
-                    } else {
-                        printf("recv : fd = %d, %s\n", events[i].data.fd,buff);
+                        printf("Logout_1!\n");
                     }
                 } 
-                // TCP 对端关闭，如何感知
-                if (events[i].events & EPOLLRDHUP) {
-                    if (epoll_ctl(epollfd, EPOLL_CTL_DEL, events[i].data.fd, NULL) < 0) {
-                        perror("epoll_ctl()");
-                        exit(1);
-                    }
-                    DBG(GREEN"<Debug>"NONE"events[i].data.fd = %d", events[i].data.fd);
+                /*sleep(3);
+                if (events[i].events & EPOLLHUP) {
+                    epoll_ctl(epollfd, EPOLL_CTL_DEL, events[i].data.fd, NULL);
+                    DBG("events[i].data.fd = %d\n", events[i].data.fd);
                     close(events[i].data.fd);
-                    printf("logout!\n");
+                    printf("Logout!\n");
                 }
+                */
             }
         }
     }
 
-    close(server_listen);
     return 0;
 }

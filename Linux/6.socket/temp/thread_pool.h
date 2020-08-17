@@ -25,7 +25,7 @@ struct task_queue {
     int size;
     int cnt;
     int epollfd;
-    //struct Data *data;
+    struct Data *data;
     int *fd;
     pthread_mutex_t mutex;
     pthread_cond_t cond;

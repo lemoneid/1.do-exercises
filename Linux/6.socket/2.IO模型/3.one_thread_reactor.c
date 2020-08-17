@@ -53,15 +53,23 @@ int main(int argc, char **argv) {
                     exit(1);
                 }
                 fd[sockfd] = sockfd;
-                ev.events = EPOLLIN | EPOLLET;
+                ev.events = EPOLLIN | EPOLLRDHUP;
                 ev.data.fd = sockfd;
                 if (epoll_ctl(epollfd, EPOLL_CTL_ADD, sockfd, &ev) < 0) {
                     perror("epoll_ctl()");
                     exit(1);
                 }
             } else {
-                char buff[512] = {0};
+                if (events[i].events & EPOLLRDHUP) {
+                    if (epoll_ctl(epollfd, EPOLL_CTL_DEL, events[i].data.fd, NULL) < 0) {
+                        perror("epoll_ctl()");
+                        exit(1);
+                    }
+                    printf(GREEN"<data.fd>"NONE" = %d is logout", events[i].data.fd);
+                    close(events[i].data.fd);
+                } 
                 if (events[i].events & EPOLLIN) {
+                    char buff[512] = {0};
                     nrecv = recv(events[i].data.fd, buff, sizeof(buff), 0);
                     // nrecv == 0 socket断开, man-RETURNVALUE
                     if (nrecv < 0) {
@@ -79,15 +87,6 @@ int main(int argc, char **argv) {
                     }
                 } 
                 // TCP 对端关闭，如何感知
-                if (events[i].events & EPOLLRDHUP) {
-                    if (epoll_ctl(epollfd, EPOLL_CTL_DEL, events[i].data.fd, NULL) < 0) {
-                        perror("epoll_ctl()");
-                        exit(1);
-                    }
-                    DBG(GREEN"<Debug>"NONE"events[i].data.fd = %d", events[i].data.fd);
-                    close(events[i].data.fd);
-                    printf("logout!\n");
-                }
             }
         }
     }

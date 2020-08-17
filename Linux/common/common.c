@@ -10,7 +10,7 @@
 #include "head.h"
 char conf_value_ans[512] = {0};
 
-void get_info(const char *names, struct User *user, char *ip) {
+void get_info(const char *names, struct User_info *user, char *ip) {
     FILE *fp = NULL;
     char *line = NULL, *sub = NULL;
     ssize_t nread, len;

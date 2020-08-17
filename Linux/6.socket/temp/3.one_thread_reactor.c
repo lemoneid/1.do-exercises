@@ -57,6 +57,7 @@ int main(int argc, char **argv) {
             perror("epoll_wait");
             exit(1);
         }
+        sleep(1);
         for (int i = 0; i < nfds; ++i) {
             if (events[i].data.fd == server_listen  && (events[i].events & EPOLLIN)) {
                 if ((sockfd = accept(server_listen, NULL, NULL)) < 0) {
@@ -73,7 +74,8 @@ int main(int argc, char **argv) {
                 }
             } else {
                 if (events[i].events & EPOLLIN) {
-                   task_queue_push(&taskQueue, events[i].data.fd);
+                    DBG(YELLOW"<main>"NONE " : push %d\n", events[i].data.fd);
+                    task_queue_push(&taskQueue, events[i].data.fd);
                 } 
             }
         }

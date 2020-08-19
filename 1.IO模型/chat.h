@@ -29,6 +29,7 @@ struct User {
 #define CHAT_FUNC 0x40
 #define CHAT_SYS 0x80
 #define CHAT_NAK 0x100
+#define CHAT_FIN_1 0x200
 
 #define FUNC_CHECK_ONLINE 0x01
 #define FUNC_CHANGE_NAME 0x02

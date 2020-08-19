@@ -14,7 +14,7 @@ extern struct User user[MAXUSER];
 
 int search_name(char *name) {
     for (int i = 0; i < MAXUSER; ++i) {
-        if (user[i].online == 0) continue;
+        if (user[i].online != 1) continue;
         if (strcmp(user[i].real_name, name) == 0) {
             return i;
         }
@@ -29,17 +29,55 @@ void do_work(int fd) {
     int nrecv;
     if ( (nrecv = recv(fd, &cm, sizeof(cm), 0)) <= 0) {
         if (epoll_ctl(epollfd, EPOLL_CTL_DEL, fd, NULL) < 0) {
-            perror("epoll_ctl() ; del ");
+            perror("epoll_ctl(); : do_work del ");
         }
-        DBG(RED"<Reactor>"NONE" : Del from reactor!\n");
+        printf(RED"<Reactor>"NONE" : Del from reactor fd = %d!\n", fd);
+        user[fd].online = 0;
         close(fd);
         return ;
     } 
-    //make_non_block(i);
     if (cm.type & CHAT_ACK || nrecv > 0) {
         user[fd].flag = 10;
     }
-    //make_block(i);
+    
+    //处理chatmsg
+    if (cm.type & CHAT_FIN) {
+        memset(&cm, 0, sizeof(cm));
+        cm.type |= CHAT_FIN_1;
+        printf(RED"\n<RECV>"NONE" : CHAT_FIN_1\n");
+        send(fd, &cm, sizeof(cm), 0);
+        return ;
+    }
+
+    if (cm.opt & FUNC_CHANGE_NAME) {
+        DBG(RED"<RECV>"NONE" : FUNC_CHANGE_NAME %s\n", cm.name);
+        send(fd, &cm, sizeof(cm), 0);
+        strcpy (user[fd].real_name, cm.name);
+    }
+
+    if (cm.opt & FUNC_CHECK_ONLINE) {
+        int cnt = 0;
+        for (int i = 0; i < MAXUSER; ++i) {
+            if (user[i].online == 1) cnt++;
+        }
+        char buff[50];
+        sprintf(buff, "%d", cnt);
+        strcpy(cm.msg, buff);
+        send(fd, &cm, sizeof(cm), 0);
+    }
+
+    if (cm.type & CHAT_PRI) {
+        int id = search_name(cm.name);
+        strcpy(cm.name, user[fd].real_name);
+        send(user[id].fd, &cm, sizeof(cm), 0);
+    } else if (cm.type & CHAT_PUB) {
+        strcpy(cm.name, user[fd].real_name);
+        for (int i = 0; i < MAXUSER; ++i) {
+            if (user[i].online == 1) {
+                send(user[i].fd, &cm, sizeof(cm), 0);
+            }
+        }
+    }
     printf(GREEN"<do_work>"NONE"type =%x, opt =%x, name =%s, msg =%s\n", cm.type, cm.opt, cm.name, cm.msg);
 }
 
@@ -101,12 +139,12 @@ void *thread_run(void *arg) {
     }
 }
 
+//心跳测试
 void *thread_heart(void *arg) {
     DBG(GREEN"<heart>"NONE" : is ready");
     while (1) {
         sleep(5);
         for (int i = 0; i < MAXUSER; ++i) {
-       //     DBG(GREEN"<heart>"NONE" :test fd = %d is online\n", i);
             usleep(500);
             if (user[i].online == 0) continue;
             DBG(GREEN"<heart>"NONE" :test fd = %d, flag = %d\n", i, user[i].flag);
@@ -114,18 +152,20 @@ void *thread_heart(void *arg) {
                 DBG(GREEN"<heart>"NONE": del fd = %d\n", i);
                 //del
                 user[i].online = 0;
+                /*
                 if (epoll_ctl(epollfd, EPOLL_CTL_DEL, i, NULL) < 0) {
-                    perror("epoll_ctl() ; del ");
+                    perror("epoll_ctl(); heart del ");
                 }
+                */
                 close(i);
             }  else if (user[i].flag > 0) {
                 struct ChatMsg heart;
                 heart.type |= CHAT_HEART;
                 if (send(user[i].fd, &heart, sizeof(heart), 0) < 0) {
                     perror("send() : heart");
+                    close(i);
                 }
                 memset(&heart, 0, sizeof(heart));
-                DBG(GREEN"<heart>"NONE" :send fd = %d\n", i);
                 user[i].flag -= 1;
             }
         }

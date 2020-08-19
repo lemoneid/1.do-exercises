@@ -9,16 +9,26 @@
 #include "./thread_pool/thread_pool.h"
 #include "./chat.h"
 
-#define MAXTHREAD 10
+#define MAXTHREAD 4 
 #define MAXQUEUE 20
 #define MAXEVENTS 10
 
 #define SUCCESS "Welcome to login! please start to chat\n"
 #define FAILURE "Sorry! your name have login\n"
 struct User user[MAXUSER];
-int people = 0;
 
 int epollfd;
+
+void *Stop(int signum) {
+    struct ChatMsg cm;
+    memset(&cm, 0, sizeof(cm));
+    cm.type |= CHAT_FIN;
+    for (int i = 0; i < MAXUSER; ++i) {
+        if (user[i].online == 1)
+            send(user[i].fd, &cm, sizeof(cm), 0);
+    }
+}
+
 
 int main(int argc, char **argv) {
     if (argc != 2) {
@@ -32,7 +42,7 @@ int main(int argc, char **argv) {
         perror("socket_create()");
         exit(1);
     }
-
+    //task_queue
     struct task_queue taskQueue;
     task_queue_init(&taskQueue, MAXQUEUE);
 
@@ -41,7 +51,7 @@ int main(int argc, char **argv) {
     for (int i = 0; i < MAXTHREAD; i++) {
         pthread_create(&tid[i], NULL, thread_run, (void *)&taskQueue);
     }
-    
+    //heart
     pthread_t tid_heart;
     pthread_create(&tid_heart, NULL, thread_heart, (void *)(NULL));
 
@@ -60,7 +70,10 @@ int main(int argc, char **argv) {
         exit(1);
     }
 
-    //
+    // ctrl + c
+    signal(SIGINT, (void *)Stop);
+
+    //epoll
 
     while (1) {
         //sleep(1);
@@ -77,53 +90,65 @@ int main(int argc, char **argv) {
                     perror("accept()");
                     exit(1);
                 }
-                DBG(YELLOW"<Debg>"NONE" : server_listen, fd= %d\n", sockfd);
+                
+                do {
+                    //设置timeout
+                    socklen_t optlen = sizeof(struct timeval);
+                    struct timeval tv;
+                    tv.tv_sec = 0;
+                    tv.tv_usec = 50 * 1000;
+                    if (setsockopt(sockfd, SOL_SOCKET, SO_RCVTIMEO, &tv, optlen) < 0){
+                        perror("setsockopt(); epoll");
+                    }
 
-                struct ChatMsg syn;
-                memset(&syn, 0, sizeof(syn));
-                if (recv(sockfd, &syn, sizeof(syn), 0) < 0) {
-                    perror("recv()");
-                }
-                //if (!(syn.type & CHAT_SYN));
-                if (search_name(syn.name) == -1 && (syn.type & CHAT_SYN)) {
-                    syn.type |= CHAT_ACK;
-                    strcpy(syn.msg, SUCCESS);
-                    send(sockfd, &syn, sizeof(syn), 0);
-                } else {
-                    //memset(&syn, 0, sizeof(syn));
-                    syn.type |= CHAT_NAK;
-                    strcpy(syn.msg, FAILURE);
-                    send(sockfd, &syn, sizeof(syn), 0);
-                    break;
-                }
+                    struct ChatMsg syn;
+                    memset(&syn, 0, sizeof(syn));
+                    if (recv(sockfd, &syn, sizeof(syn), 0) <= 0) {
+                        DBG(YELLOW"<fd = %d>"NONE" : timeout\n", sockfd);
+                        perror("recv() : server");
+                        break;
+                    }
+                    DBG(YELLOW"<Debg>"NONE" :  recv name = %s, msg = %s\n", syn.name, syn.msg);
+                    if (search_name(syn.name) == -1 && (syn.type & CHAT_SYN)) {
+                        syn.type |= CHAT_ACK;
+                        strcpy(syn.msg, SUCCESS);
+                        send(sockfd, &syn, sizeof(syn), 0);
+                    } else {
+                        //memset(&syn, 0, sizeof(syn));
+                        syn.type |= CHAT_NAK;
+                        strcpy(syn.msg, FAILURE);
+                        send(sockfd, &syn, sizeof(syn), 0);
+                        break;
+                    }
 
-                user[sockfd].fd = sockfd;
-                strcpy(user[sockfd].real_name, syn.name);
-                user[sockfd].flag = 10;
-                struct sockaddr_in client;
-                bzero(&client, sizeof(client));
-                socklen_t len = sizeof(client);
-                getpeername(sockfd, (struct sockaddr *)&client, &len);
-                strcpy(user[sockfd].ip, inet_ntoa(client.sin_addr));
-                user[sockfd].online = 1;
+                    // add-user
+                    user[sockfd].fd = sockfd;
+                    strcpy(user[sockfd].real_name, syn.name);
+                    user[sockfd].flag = 10;
+                    struct sockaddr_in client;
+                    bzero(&client, sizeof(client));
+                    socklen_t len = sizeof(client);
+                    getpeername(sockfd, (struct sockaddr *)&client, &len);
+                    strcpy(user[sockfd].ip, inet_ntoa(client.sin_addr));
+                    user[sockfd].online = 1;
 
-                //DBG(YELLOW"<fd = %d>"NONE" : server_listen, fd= %d\n", sockfd, );
+                    //DBG(YELLOW"<fd = %d>"NONE" : server_listen, fd= %d\n", sockfd, );
 
-                fd[sockfd] = sockfd;
-                ev.events = EPOLLIN | EPOLLET;
-                ev.data.fd = sockfd;
-                if (epoll_ctl(epollfd, EPOLL_CTL_ADD, sockfd, &ev) < 0) {
-                    perror("epoll_ctl()");
-                    exit(1);
-                }
-                DBG(YELLOW"<Debg>"NONE" : nfds = %d; server_listen!\n", nfds);
+                    fd[sockfd] = sockfd;
+                    ev.events = EPOLLIN | EPOLLET;
+                    ev.data.fd = sockfd;
+                    if (epoll_ctl(epollfd, EPOLL_CTL_ADD, sockfd, &ev) < 0) {
+                        perror("epoll_ctl()");
+                        exit(1);
+                    }
+                } while (0);
             } else {
                 if (events[i].events & EPOLLIN) {
                     DBG(YELLOW"<main>"NONE" : fds = %d; Push!\n", events[i].data.fd);
                     task_queue_push(&taskQueue, events[i].data.fd);
-                }
             }
+        }
+    }
 }
-}
-return 0;
+    return 0;
 }

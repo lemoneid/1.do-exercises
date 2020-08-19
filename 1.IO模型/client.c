@@ -9,23 +9,70 @@
 #include "./chat.h"
 
 char ip[20] = {0}, name[20] = {0};
+int sockfd, port;
+
+void *do_recv() {
+    struct ChatMsg cm;
+    while (1) {
+        memset(&cm, 0, sizeof(cm));
+        int nrecv; 
+        if (nrecv = recv(sockfd, &cm, sizeof(cm), 0) <= 0) {
+            perror("recv() : heart");
+            exit(1);
+        }
+        
+        if (cm.type & CHAT_FIN_1) {
+            printf("the client is exit!\n");
+            exit(1);
+        }
+        if (cm.type & CHAT_FIN) {
+            printf("the server is exit!\n");
+            exit(1);
+        }
+
+        if (cm.type & CHAT_HEART) {
+            cm.type |= CHAT_ACK;
+            send(sockfd, &cm, sizeof(cm), 0);
+        }
+        if (cm.type & CHAT_PRI) {
+            printf(RED"<PRI>"NONE BLUE"%s"NONE":%s\n", cm.name, cm.msg);
+        } else if (cm.type & CHAT_PUB) {
+            printf(YELLOW"<PUB>"NONE BLUE"%s"NONE":%s\n", cm.name, cm.msg);
+        }
+        if (cm.opt & FUNC_CHECK_ONLINE) {
+            printf("the people online is %s!\n", cm.msg);
+        }
+        if (cm.opt & FUNC_CHANGE_NAME) {
+            printf("you have changed your name success!\n");
+            strcpy(name, cm.name);
+        }
+
+    }
+}
 
 void handle(char *buff, struct ChatMsg *cm) {
     int id = 0;
     while (buff[id] == ' ') id++;
-    while (buff[id] == '#') {
+    if (buff[id] == '#') {
         id++;
-        if (buff[id] == '1') {
+        char tmp[512] = {0};
+        int cnt = sscanf(buff + id, "%s", tmp);
+        id += cnt;
+        if (strcmp(tmp, "1") == 0) {
             DBG(GREEN"<Degug>"NONE"FUNC_CHECK_ONLINE");
             cm->opt |= FUNC_CHECK_ONLINE; 
-        }
-        if (buff[id] == '2') {
-            DBG(GREEN"<Degug>"NONE"FUNC_CHANGE_NAME");
+        } else if (strcmp(tmp, "2") == 0) {
             cm->opt |= FUNC_CHANGE_NAME;
-            strcpy(cm->name, name);
-            id++;
+            sscanf(buff + id, "%s", tmp);
+            strcpy(cm->name, tmp);
+            DBG(GREEN"<Degug>"NONE"FUNC_CHANGE_NAME name=%s\n", cm->name);
+            
+        } else {
+            printf("the # arg is fault!\n");
         }
+        return ;
     }
+    
     if (buff[id] == '@') {
         id++;
         int s =id;
@@ -34,55 +81,82 @@ void handle(char *buff, struct ChatMsg *cm) {
         while (buff[id] != ' ') id++;
         strncpy(cm->name, buff + s, id - s);
         strcpy(cm->msg, buff + id);
-    } else if (strlen(buff + id) > 0){
+        return ;
+    } else {
         DBG(GREEN"<Degug>"NONE"CHAT_PUB");
         cm->type |= CHAT_PUB;
         strcpy(cm->msg, buff + id);
+        return ;
     }
+}
+
+void *Stop(int signum) {
+    struct ChatMsg cm;
+    memset(&cm, 0, sizeof(cm));
+    cm.type |= CHAT_FIN;
+    printf("\n!!! you will logout\n");
+    send(sockfd, &cm, sizeof(cm), 0);
 }
 
 
 int main(int argc, char **argv) {
-    int sockfd, port;
-    if (argc  == 1){
-        get_conf("./info.conf", "SERVERIP");
-        strcpy(ip, conf_value_ans);
-        get_conf("./info.conf", "SERVERPORT");
-        port = atoi(conf_value_ans);
-        get_conf("./info.conf", "name");
-        strcpy(name, conf_value_ans);
-    } else if (argc == 7){
-        int opt;
-        while ((opt = getopt(argc, argv, "h::p::n::"))  != -1) {
-            switch(opt) {
-                case 'h':
-                    strcpy(ip, optarg);
-                    break;
-                case 'p':
-                    port = atoi(optarg);
-                    break;
-                case 'n':
-                    strcpy(name, optarg);
-                    break;
-                default:
-                    fprintf(stderr, "Usage : %s ip port name!\n",argv[0]);
-                    exit(1);
-            }
+    printf("argc = %d\n", argc);
+    //conf
+    get_conf("./info.conf", "SERVERIP");
+    strcpy(ip, conf_value_ans);
+    get_conf("./info.conf", "SERVERPORT");
+    port = atoi(conf_value_ans);
+    get_conf("./info.conf", "name");
+    strcpy(name, conf_value_ans);
+    //getopt
+    int opt;
+    // bug : -p 无参,接-n， 导致 p的optarg为(-n省)
+    while ((opt = getopt(argc, argv, "h:p:n:"))  != -1) {
+        switch(opt) {
+            case 'h':
+                strcpy(ip, optarg);
+                break;
+            case 'p':
+                port = atoi(optarg);
+                break;
+            case 'n':
+                strcpy(name, optarg);
+                break;
+            default:
+                fprintf(stderr, "Usage : %s ip port name!\n",argv[0]);
+                exit(1);
         }
-    } else {
-        fprintf(stderr, "Usage : %s ip port name!\n",argv[0]);
-        exit(1);
     }
 
+    DBG(GREEN"<arg>"NONE" : ip =%s, port =%d, name =%s\n", ip, port, name);
 
-    if ((sockfd = socket_connect(ip, port)) < 0) {
-        perror("socket_connect()");
-        exit(1);
+    //connect
+    if ((sockfd = socket(AF_INET, SOCK_STREAM, 0)) < 0) {
+        perror("socket()");
     }
+    struct timeval tv = {1, 0};
+    socklen_t len = sizeof(tv);
+    if (setsockopt(sockfd, SOL_SOCKET, SO_SNDTIMEO, &tv, len) < 0) {
+        perror("setsockopt");
+    }
+    struct sockaddr_in server;
+    server.sin_family = AF_INET;
+    server.sin_port = htons(port);
+    server.sin_addr.s_addr = inet_addr(ip);
+    if (connect(sockfd, (struct sockaddr *)&server, sizeof(server)) < 0) {
+        if (errno == EINPROGRESS) {
+            fprintf( stderr, "time out\n");
+            exit(1);
+        }
+        perror("connect");
+        exit(0);
+    }
+    printf("connect success\n");
+
+    // syn
     struct ChatMsg syn;
     syn.type |= CHAT_SYN;
     strcpy(syn.name, name);
-
     if (send(sockfd, &syn, sizeof(syn), 0) == -1) {
         perror("send()");
     }
@@ -97,6 +171,14 @@ int main(int argc, char **argv) {
         printf(" %s %s", syn.name,syn.msg);
     }
 
+    // recv -- thread
+    pthread_t tid;
+    pthread_create(&tid, NULL, do_recv, NULL);
+
+    // ctrl + c
+
+    signal(SIGINT, (void *)Stop);
+
     while (1) {
         struct ChatMsg cm;
         memset(&cm, 0, sizeof(cm));
@@ -106,11 +188,7 @@ int main(int argc, char **argv) {
         handle(buff, &cm);
         DBG(GREEN"<Degug>"NONE"type =%x, opt =%x, name =%s, msg =%s\n", cm.type, cm.opt, cm.name, cm.msg);
         send(sockfd, &cm, sizeof(cm), 0);
-        if (cm.type & CHAT_HEART) {
-            cm.type |= CHAT_ACK;
-            recv(sockfd, &cm, sizeof(cm), 0);
-        }
-        printf("Server : %s\n", buff);
+        //printf("Server : %s\n", buff);
     }
 
     return 0;

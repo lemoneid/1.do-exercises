@@ -1,14 +1,12 @@
 /*************************************************************************
-	> File Name: chat.h
+	> File Name: datatype.h
 	> Author: weier 
 	> Mail: 1931248856@qq.com 
-	> Created Time: Sun 16 Aug 2020 10:50:32 AM CST
+	> Created Time: Wed 19 Aug 2020 02:22:28 PM CST
  ************************************************************************/
 
-#ifndef _CHAT_H
-#define _CHAT_H
-
-#define MAXUSER 100
+#ifndef _DATATYPE_H
+#define _DATATYPE_H
 
 struct User {
     char name[20];
@@ -18,12 +16,6 @@ struct User {
     char ip[20];
     int fd;
     int online;//1在线，0不在线
-    int anon_idx;
-};
-
-struct Anon {
-    char name[20];
-    int flag;
 };
 
 #define CHAT_SYN 0x01
@@ -45,4 +37,5 @@ struct ChatMsg {
     char name[20];
     char msg[1024];
 };
+
 #endif

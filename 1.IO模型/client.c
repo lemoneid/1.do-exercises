@@ -40,11 +40,14 @@ void *do_recv() {
             printf(YELLOW"<PUB>"NONE BLUE"%s"NONE":%s\n", cm.name, cm.msg);
         }
         if (cm.opt & FUNC_CHECK_ONLINE) {
-            printf("the people online is %s!\n", cm.msg);
+            printf("the people online show name!\n%s!\n", cm.msg);
         }
         if (cm.opt & FUNC_CHANGE_NAME) {
-            printf("you have changed your name success!\n");
+            printf("you have hide your name success!\n");
             strcpy(name, cm.name);
+        }
+        if (cm.type & CHAT_SYS) {
+            printf("%s is not online, or the name is fault!\n",cm.name);
         }
 
     }

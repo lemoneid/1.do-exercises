@@ -31,7 +31,7 @@ int Sub(int *p1, int len1, int *p2, int len2) {
     return 0;
 }
 
-void Div(char *num1, char *num2, int *ans) {
+int Div(char *num1, char *num2, int *ans) {
 
     int len1 = strlen(num1);
     int len2 = strlen(num2);
@@ -43,8 +43,7 @@ void Div(char *num1, char *num2, int *ans) {
     for (int i = 0, j = len2 - 1; j >= 0; ++i, --j) num_b[i] = num2[j] - '0';
 
     if (len1 < len2) {
-        cout << num1 << endl;
-        return ;
+        return 0;
     }
     
     dValue = len1 - len2;
@@ -61,15 +60,13 @@ void Div(char *num1, char *num2, int *ans) {
         }
     }
 
-    if (len1 == 0) {
-        cout << 0 << endl;
-        return ;
+    int id = dValue;
+    while (id) {
+        if (ans[id]) break;
+        id--;
     }
-    for (int i = len1 - 1; i >= 0; --i) {
-        cout << num_a[i];
-    }
-    cout << endl;
-    return ;
+    len = id + 1;
+    return len;
 }
 
 int main() {
@@ -77,5 +74,9 @@ int main() {
     int ans[SIZE + 5] = {0};
     cin >> num2 >> num1;
     // num2 / num1
-    Div(num1, num2, ans);
+    int len = Div(num1, num2, ans);
+    for (int i = len - 1; i >= 0; --i) {
+        cout << ans[i];
+    }
+    cout << endl;
 }

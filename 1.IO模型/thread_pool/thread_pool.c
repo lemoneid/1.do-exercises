@@ -11,6 +11,33 @@
 
 extern int epollfd;
 extern struct User user[MAXUSER];
+extern struct Anon anons[MAXUSER];
+
+void init_anon() {
+    int *fp = NULL, id = 0;
+    char *line = NULL;
+    ssize_t nread, len;
+    if ((fp = fopen("./anon.conf", "r")) < 0) {
+        perror("fopen()");
+        return ;
+    }
+    while ((nread = getline(&line, &len, fd)) != -1) {
+        if (id >= 100) break;
+        strncpy(anons[id].name, line, sizeof(anons[id],name));
+        anons[id].flag = 0;
+        id++;
+    }
+    return ;
+}
+
+int search_anon() {
+    int flag = 0;
+    srand(time(0));
+    while (!flag) {
+        int op = rand  % 100;
+        if (anons[op].flag == 0) return op;
+    }
+}
 
 int search_name(char *name) {
     for (int i = 0; i < MAXUSER; ++i) {
@@ -36,9 +63,7 @@ void do_work(int fd) {
         close(fd);
         return ;
     } 
-    if (cm.type & CHAT_ACK || nrecv > 0) {
-        user[fd].flag = 10;
-    }
+   user[fd].flag = 10;
     
     //处理chatmsg
     if (cm.type & CHAT_FIN) {
@@ -51,34 +76,51 @@ void do_work(int fd) {
 
     if (cm.opt & FUNC_CHANGE_NAME) {
         DBG(RED"<RECV>"NONE" : FUNC_CHANGE_NAME %s\n", cm.name);
+        int id = search_anon();
+        strcpy (cm.name, anons[id].name);
         send(fd, &cm, sizeof(cm), 0);
-        strcpy (user[fd].real_name, cm.name);
+        anons[id].flag = 1;
+        user[fd].anon_idx = id;
+       // strcpy (user[fd].real_name, cm.name);
     }
 
     if (cm.opt & FUNC_CHECK_ONLINE) {
         int cnt = 0;
+        bzero(cm.msg, sizeof(cm.msg));
         for (int i = 0; i < MAXUSER; ++i) {
-            if (user[i].online == 1) cnt++;
+            if (user[i].online == 1) {
+                cnt++;
+                if (cnt > 10) continue; 
+                strcat(cm.msg, user[i].real_name);
+                strcat(cm.msg, "\n");
+                DBG(RED"<name>"NONE" :  name = %s, msg =%s\n", user[i].real_name, cm.msg);
+            }
         }
-        char buff[50];
-        sprintf(buff, "%d", cnt);
-        strcpy(cm.msg, buff);
+        char buff[50] = {0};
+        sprintf(buff, "the total of people online is %d", cnt);
+        strcat(cm.msg, buff);
         send(fd, &cm, sizeof(cm), 0);
     }
 
     if (cm.type & CHAT_PRI) {
         int id = search_name(cm.name);
-        strcpy(cm.name, user[fd].real_name);
-        send(user[id].fd, &cm, sizeof(cm), 0);
+        if (id >= 0) {
+            strcpy(cm.name, user[fd].real_name);
+            send(user[id].fd, &cm, sizeof(cm), 0);
+        } else {
+            cm.type = CHAT_SYS;
+            send(fd, &cm, sizeof(cm), 0);
+        }
     } else if (cm.type & CHAT_PUB) {
         strcpy(cm.name, user[fd].real_name);
         for (int i = 0; i < MAXUSER; ++i) {
             if (user[i].online == 1) {
                 send(user[i].fd, &cm, sizeof(cm), 0);
             }
+            //sleep(1);
         }
     }
-    printf(GREEN"<do_work>"NONE"type =%x, opt =%x, name =%s, msg =%s\n", cm.type, cm.opt, cm.name, cm.msg);
+    //printf(GREEN"<do_work>"NONE"type =%x, opt =%x, name =%s, msg =%s\n", cm.type, cm.opt, cm.name, cm.msg);
 }
 
 void task_queue_init(struct task_queue *taskQueue, int size) {
@@ -152,11 +194,9 @@ void *thread_heart(void *arg) {
                 DBG(GREEN"<heart>"NONE": del fd = %d\n", i);
                 //del
                 user[i].online = 0;
-                /*
                 if (epoll_ctl(epollfd, EPOLL_CTL_DEL, i, NULL) < 0) {
                     perror("epoll_ctl(); heart del ");
                 }
-                */
                 close(i);
             }  else if (user[i].flag > 0) {
                 struct ChatMsg heart;

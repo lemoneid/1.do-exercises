@@ -94,7 +94,7 @@ int Division(char num1[], char num2[], char sum[])
     for(j = 0; j <= dValue; j++ )    //重复调用，同时记录减成功的次数，即为商
     {
         while((nTemp = SubStract(num_a, len1, num_b+j, len2-j)) >= 0)
-        {
+        
             len1 = nTemp;            //结果长度
             num_c[dValue-j]++;       //每成功减一次，将商的相应位加1
         }

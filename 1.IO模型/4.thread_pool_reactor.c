@@ -16,7 +16,7 @@
 #define SUCCESS "Welcome to login! please start to chat\n"
 #define FAILURE "Sorry! your name have login\n"
 struct User user[MAXUSER];
-
+struct Anon anons[MAXUSER];
 int epollfd;
 
 void *Stop(int signum) {
@@ -70,6 +70,13 @@ int main(int argc, char **argv) {
         exit(1);
     }
 
+    // init_anon
+    init_anon();
+
+    for (int i = 0; i < 100; ++i) {
+        printf("%s\n", anons[i].name);
+    }
+
     // ctrl + c
     signal(SIGINT, (void *)Stop);
 
@@ -83,7 +90,7 @@ int main(int argc, char **argv) {
             exit(1);
         }
 
-        DBG(YELLOW"<Debg>"NONE" : After wait nfds = %d\n", nfds);
+        //DBG(YELLOW"<Debg>"NONE" : After wait nfds = %d\n", nfds);
         for (int i = 0; i < nfds; ++i) {
             if (events[i].data.fd == server_listen  && (events[i].events & EPOLLIN)) {
                 if ((sockfd = accept(server_listen, NULL, NULL)) < 0) {
@@ -144,7 +151,7 @@ int main(int argc, char **argv) {
                 } while (0);
             } else {
                 if (events[i].events & EPOLLIN) {
-                    DBG(YELLOW"<main>"NONE" : fds = %d; Push!\n", events[i].data.fd);
+                    //DBG(YELLOW"<main>"NONE" : fds = %d; Push!\n", events[i].data.fd);
                     task_queue_push(&taskQueue, events[i].data.fd);
             }
         }

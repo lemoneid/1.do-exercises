@@ -13,15 +13,14 @@ struct task_queue{
     int total;
     int head;
     int tail;
-    int *fd;
+    //int epollfd;
+    struct User **users;
     pthread_mutex_t mutex;
     pthread_cond_t cond;
 };
-int search_name(char *name); 
+
 void task_queue_init(struct task_queue *taskQueue, int size);
-void task_queue_push(struct task_queue *taskQueue, int fd);
-int task_queue_pop(struct task_queue *taskQueue);
+void task_queue_push(struct task_queue *taskQueue, struct User *user);
+struct User *task_queue_pop(struct task_queue *taskQueue);
 void *thread_run(void *arg);
-void *thread_heart(void *arg);
-void init_anon();
 #endif

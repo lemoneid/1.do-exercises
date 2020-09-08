@@ -11,34 +11,38 @@ using namespace std;
 int m, k;
 int num[505], a[505];
 int main() {
-    int l = 0, r = 0, mid, cnt, sum;
+    int l = 0, r = 0;
     cin >> m >> k;
-    for (int i = 1; i <= m; ++i) {
+    for (int i = 0; i < m; ++i) {
         cin >> num[i];
         r += num[i];
     }
     while (l < r) {
-        mid = (l + r) >> 1, cnt = 0, sum  = 0;
-        for (int i = m; i > 0; --i) {
-            sum += num[i];
+        int mid = (l + r) >> 1, id = k, sum  = 0;
+        for (int i = m - 1; i >= 0; --i) {
+            if (sum < mid) {
+                sum += num[i];
+            }
             if (sum > mid) {
+                a[id--] = i + 1;
                 sum = num[i];
-                a[cnt++] = i + 1;
             } else if (sum == mid) {
+                a[id--] = i;
                 sum = 0;
-                a[cnt++] = i;
+            }
+            if (id < 0) {
+                l = mid + 1;
+                break;
             }
         }
-        if (sum != 0) cnt++;
-        if (cnt <= k) {
+        if (sum != 0) id--;
+        if (id >= 0) {
             r = mid;
-        } else {
-            l = mid + 1;
         }
     }
-    cout << cnt << " " << k <<  endl;
-    for (int i = 0; i < cnt; ++i) {
-        cout << a[i] << endl;
+    for (int i = 0; i < k; ++i) {
+        cout << a[i] << " " << a[i + 1] - 1 << endl;
     }
+    cout << a[k] << " " << m << endl;
     return 0;
 }

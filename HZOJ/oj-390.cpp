@@ -6,24 +6,31 @@
  ************************************************************************/
 
 #include <iostream>
-#include <algorithm>
 using namespace std;
 const int MAXN = 1e5 + 5;
-int n, m, num[MAXN];
+long long n, m, num[MAXN];
+long long mmax = 0, all = 0;
 
 int binary_search() {
-    int l = 0, r = num[n - 1];
+    long long l = mmax, r = all;
     while (l < r) {
-        int mid = (l + r + 1) >> 1, cnt = 0;
+        long long mid = (l + r) >> 1, sum = 0, cnt = 0;
         for (int i = 0; i < n; ++i) {
-            cnt += num[i] / mid;
-            if (cnt >= m) {
-                l = mid;
-                break;
-            }
+            if (sum + num[i] == mid) {
+                cnt++;
+                sum = 0;
+            } else if (sum + num[i] > mid) {
+                cnt++;
+                sum = num[i];
+            } else {
+                sum += num[i];
+            } 
         }    
-        if (cnt < m) {
-            r = mid - 1;
+        if (sum > 0) cnt++;
+        if (cnt > m) {
+            l = mid + 1;
+        } else {
+            r = mid;
         }
     }
     cout << l << endl;
@@ -34,8 +41,9 @@ int main() {
     cin >> n >> m;
     for (int i = 0; i < n; ++i) {
         cin >> num[i];
+        all += num[i];
+        mmax = max(mmax, num[i]);
     }
-    sort(num, num + n);
     binary_search();
     return 0;
 }

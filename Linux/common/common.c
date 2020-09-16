@@ -10,7 +10,7 @@
 #include "head.h"
 char conf_value_ans[512] = {0};
 
-void get_info(const char *names, struct User *user, char *ip) {
+void get_info(const char *names, struct User_info *user, char *ip) {
     FILE *fp = NULL;
     char *line = NULL, *sub = NULL;
     ssize_t nread, len;
@@ -136,14 +136,16 @@ int socket_connect(char *ip, int port) {
     if ((sockfd = socket(AF_INET, SOCK_STREAM, 0)) < 0) {
         return -1;
     }
-        
+    //if (setsockopt(sockfd, SOL_SOCKET, SO_SNDTIMEO, &tv, optlen) < 0){
+
+
     struct sockaddr_in server;
     server.sin_family = AF_INET;
     server.sin_port = htons(port);
     //server.sin_addr.s_addr = inet_addr("0.0.0.0");
     server.sin_addr.s_addr = inet_addr(ip);
 
-    if (connect(sockfd, (struct sockaddr *)&server, sizeof(server)) < 0) {
+    if ((connect(sockfd, (struct sockaddr *)&server, sizeof(server))) < 0) {
         return -1;
     }
     

@@ -7,7 +7,7 @@
 
 #ifndef _COMMON_H
 #define _COMMON_H
-struct User {
+struct User_info {
     int fd;
     char name[20];
     int online;
@@ -17,7 +17,7 @@ struct User {
     char id[50];
 };
 
-void get_info(const char *names, struct User *user, char *ip);
+void get_info(const char *names, struct User_info *user, char *ip);
 char *get_conf(const char *conf, char *key);
 extern char conf_value_ans[512];
 int make_non_block(int fd);

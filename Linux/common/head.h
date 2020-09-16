@@ -8,9 +8,11 @@
 #ifndef _HEAD_H
 #define _HEAD_H
 
+//my-self
 #include "color.h"
 #include "common.h"
 
+//system
 #include <math.h>
 #include <dirent.h>
 #include <string.h>
@@ -41,6 +43,10 @@
 #include <arpa/inet.h>
 #include <sys/epoll.h>
 
+// chat-project
+#include "chat.h"
+#include "thread_pool.h"
+#include "datatype.h"
 
 #ifdef _D
 #define DBG(fmt, args...); printf(fmt, ##args);

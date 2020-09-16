@@ -10,10 +10,15 @@
 #include <algorithm>
 using namespace std;
 
+<<<<<<< HEAD
 int m, t, cnt;
+=======
+>>>>>>> dabcaf672013e81b4b2280158d8a24b61857b20d
 int main() {
+    int m, t, cnt = 0;
     cin >> m >> t;
     for (int i = 1; i <= m; ++i) {
+<<<<<<< HEAD
         int temp = i;
         while (temp) {
             if (temp % 10 == t) {
@@ -24,5 +29,9 @@ int main() {
         }
     }
     cout << m - cnt << endl;
+=======
+        int len = floor(log10())
+    }
+>>>>>>> dabcaf672013e81b4b2280158d8a24b61857b20d
     return 0;
 }

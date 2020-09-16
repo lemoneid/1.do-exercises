@@ -10,37 +10,19 @@
 #include <algorithm>
 using namespace std;
 
-int m, t, head, len, cnt, temp;
-
-long long C(int n, int m) {
-    m = min(m, n - m);
-    long long ans = 1;
-    for (int i = n; i > n - m; --i) {
-        ans *= i;
-        while (m != 1 && ans % m == 0) {
-            ans /= m;
-            --m;
-        }
-    }
-    return ans;
-}
-
+int m, t, cnt;
 int main() {
     cin >> m >> t;
-    len = floor(log10(m)) + 1;
-    head = m / pow(10, len - 1);
-    for (int i = 1; i < len; ++i) {
-        temp += C(len - 1, i) * (len - i - 1) * 9;
+    for (int i = 1; i <= m; ++i) {
+        int temp = i;
+        while (temp) {
+            if (temp % 10 == t) {
+                cnt++;
+                break;
+            }
+            temp /= 10;
+        }
     }
-    temp += 1;
-    if (t == 0) {
-        cnt = temp * head;
-    } else if (head < t) {
-        cnt = temp * (head + 1);
-    } else {
-        cnt  = head * temp;
-        cnt += pow(10, len - 1);
-    }
-    cout << (m - cnt) << endl;
+    cout << m - cnt << endl;
     return 0;
 }

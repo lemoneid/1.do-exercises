@@ -1,0 +1,29 @@
+/*************************************************************************
+	> File Name: oj-516.cpp
+	> Author: weier 
+	> Mail: 1931248856@qq.com
+	> Created Time: 2020年09月08日 星期二 18时34分35秒
+ ************************************************************************/
+
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+char s[100005];
+int main() {
+    int n, ans = 0, i = 0;
+    cin >> n >> s;
+    for (int i = 0; i < n; ++i) {
+        while (s[i] != 'C') ++i;
+        for (int j = i + 1; j < n; ++j) {
+            while (s[j] != 'O') ++j;
+            int cnt = 0;
+            for (int k = j + 1; k < n; ++k) {
+                k == 'W' && cnt++;
+            }
+            ans += cnt;
+        }
+    }
+    cout  << ans << endl;
+    return 0;
+}

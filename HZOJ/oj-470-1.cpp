@@ -29,29 +29,24 @@ int main() {
     string s;
     while (cin >> s) {
         for (int i = 0; i < 5; ++i) {
-            num[cnt] = num[cnt] * 10 + to_10[s[i]];
+            num[cnt] = num[cnt] * 36 + to_10[s[i]];
         }
         if (cnt > 0) {
             num[cnt - 1] -= num[cnt];
         } 
         cnt++;
     }
-    cout << " - " << endl;
-    for (int i = 0; i < cnt - 1; ++i) {
-        cout << num[i] << endl;
-    }
-    for (int i = 1; i < cnt - 1; ++i) {
-        num[i] += num[i - 1];
-    }
-    cout << " sum " << endl;
-    for (int i = 0; i < cnt - 1; ++i) {
-        cout << num[i] << endl;
-    }
-    cout << "dp" << endl;
 
     ans = abs(num[0]);
     dp[0] = num[0];
-    cout << ans << endl;
+
+    for (int i = 0; i < cnt - 1; ++i) {
+        cout << num[i] << endl;
+    }
+    cout << "-----------" << endl;
+    cout <<  cnt - 1 << endl;
+    cout << dp[0] << endl;
+    
     for (int i = 1; i < cnt - 1; ++i) {
         if (abs(num[i]) < abs(dp[i - 1] + num[i])) {
             dp[i] = num[i];

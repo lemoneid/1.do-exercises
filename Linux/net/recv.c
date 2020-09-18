@@ -9,8 +9,8 @@
 
 struct Msg {
     char filename[512];
-    int size;
-    char buff[1024];
+    long long size;
+    char buff[4096];
 };
 
 void recv_file(int sockfd) {
@@ -21,8 +21,8 @@ void recv_file(int sockfd) {
             close(sockfd);
             return NULL;
         }
-        if ()
-        
+        printf("%s", msg.buff);
+        memset(msg.buff, 0, sizeof(msg.buff));
     }
 }
 
@@ -39,17 +39,7 @@ int main(int argc, char **argv) {
         exit(1);
     }
 
-    while (1) {
-        int newfd;
-        pthread_t tid;
-        if ((newfd = accept(listener, NULL, NULL)) < 0) {
-            perror("accept()");
-            exit(1);
-        }
-        pthread_create(&tid, NULL, , (void *)&newfd);
-        usleep(50);
-    }
-
+    recv_file(listener);
     return 0;
 }
 

@@ -13,11 +13,11 @@ struct Msg {
     char buff[4096];
 };
 
-void send_file(const char *filename, int sockfd) {
+void send_file(const char *filename,FILE *fp,int sockfd) {
     struct Msg msg;
     memset(msg, 0, sizeof(msg));
     strcpy(msg.filename, filename);
-    while (fgets(msg.buff, sizeof(msg.buff), filename) != NULL) {
+    while (fgets(msg.buff, sizeof(msg.buff), fp) != NULL) {
         send(sockfd, msg, strlen(msg), 0);
         memset(buff, 0, sizeof(buff));
     }
@@ -51,12 +51,15 @@ int main(int argc, char **argv) {
     }
 
     FILE *fp = NULL;
-    char *filename = "./test.c";
-    if ((fp = fopen(filename, "ab")) == NULL) {
+    char *path = "./recv.c";
+    char *filename = "send";
+
+    if ((fp = fopen(path, "ab")) == NULL) {
+        printf("fopen error\n");
         perror("fopen()");
         exit(1);
     }
-    send_file(filename, sockfd);
+    send_file(filename, fp, sockfd);
     close(sockfd);
     fclose(fp);
     return 0;

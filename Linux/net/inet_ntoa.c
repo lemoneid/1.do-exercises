@@ -13,11 +13,10 @@
 //192.168.0.1
 //
 char *my_inet_ntoa(struct in_addr in) {
-    static char ip[20] = {0};
-    uint8_t *p;
-    p = (uint8_t *)&in.s_addr;
-    sprintf(ip, "%d.%d.%d.%d\n", p[0], p[1], p[2], p[3]);
-    return ip;
+    static char __ip__[20] = {0};
+    uint8_t *p = (uint8_t *)&in.s_addr;
+    sprintf(__ip__, "%d.%d.%d.%d\n", p[0], p[1], p[2], p[3]);
+    return __ip__;
 }
 
 int main() {

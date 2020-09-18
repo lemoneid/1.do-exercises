@@ -9,8 +9,8 @@
 
 struct Msg {
     char filename[512];
-    int size;
-    char buff[1024];
+    long long size;
+    char buff[4096];
 };
 
 void send_file(const char *filename, int sockfd) {

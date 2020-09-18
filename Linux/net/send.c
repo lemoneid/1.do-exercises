@@ -15,11 +15,11 @@ struct Msg {
 
 void send_file(const char *filename,FILE *fp,int sockfd) {
     struct Msg msg;
-    memset(msg, 0, sizeof(msg));
+    memset(&msg, 0, sizeof(msg));
     strcpy(msg.filename, filename);
     while (fgets(msg.buff, sizeof(msg.buff), fp) != NULL) {
-        send(sockfd, msg, strlen(msg), 0);
-        memset(buff, 0, sizeof(buff));
+        send(sockfd, &msg, sizeof(msg), 0);
+        memset(msg.buff, 0, sizeof(msg.buff));
     }
 }
 
@@ -27,11 +27,10 @@ void recv_file(int sockfd) {
     while (1) {
         ssize_t nrecv;
         struct Msg msg;
-        if ((nrecv = recv(sockfd, msg, sizeof(msg), 0)) <= 0) {
+        if ((nrecv = recv(sockfd, &msg, sizeof(msg), 0)) <= 0) {
             close(sockfd);
             return NULL;
         }
-        if ()
     }
 }
 

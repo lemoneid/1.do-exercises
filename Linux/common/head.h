@@ -11,6 +11,8 @@
 //my-self
 #include "color.h"
 #include "common.h"
+#include "filemsg.h"
+
 
 //system
 #include <math.h>

@@ -27,16 +27,23 @@ void send_file(const char *filename,FILE *fp,int sockfd) {
 }
 
 void recv_file(int sockfd) {
-        ssize_t nrecv, total_size = 0;
+        ssize_t recv_size = 0, total_size = 0;
         struct FileMsg packet_t, packet;
         int packet_size = sizeof(struct FileMsg);
-        int first  = 1;
-        while ((nrecv = recv(sockfd, &msg, sizeof(msg), 0)) > 0) {
+        int first  = 1, offset = 0;
+        while ((recv_size = recv(sockfd, &packet, sizeof(packet), 0)) > 0) {
             if (first) {
                 fp = fopen(msg.filename, "wb");
             }
             first = 0;
-            fwrite(msg.buff, nrecv, 1, fp);
+            if (offset + recv_size == packet_size) {
+                fwrite(packet.buff, sizeof(packet.buff), 1, fp);
+                printf(GREEN"整包"NONE":packet_size");
+                offset = 0;
+            } else if (offset + recv_size < packet_size) {
+                offset += recv_size; 
+                memcpy();
+            }
         }
 }
 

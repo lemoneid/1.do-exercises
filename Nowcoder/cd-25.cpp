@@ -11,7 +11,7 @@ using namespace std;
 
 int arr[MAX_N + 5], dp[MAX_N + 5];
 
-int binary_search(int *arr, int len, int k) {
+int binary_search(int *arr, int len, int k) {E8
     int l = 0, r = len, mid;
     while (l < r) {
         mid = (l + r) >> 1;

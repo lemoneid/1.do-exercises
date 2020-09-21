@@ -28,16 +28,24 @@ void send_file(const char *filename,FILE *fp,int sockfd) {
 }
 
 void recv_file(int sockfd) {
-        ssize_t nrecv, total_size = 0;
+        ssize_t recv_size, total_size = 0;
         struct FileMsg packet_t, packet;
         int packet_size = sizeof(struct FileMsg);
-        int first  = 1;
-        while ((nrecv = recv(sockfd, &msg, sizeof(msg), 0)) > 0) {
+        int first  = 1, offset = 0;
+        while ((recv_size = recv(sockfd, &msg, sizeof(msg), 0)) > 0) {
             if (first) {
                 fp = fopen(msg.filename, "wb");
             }
             first = 0;
             fwrite(msg.buff, nrecv, 1, fp);
+            if (offset + recv_size == pack_size) {
+                
+            } else if () {
+                
+            } else {
+
+            }
+            
         }
 }
 

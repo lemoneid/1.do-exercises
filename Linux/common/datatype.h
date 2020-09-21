@@ -38,4 +38,10 @@ struct ChatMsg {
     char msg[1024];
 };
 
+struct FileMsg {
+    char filename[512];
+    long long size;
+    char buff[4096];
+};
+
 #endif

@@ -11,7 +11,17 @@
 //my-self
 #include "color.h"
 #include "common.h"
-#include "filemsg.h"
+
+
+// chat-project
+/*
+#include "chat.h"
+#include "thread_pool.h"
+*/
+#include "datatype.h"
+
+#include "file_transfer.h"
+
 
 
 //system
@@ -45,10 +55,6 @@
 #include <arpa/inet.h>
 #include <sys/epoll.h>
 
-// chat-project
-#include "chat.h"
-#include "thread_pool.h"
-#include "datatype.h"
 
 #ifdef _D
 #define DBG(fmt, args...); printf(fmt, ##args);

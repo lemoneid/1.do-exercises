@@ -9,38 +9,43 @@
 using namespace std;
 #define MAX_N 100000
 
-int arr[MAX_N + 5], dp[MAX_N + 5];
-
-int binary_search(int *arr, int len, int k) {E8
-    int l = 0, r = len, mid;
-    while (l < r) {
-        mid = (l + r) >> 1;
-        if (arr[mid] > k) {
-            r = mid;
-        } else {
-            l = mid + 1;
-        }
-    }
-    return l;
-}
+int arr[MAX_N + 5], dp[MAX_N + 5], val[MAX_N + 5], ans[MAX_N + 5];
 
 int main() {
-    int n, len = 0;
+    int n, len = 1, end = 0;
     cin >> n;
     for (int i = 0; i < n; ++i) {
         cin >> arr[i];
     }
-    dp[len] = arr[0];
-    for (int i = 1; i < n; ++i) {
-        if (dp[len] < arr[i]) {
-            dp[++len] = arr[i];
+    val[0] = arr[0];
+    dp[0] = 1;
+    for (int i = 0; i < n; ++i) {
+        int id = lower_bound(val, val + len, arr[i]) - val;
+        if (id == len) {
+            val[len++] = arr[i];
+            dp[i] = len; 
+            end = i;
         } else {
-            dp[binary_search(dp, len, arr[i])] = arr[i];
+            val[id] = arr[i];
+            dp[i] = id + 1;
+            if (dp[i] == len) end = i;
         }
     }
-    for (int i = 0; i <= len; ++i) {
+    int l = len;
+    ans[--l] = arr[end];
+    for (int i = 0; i < n; ++i) {
+        cout << "num = " << arr[i] << "; step = " << dp[i] << endl;
+    }
+    for (int i = end; i >= 0; --i) {
+        //if (arr[i] < arr[end] && dp[i] == dp[end] - 1) {
+        if (dp[i] == dp[end] - 1) {
+            ans[--l] = arr[i];
+            end = i;
+        }
+    }
+    for (int i = 0; i < len; ++i) {
         i && cout << " ";
-        cout << dp[i];
+        cout << ans[i];
     }
     cout << endl;
     return 0;

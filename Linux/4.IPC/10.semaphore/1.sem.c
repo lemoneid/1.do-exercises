@@ -11,7 +11,7 @@
 #define handle_error(msg)\
     do{perror(msg);exit(EXIT_FAILURE);}while(0);
 
-#define MAX_P 6 //最大进程数
+#define MAX_P 8 //最大进程数
 #define MAX_N 3 //最大可用资源
 
 #define P sem_wait
@@ -26,21 +26,24 @@ int data[MAX_P + 5];
 void out(int x) {
     while (1) {
         srand(time(0));
+        if (data[x] < 1) return ;
         P(&empty);
-        P(&mutex);
+        //P(&mutex);
         int t = rand() % 100;
         while (t & 1) {
             t = rand() % 100;
             sleep(1);
         }
-        printf("%d 离开宿舍\n", x);
-        V(&mutex);
+        printf(RED"%d 离开宿舍\n"NONE, x);
+        //V(&mutex);
+        sleep(3);
         t = rand() % 100;
         while (t & 1) {
             t = rand() % 100;
             sleep(1);
         }
-        printf("%d 回到宿舍\n", x);
+        printf(GREEN"%d 回到宿舍\n"NONE, x);
+        data[x]--;
         //V(&full);
         V(&empty);
     }
@@ -70,7 +73,6 @@ int main() {
     }
     if (pid == 0) {
         //DBG("the %d child\n", x);
-        for (int i = 0; i < 3; ++i)
         out(x);
     } else {
         for (int i = 0; i < MAX_P; ++i) {

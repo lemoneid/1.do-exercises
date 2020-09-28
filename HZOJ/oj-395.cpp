@@ -1,56 +1,63 @@
 /*************************************************************************
-	> File Name: oj-395.cpp
+	> File Name: test.cpp
 	> Author: weier 
-	> Mail: 1931248856@qq.com 
-	> Created Time: Tue 08 Sep 2020 02:45:05 PM CST
+	> Mail: 1931248856@qq.com
+	> Created Time: 2020年09月24日 星期四 14时15分32秒
  ************************************************************************/
 
 #include <iostream>
+#include <algorithm>
+#include <cstring>
 using namespace std;
-
+#define MAX_N 500
 int m, k;
-int num[505], a[505];
+int arr[MAX_N];
+
 int main() {
     int l = 0, r = 0;
     cin >> m >> k;
-    for (int i = 1; i <= m; ++i) {
-        cin >> num[i];
-        r += num[i];
+    for (int i = 0; i < m; ++i) {
+        cin >> arr[i];
+        r += arr[i];
+        l = max(l, arr[i]);
     }
+
     while (l < r) {
-        int mid = (l + r) >> 1, cnt = 0, sum  = 0;
-        for (int i = 1; i <= m; ++i) {
-            sum += num[i];
-            if (sum > mid) {
-                sum = num[i];
+        int mid = (l + r) >> 1;
+        int now = 0, cnt = 0;
+        for (int i = 0; i < m; ++i) {
+            if (now + arr[i] == mid) {
                 cnt++;
-            } else if (sum == mid) {
-                sum = 0;
-                cnt++;;
+                now = 0;
+            } else if (now + arr[i] > mid) {
+                now = arr[i];
+                cnt++;
+            } else {
+                now += arr[i];
             }
+            if (cnt > k) break;
         }
-        if (sum != 0) cnt++;
-        if (cnt <= k) {
-            r = mid;
+        if (now) cnt++;
+        if (cnt <= k) r = mid;
+        else l = mid + 1;
+    }
+    int target = l, now = 0;
+    int ans[MAX_N] = {0}, len = k;
+    for (int i = m - 1; i >= 0; --i) {
+        if (now + arr[i] == target) {
+            ans[len--] = i + 1;
+            now = 0;
+        } else if (now + arr[i] > target) {
+            ans[len--] = i + 2;
+            now = arr[i];
         } else {
-            l = mid + 1;
+            now += arr[i];
         }
     }
-    int sum = 0, id = 1;
-    for (int i = m; i > 0; --i) {
-        sum += num[i];
-        if (sum == l) {
-            sum = 0;
-            a[id++] = i;
-        } else if (sum > l) {
-            sum = num[i];
-            a[id++] = i + 1;
-        }
+    cout << "1 " << ans[2] - 1 << endl;
+    for (int i = 2; i < k ; ++i) {
+        cout << ans[i] << " " << ans[i + 1] - 1 << endl;
     }
-    cout << "1 " << a[id - 1] - 1<< endl;
-    for (int i = id - 1; i > 1; --i) {
-        cout << a[i] << " " << a[i - 1] - 1 << endl;
-    }
-    cout << a[1] << " " << m << endl;
+    cout << ans[k] << " " << m << endl;
     return 0;
 }

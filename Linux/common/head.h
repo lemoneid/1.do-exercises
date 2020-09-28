@@ -18,9 +18,9 @@
 #include "chat.h"
 #include "thread_pool.h"
 */
-#include "datatype.h"
+//#include "datatype.h"
 
-#include "file_transfer.h"
+//#include "file_transfer.h"
 
 
 

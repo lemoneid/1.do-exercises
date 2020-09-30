@@ -101,7 +101,7 @@ void clear(pNode root) {
 void __output(pNode root) {
     if (!root) return ;
     __output(root->lchild);
-    printf("%d %d %d %d \n", VAL(root), VAL(root->lchild), VAL(root->rchild));
+    printf("%d %d %d\n", VAL(root), VAL(root->lchild), VAL(root->rchild));
     __output(root->rchild);
 }
 

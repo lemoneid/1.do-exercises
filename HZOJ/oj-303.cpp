@@ -1,8 +1,8 @@
 /*************************************************************************
-	> File Name: test.cpp
+	> File Name: oj-303.cpp
 	> Author: weier 
 	> Mail: 1931248856@qq.com
-	> Created Time: 2020年09月29日 星期二 18时17分03秒
+	> Created Time: 2020年09月29日 星期二 18时03分28秒
  ************************************************************************/
 
 #include <iostream>
@@ -17,29 +17,23 @@
 #include <map>
 #include <set>
 using namespace std;
-
-char mmap[155][155];
-int n, m;
-int dir[8][2] = {
-    1, 2, 1, -2,
-    -1, 2, -1, -2,
-    2, 1, 2, -1,
-    -2, 1, -2, -1
-};
-
+#define MAX_N 1000
 
 struct node {
     int x, y, step;
 };
 
+int n, m, ans[MAX_N + 5][MAX_N + 5];
+char mmap[MAX_N + 5][MAX_N + 5];
+int dir[4][2] = {0, 1, 1, 0, 0, -1, -1, 0};
+
 int main() {
-    std::ios::sync_with_stdio(false);
-    cin >> m >> n;
     queue <node> que;
-    for (int i = 1; i <= n; ++i) {
+    cin >> n >> m;
+    for (int i = 1; i <= n ; ++i) {
         for (int j = 1; j <= m; ++j) {
             cin >> mmap[i][j];
-            if (mmap[i][j] == 'K') {
+            if (mmap[i][j] == '1') {
                 que.push((node){i, j, 0});
             }
         }
@@ -47,19 +41,22 @@ int main() {
     while (!que.empty()) {
         node temp = que.front();
         que.pop();
-        for (int i = 0; i < 8; ++i) {
+        for (int i = 0; i < 4; ++i) {
             int x = temp.x + dir[i][0];
             int y = temp.y + dir[i][1];
-            if (mmap[x][y] == 'H') {
-                cout << temp.step + 1 << endl;
-                return 0;
-            }
-            if (mmap[x][y] == '.') {
-                que.push((node){x, y, temp.step + 1});
-                mmap[x][y] = '*';
+            if (mmap[x][y] == '0') {
+                ans[x][y] = temp.step + 1;
+                mmap[x][y] = '2';
+                que.push((node){x, y, ans[x][y]});
             }
         }
     }
-    cout << -1 << endl;
+    for (int i = 1; i<= n; ++i) {
+        for (int j = 1; j <= m; ++j) {
+            j != 1 && cout << " ";
+            cout << ans[i][j];
+        }
+        cout << endl;
+    }
     return 0;
 }

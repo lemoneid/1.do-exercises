@@ -20,17 +20,17 @@ tmp_DiskPercent=${DiskPercent%%%*}
 tmp_MemPercent=${MemUserdPercent%%.*}
 #echo "$tmp_DiskPercent $tmp_MemPercent"
 
-if [ ${tmp_DiskPercent} -lt 80 ] 
-then Disk_flag="normal"
-elif [ ${tmp_DiskPercent} -lt 90 ]
-then Disk_flag="note"
+if [ ${tmp_DiskPercent} -lt 80 ]; then
+    Disk_flag="normal"
+elif [ ${tmp_DiskPercent} -lt 90 ]; then
+    Disk_flag="note"
 else Disk_flag="warning"
 fi
 
-if [ ${tmp_MemPercent} -lt 70 ]
-then Mem_flag="normal"
-elif [ ${tmp_MemPercent} -lt 80 ]
-then Mem_flag="note"
+if [ ${tmp_MemPercent} -lt 70 ]; then
+    Mem_flag="normal"
+elif [ ${tmp_MemPercent} -lt 80 ]; then
+    Mem_flag="note"
 else Mem_flag="warning"
 fi
 

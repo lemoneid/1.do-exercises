@@ -39,7 +39,7 @@ int main() {
     pid_t pid;
     int shmid;
     int op;
-    key_t key = ftok(".", 20008);
+    key_t key = ftok(".", 2008);
     if ((shmid =shmget(key, sizeof(struct msg), IPC_CREAT | 0665)) < 0) {
         handle_error("shmget()");
     }
@@ -57,9 +57,6 @@ int main() {
     pthread_cond_init(&share_memory->cond, &cond_attr);
     pthread_cond_init(&share_memory->cond_master, &cond_attr);
 
-    if ((pid = fork()) < 0) {
-            handle_error("fork()");
-    }
     int x = 0;
     for (int i = 0; i < 2; ++i) {
         if ((pid = fork()) < 0) {

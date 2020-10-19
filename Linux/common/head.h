@@ -57,6 +57,13 @@
 #include <semaphore.h>
 
 
+//json
+#include <cjson/cJSON.h>
+#include "parse_conf.h"
+//#include "cJSON.h"
+
+
+
 #ifdef _D
 #define DBG(fmt, args...); printf(fmt, ##args);
 #else

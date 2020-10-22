@@ -11,7 +11,6 @@
 
 extern struct ShellData arr[MAX_THREAD];
 
-
 pthread_mutex_t mutex = PTHREAD_MUTEX_INITIALIZER;
 static char *shell_conf[8] = {
 "Proc",

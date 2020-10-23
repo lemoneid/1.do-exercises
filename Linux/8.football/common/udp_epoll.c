@@ -6,10 +6,12 @@
  ************************************************************************/
 
 #include "head.h"
-extern struct User *bteam， *rteam；
+extern struct User *bteam, *rteam;
 extern int port;
 
-void add_event_ptr(int epollfd, int fd, int events， struct User *user) {
+#define MAX 6
+
+void add_event_ptr(int epollfd, int fd, int events, struct User *user) {
     struct epoll_event ev;
     ev.events = events;
     ev.data.ptr = (void *)user;
@@ -21,7 +23,7 @@ void add_event_ptr(int epollfd, int fd, int events， struct User *user) {
 }
 
 void del_event(int epollfd, int fd) {
-    epoll_ctl(epollfd, EPOLL_CTL_DEL, user->fd, NULL);
+    epoll_ctl(epollfd, EPOLL_CTL_DEL, fd, NULL);
     DBG(PINK"Main Reactor"NONE " : deling %s to main reacator\n", user->name);
 
 }
@@ -31,7 +33,7 @@ int udp_connect(struct sockaddr_in *client){
     //调用任务2创建一个udp套接字
     //connect到client
     //注意，在这里你应该至少用两个if判断是否成功，必要的安全判断，是程序稳定运行的前提，也是写程序时一定要注意的细节，减少调试压力
-    return sockfd；
+    return sockfd;
 }
 
 //user指针需要在调用之前创建一个User结构体，然后将其地址传入，这是一个输出参数
@@ -61,5 +63,5 @@ int check_online(struct LogRequest *request){
     //判断两个队伍中是否有同名用户，有的话返回1
     
     }
-    return 0；
+    return 0;
 }

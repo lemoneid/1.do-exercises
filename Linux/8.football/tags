@@ -1,0 +1,146 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+ACTION_CARRY	common/datatype.h	67;"	d
+ACTION_DFL	common/datatype.h	69;"	d
+ACTION_KICK	common/datatype.h	66;"	d
+ACTION_STOP	common/datatype.h	68;"	d
+Aspeed	common/datatype.h	/^struct Aspeed{$/;"	s
+BLACK	common/color.h	10;"	d
+BLINK	common/color.h	28;"	d
+BLUE	common/color.h	18;"	d
+BOLD	common/color.h	26;"	d
+BROWN	common/color.h	16;"	d
+BallStatus	common/datatype.h	/^struct BallStatus {$/;"	s
+Bpoint	common/datatype.h	/^struct Bpoint {$/;"	s
+CLEAR	common/color.h	31;"	d
+CLRLINE	common/color.h	32;"	d
+CYAN	common/color.h	22;"	d
+Ctl	common/datatype.h	/^struct Ctl{$/;"	s
+DBG	common/head.h	73;"	d
+DBG	common/head.h	75;"	d
+FT_ACK	common/datatype.h	78;"	d
+FT_CTL	common/datatype.h	81;"	d
+FT_FIN	common/datatype.h	83;"	d
+FT_GAMEOVER	common/datatype.h	85;"	d
+FT_HEART	common/datatype.h	77;"	d
+FT_MAP	common/datatype.h	82;"	d
+FT_MSG	common/datatype.h	79;"	d
+FT_SCORE	common/datatype.h	84;"	d
+FT_WALL	common/datatype.h	80;"	d
+FootBallMsg	common/datatype.h	/^struct FootBallMsg {$/;"	s
+GRAY	common/color.h	24;"	d
+GREEN	common/color.h	14;"	d
+HIDE	common/color.h	30;"	d
+L_BLACK	common/color.h	11;"	d
+L_BLUE	common/color.h	19;"	d
+L_CYAN	common/color.h	23;"	d
+L_GREEN	common/color.h	15;"	d
+L_PINK	common/color.h	21;"	d
+L_RED	common/color.h	13;"	d
+LogRequest	common/datatype.h	/^struct  LogRequest {$/;"	s
+LogResponse	common/datatype.h	/^struct LogResponse{$/;"	s
+MAX_MSG	common/datatype.h	86;"	d
+Map	common/datatype.h	/^struct Map {$/;"	s
+NONE	common/color.h	9;"	d
+PINK	common/color.h	20;"	d
+Point	common/datatype.h	/^struct Point {$/;"	s
+RED	common/color.h	12;"	d
+REVERSE	common/color.h	29;"	d
+Score	common/datatype.h	/^struct Score{$/;"	s
+Speed	common/datatype.h	/^struct Speed{$/;"	s
+UNDERLINE	common/color.h	27;"	d
+User	common/datatype.h	/^struct User {$/;"	s
+WHITE	common/color.h	25;"	d
+YELLOW	common/color.h	17;"	d
+_COLOR_H_	common/color.h	8;"	d
+_COMMON_H	common/common.h	9;"	d
+_DATATYPE_H	common/datatype.h	9;"	d
+_HEAD_H	common/head.h	9;"	d
+_SUB_REACTOR_H	common/sub_reactor.h	9;"	d
+_THREAD_POOL_H	common/thread_pool.h	9;"	d
+_UDP_EPOLL_H	common/udp_epoll.h	9;"	d
+a	common/datatype.h	/^    struct Aspeed a;$/;"	m	struct:BallStatus	typeref:struct:BallStatus::Aspeed
+action	common/datatype.h	/^    int action;$/;"	m	struct:Ctl
+add_event_ptr	common/udp_epoll.c	/^void add_event_ptr(int epollfd, int fd, int events， struct User *user) {$/;"	f
+blue	common/datatype.h	/^    int blue;$/;"	m	struct:Score
+by_team	common/datatype.h	/^    int by_team;$/;"	m	struct:BallStatus
+check_online	common/udp_epoll.c	/^int check_online(struct LogRequest *request){$/;"	f
+cond	common/thread_pool.h	/^    pthread_cond_t cond;$/;"	m	struct:task_queue
+conf	client/client.c	/^char *conf = ".\/football.conf";$/;"	v
+conf_ans	common/common.c	/^char conf_ans[512];$/;"	v
+conf_value_ans	common/common.c	/^char conf_value_ans[512];$/;"	v
+ctl	common/datatype.h	/^    struct Ctl ctl;$/;"	m	struct:FootBallMsg	typeref:struct:FootBallMsg::Ctl
+del_event	common/udp_epoll.c	/^void del_event(int epollfd, int fd) {$/;"	f
+dirx	common/datatype.h	/^    int dirx;$/;"	m	struct:Ctl
+diry	common/datatype.h	/^    int diry;$/;"	m	struct:Ctl
+do_work	common/thread_pool.c	/^void do_work(struct User *user) {$/;"	f
+epollfd	common/thread_pool.h	/^    int epollfd;$/;"	m	struct:task_queue
+fd	common/datatype.h	/^    int fd; \/\/该玩家对应的连接$/;"	m	struct:User
+flag	common/datatype.h	/^    int flag; \/\/未响应次数$/;"	m	struct:User
+gate_height	common/datatype.h	/^    int gate_height;$/;"	m	struct:Map
+gate_width	common/datatype.h	/^    int gate_width;$/;"	m	struct:Map
+get_conf	common/common.c	/^char *get_conf(const char *conf, char *key) {$/;"	f
+get_conf_value	common/common.c	/^char *get_conf_value(const char *path, const char *key) {$/;"	f
+get_name	common/thread_pool.c	/^void get_name(int fd) {$/;"	f
+head	common/thread_pool.h	/^    int head;$/;"	m	struct:task_queue
+height	common/datatype.h	/^    int height;$/;"	m	struct:Map
+loc	common/datatype.h	/^    struct Point loc;$/;"	m	struct:User	typeref:struct:User::Point
+main	client/client.c	/^int main(int argc, char **argv) {$/;"	f
+main	server/server.c	/^int main() {$/;"	f
+make_block	common/common.c	/^int make_block(int fd) {$/;"	f
+make_non_block	common/common.c	/^int make_non_block(int fd) {$/;"	f
+msg	common/datatype.h	/^    char msg[512];$/;"	m	struct:LogRequest
+msg	common/datatype.h	/^    char msg[512];$/;"	m	struct:LogResponse
+msg	common/datatype.h	/^    char msg[MAX_MSG];$/;"	m	struct:FootBallMsg
+mutex	common/thread_pool.h	/^    pthread_mutex_t mutex;$/;"	m	struct:task_queue
+name	common/datatype.h	/^    char name[20];$/;"	m	struct:BallStatus
+name	common/datatype.h	/^    char name[20];$/;"	m	struct:FootBallMsg
+name	common/datatype.h	/^    char name[20];$/;"	m	struct:LogRequest
+name	common/datatype.h	/^    char name[20];$/;"	m	struct:User
+online	common/datatype.h	/^    int online;\/\/ 1 在线 0 不在线$/;"	m	struct:User
+port	server/server.c	/^int port; \/\/服务端等待客户接入的端口，设置为全局$/;"	v
+red	common/datatype.h	/^    int red;$/;"	m	struct:Score
+send_all	common/thread_pool.c	/^void send_all(struct ChatMsg *msg) {$/;"	f
+send_to	common/thread_pool.c	/^void send_to(struct ChatMsg *msg) {$/;"	f
+server_ip	client/client.c	/^char server_ip[20] = {0};$/;"	v
+server_port	client/client.c	/^int server_port = 0;$/;"	v
+size	common/datatype.h	/^    int size;$/;"	m	struct:FootBallMsg
+size	common/thread_pool.h	/^    int size;$/;"	m	struct:task_queue
+socket_connect	common/common.c	/^int socket_connect(char *ip, int port) {$/;"	f
+socket_create	common/common.c	/^int socket_create(int port) {$/;"	f
+socket_create_udp	common/common.c	/^int socket_create_udp(int port) {$/;"	f
+socket_udp	common/common.c	/^int socket_udp() {$/;"	f
+sockfd	client/client.c	/^int sockfd = -1;$/;"	v
+start	common/datatype.h	/^    struct Point start;$/;"	m	struct:Map	typeref:struct:Map::Point
+strength	common/datatype.h	/^    int strength;$/;"	m	struct:Ctl
+sub_reactor	common/sub_reactor.c	/^void *sub_reactor(void *arg){$/;"	f
+tail	common/thread_pool.h	/^    int tail;$/;"	m	struct:task_queue
+task_queue	common/thread_pool.h	/^struct task_queue{$/;"	s
+task_queue_init	common/thread_pool.c	/^void task_queue_init(struct task_queue *taskQueue, int size, int epollfd) {$/;"	f
+task_queue_pop	common/thread_pool.c	/^struct User *task_queue_pop(struct task_queue *taskQueue) {$/;"	f
+task_queue_push	common/thread_pool.c	/^void task_queue_push(struct task_queue *taskQueue, struct User *user) {$/;"	f
+team	client/client.c	/^int team = -1;$/;"	v
+team	common/datatype.h	/^    int team; \/\/ 0 RED  1 BLUE$/;"	m	struct:User
+team	common/datatype.h	/^    int team;$/;"	m	struct:FootBallMsg
+team	common/datatype.h	/^    int team;$/;"	m	struct:LogRequest
+teams	common/thread_pool.h	/^    struct User **teams;$/;"	m	struct:task_queue	typeref:struct:task_queue::User
+thread_run	common/thread_pool.c	/^void *thread_run(void *arg) {$/;"	f
+total	common/thread_pool.h	/^    int total;$/;"	m	struct:task_queue
+type	common/datatype.h	/^    int type; \/\/ 0 OK 1 NO$/;"	m	struct:LogResponse
+type	common/datatype.h	/^    int type;$/;"	m	struct:FootBallMsg
+udp_accept	common/udp_epoll.c	/^int udp_accept(int fd, struct User *user) {$/;"	f
+udp_connect	common/udp_epoll.c	/^int udp_connect(struct sockaddr_in *client){$/;"	f
+v	common/datatype.h	/^    struct Speed v;$/;"	m	struct:BallStatus	typeref:struct:BallStatus::Speed
+width	common/datatype.h	/^    int width;$/;"	m	struct:Map
+x	common/datatype.h	/^    double x;$/;"	m	struct:Aspeed
+x	common/datatype.h	/^    double x;$/;"	m	struct:Bpoint
+x	common/datatype.h	/^    double x;$/;"	m	struct:Speed
+x	common/datatype.h	/^    int x;$/;"	m	struct:Point
+y	common/datatype.h	/^    double y;$/;"	m	struct:Aspeed
+y	common/datatype.h	/^    double y;$/;"	m	struct:Bpoint
+y	common/datatype.h	/^    double y;$/;"	m	struct:Speed
+y	common/datatype.h	/^    int y;$/;"	m	struct:Point

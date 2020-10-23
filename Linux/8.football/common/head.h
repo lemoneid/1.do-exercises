@@ -16,8 +16,12 @@
 
 #include "datatype.h"
 #include "udp_epoll.h"
-#include "thread_pool.h"
-#include "sub_reactor.h"
+//#include "thread_pool.h"
+//#include "sub_reactor.h"
+//
+//json
+#include <cjson/cJSON.h>
+//#include "parse_conf.h"
 
 // chat-project
 /*
@@ -62,9 +66,6 @@
 #include <semaphore.h>
 
 
-//json
-#include <cjson/cJSON.h>
-#include "parse_conf.h"
 
 
 

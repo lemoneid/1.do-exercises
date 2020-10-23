@@ -9,7 +9,7 @@
 #include <algorithm>
 using namespace std;
 #define maxn 800 
-int num[maxn + 5] = {6, 2, 5, 5, 4, 5, 6, 3 ,7, 6}, cnt = 0;
+int num[10] = {6, 2, 5, 5, 4, 5, 6, 3 ,7, 6};
 
 int calc(int x) {
     int cnt = 0;

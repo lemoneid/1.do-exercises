@@ -20,7 +20,7 @@ struct User {
     int fd; //该玩家对应的连接
     char name[20];
     int online;// 1 在线 0 不在线
-    int flag； //未响应次数
+    int flag; //未响应次数
     struct Point loc;
 };
 //登录相关的

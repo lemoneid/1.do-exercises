@@ -20,8 +20,8 @@
 //#include "sub_reactor.h"
 //
 //json
-//#include <cjson/cJSON.h>
-#include "cJSON.h"
+#include <cjson/cJSON.h>
+//#include "cJSON.h"
 #include "parse_conf.h"
 
 // chat-project

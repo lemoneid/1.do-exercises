@@ -9,8 +9,9 @@
 int server_port = 0;
 char server_ip[20] = {0};
 int team = -1;
-char *conf = "./football.conf";
+char *conf = "./football.json";
 int sockfd = -1;
+char host[20] = {0};
 
 int main(int argc, char **argv) {
     int opt;
@@ -20,30 +21,39 @@ int main(int argc, char **argv) {
     bzero(&response, sizeof(response));
     while ((opt = getopt(argc, argv, "h:p:t:m:n:")) != -1) {
         switch (opt) {
-                //获取启动参数
-                //h -> host
-                //p -> port
-                //m -> msg
-                //t -> team
-                //n -> name
+            case 'h' : strcpy(host, optarg); break;
+            case 'p' : server_port = atoi(optarg); break;
+            case 'm' : strcpy(request.msg, optarg); break;
+            case 't' : request.team = atoi(optarg);  break;
+            case 'n' : strcpy(request.name, optarg); break;
             default:
-                fprintf(stderr, "Usage : %s [-hptmn]!\n", argv[0]);
-                exit(1);
+            fprintf(stderr, "Usage : %s [-hptmn]!\n", argv[0]);
+            exit(1);
         }
     }
     //请判断如果启动参数中没有这些配置，从配置文件中读取
-    //请打印出上面的各配置信息，用以确定是否正确
-    // main(int argc, char **argv) {
-    DBG(GREEN"get_cjson\n"NONE);
-    cJSON *cJSONFile = get_cjson(conf);
-    struct LogRequest curHost;
-    strcpy(curHost.name, get_cjson_valuestring("NAME"));
-    curHost.team = team = get_cjson_valueint("TEAM");
-    strcpy(curHost.msg, get_cjson_valuestring("LOGMSG"));
-    strcpy(server_ip, get_cjson_valuestring("SERVERIP"));
-    server_port = get_cjson_valueint("SERVERPORT");
+    DBG(GREEN"Name = %s, team = %d, msg = %s, IP = %s, port = %d\n"NONE,request.name, request.team, request.msg ,server_ip, server_port);
+    DBG(GREEN"Checking config file...\n");
+    char buff[1024] = {0};
+    if ((get_string(conf, buff, sizeof(buff))) < 0) {
+        perror("get_string");
+        exit(1);
+    }
+    DBG(GREEN"%s"NONE, buff);
+    cJSON *cJSONFile = get_cjson(buff);
+    DBG(RED"===dug==="NONE);
+    if (request.name == NULL) strcpy(request.name, get_json_valuestring(cJSONFile, "NAME"));
+    DBG(RED"===dug==="NONE);
+    if (request.team == -1) request.team = team = get_json_valueint(cJSONFile, "TEAM");
+    DBG(RED"===dug==="NONE);
+    if (request.msg == NULL) strcpy(request.msg, get_json_valuestring(cJSONFile, "LOGMSG"));
+    DBG(RED"===dug==="NONE);
+    if (server_ip == NULL) strcpy(server_ip, get_json_valuestring(cJSONFile, "SERVERIP"));
+    DBG(RED"===dug==="NONE);
+    if (server_port == 0)server_port = get_json_valueint(cJSONFile, "SERVERPORT");
+    DBG(GREEN"Name = %s, team = %d, msg = %s, IP = %s, port = %d"NONE,request.name, request.team, request.msg ,server_ip, server_port);
 
-    DBG(GREEN"IP = %s, port = %d"NONE, server_ip, server_port);
+    DBG(GREEN"server init..."NONE);
     struct sockaddr_in server;
     server.sin_family = AF_INET;
     server.sin_port = htons(server_port);
@@ -56,6 +66,8 @@ int main(int argc, char **argv) {
     sendto(sockfd, (void *)&request, sizeof(request), 0, (struct sockaddr *)&server, len);
     //  在这里，请使用select做定时，如果超过时间没有收到数据，判定为server不在线
     //  retval就是select的返回值
+    //int retval = select(sockfd,)
+    int retval = 1;
     if (retval < 0) {
         perror("select");
         exit(1);

@@ -5,8 +5,10 @@
 	> Created Time: 2020年10月21日 星期三 19时14分44秒
  ************************************************************************/
 
-#include <stdio.h>
-#include <stdlib.h>
+#include "head.h"
+char *conf = "./football.json"
+struct Map court;
+struct 
 
 int port; //服务端等待客户接入的端口，设置为全局
 

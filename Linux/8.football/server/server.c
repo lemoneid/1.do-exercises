@@ -76,6 +76,9 @@ int main(int argc, char **argv) {
         exit(1);
     }
     
+    struct task_queue redQueue;
+    struct task_queue blueQueue;
+
     task_queue_init(&redQueue, MAX, repollfd);
     task_queue_init(&blueQueue, MAX, bepollfd);
 
@@ -84,6 +87,12 @@ int main(int argc, char **argv) {
     pthread_create(&heart_t, NULL, heart_beat, NULL);
 
     signal(SIGINT, server_exit);
+
+    struct epoll_event ev, events[MAX * 2];
+    ev.events = EPOLLIN;
+    ev.data.fd = listener;
+
+    signal(SIGALRM, re_draw);
 
     struct itimerval itimer;
     itimer.it_interval.tv_sec = 0;

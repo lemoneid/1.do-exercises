@@ -7,14 +7,14 @@
 
 #ifndef _THREAD_POOL_H
 #define _THREAD_POOL_H
-
+#include "head.h"
 struct task_queue{
     int size;
     int total;
     int head;
     int tail;
     int epollfd;
-    struct User **teams;
+    struct User **team;
     pthread_mutex_t mutex;
     pthread_cond_t cond;
 };

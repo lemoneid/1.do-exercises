@@ -9,7 +9,7 @@
 int server_port = 0;
 char server_ip[20] = {0};
 int team = -1;
-char *conf = "./football.json";
+char *conf = "./football.conf";
 int sockfd = -1;
 char host[20] = {0};
 
@@ -34,23 +34,11 @@ int main(int argc, char **argv) {
     //请判断如果启动参数中没有这些配置，从配置文件中读取
     DBG(GREEN"Name = %s, team = %d, msg = %s, IP = %s, port = %d\n"NONE,request.name, request.team, request.msg ,server_ip, server_port);
     DBG(GREEN"Checking config file...\n");
-    char buff[1024] = {0};
-    if ((get_string(conf, buff, sizeof(buff))) < 0) {
-        perror("get_string");
-        exit(1);
-    }
-    DBG(GREEN"%s"NONE, buff);
-    cJSON *cJSONFile = get_cjson(buff);
-    DBG(RED"===dug==="NONE);
-    if (request.name == NULL) strcpy(request.name, get_json_valuestring(cJSONFile, "NAME"));
-    DBG(RED"===dug==="NONE);
-    if (request.team == -1) request.team = team = get_json_valueint(cJSONFile, "TEAM");
-    DBG(RED"===dug==="NONE);
-    if (request.msg == NULL) strcpy(request.msg, get_json_valuestring(cJSONFile, "LOGMSG"));
-    DBG(RED"===dug==="NONE);
-    if (server_ip == NULL) strcpy(server_ip, get_json_valuestring(cJSONFile, "SERVERIP"));
-    DBG(RED"===dug==="NONE);
-    if (server_port == 0)server_port = get_json_valueint(cJSONFile, "SERVERPORT");
+    if (request.name == NULL) strcpy(request.name, get_conf_value(conf, "NAME"));
+    if (request.team == -1) request.team = team = atoi(get_conf_value(conf, "TEAM"));
+    if (request.msg == NULL) strcpy(request.msg, get_conf_value(conf, "LOGMSG"));
+    if (server_ip == NULL) strcpy(server_ip, get_conf_value(conf, "SERVERIP"));
+    if (server_port == 0)server_port = atoi(get_conf_value(conf, "SERVERPORT"));
     DBG(GREEN"Name = %s, team = %d, msg = %s, IP = %s, port = %d"NONE,request.name, request.team, request.msg ,server_ip, server_port);
 
     DBG(GREEN"server init..."NONE);
@@ -66,8 +54,14 @@ int main(int argc, char **argv) {
     sendto(sockfd, (void *)&request, sizeof(request), 0, (struct sockaddr *)&server, len);
     //  在这里，请使用select做定时，如果超过时间没有收到数据，判定为server不在线
     //  retval就是select的返回值
-    //int retval = select(sockfd,)
-    int retval = 1;
+    fd_set rdfds;
+    struct timeval timeout;
+    FD_ZERO(&rdfds);
+    FD_SET(socketfd, &rdfds);
+    timeout.tv_sec = 6;
+	timeout.tv_usec = 0;
+    int retval = select(sockfd, &rdfds, NULL, NULL, &timeout);
+    //int retval = 1;
     if (retval < 0) {
         perror("select");
         exit(1);

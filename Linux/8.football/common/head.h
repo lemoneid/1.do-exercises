@@ -13,14 +13,25 @@
 #include "common.h"
 
 //football
-
+#include "ball_status.h"
+#include "cJSON.h"
+#include "color.h"
+#include "common.h"
 #include "datatype.h"
-#include "udp_epoll.h"
-#include "thread_pool.h"
-#include "sub_reactor.h"
+#include "game_ui.h"
+#include "head.h"
 #include "heart_beat.h"
+#include "parse_conf.h"
+#include "send_chat.h"
+#include "send_ctl.h"
 #include "server_exit.h"
+#include "server_re_draw.h"
 #include "server_send_all.h"
+#include "show_data_stream.h"
+#include "show_strength.h"
+#include "sub_reactor.h"
+#include "thread_pool.h"
+#include "udp_epoll.h"
 //
 //json
 #include <cjson/cJSON.h>

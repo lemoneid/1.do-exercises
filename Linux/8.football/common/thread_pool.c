@@ -94,20 +94,35 @@ void do_work(struct User *user) {
             if (user->loc.y >= court.height + 2) user->loc.y = court.height + 2;
         }
     } else if (msg.type & ACTION_KICK) {
+        show_data_stream('k');
+        sprintf(buff, "bx = %lf, by = %lf, px = %d, py = %d", ball.x, ball.y, user->loc.x, user->loc.y);
+        Show_Message(, user, buff, 0);
         if (can_kick(&user->loc, msg.ctl.strength)) {
             ball_status.by_team = user->team;
             strcpy(ball_status.name, user->name);
             sprintf(buff, "vx = %d, vy = %f, ax = %f, ay = %f", ball_status.v.x, ball_status.v.y, ball_status.a.x, ball_status.a.y);
-            //Show_Message(, user, tmp, 0);
+            Show_Message(, user, buff, 0);
         }
 
+    } else if (msg.ctl.action & ACTION_STOP) {
+        show_data_stream('s');
+        if (can_access(&user->loc)) {
+            bazero(&ball_status.v, sizeof(ball_status.v));
+            bazero(&ball_status.a, sizeof(ball_status.a));
+            sprintf(buff, "Stop the Ball");
+            Show_Message(, user, buff, 0);
+        }
+    } else if (msg.ctl.action & ACTION_CARRY) {
+        show_data_stream('c');
+        sprintf(buff, "Try Carry the BAll");
+        Show_Message(, user, buff, 0);
     }
 }
 
 void task_queue_init(struct task_queue *taskQueue, int size, int epollfd) {
     taskQueue->size = size;
     taskQueue->total = taskQueue->head = taskQueue->tail = 0;
-    taskQueue->teams = calloc(size, sizeof(struct User));
+    taskQueue->team = calloc(size, sizeof(struct User));
     taskQueue->epollfd = epollfd;
     pthread_mutex_init(&taskQueue->mutex, NULL);
     pthread_cond_init(&taskQueue->cond, NULL);
@@ -121,7 +136,7 @@ void task_queue_push(struct task_queue *taskQueue, struct User *user) {
         DBG(YELLOW"<taskQueue>"NONE" : taskQueue is full!\n");
         return;
     }
-    taskQueue->teams[taskQueue->tail] = user;
+    taskQueue->team[taskQueue->tail] = user;
     taskQueue->total++;
     DBG(GREEN"<Push>"NONE" : %s\n", user->name);
     if (++taskQueue->tail == taskQueue->size) {
@@ -140,7 +155,7 @@ struct User *task_queue_pop(struct task_queue *taskQueue) {
         DBG(PINK"<Debug>"NONE" : taskQueue is empty!\n ");
         pthread_cond_wait(&taskQueue->cond, &taskQueue->mutex);
     }
-    struct User *user = taskQueue->teams[taskQueue->head];
+    struct User *user = taskQueue->team[taskQueue->head];
     taskQueue->total--;
     DBG(BLUE"<taskQueue>"NONE" : pop %s!\n", user->name);
     if (++taskQueue->head == taskQueue->size) {

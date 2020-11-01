@@ -6,7 +6,7 @@
  ************************************************************************/
 
 #include "head.h"
-
+#include <pthread.h>
 extern int epollfd;
 extern int repollfd, bepllfd;
 extern struct User *bteam, *rteam;

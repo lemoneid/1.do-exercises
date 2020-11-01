@@ -16,6 +16,7 @@ int socket_udp() {
     if ((sockfd = socket(AF_INET, SOCK_DGRAM, 0)) < 0) {
         return -1;
     }
+    make_non_block(sockfd);
     return sockfd;
 }
 
@@ -24,16 +25,18 @@ int socket_create_udp(int port) {
     if ((sockfd = socket(AF_INET, SOCK_DGRAM, 0)) < 0) {
         return -1;
     }
-    int val = 1;
-    if (setsockopt(sockfd, SOL_SOCKET, SO_REUSEADDR, &val, sizeof(int)) < 0) {
-        return -1;
-    }
 
     struct sockaddr_in server;
     server.sin_family = AF_INET;
     server.sin_port = htons(port);
     //server.sin_addr.s_addr = inet_addr("0.0.0.0");
     server.sin_addr.s_addr = INADDR_ANY;
+    
+    int val = 1;
+    if (setsockopt(sockfd, SOL_SOCKET, SO_REUSEADDR, &val, sizeof(int)) < 0) {
+        return -1;
+    }
+    make_non_block(sockfd);
 
     if (bind(sockfd, (struct sockaddr *)&server, sizeof(server)) < 0) {
         return -1;

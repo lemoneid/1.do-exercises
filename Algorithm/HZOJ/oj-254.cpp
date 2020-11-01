@@ -21,7 +21,8 @@ struct Data {
 int num[MAX_N + 5];
 
 bool cmp(const Data &a, const Data &b) {
-    return a.x < b.x;
+    if (a.x - b.x) return a.x < b.x;
+    return a.id < b.id;
 }
 
 priority_queue <Data> q;

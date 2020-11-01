@@ -16,8 +16,11 @@
 
 #include "datatype.h"
 #include "udp_epoll.h"
-//#include "thread_pool.h"
-//#include "sub_reactor.h"
+#include "thread_pool.h"
+#include "sub_reactor.h"
+#include "heart_beat.h"
+#include "server_exit.h"
+#include "server_send_all.h"
 //
 //json
 #include <cjson/cJSON.h>

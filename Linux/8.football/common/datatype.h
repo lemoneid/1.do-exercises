@@ -66,7 +66,7 @@ struct Score{
 #define ACTION_KICK 0x01
 #define ACTION_CARRY 0x02
 #define ACTION_STOP 0x04
-#define ACTION_DFL 0x08
+#define ACTION_DFT 0x08
 struct Ctl{
     int action;
     int dirx;
@@ -74,15 +74,15 @@ struct Ctl{
     int strength;
 };
 //type的值
-#define FT_HEART 0x01
-#define FT_ACK 0x02
+#define FT_HEART 0x01 //心跳
+#define FT_ACK 0x02   //ack
 #define FT_MSG 0x04  //私聊，队友之间
-#define FT_WALL 0x08
-#define FT_CTL 0x10
+#define FT_WALL 0x08 //公告
+#define FT_CTL 0x10  //控制信息
 #define FT_MAP 0x20 //场地数据
-#define FT_FIN 0x40
-#define FT_SCORE 0x80
-#define FT_GAMEOVER 0x100
+#define FT_FIN 0x40 //离场
+#define FT_SCORE 0x80 //比分变化
+#define FT_GAMEOVER 0x100 //gameover
 #define MAX_MSG 1024
 struct FootBallMsg {
     int type;

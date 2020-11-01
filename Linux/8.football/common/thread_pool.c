@@ -8,7 +8,12 @@
 #include "head.h"
 
 extern int epollfd;
-extern struct User *users;
+extern int repollfd, bepllfd;
+extern struct User *bteam, *rteam;
+extern WINDOW *Football;
+extern struct BallStatus ball_status;
+extern struct Bpoint ball;
+extern struct Map court;
 extern int maxfd;
 
 void get_name(int fd) {
@@ -26,15 +31,15 @@ void get_name(int fd) {
     }
 }
 
-void send_all(struct ChatMsg *msg) {
+void send_all(struct FootBallMsg *msg) {
     for (int i = 1; i <= maxfd; ++i) {
-        if (users[i].online == 1) {
-            send(users[i].fd, (void *)msg, sizeof(msg), 0);
+        if (team[i].online == 1) {
+            send(team[i].fd, (void *)msg, sizeof(msg), 0);
         }
     }
 }
 
-void send_to(struct ChatMsg *msg) {
+void send_to(struct FootBallMsg *msg) {
     char to_name[20] = {0};
     int i = 1; //@suyelu hello
     for (; i <= 21; ++i) {
@@ -44,37 +49,65 @@ void send_to(struct ChatMsg *msg) {
 } 
 
 void do_work(struct User *user) {
-    struct ChatMsg msg;
+    struct FootBallMsg msg;
+    bzero(&msg, sizeof(msg));
     char buff[512] = {0};
-    if (recv(user->fd, &msg, sizeof(msg), 0) <= 0) {
+    //int size = recv(user->fd, (void *)*msg, sizeof(msg), 0);
+    if (recv(user->fd, (void *)&msg, sizeof(msg), 0) <= 0) {
         epoll_ctl(epollfd, EPOLL_CTL_DEL, user->fd, NULL);
         DBG(RED"<Reactor>"NONE" : Del from reactor!\n");
         close(user->fd);
         return ;
     } 
     user->flag = 10;
-    if (msg.type & CHAT_PUB) {
-        printf(BLUE"%s"NONE" ; %s\n", user->name, msg.msg);
-        send_all(&msg);
-    } else if (msg.type & CHAT_PRI) {
-        printf(PINK"%s"NONE" : %s *\n", user->name, msg.msg);
-        //send_to(&msg);
-    } else if (msg.type & CHAT_FUNC) {
-        if (msg.msg[0] != '#') {
-            
+    if (msg.type & FT_ACK) {
+        if (user->team) {
+            DBG(L_BLUE"%s"NONE " heart \n", user->name);        
+        } else {
+            DBG(L_RED"%s"NONE " heart \n", user->name);        
         }
-        
-    } else if (msg.type & CHAT_SYN) {
-        do_login(user, &msg);
-    } else if (msg.type & CHAT_FIN) {
-        msg.type = CHAT_FIN_1;
+    } else if (msg.type & (FT_WALL | FT_MSG)) {
+        if (user->team) {
+            DBG(L_BLUE"%s"NONE " %s\n", user->name, msg.msg);        
+        } else {
+            DBG(L_RED"%s"NONE " %s\n", user->name, msg.msg);        
+        }
+        strcpy(msg.name, user->name);
+        msg.team = user->team;
+        send_all(&msg);
+    } else if (msg.type & FT_FIN) {
+        DBG(RED"%d logout. \n", user->name);
+        sprintf(buff, "%s Logout.", user->name);
+        //加锁, 有线程并发问题，online为0，仍发消息
+        user->online = 0;
+        int epollfd_tmp = (user->team ? bepllfd : repollfd);
+        del_event(epollfd_tmp, user->fd);
+    
+    } else if (msg.type & FT_CTL) {
+        sprintf(buff, "Ctrl Message kick = %d", msg.ctl.strength);
+        if (msg.ctl.action & ACTION_DFT) {
+            user->loc.x += msg.ctl.dirx;
+            user->loc.y += msg.ctl.diry;
+            if (user->loc.x <= 1) user->loc.x = 1;
+            if (user->loc.x >= court.width + 2) user->loc.x = court.width + 2;
+            if (user->loc.y <= 0) user->loc.x = 0;
+            if (user->loc.y >= court.height + 2) user->loc.y = court.height + 2;
+        }
+    } else if (msg.type & ACTION_KICK) {
+        if (can_kick(&user->loc, msg.ctl.strength)) {
+            ball_status.by_team = user->team;
+            strcpy(ball_status.name, user->name);
+            sprintf(buff, "vx = %d, vy = %f, ax = %f, ay = %f", ball_status.v.x, ball_status.v.y, ball_status.a.x, ball_status.a.y);
+            //Show_Message(, user, tmp, 0);
+        }
+
     }
 }
 
 void task_queue_init(struct task_queue *taskQueue, int size, int epollfd) {
     taskQueue->size = size;
     taskQueue->total = taskQueue->head = taskQueue->tail = 0;
-    taskQueue->users = calloc(size, sizeof(struct User));
+    taskQueue->teams = calloc(size, sizeof(struct User));
     taskQueue->epollfd = epollfd;
     pthread_mutex_init(&taskQueue->mutex, NULL);
     pthread_cond_init(&taskQueue->cond, NULL);
@@ -88,7 +121,7 @@ void task_queue_push(struct task_queue *taskQueue, struct User *user) {
         DBG(YELLOW"<taskQueue>"NONE" : taskQueue is full!\n");
         return;
     }
-    taskQueue->users[taskQueue->tail] = user;
+    taskQueue->teams[taskQueue->tail] = user;
     taskQueue->total++;
     DBG(GREEN"<Push>"NONE" : %s\n", user->name);
     if (++taskQueue->tail == taskQueue->size) {
@@ -107,10 +140,11 @@ struct User *task_queue_pop(struct task_queue *taskQueue) {
         DBG(PINK"<Debug>"NONE" : taskQueue is empty!\n ");
         pthread_cond_wait(&taskQueue->cond, &taskQueue->mutex);
     }
-    struct User *user = taskQueue->users[taskQueue->head];
+    struct User *user = taskQueue->teams[taskQueue->head];
     taskQueue->total--;
-    DBG(BLUE"<taskQueue>"NONE" : pop %d!\n", fd);
+    DBG(BLUE"<taskQueue>"NONE" : pop %s!\n", user->name);
     if (++taskQueue->head == taskQueue->size) {
+    DBG(L_GREEN"<taskQueue>"NONE" : taskQueue End!\n");
         taskQueue->head = 0;
     }
    // sleep(1);

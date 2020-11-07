@@ -6,13 +6,15 @@
  ************************************************************************/
 
 #include "head.h"
+#include "thread_pool.h"
+#include "udp_epoll.h"
 extern struct User *bteam, *rteam;
 extern int repollfd, bepollfd;
 extern int score;
 extern pthread_mutex_t rmutex, bmutex;
 extern struct Map court;
 extern int port;
-#define MAX 6
+#define MAX 50 
 
 void add_event_ptr(int epollfd, int fd, int events, struct User *user) {
     struct epoll_event ev;
@@ -27,8 +29,6 @@ void add_event_ptr(int epollfd, int fd, int events, struct User *user) {
 
 void del_event(int epollfd, int fd) {
     epoll_ctl(epollfd, EPOLL_CTL_DEL, fd, NULL);
-    DBG(PINK"Main Reactor"NONE " : deling %s to main reacator\n", user->name);
-
 }
 
 int find_sub(struct User *team) {
@@ -110,9 +110,9 @@ void add_to_sub_reactor(struct User *user) {
     struct User *team = (user->team ? bteam : rteam);
     DBG(YELLOW"Main Thread : "NONE"Add to sub_reactor\n");
     if (user->team) {
-        pthead_mutex_lock(&bmutex);
+        pthread_mutex_lock(&bmutex);
     } else {
-        pthead_mutex_lock(&rmutex);
+        pthread_mutex_lock(&rmutex);
     }
 
     int sub = find_sub(team);
@@ -130,9 +130,9 @@ void add_to_sub_reactor(struct User *user) {
     r_msg.type = FT_WALL;
     send_all(&r_msg);
     if (user->team) {
-        pthead_mutex_unlock(&bmutex);
+        pthread_mutex_unlock(&bmutex);
     } else {
-        pthead_mutex_unlock(&rmutex);
+        pthread_mutex_unlock(&rmutex);
     }
     DBG(L_RED"sub = %d, name = %s\n"NONE, sub, team[sub].name);
     if (user->team) {

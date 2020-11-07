@@ -5,8 +5,19 @@
 	> Created Time: 2020年10月21日 星期三 19时14分44秒
  ************************************************************************/
 
-#include "head.h"
-char *conf = "./football.conf"
+#include "../common/head.h"
+#include "../common/thread_pool.h"
+#include "../common/common.h"
+#include "../common/sub_reactor.h"
+#include "../common/heart_beat.h"
+#include "../common/game_ui.h"
+#include "../common/server_exit.h"
+#include "../common/server_re_draw.h"
+#include "../common/show_data_stream.h"
+#include "../common/ball_status.h"
+#include "../common/udp_epoll.h"
+
+char *conf = "./football.conf";
 struct Map court;
 struct Bpoint ball;
 struct BallStatus ball_status;
@@ -17,8 +28,8 @@ int port = 0, message_num = 0; //服务端等待客户接入的端口，设置�
 char data_stream[20] = {0};
 pthread_mutex_t rmutex = PTHREAD_MUTEX_INITIALIZER;
 pthread_mutex_t bmutex = PTHREAD_MUTEX_INITIALIZER;
-
 WINDOW *Football, *Football_t, *Message, *Help, *Score, *Write;
+#define MAX 50
 
 //全局变量存储于数据区(全局区)，更好的实现是传参
 
@@ -36,15 +47,20 @@ int main(int argc, char **argv) {
                 exit(1);
         }
     }
+    argc -= (optind - 1);
+    argv += (optind - 1);
 
-
-    
+    if (argc > 1) {
+        fprintf(stderr, "Usage: %s [-p port]\n", argv[0]);
+        exit(1);
+    }
     //使nurse库支持中文
     setlocale(LC_ALL, "");
     if (!port) port = atoi(get_conf_value(conf, "PORT"));
     court.width = atoi(get_conf_value(conf, "COLS"));
     court.height = atoi(get_conf_value(conf, "LINES"));
-
+    printf("port = %d, width = %d, height = %d\n", port, court.width, court.height);
+    DBG("port = %d, width = %d, height = %d\n", port, court.width, court.height);
     court.start.x = 3;
     court.start.y = 3;
 
@@ -94,7 +110,7 @@ int main(int argc, char **argv) {
     ev.events = EPOLLIN;
     ev.data.fd = listener;
 
-    signal(SIGALRM, re_draw);
+    signal(SIGALRM, re_drew);
 
     struct itimerval itimer;
     itimer.it_interval.tv_sec = 0;
@@ -114,7 +130,7 @@ int main(int argc, char **argv) {
     bzero(&client, sizeof(client));
     socklen_t len = sizeof(client);
 
-    Show_Message( , , "Waiting for Login." 1);
+   // Show_Message( , , "Waiting for Login." 1);
     
     //使下面的程序不受时钟信号的影响
     sigset_t origmask, sigmask;
@@ -142,6 +158,9 @@ int main(int argc, char **argv) {
                     show_data_stream('l');
                     add_to_sub_reactor(&user);
                 }
+            } else {
+                recv(events[i].data.fd, buff, sizeof(buff), 0);
+                DBG(PINK"RECV"NONE" : %s\n", buff);
             }
         }
     } 

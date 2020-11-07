@@ -7,19 +7,23 @@
 
 #ifndef _THREAD_POOL_H
 #define _THREAD_POOL_H
+#include "head.h"
 struct task_queue{
-    int size;
-    int total;
-    int head;
-    int tail;
-    int epollfd;
-    struct User **team;
-    pthread_mutex_t mutex;
-    pthread_cond_t cond;
+	int sum;
+	int epollfd;
+	struct User **team;
+	int head;
+	int tail;
+	pthread_mutex_t mutex;
+	pthread_cond_t cond;
 };
 
-void task_queue_init(struct task_queue *taskQueue, int size, int epollfd);
+void task_queue_init(struct task_queue *taskQueue, int sum, int epollfd);
 void task_queue_push(struct task_queue *taskQueue, struct User *user);
 struct User *task_queue_pop(struct task_queue *taskQueue);
 void *thread_run(void *arg);
+void send_all(struct FootBallMsg *msg);
+
+#define MAXTASK 100
+#define NTHREAD 8 
 #endif

@@ -5,13 +5,43 @@
 	> Created Time: Fri Oct 23 19:58:59 2020
  ************************************************************************/
 
-#include "head.h"
+#include "../common/head.h"
+#include "../common/client_recv.h"
+#include "../common/game_ui.h"
+#include "../common/send_chat.h"
+#include "../common/send_ctl.h"
+#include "../common/show_strength.h"
+#include "../common/thread_pool.h"
+#include "../common/common.h"
+#include "../common/server_re_draw.h"
+#include "../common/show_data_stream.h"
+#include "../common/ball_status.h"
+#include "../common/udp_epoll.h"
 int server_port = 0;
 char server_ip[20] = {0};
 int team = -1;
 char *conf = "./football.conf";
 int sockfd = -1;
-char host[20] = {0};
+struct Map court;
+struct Bpoint ball;
+struct FootBallMsg chat_msg;
+struct FootBallMsg ctl_msg;
+int show_name = 0;
+char data_stream[20];
+WINDOW *Football, *Message, *Help, *Score, *Write, *Football_t;
+int message_num = 0;
+struct BallStatus ball_status;
+struct Score score;
+
+void logout(int signum) {
+	struct FootBallMsg msg;
+	msg.type = FT_FIN;
+	send(sockfd, (void *)&msg, sizeof(msg), 0);
+    close(sockfd);
+    DBG(RED"Bye!\n"NONE);
+	endwin();
+	exit(1);
+}
 
 int main(int argc, char **argv) {
     int opt;
@@ -19,9 +49,13 @@ int main(int argc, char **argv) {
     struct LogResponse response;
     bzero(&request, sizeof(request));
     bzero(&response, sizeof(response));
+    bzero(&chat_msg, sizeof(struct FootBallMsg));
+    bzero(&ctl_msg, sizeof(struct FootBallMsg));
+    chat_msg.type = FT_WALL;
+    ctl_msg.type = FT_CTL;
     while ((opt = getopt(argc, argv, "h:p:t:m:n:")) != -1) {
         switch (opt) {
-            case 'h' : strcpy(host, optarg); break;
+            case 'h' : strcpy(server_ip, optarg); break;
             case 'p' : server_port = atoi(optarg); break;
             case 'm' : strcpy(request.msg, optarg); break;
             case 't' : request.team = atoi(optarg);  break;
@@ -57,7 +91,7 @@ int main(int argc, char **argv) {
     fd_set rdfds;
     struct timeval timeout;
     FD_ZERO(&rdfds);
-    FD_SET(socketfd, &rdfds);
+    FD_SET(sockfd, &rdfds);
     timeout.tv_sec = 5;
 	timeout.tv_usec = 0;
     int retval = select(sockfd + 1, &rdfds, NULL, NULL, &timeout);
@@ -75,18 +109,56 @@ int main(int argc, char **argv) {
         exit(1);
     }
     connect(sockfd, (struct sockaddr *)&server, len);
-    
-    struct ChatMsg msg;
-    while (1) {
-        memset(&msg, 0, sizeof(msg));
-        msg.type = CHAT_WALL;
-        scanf("%[^\n]s", msg.msg);
-        getchar();
-        strcpy(msg.name, request.name);
-        if (strlen(msg.msg)) {
-            
-        }
-    }
 
-    return 0;
+#ifndef _D
+    initfootball();
+#endif
+
+    signal(SIGALRM, send_ctl);
+    struct itimerval itimer;
+    itimer.it_interval.tv_sec = 0;
+    itimer.it_interval.tv_usec = 100000;
+    itimer.it_value.tv_sec = 0;
+    itimer.it_value.tv_usec = 100000;
+
+    //内核维护一个时钟信号
+    setitimer(ITIMER_REAL, &itimer, NULL);
+
+	while (1) {
+		int c = getchar();
+		switch (c) {
+			case 'a':
+				ctl_msg.ctl.dirx -= 1;
+				break;
+			case 'd':
+				ctl_msg.ctl.dirx += 1;
+				break;
+			case 'w':
+				ctl_msg.ctl.diry -= 1;
+				break;
+			case 's':
+				ctl_msg.ctl.diry += 1;
+				break;
+			case 13:
+				send_chat();
+				break;
+			case ' ':
+				show_strength();
+				break;
+            case 'k': {
+                show_data_stream('k');
+                struct FootBallMsg msg;
+                bzero(&msg, sizeof(struct FootBallMsg));
+                msg.type = FT_CTL;
+                msg.ctl.action = ACTION_KICK;
+                msg.ctl.strength = 1;
+                send(sockfd, (void *)&msg, sizeof(msg), 0);
+            }
+            break;
+			default:
+				break;
+		}
+	}
+
+    sleep(10);    return 0;
 }

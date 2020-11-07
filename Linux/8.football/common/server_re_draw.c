@@ -5,11 +5,18 @@
 	> Created Time: 2020年11月01日 星期日 17时18分51秒
  ************************************************************************/
 #include "head.h"
+#include "game_ui.h"
+#include "server_exit.h"
+#include "thread_pool.h"
+#include <math.h>
+#define MAX 50
 extern struct User *rteam, *bteam;
 extern WINDOW *Football, *Football_t;
 extern struct BallStatus ball_status;
 extern struct Map court;
 extern struct Bpoint ball;
+extern struct Score score;
+
 void re_drew_ball() {
     //根据ball_status里记录的加速度，和上次re_drew时的速度，算出本次球应该移动的时间
     //加速度保持不变，速度更新
@@ -20,10 +27,10 @@ void re_drew_ball() {
         char tmp[512] = {0};
         sprintf(tmp, "time out = %lf, ax = %lf, ay = %lf", sqrt(pow(ball_status.v.x, 2) + pow(ball_status.v.y, 2)) / sqrt(pow(ball_status.a.x, 2) + pow(ball_status.a.y, 2)), ball_status.a.x, ball_status.a.y );
         double t = 100000.0 / 1000000.0;
-        Show_Message(, NULL, tmp, 1);
+        //Show_Message(, NULL, tmp, 1);
         if (t >= sqrt(pow(ball_status.v.x, 2) + pow(ball_status.v.y, 2)) / sqrt(pow(ball_status.a.y, 2) + pow(ball_status.a.y, 2))) {
-            Show_Message(, NULL, tmp, 1);
-            Show_Message(, NULL, "time out", 1);
+            //Show_Message(, NULL, tmp, 1);
+            //Show_Message(, NULL, "time out", 1);
             bzero(&ball_status.v, sizeof(ball_status.v));
             bzero(&ball_status.a, sizeof(ball_status.a));
         } else {
@@ -66,12 +73,12 @@ void re_drew_ball() {
     }
     w_gotoxy_putc(Football, (int)ball.x, (int)ball.y, 'o');
     if (ball_status.by_team) {
-        wattron(Football, COLOR_PRIR(6));
+        wattron(Football, COLOR_PAIR(6));
     } else {
-        wattron(Football, COLOR_PRIR(2));
+        wattron(Football, COLOR_PAIR(2));
     }
     w_gotoxy_putc(Football, (int)ball.x + 1, (int)ball.y, ACS_DEGREE);
-    wattron(Football, COLOR_PRIR(3));
+    wattron(Football, COLOR_PAIR(3));
 
 }
 void  re_drew_player(int team, char *name, struct Point *loc) {
@@ -79,28 +86,33 @@ void  re_drew_player(int team, char *name, struct Point *loc) {
   //在loc位置打印player，并显示姓名
     char p = 'K';
     char blank[20] = {0};
-    wattron(Football, COLOR_PRIR(team ? 6 : 2));
+    wattron(Football, COLOR_PAIR(team ? 6 : 2));
     w_gotoxy_putc(Football, loc->x + 1, loc->y - 1, p);
     w_gotoxy_puts(Football, loc->x + 1, loc->y - 1, name);
-    wattroff(Football, COLOR_PRIR(team ? 6 : 2));
+    wattroff(Football, COLOR_PAIR(team ? 6 : 2));
 }
 void re_drew_team(struct User *team) {
     //在team数组中，循环遍历用户，调用re_drew_palyer
     for (int i = 0; i < MAX; ++i) {
         if (!team[i].online) continue;
-        re_drew_palyer(team[i].team, team[i].name, &team[i].loc);
+        re_drew_player(team[i].team, team[i].name, &team[i].loc);
     }
 }
-void re_drew(int signum){
+
+void re_drew_gate() {
+    for (int i = (2 * court.height / 5); i <= (3 * court.height / 5); i++) {
+		w_gotoxy_puts(Football_t, 1, i + 1, "x");
+		w_gotoxy_puts(Football_t, court.width + 2, i + 1, "x");
+	}
+}
+
+void re_drew(){
     //分别调用re_drew_team、re_drew_ball
-    
     char tmp[512] = {0};
     werase(Football_t);
     box(Football, 0, 0);
     box(Football_t, 0, 0);
     re_drew_ball(rteam);
     re_drew_ball(bteam);
-    re_drew_gate(bteam);
-    wrefesh(Football_t);
-
+    wrefresh(Football_t);
 }

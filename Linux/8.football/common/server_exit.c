@@ -6,6 +6,7 @@
  ************************************************************************/
 
 #include "head.h"
+#define MAX 50
 extern struct User *rteam, *bteam;
 void server_exit(int signum) {
     struct FootBallMsg msg;

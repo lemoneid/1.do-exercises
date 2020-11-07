@@ -15,6 +15,7 @@
 #define L_GREEN "\e[1;32m" //鲜绿
 #define BROWN "\e[0;33m" //深黄，暗黄
 #define YELLOW "\e[1;33m" //鲜黄
+#define L_YELLOW "\e[0;33m" //鲜黄
 #define BLUE "\e[0;34m" //深蓝，暗蓝
 #define L_BLUE "\e[1;34m" //亮蓝，偏白灰
 #define PINK "\e[0;35m" //深粉，暗粉，偏暗紫

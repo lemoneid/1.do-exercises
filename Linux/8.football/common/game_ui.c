@@ -5,6 +5,7 @@
 	> Created Time: 2020年10月30日 星期五 18时20分59秒
  ************************************************************************/
 #include "head.h"
+#include <ncurses.h>
 extern struct Map court;//球场大小，你应该在server.c和client.c中定义该变量，并初始化
 extern WINDOW *Football, *Football_t, *Message, *Help, *Score, *Write;//窗体
 extern struct Bpoint ball;  //球的位置
@@ -78,4 +79,5 @@ void initfootball() {
     box(Write, 0, 0);
     wattron(Football, COLOR_PAIR(6));
     w_gotoxy_putc(Football, ball.x, ball.y, 'o');
+    return ;
 }

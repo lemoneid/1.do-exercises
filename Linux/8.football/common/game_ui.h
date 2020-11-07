@@ -14,5 +14,5 @@ void gotoxy_putc(int x, int y, int c);
 void gotoxy_puts(int x, int y, char* s);
 void w_gotoxy_putc(WINDOW *win, int x, int y, int c);
 void w_gotoxy_puts(WINDOW *win, int x, int y, char *s);
-void initfootball() {
+void initfootball();
 #endif

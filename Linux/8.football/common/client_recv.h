@@ -1,11 +1,11 @@
 /*************************************************************************
-	> File Name: send_ctl.h
+	> File Name: client_recv.h
 	> Author: wei 
-	> Mail: 1931248856@qq.com
-	> Created Time: 2020年10月30日 星期五 18时04分22秒
+	> Mail: 1931248856@qq.com 
+	> Created Time: Sat Nov  7 14:58:15 2020
  ************************************************************************/
 
-#ifndef _SEND_CTL_H
-#define _SEND_CTL_H
-void send_ctl();
+#ifndef _CLIENT_RECV_H
+#define _CLIENT_RECV_H
+void *client_recv(void *arg);
 #endif

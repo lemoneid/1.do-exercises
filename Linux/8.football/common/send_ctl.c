@@ -6,10 +6,14 @@
  ************************************************************************/
 
 #include "head.h"
+#include "show_data_stream.h"
 extern int sockfd;
 extern struct FootBallMsg ctl_msg; //也是个全局变量
 void send_ctl() {
-    if (ctl_msg.ctl.dirx || ctl_msg.ctl.diry)
+    if (ctl_msg.ctl.dirx || ctl_msg.ctl.diry) {
+        ctl_msg.ctl.action = ACTION_DFT;
         send(sockfd, (void *)&ctl_msg, sizeof(ctl_msg), 0);
-    ctl_msg.ctl.dirx = ctl_msg.ctl.diry = 0;
+        ctl_msg.ctl.dirx = ctl_msg.ctl.diry = 0;
+        show_data_stream('n');
+    }
 }

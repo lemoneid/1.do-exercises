@@ -6,6 +6,8 @@
  ************************************************************************/
 
 #include "head.h"
+#include "game_ui.h"
+#include <math.h>
 extern WINDOW *Message;
 extern struct Bpoint ball;
 extern struct BallStatus ball_status;
@@ -26,7 +28,7 @@ int can_kick(struct Point *loc, int strength){
         if (loc->x - 2 == (int)ball.x && loc->y + 1 + (int)ball.y <= 2) {
             double v_tmp = (40.0 * strength) * 0.2;
             sprintf(tmp, "v_tmp = %lf", v_tmp);
-            Show_Message(Message, NULL, tmp, 1);
+            //Show_Message(Message, NULL, tmp, 1);
             double a;
             if (loc->x - 2 == (int)ball.x) {
                 a = PI / 2;
@@ -52,6 +54,15 @@ int can_kick(struct Point *loc, int strength){
             return 0;
         }
     }
-
-
+    return 0;
 }
+
+int can_access(struct Point *loc) {
+	int px = loc->x;
+	int py = loc->y;
+	if (abs(px - (int)ball.x) <= 2 && abs(py - (int)ball.y) <= 2) {
+		return 1;
+	}
+	return 0;
+}
+

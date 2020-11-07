@@ -8,45 +8,15 @@
 #ifndef _HEAD_H
 #define _HEAD_H
 
-//my-self
-#include "color.h"
-#include "common.h"
-
 //football
-#include "ball_status.h"
-#include "cJSON.h"
 #include "color.h"
 #include "common.h"
 #include "datatype.h"
-//#include "game_ui.h"
-#include "head.h"
-#include "heart_beat.h"
-#include "parse_conf.h"
-#include "send_chat.h"
-#include "send_ctl.h"
-#include "server_exit.h"
-#include "server_re_draw.h"
-#include "server_send_all.h"
-#include "show_data_stream.h"
-#include "show_strength.h"
-#include "sub_reactor.h"
-//#include "thread_pool.h"
-#include "udp_epoll.h"
 //
-//json
- #include <curses.h>
+#include <ncurses.h>
 //#include <cjson/cJSON.h>
-//#include "cJSON.h"
-#include "parse_conf.h"
-
-// chat-project
-/*
-#include "chat.h"
-*/
-//#include "datatype.h"
-//#include "file_transfer.h"
-
-
+#include "cJSON.h"
+#include <locale.h>
 
 //system
 #include <math.h>
@@ -78,7 +48,8 @@
 #include <arpa/inet.h>
 #include <sys/epoll.h>
 #include <semaphore.h>
-
+#include <sys/select.h>
+#include <sys/time.h>
 
 
 

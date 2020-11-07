@@ -6,20 +6,19 @@
  ************************************************************************/
 
 #include "head.h"
-
+#include "datatype.h"
+#include "udp_epoll.h"
+#include "game_ui.h"
+#include "show_data_stream.h"
 #define MAX 50
 extern struct User *rteam, *bteam;
 extern int repollfd, bepollfd;
 
 void heart_beat_team(struct User *team) {
-    //遍历team数组，判断在线，则发送FT_HEART心跳包，flag--
-  //判断palyer的flag是否减为0，减为0则判断为下线
-    //数组中标记为offline-->online = 0
-        //在从反应堆中注销IO  //del_event
-    struct FootBallMsg *msg;
-    msg.type = FT_TEST;
+    struct FootBallMsg msg;
+    msg.type = FT_HEART;
     for (int i = 0; i < MAX; ++i) {
-        if (!team.online) continue;
+        if (!team[i].online) continue;
         if (!team[i].flag) {
             team[i].online = 0;
             continue;

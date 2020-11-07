@@ -11,7 +11,6 @@
 #include "../common/send_chat.h"
 #include "../common/send_ctl.h"
 #include "../common/show_strength.h"
-#include "../common/thread_pool.h"
 #include "../common/common.h"
 #include "../common/server_re_draw.h"
 #include "../common/show_data_stream.h"
@@ -32,6 +31,8 @@ WINDOW *Football, *Message, *Help, *Score, *Write, *Football_t;
 int message_num = 0;
 struct BallStatus ball_status;
 struct Score score;
+struct User* rteam, *bteam;
+
 
 void logout(int signum) {
 	struct FootBallMsg msg;
@@ -66,16 +67,15 @@ int main(int argc, char **argv) {
         }
     }
     //请判断如果启动参数中没有这些配置，从配置文件中读取
-    DBG(GREEN"Name = %s, team = %d, msg = %s, IP = %s, port = %d\n"NONE,request.name, request.team, request.msg ,server_ip, server_port);
     DBG(GREEN"Checking config file...\n");
-    if (request.name == NULL) strcpy(request.name, get_conf_value(conf, "NAME"));
+    if (!request.name[0]) strcpy(request.name, get_conf_value(conf, "NAME"));
     if (request.team == -1) request.team = team = atoi(get_conf_value(conf, "TEAM"));
-    if (request.msg == NULL) strcpy(request.msg, get_conf_value(conf, "LOGMSG"));
-    if (server_ip == NULL) strcpy(server_ip, get_conf_value(conf, "SERVERIP"));
-    if (server_port == 0)server_port = atoi(get_conf_value(conf, "SERVERPORT"));
-    DBG(GREEN"Name = %s, team = %d, msg = %s, IP = %s, port = %d"NONE,request.name, request.team, request.msg ,server_ip, server_port);
+    if (!request.msg[0]) strcpy(request.msg, get_conf_value(conf, "LOGMSG"));
+    if (!server_ip[0]) strcpy(server_ip, get_conf_value(conf, "SERVERIP"));
+    if (!server_port)server_port = atoi(get_conf_value(conf, "SERVERPORT"));
+    DBG(GREEN"Name=%s, team=%d, msg=%s, IP=%s, port=%d\n"NONE,request.name, request.team, request.msg ,server_ip, server_port);
 
-    DBG(GREEN"server init..."NONE);
+    DBG(GREEN"server init...\n"NONE);
     struct sockaddr_in server;
     server.sin_family = AF_INET;
     server.sin_port = htons(server_port);
@@ -88,14 +88,14 @@ int main(int argc, char **argv) {
     sendto(sockfd, (void *)&request, sizeof(request), 0, (struct sockaddr *)&server, len);
     //  在这里，请使用select做定时，如果超过时间没有收到数据，判定为server不在线
     //  retval就是select的返回值
-    fd_set rdfds;
-    struct timeval timeout;
-    FD_ZERO(&rdfds);
-    FD_SET(sockfd, &rdfds);
-    timeout.tv_sec = 5;
-	timeout.tv_usec = 0;
-    int retval = select(sockfd + 1, &rdfds, NULL, NULL, &timeout);
-    if (retval < 0) {
+    fd_set set;
+	FD_ZERO(&set);
+	FD_SET(sockfd, &set);
+	struct timeval tv;
+	tv.tv_sec = 5;
+	tv.tv_usec = 0;
+    int retval = select(sockfd + 1, &set, NULL, NULL, &tv);
+    if (retval == -1) {
         perror("select");
         exit(1);
     } else if (retval){
@@ -108,10 +108,11 @@ int main(int argc, char **argv) {
         printf("The Game Server is out of service!.\n");
         exit(1);
     }
+    DBG(GREEN"SERVER : "NONE" %s\n", response.msg);
     connect(sockfd, (struct sockaddr *)&server, len);
 
 #ifndef _D
-    initfootball();
+   // initfootball();
 #endif
 
     signal(SIGALRM, send_ctl);
@@ -124,27 +125,29 @@ int main(int argc, char **argv) {
     //内核维护一个时钟信号
     setitimer(ITIMER_REAL, &itimer, NULL);
 
-	while (1) {
-		int c = getchar();
-		switch (c) {
-			case 'a':
-				ctl_msg.ctl.dirx -= 1;
-				break;
-			case 'd':
-				ctl_msg.ctl.dirx += 1;
-				break;
-			case 'w':
-				ctl_msg.ctl.diry -= 1;
-				break;
-			case 's':
-				ctl_msg.ctl.diry += 1;
-				break;
-			case 13:
-				send_chat();
-				break;
-			case ' ':
-				show_strength();
-				break;
+    while (1) {
+        DBG(GREEN"Please input\n"NONE);
+        int c = getchar();
+        printf(GREEN"input:%c\n"NONE, c);
+        switch (c) {
+            case 'a':
+            ctl_msg.ctl.dirx -= 1;
+            break;
+            case 'd':
+            ctl_msg.ctl.dirx += 1;
+            break;
+            case 'w':
+            ctl_msg.ctl.diry -= 1;
+            break;
+            case 's':
+            ctl_msg.ctl.diry += 1;
+            break;
+            case 13:
+            send_chat();
+            break;
+            case ' ':
+            show_strength();
+            break;
             case 'k': {
                 show_data_stream('k');
                 struct FootBallMsg msg;
@@ -155,10 +158,10 @@ int main(int argc, char **argv) {
                 send(sockfd, (void *)&msg, sizeof(msg), 0);
             }
             break;
-			default:
-				break;
-		}
-	}
+            default:
+            break;
+        }
+    }
 
     sleep(10);    return 0;
-}
+    }

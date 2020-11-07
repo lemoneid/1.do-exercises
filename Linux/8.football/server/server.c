@@ -31,7 +31,7 @@ pthread_mutex_t bmutex = PTHREAD_MUTEX_INITIALIZER;
 WINDOW *Football, *Football_t, *Message, *Help, *Score, *Write;
 #define MAX 50
 
-void *draw(void *arg) {
+void *drew(void *arg) {
     initfootball();
     while (1) {
         sleep(10);
@@ -64,9 +64,7 @@ int main(int argc, char **argv) {
     }
     //使nurse库支持中文
     setlocale(LC_ALL, "");
-    printf("--test--\n");
     if (!port) port = atoi(get_conf_value(conf, "PORT"));
-    printf("--test--\n");
     court.width = atoi(get_conf_value(conf, "COLS"));
     court.height = atoi(get_conf_value(conf, "LINES"));
     printf("port = %d, width = %d, height = %d\n", port, court.width, court.height);
@@ -89,9 +87,8 @@ int main(int argc, char **argv) {
     DBG(GREEN"INFO"NONE" : server start On port!\n");
 
 #ifndef _D 
-    initfootball();
     pthread_t drew_t;
-    pthread_create(&drew_t, NULL, draw, NULL);
+    pthread_create(&drew_t, NULL, drew, NULL);
 #endif
 
     rteam = (struct User *)calloc(MAX, sizeof(struct User));
@@ -162,6 +159,7 @@ int main(int argc, char **argv) {
             char buff[512] = {0};
             struct User user;
             bzero(&user, sizeof(user));
+            DBG(YELLOW"EPOLL"NONE" :  Doing with %dth fd\n", i);
             if (events[i].data.fd == listener) {
                 int new_fd = udp_accept(listener, &user);
                 if (new_fd > 0) {

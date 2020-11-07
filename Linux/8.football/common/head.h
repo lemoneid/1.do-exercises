@@ -18,7 +18,7 @@
 #include "color.h"
 #include "common.h"
 #include "datatype.h"
-#include "game_ui.h"
+//#include "game_ui.h"
 #include "head.h"
 #include "heart_beat.h"
 #include "parse_conf.h"
@@ -30,11 +30,12 @@
 #include "show_data_stream.h"
 #include "show_strength.h"
 #include "sub_reactor.h"
-#include "thread_pool.h"
+//#include "thread_pool.h"
 #include "udp_epoll.h"
 //
 //json
-#include <cjson/cJSON.h>
+ #include <curses.h>
+//#include <cjson/cJSON.h>
 //#include "cJSON.h"
 #include "parse_conf.h"
 
@@ -43,7 +44,6 @@
 #include "chat.h"
 */
 //#include "datatype.h"
-
 //#include "file_transfer.h"
 
 
@@ -55,7 +55,6 @@
 #include <grp.h>
 #include <pwd.h>
 #include <time.h>
-#include "head.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>

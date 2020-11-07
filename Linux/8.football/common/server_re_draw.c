@@ -77,6 +77,12 @@ void re_drew_ball() {
 void  re_drew_player(int team, char *name, struct Point *loc) {
     //根据team，切换颜色
   //在loc位置打印player，并显示姓名
+    char p = 'K';
+    char blank[20] = {0};
+    wattron(Football, COLOR_PRIR(team ? 6 : 2));
+    w_gotoxy_putc(Football, loc->x + 1, loc->y - 1, p);
+    w_gotoxy_puts(Football, loc->x + 1, loc->y - 1, name);
+    wattroff(Football, COLOR_PRIR(team ? 6 : 2));
 }
 void re_drew_team(struct User *team) {
     //在team数组中，循环遍历用户，调用re_drew_palyer

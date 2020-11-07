@@ -14,7 +14,7 @@
 #include <locale.h>
 #include <sys/time.h>
 #include <math.h>
-#include <cjson/cJSON.h>
+#include "cJSON.h"
 
 #include "datatype.h"
 #include "global.h"

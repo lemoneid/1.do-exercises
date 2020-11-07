@@ -11,7 +11,7 @@
 #include "game_ui.h"
 #include "show_data_stream.h"
 #include "ball_status.h"
-#include <pthread.h>
+#include "./server_send_all.h"
 extern int epollfd;
 extern int repollfd, bepollfd;
 extern struct User *bteam, *rteam;
@@ -19,21 +19,6 @@ extern struct BallStatus ball_status;
 extern struct Bpoint ball;
 extern struct Map court;
 #define MAX 50
-
-void send_all(struct FootBallMsg *msg) {
-    for (int i = 1; i <= MAX; ++i) {
-        if (bteam[i].online) send(bteam[i].fd, (void *)msg, sizeof(struct FootBallMsg), 0);
-        if (rteam[i].online) send(rteam[i].fd, (void *)msg, sizeof(struct FootBallMsg), 0);
-    }
-}
-
-void send_to(struct FootBallMsg *msg) {
-    char to_name[20] = {0};
-    int i = 1; //@suyelu hello
-    for (; i <= 21; ++i) {
-        if (msg->msg[i] == ' ') break;
-    }
-} 
 
 void do_work(struct User *user) {
     struct FootBallMsg msg;

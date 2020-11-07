@@ -6,11 +6,10 @@
  ************************************************************************/
 
 #include "head.h"
-#include "thread_pool.h"
+#include "server_send_all.h"
 #include "udp_epoll.h"
 extern struct User *bteam, *rteam;
 extern int repollfd, bepollfd;
-extern int score;
 extern pthread_mutex_t rmutex, bmutex;
 extern struct Map court;
 extern int port;

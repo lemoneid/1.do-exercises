@@ -8,7 +8,7 @@
 #include "game_ui.h"
 #include "server_exit.h"
 #include "thread_pool.h"
-#include <math.h>
+#include "server_send_all.h"
 #define MAX 50
 extern struct User *rteam, *bteam;
 extern WINDOW *Football, *Football_t;
@@ -87,7 +87,7 @@ void  re_drew_player(int team, char *name, struct Point *loc) {
     char p = 'K';
     char blank[20] = {0};
     wattron(Football, COLOR_PAIR(team ? 6 : 2));
-    w_gotoxy_putc(Football, loc->x + 1, loc->y - 1, p);
+    w_gotoxy_putc(Football, loc->x, loc->y, p);
     w_gotoxy_puts(Football, loc->x + 1, loc->y - 1, name);
     wattroff(Football, COLOR_PAIR(team ? 6 : 2));
 }

@@ -60,7 +60,6 @@ void initfootball() {
     clear();
     if (!has_colors() || start_color() == ERR) {
         endwin();
-        fprintf(stderr, "");
         exit(1);
     }
     init_pair(1, COLOR_GREEN, COLOR_BLACK);

@@ -8,7 +8,6 @@
 // static extern
 
 #include "head.h"
-//char conf_value_ans[512];
 char conf_ans[512];
 
 int socket_udp() {
@@ -47,7 +46,7 @@ int socket_create_udp(int port) {
 char *get_conf_value(const char *path, const char *key) {
     FILE *fp = NULL;
     char *line = NULL, *sub = NULL;
-    ssize_t nread, len;
+    ssize_t nread = 0, len = 0;
     if (path == NULL || key == NULL) {
         errno = EINVAL;
         return NULL;

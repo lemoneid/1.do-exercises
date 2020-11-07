@@ -6,6 +6,7 @@
  ************************************************************************/
 
 #include "head.h" 
+#define MAX 50
 extern struct User *rteam, *bteam;
 void send_team(struct User *team, struct FootBallMsg *msg){
     for (int i = 0; i < MAX; i++) {

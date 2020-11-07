@@ -31,6 +31,14 @@ pthread_mutex_t bmutex = PTHREAD_MUTEX_INITIALIZER;
 WINDOW *Football, *Football_t, *Message, *Help, *Score, *Write;
 #define MAX 50
 
+void *draw(void *arg) {
+    initfootball();
+    while (1) {
+        sleep(10);
+    }
+    return NULL;
+}
+
 //全局变量存储于数据区(全局区)，更好的实现是传参
 
 int main(int argc, char **argv) {
@@ -56,7 +64,9 @@ int main(int argc, char **argv) {
     }
     //使nurse库支持中文
     setlocale(LC_ALL, "");
+    printf("--test--\n");
     if (!port) port = atoi(get_conf_value(conf, "PORT"));
+    printf("--test--\n");
     court.width = atoi(get_conf_value(conf, "COLS"));
     court.height = atoi(get_conf_value(conf, "LINES"));
     printf("port = %d, width = %d, height = %d\n", port, court.width, court.height);
@@ -80,6 +90,8 @@ int main(int argc, char **argv) {
 
 #ifndef _D 
     initfootball();
+    pthread_t drew_t;
+    pthread_create(&drew_t, NULL, draw, NULL);
 #endif
 
     rteam = (struct User *)calloc(MAX, sizeof(struct User));
@@ -101,7 +113,7 @@ int main(int argc, char **argv) {
     task_queue_init(&blueQueue, MAX, bepollfd);
 
     pthread_create(&ret_t, NULL, sub_reactor, (void *)&redQueue);
-    pthread_create(&blue_t, NULL, sub_reactor, (void *)&redQueue);
+    pthread_create(&blue_t, NULL, sub_reactor, (void *)&blueQueue);
     pthread_create(&heart_t, NULL, heart_beat, NULL);
 
     signal(SIGINT, server_exit);
@@ -154,6 +166,7 @@ int main(int argc, char **argv) {
                 int new_fd = udp_accept(listener, &user);
                 if (new_fd > 0) {
                     sprintf(buff, "%s login the Game.", user.name);
+					DBG(YELLOW"Main thread"NONE" : Add %s to %s sub_reactor.\n", user.name, (user.team ? "BLUE": "RED"));
                     //Show_Message( , , buff, 1);
                     show_data_stream('l');
                     add_to_sub_reactor(&user);

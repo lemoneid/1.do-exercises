@@ -83,7 +83,7 @@ void do_work(struct User *user) {
             ball_status.by_team = user->team;
             strcpy(ball_status.name, user->name);
             sprintf(buff, "vx = %d, vy = %f, ax = %f, ay = %f", ball_status.v.x, ball_status.v.y, ball_status.a.x, ball_status.a.y);
-            Show_Message(, user, buff, 0);
+           // Show_Message(, user, buff, 0);
         }
 
     } else if (msg.ctl.action & ACTION_STOP) {
@@ -92,12 +92,12 @@ void do_work(struct User *user) {
             bazero(&ball_status.v, sizeof(ball_status.v));
             bazero(&ball_status.a, sizeof(ball_status.a));
             sprintf(buff, "Stop the Ball");
-            Show_Message(, user, buff, 0);
+           // Show_Message(, user, buff, 0);
         }
     } else if (msg.ctl.action & ACTION_CARRY) {
         show_data_stream('c');
         sprintf(buff, "Try Carry the BAll");
-        Show_Message(, user, buff, 0);
+        //Show_Message(, user, buff, 0);
     }
 }
 

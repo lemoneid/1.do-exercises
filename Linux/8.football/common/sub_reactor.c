@@ -35,7 +35,7 @@ void *sub_reactor(void *arg){
                 int new_fd = udp_accept(listener, &user);
                 if (new_fd > 0) {
                     sprintf(buff, "%s login the Game.", user.name);
-                    Show_Message( , , buff, 1);
+                    //Show_Message( , , buff, 1);
                     show_data_stream('l');
                     add_to_sub_reactor(&user);
                 }

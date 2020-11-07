@@ -21,7 +21,7 @@ int can_kick(struct Point *loc, int strength){
     
     char tmp[512];
     sprintf(tmp, "loc->x = %d, (int)ball.x = %d, loc->y = %d, (int)ball.y = %d", loc->x - 2, (int)ball.x, loc->y, (int)ball.y);
-    Show_Message(Message, NULL, tmp, 1);
+    //Show_Message(Message, NULL, tmp, 1);
     if (abs(loc->x - 2 - (int)ball.x) <= 2 && abs(-loc->y + 1 + (int)ball.y) <= 2) {
         if (loc->x - 2 == (int)ball.x && loc->y + 1 + (int)ball.y <= 2) {
             double v_tmp = (40.0 * strength) * 0.2;

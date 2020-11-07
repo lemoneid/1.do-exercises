@@ -36,6 +36,8 @@ int main(int argc, char **argv) {
                 exit(1);
         }
     }
+
+
     
     //使nurse库支持中文
     setlocale(LC_ALL, "");

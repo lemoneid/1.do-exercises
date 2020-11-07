@@ -2,91 +2,129 @@
 	> File Name: test.cpp
 	> Author: wei 
 	> Mail: 1931248856@qq.com
-	> Created Time: 2020年10月08日 星期四 19时23分27秒
+	> Created Time: 2020年11月05日 星期四 19时28分24秒
  ************************************************************************/
-#include <cstdio>
-#include <cstdlib>
-#include <cmath>
-#include <ctime>
-#define swap(a, b) {\
-    __typeof(a) _tmp = a;\
-    a = b; b = _tmp;\
-}
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 
-typedef struct priority_queue{
-    int *data;
-    int cnt, size;
-} priority_queue;
+#define LH(root) (root->lchild->h)
+#define RH(root) (root->rchild->h)
+#define VAL(root) (root->key)
+#define max(a, b) ({\
+    __typeof(a) __a = (a);\
+    __typeof(b) __b = (b);\
+    __a > __b ? __a : __b;\
+})
 
-priority_queue *init(int n) {
-    priority_queue *q = (priority_queue *)malloc(sizeof(priority_queue));
-    q->data = (int *)malloc(sizeof(int) * (n + 1));
-    q->size = n;
-    q->cnt = 0;
-    return q;
-}
+typedef struct Node {
+    int key, h;
+    struct Node *lchild, *rchild;
+} Node, *pNode;
 
-int empty(priority_queue *q) {
-    return q->cnt == 0;
-}
+Node __NIL;
+#define NIL (&__NIL)
 
-int top(priority_queue *q) {
-    return q->data[1];
-}
-
-int push(priority_queue *q, int val) {
-    if (q == NULL) return 0;
-    if (q->size == q->cnt) return 0;
-    q->data[++q->cnt] = val;
-    int idx = q->cnt;
-    while (idx >> 1) {
-        int tmp = idx, l = idx >> 1, r = idx >> 1 | 1;
-        if (q->data[tmp] > q->data[l]) tmp = l;
-        if (r && q->data[tmp] > q->data[r]) tmp = r;
-        if (tmp == idx) break;
-        swap(q->data[idx], q->data[tmp]);
-        idx = tmp;
-    }
-    return 1;
-}
-
-int pop(priority_queue *q) {
-    if (q == NULL) return 0;
-    if (empty(q)) return 0;
-    q->data[1] = q->data[q->cnt--];
-    int idx = 1;
-    while ((idx << 1) <= q->cnt) {
-        int tmp = idx, l = idx << 1, r = idx << 1 | 1;
-        if (q->data[tmp] < q->data[l]) tmp = l;
-        if (r && q->data[tmp] < q->data[r]) tmp = r;
-        if (tmp == idx) break;
-        swap(q->data[idx], q->data[tmp]);
-        idx = tmp;
-    }
-    return 1;
-}
-
-void clear(priority_queue *q) {
-    if (q == NULL) return ;
-    free(q->data);
-    free(q);
+__attribute__((constructor))
+void init_NIL() {
+    NIL->key = 0;
+    NIL->lchild = NIL->rchild = NIL;
+    NIL->h = 0;
     return ;
 }
 
+pNode getNewNode(int key) {
+    pNode p = (pNode)malloc(sizeof(Node));
+    p->key = key;
+    p->lchild = p->rchild = NIL;
+    p->h = 1;
+    return p;
+}
+
+void update_height(pNode root) {
+    root->h = max(LH(root), RH(root)) + 1;
+    return ;
+}
+
+pNode left_rotate(pNode root) {
+    printf("left_rotate\n");
+    pNode temp = root->rchild;
+    root->rchild = temp->lchild;
+    temp->lchild = root;
+    update_height(root);
+    update_height(temp);
+    return temp;
+}
+
+pNode right_rotate(pNode root) {
+    printf("right_rotate\n");
+    pNode temp = root->lchild;
+    root->lchild = temp->rchild;
+    temp->rchild = root;
+    update_height(root);
+    update_height(temp);
+    return temp;
+}
+
+pNode maintain(pNode root) {
+    update_height(root);
+    if (abs(LH(root) - RH(root)) <= 1) return root;
+    if (LH(root) > RH(root)) {
+        if (RH(root->lchild) > LH(root->lchild)) {
+            root->lchild = left_rotate(root->lchild);
+        }
+        root = right_rotate(root);
+    } else {
+        if (LH(root->rchild) > RH(root->rchild)) {
+            root->rchild = right_rotate(root->rchild);
+        }
+        root = left_rotate(root);
+    }
+    return root;
+}
+
+pNode insert(pNode root, int key) {
+    if (root == NIL) return getNewNode(key);
+    if (root->key == key) return root;
+    if (root->key > key) root->lchild = insert(root->lchild, key);
+    else root->rchild = insert(root->rchild, key);
+    return maintain(root);
+}
+
+void clear(pNode root) {
+    if (root == NIL) return ;
+    clear(root->lchild);
+    clear(root->rchild);
+    free(root);
+    return ;
+}
+
+void __output(pNode root) {
+    if (root == NIL) return ;
+    __output(root->lchild);
+    printf("(%d, %d, %d)\n", VAL(root), VAL(root->lchild), VAL(root->rchild));
+    __output(root->rchild);
+    return ;
+}
+
+void output(pNode root) {
+    printf("AVL tree : ==========\n");
+    __output(root);
+    printf("---------------------\n");
+    return ;
+}
 
 int main() {
     srand(time(0));
-    #define max_op 25
-    priority_queue *q = init(max_op);
-    for (int i = 0; i < max_op; ++i) {
-        int val = rand() % 100;
-        push(q, val);
-        printf("push %d to priority_queue \n", val);
+    #define max_op 20
+    int val;
+    pNode root = NIL;
+    for (int i = 0; i < max_op; i++) {
+        val = rand() % 100;
+        root = insert(root, val);
+        printf("insert %d to tree\n", val);
+        output(root);
     }
-    for (int i = 0; i < max_op; ++i) {
-        printf("%d ", top(q));
-        pop(q);
-    }
-    #undef max_op
+    clear(root);
     return 0;
 }

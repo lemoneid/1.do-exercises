@@ -7,8 +7,6 @@
 
 #ifndef _COMMON_H
 #define _COMMON_H
-char *get_conf(const char *conf, char *key);
-extern char conf_value_ans[512];
 int make_non_block(int fd);
 int make_block(int fd);
 int socket_create(int port);

@@ -10,32 +10,14 @@
 extern int epollfd;
 extern int repollfd, bepllfd;
 extern struct User *bteam, *rteam;
-extern WINDOW *Football;
 extern struct BallStatus ball_status;
 extern struct Bpoint ball;
 extern struct Map court;
-extern int maxfd;
-
-void get_name(int fd) {
-    struct ChatMsg msg;
-    memset(&msg, 0, sizeof(msg));
-    msg.type = CHAT_SYS;
-    int cnt = 0;
-    for (int i = 1; i <= maxfd; ++i) {
-        if (cnt > 10) break;
-        if (users[i].online == 1) {
-            strcat(msg.msg, users[i].chat_name);
-            strcat(msg.msg, ",");
-            cnt++;
-        }
-    }
-}
 
 void send_all(struct FootBallMsg *msg) {
-    for (int i = 1; i <= maxfd; ++i) {
-        if (team[i].online == 1) {
-            send(team[i].fd, (void *)msg, sizeof(msg), 0);
-        }
+    for (int i = 1; i <= MAX; ++i) {
+        if (bteam[i].online) send(bteam[i].fd, (void *)msg, sizeof(struct FootBallMsg), 0);
+        if (rteam[i].online) send(rteam[i].fd, (void *)msg, sizeof(struct FootBallMsg), 0);
     }
 }
 

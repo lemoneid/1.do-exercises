@@ -8,7 +8,7 @@
 // static extern
 
 #include "head.h"
-char conf_value_ans[512];
+//char conf_value_ans[512];
 char conf_ans[512];
 
 int socket_udp() {
@@ -70,38 +70,6 @@ char *get_conf_value(const char *path, const char *key) {
     fclose(fp);
     if (sub == NULL) return NULL;
     return conf_ans;
-}
-
-char *get_conf(const char *conf, char *key) {
-    FILE *fp = NULL; 
-    char *line = NULL, *sub = NULL;
-    ssize_t nread, len;
-    //optarg的实现，静态变量
-    if (conf == NULL || key == NULL) {
-        errno = EINVAL;
-        return NULL;
-    }
-    if ((fp = fopen(conf, "r")) == NULL) {
-        //perror("fopen()");
-        errno = EINVAL;
-        return NULL;
-    }
-
-    while ((nread = getline(&line, &len, fp)) != -1) {
-        if ((sub = strstr(line, key)) == NULL) {
-            continue;
-        }
-        if (line[strlen(key)] == '=') {
-            strncpy(conf_value_ans, sub + strlen(key) + 1, nread - strlen(key) - 2);
-            *(conf_value_ans + nread - strlen(key) - 2) = '\0';
-            break;
-        }
-    }
-    free(line);
-    fclose(fp);
-    //if (!strlen(conf_value_ans)) return NULL;
-    if (sub == NULL) return NULL;
-    return conf_value_ans;
 }
 
 int make_non_block(int fd) {

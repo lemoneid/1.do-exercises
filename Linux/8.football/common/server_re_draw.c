@@ -22,7 +22,6 @@ void re_drew_ball() {
     //加速度保持不变，速度更新
     //需要注意的是，当判断到速度减为，ball_status里的速度和加速度都清空
     //同样需要注意的时，球如果超过球场边界，则判定为出界，球停止到边界即可
-
     if (ball_status.v.x || ball_status.v.y) {
         char tmp[512] = {0};
         sprintf(tmp, "time out = %lf, ax = %lf, ay = %lf", sqrt(pow(ball_status.v.x, 2) + pow(ball_status.v.y, 2)) / sqrt(pow(ball_status.a.x, 2) + pow(ball_status.a.y, 2)), ball_status.a.x, ball_status.a.y );
@@ -112,7 +111,8 @@ void re_drew(){
     werase(Football_t);
     box(Football, 0, 0);
     box(Football_t, 0, 0);
-    re_drew_ball(rteam);
-    re_drew_ball(bteam);
+    re_drew_team(rteam);
+    re_drew_team(bteam);
+    re_drew_ball();
     wrefresh(Football_t);
 }

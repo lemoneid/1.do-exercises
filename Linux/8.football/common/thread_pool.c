@@ -24,7 +24,9 @@ void do_work(struct User *user) {
     struct FootBallMsg msg;
     bzero(&msg, sizeof(msg));
     char buff[512] = {0};
+    DBG(BLUE"wait do_work\n"NONE);
     int size = recv(user->fd, (void *)&msg, sizeof(msg), 0);
+    DBG(BLUE"recv success ! do_work\n"NONE);
     user->flag = 10;
     if (msg.type & FT_ACK) {
         if (user->team) {
@@ -59,30 +61,36 @@ void do_work(struct User *user) {
             if (user->loc.y <= 0) user->loc.x = 0;
             if (user->loc.y >= court.height + 2) user->loc.y = court.height + 2;
         }
-    } else if (msg.type & ACTION_KICK) {
-        show_data_stream('k');
-        sprintf(buff, "bx = %lf, by = %lf, px = %d, py = %d", ball.x, ball.y, user->loc.x, user->loc.y);
-        //Show_Message(, user, buff, 0);
-        if (can_kick(&user->loc, msg.ctl.strength)) {
-            ball_status.by_team = user->team;
-            strcpy(ball_status.name, user->name);
-            //sprintf(buff, "vx = %d, vy = %f, ax = %f, ay = %f", ball_status.v.x, ball_status.v.y, ball_status.a.x, ball_status.a.y);
-            // Show_Message(, user, buff, 0);
+        else if (msg.ctl.action & ACTION_KICK) {
+            show_data_stream('k');
+            user->loc.x = ball.x, user->loc.y = ball.y;
+            sprintf(buff, "bx = %lf, by = %lf, px = %d, py = %d", ball.x, ball.y, user->loc.x, user->loc.y);
+            //Show_Message(, user, buff, 0);
+                DBG(BLUE"%s\n"NONE, buff);
+            if (can_kick(&user->loc, msg.ctl.strength)) {
+                DBG(BLUE"You can kick!\n"NONE); 
+                ball_status.by_team = user->team;
+                strcpy(ball_status.name, user->name);
+                sprintf(buff, "vx = %f, vy = %f, ax = %f, ay = %f", ball_status.v.x, ball_status.v.y, ball_status.a.x, ball_status.a.y);
+                DBG(BLUE"%s\n"NONE, buff);
+                // Show_Message(, user, buff, 0);
+            } else  {
+                DBG(BLUE"You can not kick!\n"NONE); 
+            }
+        } else if (msg.ctl.action & ACTION_STOP) {
+            show_data_stream('s');
+            if (can_access(&user->loc)) {
+                bzero(&ball_status.v, sizeof(ball_status.v));
+                bzero(&ball_status.a, sizeof(ball_status.a));
+                sprintf(buff, "Stop the Ball");
+                // Show_Message(, user, buff, 0);
+            }
+        } else if (msg.ctl.action & ACTION_CARRY) {
+            show_data_stream('c');
+            sprintf(buff, "Try Carry the BAll");
+            //Show_Message(, user, buff, 0);
         }
-
-    } else if (msg.ctl.action & ACTION_STOP) {
-        show_data_stream('s');
-        if (can_access(&user->loc)) {
-            bzero(&ball_status.v, sizeof(ball_status.v));
-            bzero(&ball_status.a, sizeof(ball_status.a));
-            sprintf(buff, "Stop the Ball");
-            // Show_Message(, user, buff, 0);
-        }
-    } else if (msg.ctl.action & ACTION_CARRY) {
-        show_data_stream('c');
-        sprintf(buff, "Try Carry the BAll");
-        //Show_Message(, user, buff, 0);
-    }
+}
 }
 
 void task_queue_init(struct task_queue *taskQueue, int sum, int epollfd) {

@@ -32,9 +32,9 @@ WINDOW *Football, *Football_t, *Message, *Help, *Score, *Write;
 #define MAX 50
 
 void *drew(void *arg) {
-    initfootball();
+        initfootball();
     while (1) {
-        sleep(10);
+        sleep(15);
     }
     return NULL;
 }
@@ -170,7 +170,6 @@ int main(int argc, char **argv) {
                     add_to_sub_reactor(&user);
                 }
             } else {
-                recv(events[i].data.fd, buff, sizeof(buff), 0);
                 DBG(PINK"RECV"NONE" : %s\n", buff);
             }
         }

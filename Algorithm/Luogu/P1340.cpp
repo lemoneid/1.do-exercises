@@ -40,8 +40,6 @@ struct UnionSet {
 Edge e[6005];
 UnionSet uset;
 int n, m;
-bool mark[6005];
-vector<int> res;
 
 int main() {
     cin >> n >> m;
@@ -50,37 +48,24 @@ int main() {
         e[i].mtime = i;
     }
     sort(e, e + m, [](const Edge &a, const Edge &b){return a.w < b.w;});
-    int already = 1, ans = 0, cnt = 0;
-    for (int i = m - 1; i >= 0 ; --i) {
-        do {
-            if (i != m - 1 && mark[i + 1] == false) break;
-            //init
-            memset(mark, false, sizeof(mark));
-            already = 1, ans = 0;
-            uset.init(n);
-            for (int j = 0; j < m; ++j) {
-                if (e[j].mtime > i) continue;
-                int fu = uset.get(e[j].u), fv = uset.get(e[j].v);
-                if (fu == fv) continue;
-                uset.merge(fu, fv);
-                ans += e[j].w;
-                mark[e[j].mtime] = true;
-                already++;
-                if (already == n) break;
-            }
-        } while (0);
+    for (int i = 0; i < m; ++i) {
+        int already = 1, ans = 0;
+        uset.init(n);
+        for (int j = 0; j < m; ++j) {
+            if (e[j].mtime > i) continue;
+            int fu = uset.get(e[j].u), fv = uset.get(e[j].v);
+            if (fu == fv) continue;
+            uset.merge(fu, fv);
+            ans += e[j].w;
+            already++;
+            if (already == n) break;
+        }
         if (already == n) {
-            res.push_back(ans);
+            cout << ans << endl;
         } else {
-            cnt = i + 1;
-            break;
+            cout << -1 << endl;
         }
     }
-    for (int i = 0; i < cnt; ++i) {
-        cout << -1 << endl;
-    }
-    for (int i = res.size() - 1; i >= 0; --i) {
-        cout << res[i] << endl;
-    }
+
     return 0;
 }

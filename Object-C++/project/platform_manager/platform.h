@@ -9,7 +9,10 @@
 #define _PLATFORM_H
 
 #include <string>
+#include <vector>
 using namespace std;
+class Palyer;
+class Interface;
 class Plageform {
 
     private:

@@ -9,6 +9,7 @@
 #include <algorithm>
 #include <string>
 #include "./platform.h"
+#include "../game_interface/interface.h"
 
 Platform::Platform() {
     Player *defaultPlayer{};

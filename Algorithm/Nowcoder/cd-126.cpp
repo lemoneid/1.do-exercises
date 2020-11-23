@@ -1,8 +1,8 @@
 /*************************************************************************
-	> File Name: cdd-102.cpp
+	> File Name: cd-126.cpp
 	> Author: yanzhiwei 
 	> Mail: 1931248856@qq.com
-	> Created Time: 2020年11月22日 星期日 20时22分41秒
+	> Created Time: 2020年11月21日 星期六 21时24分14秒
  ************************************************************************/
 
 #include <iostream>
@@ -17,12 +17,17 @@
 using namespace std;
 
 int main() {
-    int t, n, p, m;
-    scanf("%d", &t);
-    for (int i = 0; i < t; ++i) {
-        scanf("%d%d%d", &n, &p, &m);
-        cout <<  (n <= 1 ? 0 : 2 * n - 3) << endl;
+    string str;
+    int cnt = 0, flag = 1;
+    cin >> str;
+    for (int i = 0; str[i]; ++i) {
+        if (str[i] != '(' && str[i] != ')' || cnt < 0) {
+            flag = 0;
+            break;
+        }
+        str[i] == '(' ? cnt++ : cnt--;
     }
-
+    if (cnt != 0) flag = 0;
+    cout << (flag == 1 ? "YES" : "NO")<< endl;
     return 0;
 }

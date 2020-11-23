@@ -1,8 +1,8 @@
 /*************************************************************************
-	> File Name: cdd-102.cpp
+	> File Name: const.cpp
 	> Author: yanzhiwei 
 	> Mail: 1931248856@qq.com
-	> Created Time: 2020年11月22日 星期日 20时22分41秒
+	> Created Time: 2020年11月19日 星期四 15时54分48秒
  ************************************************************************/
 
 #include <iostream>
@@ -15,14 +15,19 @@
 #include <stack>
 #include <map>
 using namespace std;
+const int a = 2;
+
+void func() {
+    cout << "func brfore : " << a << endl;
+    const int a = 3;
+    int *p = (int *)&a;
+    *p = 4;
+    cout << "func : " << a << endl;
+    cout << *p << endl;
+}
 
 int main() {
-    int t, n, p, m;
-    scanf("%d", &t);
-    for (int i = 0; i < t; ++i) {
-        scanf("%d%d%d", &n, &p, &m);
-        cout <<  (n <= 1 ? 0 : 2 * n - 3) << endl;
-    }
-
+    cout << a << endl;
+    func();
     return 0;
 }

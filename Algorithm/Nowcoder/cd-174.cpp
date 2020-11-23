@@ -2,7 +2,7 @@
 	> File Name: cd-174.cpp
 	> Author: yanzhiwei 
 	> Mail: 1931248856@qq.com
-	> Created Time: 2020年11月18日 星期三 14时02分48秒
+	> Created Time: 2020年11月22日 星期日 21时23分34秒
  ************************************************************************/
 
 #include <iostream>
@@ -13,30 +13,57 @@
 #include <cstring>
 #include <queue>
 #include <stack>
-#include <unordered_map>
+#include <map>
 using namespace std;
-#define MAX_N 10000
+struct Node {
+    int lchild, rchild;
+};
 
-int pre[MAX_N + 5], in[MAX_N + 5], ans[MAX_N + 5];
-unordered_map<int, int> mmap;
-int setPos(int *pre, int pl, int pr, int *in, int il, int ir, int *ans, int s) {
-    if (pl > pr) return s;
-    ans[s--] = pre[pl];
-    int id = mmap[pre[pl]];
-    s = setPos(pre, pr - (ir - (id + 1)), pr, in, id + 1, ir, ans, s);
-    return setPos(pre, pl + 1, pl + id  - il, in, il, id - 1, ans, s);
+vector<Node> tree;
+
+bool isBSTree(int root, int &pre) {
+    if (!root) return true;
+    if (!isBSTree(tree[root].lchild, pre)) return false;
+    if (pre && pre > root) return false;
+    pre = root;
+    return isBSTree(tree[root].rchild, pre);
+}
+
+bool isCBTree(int root) {
+    if (!root) return true;
+    queue<int> que;
+    bool leaf = false;
+    int l = 0, r = 0;
+    que.push(root);
+    while (!que.empty()) {
+        int cur = que.front();
+        que.pop();
+        l = tree[cur].lchild;
+        r = tree[cur].rchild;
+        if ((leaf && (l || r)) || (!l && r)) return false;
+        if (l) que.push(l);
+        if (r) que.push(r);
+        else leaf = false;
+    }
+    return true;
 }
 
 int main() {
-    int n;
-    scanf("%d", &n);
-    for (int i = 0; i < n; ++i) scanf("%d", pre + i);
-    for (int i = 0; i < n; ++i) scanf("%d", in + i), mmap[in[i]] = i;
-    setPos(pre, 0, n - 1, in, 0, n - 1, ans, n - 1);
-    for (int i = 0; i < n; ++i) {
-        i && printf(" ");
-        printf("%d", ans[i]);
-    } 
-    printf("\n");
+    int n, root;
+    scanf("%d%d", &n, &root);
+    if (!n) {
+        cout << "false" << endl; 
+        cout << "false" << endl; 
+        return 0;
+    }
+    tree.resize(n + 1);
+    for (int i = 0, fa, l, r; i < n; ++i) {
+        scanf("%d%d%d", &fa, &l, &r);
+        tree[fa].lchild = l;
+        tree[fa].rchild = r;
+    }
+    int pre = 0;
+    puts(isBSTree(root, pre) ? "true" : "false");
+    puts(isCBTree(root) ? "true" : "false");
     return 0;
 }

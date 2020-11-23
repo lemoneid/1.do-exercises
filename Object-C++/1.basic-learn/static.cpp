@@ -1,8 +1,8 @@
 /*************************************************************************
-	> File Name: cdd-102.cpp
+	> File Name: static.cpp
 	> Author: yanzhiwei 
 	> Mail: 1931248856@qq.com
-	> Created Time: 2020年11月22日 星期日 20时22分41秒
+	> Created Time: 2020年11月19日 星期四 13时55分57秒
  ************************************************************************/
 
 #include <iostream>
@@ -16,13 +16,19 @@
 #include <map>
 using namespace std;
 
-int main() {
-    int t, n, p, m;
-    scanf("%d", &t);
-    for (int i = 0; i < t; ++i) {
-        scanf("%d%d%d", &n, &p, &m);
-        cout <<  (n <= 1 ? 0 : 2 * n - 3) << endl;
-    }
+static int arr[1024 * 1024] = {1};
 
+void func() {
+    static int arr[1024 * 1024] = {1};
+    arr[1] = 2;
+    cout << arr << ":" << arr[1] << endl;
+    return ;
+}
+
+int main() {
+    arr[1] = 3;
+    cout << arr << ":" << arr[1] << endl;
+    func();
+    cout << arr << ":" << arr[1] << endl;
     return 0;
 }

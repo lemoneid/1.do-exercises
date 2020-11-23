@@ -15,7 +15,7 @@
 #include <stack>
 #include <map>
 using namespace std;
-#define MOD 1000000009
+#define MOD 1000000007
 #define MAX_N 10000
 
 long long inv[MAX_N + 5];
@@ -34,7 +34,6 @@ int main() {
     ans = 1;
     for (int i = 1; i <= n; ++i) {
         ans = ((ans * (4 * i - 2)) % MOD) * inv[i + 1] % MOD;
-        cout << ans << endl;
     }
     cout << ans << endl;
     return 0;

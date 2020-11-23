@@ -1,8 +1,8 @@
 /*************************************************************************
-	> File Name: cdd-102.cpp
+	> File Name: copy_assign.cpp
 	> Author: yanzhiwei 
 	> Mail: 1931248856@qq.com
-	> Created Time: 2020年11月22日 星期日 20时22分41秒
+	> Created Time: 2020年11月20日 星期五 18时10分27秒
  ************************************************************************/
 
 #include <iostream>
@@ -11,18 +11,21 @@
 #include <cstdlib>
 #include <cmath>
 #include <cstring>
-#include <queue>
-#include <stack>
-#include <map>
+#include <string>
 using namespace std;
 
-int main() {
-    int t, n, p, m;
-    scanf("%d", &t);
-    for (int i = 0; i < t; ++i) {
-        scanf("%d%d%d", &n, &p, &m);
-        cout <<  (n <= 1 ? 0 : 2 * n - 3) << endl;
+typedef unsigned int uint;
+
+class PersonInfo {
+    string name;   
+    uint IDNumber;
+public:
+    PersonInfo(uint idn) {
+        IDNumber = idn;
     }
+};
+
+int main() {
 
     return 0;
 }

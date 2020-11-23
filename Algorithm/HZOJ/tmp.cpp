@@ -1,9 +1,9 @@
 /*************************************************************************
-	> File Name: oj-673.cpp
-	> Author: yanzhiwei 
-	> Mail: 1931248856@qq.com
-	> Created Time: 2020年11月20日 星期五 16时11分34秒
- ************************************************************************/
+> File Name: oj-673.cpp
+> Author: yanzhiwei 
+> Mail: 1931248856@qq.com
+> Created Time: 2020年11月20日 星期五 16时11分34秒
+************************************************************************/
 
 #include <iostream>
 #include <algorithm>
@@ -23,33 +23,44 @@ struct Edge {
 };
 
 Edge e[MAX_M + 5];
-int head[MAX_N + 5], in_degree[MAX_N + 5];
+int head[MAX_N + 5], in_degree[MAX_N + 5], dist[MAX_N + 5];
 int n, m, mark[MAX_N + 5];
 int ans1, ans2;
 
-inline void dfs(int pre, int ans) {
+void dfs(int left, int pre, int ans) {
+    if (left == 0) {
+        for (int i = 0; i < n; ++i) {
+            cout << dist[i] << " ";
+        }
+        cout << endl;
+        return ;
+    }
     vector<int> vec;
     for (int i = 1; i <= n; ++i) {
         if (mark[i] || in_degree[i]) continue;
         vec.push_back(i);
     }
     for (auto cur : vec) {
-        if (cur == n) {
-            ans1 = max(ans1, ans + 1);
-            ans2 = min(ans2, ans + 1);
-            continue;
+        if (cur == n) { 
+            cout << "zhi-";
+            for (int i = 0; i < n - left; ++i) {
+                cout << dist[i] << " ";
+            }
+            cout << endl;
+            continue ;
         }
         mark[cur] = 1;
         for (int i = head[cur]; i != -1; i = e[i].next) {
             in_degree[e[i].v]--;
         }
         if (cur > pre) ans += 1;
-        dfs(max(cur, pre), ans);
+        dist[n - left] = cur;
+        dfs(left - 1, max(cur, pre), ans);
         if (cur > pre) ans -= 1;
+        mark[cur] = 0;
         for (int i = head[cur]; i != -1; i = e[i].next) {
             in_degree[e[i].v]++;
         }
-        mark[cur] = 0;
     }
     return ;
 }
@@ -63,8 +74,9 @@ int main() {
         head[a] = i;
         in_degree[b]++;
     }
+
     ans1 = 0, ans2 = n + 1;
-    dfs(0, 0);
+    dfs(n, 0, 0);
     printf("%d\n%d\n", ans1, ans2);
     return 0;
 }

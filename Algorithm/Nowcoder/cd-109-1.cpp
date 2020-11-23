@@ -1,8 +1,8 @@
 /*************************************************************************
-	> File Name: cdd-102.cpp
+	> File Name: cd-109-1.cpp
 	> Author: yanzhiwei 
 	> Mail: 1931248856@qq.com
-	> Created Time: 2020年11月22日 星期日 20时22分41秒
+	> Created Time: 2020年11月21日 星期六 17时52分48秒
  ************************************************************************/
 
 #include <iostream>
@@ -17,12 +17,10 @@
 using namespace std;
 
 int main() {
-    int t, n, p, m;
-    scanf("%d", &t);
-    for (int i = 0; i < t; ++i) {
-        scanf("%d%d%d", &n, &p, &m);
-        cout <<  (n <= 1 ? 0 : 2 * n - 3) << endl;
-    }
-
+    int n, m;
+    cin >> n >> m;
+    int res = 0;
+    for (int i = 2; i <= n; ++i) res = (res + m) % i;
+    cout << res + 1 << endl;
     return 0;
 }

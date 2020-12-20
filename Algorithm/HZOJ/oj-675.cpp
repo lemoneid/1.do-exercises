@@ -21,33 +21,26 @@ struct Edge {
     int v, w, next;
 };
 
-struct Node {
-    int id, time;
-    bool operator<(const Node &b) const {
-        return this->time > b.time;
-    }
-};
-
 Edge e[MAX_N + 5];
 int head[MAX_N + 5], ans[MAX_N + 5], in_degree[MAX_N + 5];
 int n, m, k;
 
 void topo() {
-    priority_queue<Node> que;
+    queue<int> que;
     for (int i = 1; i <= n; ++i) {
         if (in_degree[i] == 0) {
-            que.push((Node){i, ans[i]});
+            que.push(i);
         }
     }
     while (!que.empty()) {
-        Node cur = que.top();
+        int cur = que.front();
         que.pop();
-        for (int i = head[cur.id]; i != -1; i = e[i].next) {
+        for (int i = head[cur]; i != -1; i = e[i].next) {
             int v = e[i].v, w = e[i].w;
-            ans[v] = max(ans[v], ans[cur.id] + w);
+            ans[v] = max(ans[v], ans[cur] + w);
             in_degree[v]--;
             if (in_degree[v] == 0) {
-                que.push((Node){v, ans[v]});
+                que.push(v);
             }
         }
     }

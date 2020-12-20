@@ -10,7 +10,6 @@ using namespace std;
     否：深
 
     业务逻辑层，根据需要，如果是拷贝构造，会定义成深拷贝
-
     浅拷贝，不要创建对象，只做指针的引用
 */
 class Address

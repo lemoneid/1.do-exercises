@@ -1,0 +1,734 @@
+./single_inherit.cpp
+/*************************************************************************
+	> File Name: single_inherit.cpp
+	> Author: yanzhiwei 
+	> Mail: 1931248856@qq.com
+	> Created Time: 2020年11月25日 星期三 18时28分17秒
+ ************************************************************************/
+#include <iostream>
+#include <algorithm>
+#include <cstdio>
+#include <cstdlib>
+#include <cmath>
+#include <cstring>
+#include <queue>
+#include <stack>
+#include <map>
+using namespace std;
+/*
+    成员变量基类当中封装 private protected public
+    
+    继承封装
+    private     本类当中可以访问，派生类不可访问
+    protected   public降为protected
+    public      不更改任何权限
+    继承只能缩减封装，不能扩充封装权限
+    继承的限制是影响下一代的
+    如果没有后继类，可以设置为private私有继承
+    如果不希望更改任何原先的成员权限，可以设置为public
+    如果希望数据对外部保护，内部公开，设置为protected
+*/
+class Base {
+private:
+    int n = 10;
+protected:
+    int j = 100;
+public:
+    int m = 666;
+};
+class Drived : protected Base {
+// private:
+//   对于private继承派生类： 其父类的protected ，public j, m 相当于放在当前private下
+public:
+    void showMessage() {
+        cout << j << endl;
+        cout << m << endl;
+    }
+};
+class Third : Drived{
+public:
+    void showMessageTT() {
+        cout << j << endl;
+        cout << m << endl;
+    }
+};
+int main() {
+    Drived d;
+    d.showMessage();
+    Third s;
+    s.showMessageTT();
+    return 0;
+}
+./dynamic_condi.cpp
+/*************************************************************************
+	> File Name: dynamic_condi.cpp
+	> Author: yanzhiwei 
+	> Mail: 1931248856@qq.com
+	> Created Time: 2020年11月25日 星期三 20时46分03秒
+ ************************************************************************/
+#include <iostream>
+#include <algorithm>
+#include <cstdio>
+#include <cstdlib>
+#include <cmath>
+#include <cstring>
+#include <queue>
+#include <stack>
+#include <map>
+using namespace std;
+struct Animal {
+    virtual void eat() {
+        cout << "Animal eat something" << endl;
+    }
+};
+struct Dog: Animal {
+    void eat() {
+        cout << "Dog eat meat" << endl;
+    }
+};
+struct Cat: Animal {
+    void eat() {
+        cout << "Cat eat fish" << endl;
+    }
+};
+struct Mouse: Animal {
+    void eat() {
+        cout << "Mouse eat nailao" << endl;
+    }
+};
+/*
+    动态多态发生的条件
+        -1 必须有继承
+        -2 必须有方法重写
+        -3 基类的指针或引用绑定子类的对象
+        -4 发生多态的函数必须为虚函数
+    
+    当一个类中，没有设置一个函数为虚函数时，
+    程序在编译期间会生成该函数的静态地址，
+    通过对象指针，可以访问到改地址，也就没有segmentation fault 
+    设置一个函数为虚函数后
+    对象空间中就一个虚函数表，如果一个对象搜索不到该虚函数表，
+    产生segmentation fault
+    
+    动态绑定用于传递结果
+*/
+/*
+void lockSick(SomePerson *) {
+    
+}
+*/
+int main() {
+    //tom and jerry 
+    Dog spike;
+    Cat tom;
+    Mouse jerry;
+    //why 空指针可以调用eat方法；
+    Animal *anyAnimal = nullptr;
+    //anyAnimal->eat();
+    cout << sizeof(*anyAnimal) << endl;
+    anyAnimal = &spike;
+    anyAnimal->eat();
+    anyAnimal = &tom;
+    anyAnimal->eat();
+    anyAnimal = &jerry;
+    anyAnimal->eat();
+    return 0;
+}
+./abstract_class.cpp
+/*************************************************************************
+	> File Name: abstract_class.cpp
+	> Author: yanzhiwei 
+	> Mail: 1931248856@qq.com
+	> Created Time: 2020年11月25日 星期三 21时11分38秒
+ ************************************************************************/
+#include <iostream>
+#include <algorithm>
+#include <cstdio>
+#include <cstdlib>
+#include <cmath>
+#include <cstring>
+#include <queue>
+#include <stack>
+#include <map>
+using namespace std;
+/*
+    拥有纯虚函数的类，称为抽象类
+    抽象类不可以构造对象
+    
+    派生类没有对纯虚函数进行实现，那么派生类也是抽象类
+    和泛化关系的区别在于，泛化的类可以生产对象
+    WorkBuilding 与 Building 之间就是实现关系
+    C++当中面向接口编程，就是通过抽象类实现的
+    比如：娃哈哈就是一个借口，抽象
+        矿泉水
+        营养快线
+    工厂设计模式
+        实际由该工厂生产对象
+    抽象工厂设计模式
+        只提供生产技术支持，平台授权等 Apple
+*/
+class Building {
+    public:
+    virtual void build() = 0;
+};
+class WorkBuilding : public Building {
+    public:
+    void build() {
+        cout << "建造" << endl;
+    }   
+};
+int main() {
+    Building *someBuild = new WorkBuilding;
+    someBuild->build();
+    return 0;
+}
+./static_condic.cpp
+/*************************************************************************
+	> File Name: mutil_condi.cpp
+	> Author: yanzhiwei 
+	> Mail: 1931248856@qq.com
+	> Created Time: 2020年11月25日 星期三 20时33分49秒
+ ************************************************************************/
+#include <iostream>
+#include <algorithm>
+#include <cstdio>
+#include <cstdlib>
+#include <cmath>
+#include <cstring>
+#include <queue>
+#include <stack>
+#include <map>
+using namespace std;
+void swap(int a, int b) { cout << "int" << endl; };
+void swap(string a, string b) { cout << "string" << endl; };
+void swap(double a, double b) { cout << "double" << endl; };
+void swap(char a, char b) {cout << "char" << endl;};
+/*
+    静态多态
+    必须在编译器期给定类型>对应的数据类型
+    指针包含多层含义
+        -1 空间地址
+        -2 空间长度
+        -3 从空间读取出的值的类型
+    编译期已经确定其寻址方式
+*/
+int main() {
+    int *i, *j;
+    i = (int *)malloc(3);
+    j = (int *)malloc(3);
+    cout << sizeof(*i) << endl;
+    swap(*i, *j);
+    return 0;
+}
+./mutil_inherit.cpp
+/*************************************************************************
+	> File Name: mutil_inherit.cpp
+	> Author: yanzhiwei 
+	> Mail: 1931248856@qq.com
+	> Created Time: 2020年11月25日 星期三 19时47分17秒
+ ************************************************************************/
+#include <iostream>
+#include <algorithm>
+#include <cstdio>
+#include <cstdlib>
+#include <cmath>
+#include <cstring>
+#include <queue>
+#include <stack>
+#include <map>
+using namespace std;
+struct Person {
+    public:
+    string lastName = ":";
+    Person() = default;
+    Person(string n) :lastName(n) {cout << "Person:"<< &lastName << endl;};
+};
+struct F :virtual Person {
+    //string lastName = "y";
+    F():Person("y") { cout << "F:" << &lastName << endl; };
+};
+struct M :virtual Person{
+    //string lastName = "z";
+    M():Person("z") {cout << "M:" << &lastName << endl;};
+};
+/*
+    解决歧异性问题
+        -1 指定访问的域
+        -2 virtual 虚继承
+        针对菱形继承，可以使用虚继承
+            -1 此时无法在访问到基类（父类）对应的值
+            -2 产生的对象的空间因此发生改变
+                    Person  F    M   S1
+    没有virtual     32      32  32  96
+        Person:0x7ffdceacb130
+        F:0x7ffdceacb130
+        Person:0x7ffdceacb150
+        M:0x7ffdceacb150
+    加virtual后     32      40  40  80
+        F:0x7ffefd729a40
+        M:0x7ffefd729a40
+    40 = 32 + 8
+    80 = 40(Person) + 8(地址) +_ 32(myLastName)
+    所谓的虚继承，产生的是一种地址拷贝，而不是空间拷贝
+    来源于父母的空间，只有一份，这份是从祖先基类继承下来的，
+    自然没有父母空间，也就无法访问；
+    
+    所有上层特性，其实到底层当中，都需要从内存角度思考
+*/
+struct S1: public F, public M {
+    string myLastName; 
+};
+struct S2: S1 {
+    string newLastName;
+};
+int main() {
+    
+    S1 s;
+    cout << s.F::lastName << endl;
+    cout << s.M::lastName << endl;
+    cout << sizeof(Person) << " " << sizeof(F) << " " << sizeof(M) << " " << sizeof(S1) << endl;
+    
+    cout << sizeof(Person) << " " << sizeof(F) << " " << sizeof(M) << " " << sizeof(S2) << endl;
+    return 0;
+}
+./array.cpp
+/*************************************************************************
+	> File Name: array.cpp
+	> Author: yanzhiwei 
+	> Mail: 1931248856@qq.com
+	> Created Time: 2020年11月25日 星期三 13时51分11秒
+ ************************************************************************/
+#include <iostream>
+#include <algorithm>
+#include <cstdio>
+#include <cstdlib>
+#include <cmath>
+#include <cstring>
+#include <string>
+#include <ctime>
+using namespace std;
+class MyArray
+{
+private:
+    int *m_p;//数组空间的起始地址
+    size_t m_len;//申请的数组元素个数
+public:
+    MyArray(size_t n);//n 表示申请的动态数组元素个数。 
+    ~MyArray();
+    MyArray(const MyArray &a);
+    MyArray &operator=(const MyArray &a);
+    int &operator[](size_t index);
+    const int &operator[](size_t index) const;
+    friend ostream& operator<<(ostream &out, const MyArray &a);
+};
+MyArray::MyArray(size_t n) {
+    m_len = n >= 0 ? n : 0;
+    if (n == 0) m_p = nullptr;
+    else m_p = new int[n];
+}
+MyArray::~MyArray() {
+    m_len = 0;
+    if (m_p != nullptr) delete m_p;
+}
+MyArray::MyArray(const MyArray &a) {
+    if (a.m_len == 0) return ;
+    m_len = a.m_len;
+    m_p = new int[m_len];
+    memcpy(m_p, a.m_p, sizeof(int) * m_len);
+}
+MyArray& MyArray::operator=(const MyArray &a) {
+    if (a.m_len == 0) return *this;
+    m_len = a.m_len;
+    m_p = new int[m_len];
+    memcpy(m_p, a.m_p, sizeof(int) * m_len);
+}
+int &MyArray::operator[](size_t index) {
+	if (index < 0 || index >= m_len) {
+        cout << "the index is error!" << endl;
+	}
+	return m_p[index];
+}
+const int& MyArray::operator[](size_t index) const {
+	if (index < 0 || index >= m_len) {
+        cout << "const the index is error!" << endl;
+	}
+	return m_p[index];
+}
+ostream& operator<<(ostream &out, const MyArray &a) {
+    cout << "the array[" << a.m_len << "] = ";
+    for (int i = 0; i < a.m_len; ++i) {
+        i && out << " ";
+        out << a.m_p[i];
+    }
+    return out;
+}
+int main() {
+    srand(time(0));
+    MyArray a1(10);    
+    for (int i = 0; i < 5; ++i) {
+        a1[i] = rand() % 100;
+    }
+    MyArray a2(a1);
+    MyArray a3 = a1;
+    cout << a1 << endl;
+    cout << a2 << endl;
+    cout << a3 << endl;
+    a1[11];
+    a2[10];
+    a3[11];
+    cout << a2[9] << endl;
+    return 0;
+}
+./tmp
+./single_inherit.cpp
+/*************************************************************************
+	> File Name: single_inherit.cpp
+	> Author: yanzhiwei 
+	> Mail: 1931248856@qq.com
+	> Created Time: 2020年11月25日 星期三 18时28分17秒
+ ************************************************************************/
+#include <iostream>
+#include <algorithm>
+#include <cstdio>
+#include <cstdlib>
+#include <cmath>
+#include <cstring>
+#include <queue>
+#include <stack>
+#include <map>
+using namespace std;
+/*
+    成员变量基类当中封装 private protected public
+    
+    继承封装
+    private     本类当中可以访问，派生类不可访问
+    protected   public降为protected
+    public      不更改任何权限
+    继承只能缩减封装，不能扩充封装权限
+    继承的限制是影响下一代的
+    如果没有后继类，可以设置为private私有继承
+    如果不希望更改任何原先的成员权限，可以设置为public
+    如果希望数据对外部保护，内部公开，设置为protected
+*/
+class Base {
+private:
+    int n = 10;
+protected:
+    int j = 100;
+public:
+    int m = 666;
+};
+class Drived : protected Base {
+// private:
+//   对于private继承派生类： 其父类的protected ，public j, m 相当于放在当前private下
+public:
+    void showMessage() {
+        cout << j << endl;
+        cout << m << endl;
+    }
+};
+class Third : Drived{
+public:
+    void showMessageTT() {
+        cout << j << endl;
+        cout << m << endl;
+    }
+};
+int main() {
+    Drived d;
+    d.showMessage();
+    Third s;
+    s.showMessageTT();
+    return 0;
+}
+./dynamic_condi.cpp
+/*************************************************************************
+	> File Name: dynamic_condi.cpp
+	> Author: yanzhiwei 
+	> Mail: 1931248856@qq.com
+	> Created Time: 2020年11月25日 星期三 20时46分03秒
+ ************************************************************************/
+#include <iostream>
+#include <algorithm>
+#include <cstdio>
+#include <cstdlib>
+#include <cmath>
+#include <cstring>
+#include <queue>
+#include <stack>
+#include <map>
+using namespace std;
+struct Animal {
+    virtual void eat() {
+        cout << "Animal eat something" << endl;
+    }
+};
+struct Dog: Animal {
+    void eat() {
+        cout << "Dog eat meat" << endl;
+    }
+};
+struct Cat: Animal {
+    void eat() {
+        cout << "Cat eat fish" << endl;
+    }
+};
+struct Mouse: Animal {
+    void eat() {
+        cout << "Mouse eat nailao" << endl;
+    }
+};
+/*
+    动态多态发生的条件
+        -1 必须有继承
+        -2 必须有方法重写
+        -3 基类的指针或引用绑定子类的对象
+        -4 发生多态的函数必须为虚函数
+    
+    当一个类中，没有设置一个函数为虚函数时，
+    程序在编译期间会生成该函数的静态地址，
+    通过对象指针，可以访问到改地址，也就没有segmentation fault 
+    设置一个函数为虚函数后
+    对象空间中就一个虚函数表，如果一个对象搜索不到该虚函数表，
+    产生segmentation fault
+    
+    动态绑定用于传递结果
+*/
+/*
+void lockSick(SomePerson *) {
+    
+}
+*/
+int main() {
+    //tom and jerry 
+    Dog spike;
+    Cat tom;
+    Mouse jerry;
+    //why 空指针可以调用eat方法；
+    Animal *anyAnimal = nullptr;
+    //anyAnimal->eat();
+    cout << sizeof(*anyAnimal) << endl;
+    anyAnimal = &spike;
+    anyAnimal->eat();
+    anyAnimal = &tom;
+    anyAnimal->eat();
+    anyAnimal = &jerry;
+    anyAnimal->eat();
+    return 0;
+}
+./abstract_class.cpp
+/*************************************************************************
+	> File Name: abstract_class.cpp
+	> Author: yanzhiwei 
+	> Mail: 1931248856@qq.com
+	> Created Time: 2020年11月25日 星期三 21时11分38秒
+ ************************************************************************/
+#include <iostream>
+#include <algorithm>
+#include <cstdio>
+#include <cstdlib>
+#include <cmath>
+#include <cstring>
+#include <queue>
+#include <stack>
+#include <map>
+using namespace std;
+/*
+    拥有纯虚函数的类，称为抽象类
+    抽象类不可以构造对象
+    
+    派生类没有对纯虚函数进行实现，那么派生类也是抽象类
+    和泛化关系的区别在于，泛化的类可以生产对象
+    WorkBuilding 与 Building 之间就是实现关系
+    C++当中面向接口编程，就是通过抽象类实现的
+    比如：娃哈哈就是一个借口，抽象
+        矿泉水
+        营养快线
+    工厂设计模式
+        实际由该工厂生产对象
+    抽象工厂设计模式
+        只提供生产技术支持，平台授权等 Apple
+*/
+class Building {
+    public:
+    virtual void build() = 0;
+};
+class WorkBuilding : public Building {
+    public:
+    void build() {
+        cout << "建造" << endl;
+    }   
+};
+int main() {
+    Building *someBuild = new WorkBuilding;
+    someBuild->build();
+    return 0;
+}
+./static_condic.cpp
+/*************************************************************************
+	> File Name: mutil_condi.cpp
+	> Author: yanzhiwei 
+	> Mail: 1931248856@qq.com
+	> Created Time: 2020年11月25日 星期三 20时33分49秒
+ ************************************************************************/
+#include <iostream>
+#include <algorithm>
+#include <cstdio>
+#include <cstdlib>
+#include <cmath>
+#include <cstring>
+#include <queue>
+#include <stack>
+#include <map>
+using namespace std;
+void swap(int a, int b) { cout << "int" << endl; };
+void swap(string a, string b) { cout << "string" << endl; };
+void swap(double a, double b) { cout << "double" << endl; };
+void swap(char a, char b) {cout << "char" << endl;};
+/*
+    静态多态
+    必须在编译器期给定类型>对应的数据类型
+    指针包含多层含义
+        -1 空间地址
+        -2 空间长度
+        -3 从空间读取出的值的类型
+    编译期已经确定其寻址方式
+*/
+int main() {
+    int *i, *j;
+    i = (int *)malloc(3);
+    j = (int *)malloc(3);
+    cout << sizeof(*i) << endl;
+    swap(*i, *j);
+    return 0;
+}
+./mutil_inherit.cpp
+/*************************************************************************
+	> File Name: mutil_inherit.cpp
+	> Author: yanzhiwei 
+	> Mail: 1931248856@qq.com
+	> Created Time: 2020年11月25日 星期三 19时47分17秒
+ ************************************************************************/
+#include <iostream>
+#include <algorithm>
+#include <cstdio>
+#include <cstdlib>
+#include <cmath>
+#include <cstring>
+#include <queue>
+#include <stack>
+#include <map>
+using namespace std;
+struct Person {
+    public:
+    string lastName = ":";
+    Person() = default;
+    Person(string n) :lastName(n) {cout << "Person:"<< &lastName << endl;};
+};
+struct F :virtual Person {
+    //string lastName = "y";
+    F():Person("y") { cout << "F:" << &lastName << endl; };
+};
+struct M :virtual Person{
+    //string lastName = "z";
+    M():Person("z") {cout << "M:" << &lastName << endl;};
+};
+/*
+    解决歧异性问题
+        -1 指定访问的域
+        -2 virtual 虚继承
+        针对菱形继承，可以使用虚继承
+            -1 此时无法在访问到基类（父类）对应的值
+            -2 产生的对象的空间因此发生改变
+                    Person  F    M   S1
+    没有virtual     32      32  32  96
+        Person:0x7ffdceacb130
+        F:0x7ffdceacb130
+        Person:0x7ffdceacb150
+        M:0x7ffdceacb150
+    加virtual后     32      40  40  80
+        F:0x7ffefd729a40
+        M:0x7ffefd729a40
+    40 = 32 + 8
+    80 = 40(Person) + 8(地址) +_ 32(myLastName)
+    所谓的虚继承，产生的是一种地址拷贝，而不是空间拷贝
+    来源于父母的空间，只有一份，这份是从祖先基类继承下来的，
+    自然没有父母空间，也就无法访问；
+    
+    所有上层特性，其实到底层当中，都需要从内存角度思考
+*/
+struct S1: public F, public M {
+    string myLastName; 
+};
+struct S2: S1 {
+    string newLastName;
+};
+int main() {
+    
+    S1 s;
+    cout << s.F::lastName << endl;
+    cout << s.M::lastName << endl;
+    cout << sizeof(Person) << " " << sizeof(F) << " " << sizeof(M) << " " << sizeof(S1) << endl;
+    
+    cout << sizeof(Person) << " " << sizeof(F) << " " << sizeof(M) << " " << sizeof(S2) << en./single_inherit_func.cpp
+/*************************************************************************
+	> File Name: single_inherit_func.cpp
+	> Author: yanzhiwei 
+	> Mail: 1931248856@qq.com
+	> Created Time: 2020年11月25日 星期三 19时06分22秒
+ ************************************************************************/
+#include <iostream>
+#include <algorithm>
+#include <cstdio>
+#include <cstdlib>
+#include <cmath>
+#include <cstring>
+#include <queue>
+#include <stack>
+#include <map>
+using namespace std;
+class Person {
+    string name;
+public:
+    Person(string n) {
+        name = n;
+    }
+    void showMessage() {
+        cout << name << endl;
+    }
+};
+/*
+    继承的类， 对于父类当中成员函数
+    系统会隐式调用其默认的构造函数
+    如果没有，必须显示调用-->成员初始化列表
+*/
+class Man : Person {
+    string workName;
+public:
+    Man(string n, string work) : Person(n) {
+        workName = work;
+    }
+    Man(const Man &m): Person(m) {
+        cout << "--default--" << endl;
+        this->workName = m.workName;
+    }
+    Man &operator=(const Man &m) :Person(m) {
+        cout << "--operator=--" << endl;
+        this->workName = m.workName;
+    }
+    void showMessagePerson() {
+        this->showMessage();
+    }
+    void showMessageMan() {
+        cout << workName << endl;
+    }
+};
+int main() {
+    Man m = Man("worst", "coder"); 
+    m.showMessagePerson();
+    m.showMessageMan();
+    Man newm = m;
+    newm.showMessagePerson();
+    newm.showMessageMan();
+    return 0;
+}

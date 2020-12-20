@@ -1,0 +1,23 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+BaseView	InterfaceManager/DisplayView.h	/^class BaseView$/;"	c
+COMPLIER	makefile	/^COMPLIER := g++$/;"	m
+COMPLIER_FLAGS	makefile	/^COMPLIER_FLAGS := -Wall -std=c++11$/;"	m
+LINK_FLAGS	makefile	/^LINK_FLAGS := -lncurses$/;"	m
+LoginView	InterfaceManager/DisplayView.h	/^class LoginView: public BaseView$/;"	c
+OUTPUT_FILE_NAME	makefile	/^OUTPUT_FILE_NAME := TinyKai$/;"	m
+PlatformManager	PlatformManager/PlatformManager.h	/^class PlatformManager$/;"	c
+SRC	makefile	/^SRC := main.cpp GameLibrary\/*.cpp PlatformManager\/*.cpp PlatformSettings\/*.cpp InterfaceManager\/*.cpp$/;"	m
+_DISPLAY_VIEW_H_	InterfaceManager/DisplayView.h	2;"	d
+_PLATFORM_MANAGER_H_	PlatformManager/PlatformManager.h	2;"	d
+backUp	InterfaceManager/DisplayView.cpp	/^void LoginView::backUp()$/;"	f	class:LoginView
+currentWindow	InterfaceManager/DisplayView.h	/^    WINDOW *currentWindow;$/;"	m	class:BaseView
+helpMeShow	InterfaceManager/DisplayView.cpp	/^void LoginView::helpMeShow(std::function<void (WINDOW *)> helpfunc)$/;"	f	class:LoginView
+hide	InterfaceManager/DisplayView.cpp	/^void LoginView::hide()$/;"	f	class:LoginView
+main	main.cpp	/^int main()$/;"	f
+show	InterfaceManager/DisplayView.cpp	/^void LoginView::show()$/;"	f	class:LoginView
+start	PlatformManager/PlatformManager.cpp	/^void PlatformManager::start()$/;"	f	class:PlatformManager

@@ -1,0 +1,66 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+Logger	logger-haizei.h	/^class Logger {$/;"	c	namespace:worst
+Logger	logger.h	/^class Logger {$/;"	c	namespace:worst
+LoggerStream	logger-haizei.h	/^        LoggerStream(Logger &raw_obj) : raw_obj(raw_obj) {}$/;"	f	class:worst::Logger::LoggerStream
+LoggerStream	logger-haizei.h	/^        LoggerStream(const LoggerStream &ls) : raw_obj(ls.raw_obj) {}$/;"	f	class:worst::Logger::LoggerStream
+LoggerStream	logger-haizei.h	/^    LoggerStream() {}$/;"	f	class:worst::LoggerStream
+LoggerStream	logger-haizei.h	/^    LoggerStream(const LoggerStream &ls) {}$/;"	f	class:worst::LoggerStream
+LoggerStream	logger-haizei.h	/^    class LoggerStream : public std::ostringstream {$/;"	c	class:worst::Logger
+LoggerStream	logger-haizei.h	/^class LoggerStream : public std::ostringstream {$/;"	c	namespace:worst
+LoggerStream	logger.h	/^        LoggerStream(Logger &raw_obj) : raw_obj(raw_obj) {}$/;"	f	class:worst::Logger::LoggerStream
+LoggerStream	logger.h	/^        LoggerStream(const LoggerStream &ls) : raw_obj(ls.raw_obj) {}$/;"	f	class:worst::Logger::LoggerStream
+LoggerStream	logger.h	/^    LoggerStream() {}$/;"	f	class:worst::LoggerStream
+LoggerStream	logger.h	/^    LoggerStream(const LoggerStream &ls) {}$/;"	f	class:worst::LoggerStream
+LoggerStream	logger.h	/^    class LoggerStream : public std::ostringstream {$/;"	c	class:worst::Logger
+LoggerStream	logger.h	/^class LoggerStream : public std::ostringstream {$/;"	c	namespace:worst
+Task	thread_pool.h	/^    Task(Func_T f, ARGS ...args) {$/;"	f	class:worst::Task
+Task	thread_pool.h	/^class Task {$/;"	c	namespace:worst
+Tasks	thread_pool.h	/^    std::queue<Task *> Tasks;$/;"	m	class:worst::ThreadPool
+ThreadPool	thread_pool.h	/^ThreadPool::ThreadPool(int thread_size) : thread_size(thread_size), is_stated(false), m_mutex(), m_queue_mutex(), m_cond() {$/;"	f	class:worst::ThreadPool
+ThreadPool	thread_pool.h	/^class ThreadPool {$/;"	c	namespace:worst
+Threads	thread_pool.h	/^    std::vector<std::thread *>Threads;$/;"	m	class:worst::ThreadPool
+_LOGGER_H	logger.h	9;"	d
+_LOGGER_HAIZEI_H	logger-haizei.h	9;"	d
+_THREAD_POLL_H	thread_pool.h	9;"	d
+__add_one_task	thread_pool.h	/^void ThreadPool::__add_one_task(Task * t) {$/;"	f	class:worst::ThreadPool
+add_one_task	thread_pool.h	/^    void add_one_task(Func_T f, ARGS ...args) {$/;"	f	class:worst::ThreadPool
+func	thread_pool.h	/^    std::function<void()> func;$/;"	m	class:worst::Task
+func1	main.cpp	/^void func1 () {$/;"	f
+func2	main.cpp	/^void func2 (worst::Logger &log) {$/;"	f
+get_one_task	thread_pool.h	/^Task *ThreadPool::get_one_task() {$/;"	f	class:worst::ThreadPool
+is_stated	thread_pool.h	/^    bool is_stated;$/;"	m	class:worst::ThreadPool
+m_cond	thread_pool.h	/^    std::condition_variable m_cond;$/;"	m	class:worst::ThreadPool
+m_mutex	logger-haizei.h	/^    std::mutex m_mutex;$/;"	m	class:worst::Logger
+m_mutex	logger-haizei.h	/^    std::mutex m_mutex;$/;"	m	class:worst::LoggerStream
+m_mutex	logger.h	/^    std::mutex m_mutex;$/;"	m	class:worst::Logger
+m_mutex	logger.h	/^    std::mutex m_mutex;$/;"	m	class:worst::LoggerStream
+m_mutex	thread_pool.h	/^    std::mutex m_mutex;$/;"	m	class:worst::ThreadPool
+m_queue_mutex	thread_pool.h	/^    std::mutex m_queue_mutex;$/;"	m	class:worst::ThreadPool
+main	main.cpp	/^int main() {$/;"	f
+operator ()	logger-haizei.h	/^    LoggerStream operator()() {$/;"	f	class:worst::Logger
+operator ()	logger.h	/^    LoggerStream operator()() {$/;"	f	class:worst::Logger
+output	logger-haizei.h	/^        void output() {$/;"	f	class:worst::Logger::LoggerStream
+output	logger-haizei.h	/^    void output() {$/;"	f	class:worst::LoggerStream
+output	logger.h	/^        void output() {$/;"	f	class:worst::Logger::LoggerStream
+output	logger.h	/^    void output() {$/;"	f	class:worst::LoggerStream
+raw_obj	logger-haizei.h	/^        Logger &raw_obj;$/;"	m	class:worst::Logger::LoggerStream
+raw_obj	logger.h	/^        Logger &raw_obj;$/;"	m	class:worst::Logger::LoggerStream
+run	thread_pool.h	/^    void run() {$/;"	f	class:worst::Task
+start	thread_pool.h	/^void ThreadPool::start() {$/;"	f	class:worst::ThreadPool
+stop	thread_pool.h	/^void ThreadPool::stop() {$/;"	f	class:worst::ThreadPool
+stop_wait_queue	thread_pool.h	/^void ThreadPool::stop_wait_queue() {$/;"	f	class:worst::ThreadPool
+thread_loop	thread_pool.h	/^void ThreadPool::thread_loop() {$/;"	f	class:worst::ThreadPool
+thread_size	thread_pool.h	/^    int thread_size;$/;"	m	class:worst::ThreadPool
+worst	logger-haizei.h	/^namespace worst {$/;"	n
+worst	logger.h	/^namespace worst {$/;"	n
+worst	thread_pool.h	/^namespace worst {$/;"	n
+~LoggerStream	logger-haizei.h	/^        ~LoggerStream() {$/;"	f	class:worst::Logger::LoggerStream
+~LoggerStream	logger-haizei.h	/^    ~LoggerStream() {$/;"	f	class:worst::LoggerStream
+~LoggerStream	logger.h	/^        ~LoggerStream() {$/;"	f	class:worst::Logger::LoggerStream
+~LoggerStream	logger.h	/^    ~LoggerStream() {$/;"	f	class:worst::LoggerStream
+~ThreadPool	thread_pool.h	/^ThreadPool::~ThreadPool() {$/;"	f	class:worst::ThreadPool

@@ -37,7 +37,7 @@ public :
     void stop();
     void stop_wait_queue();
     template<typename Func_T, typename ...ARGS>
-    void add_one_task(Func_T f, ARGS ...args) {
+    void add_one_task(Func_T f, ARGS...args) {
         __add_one_task(new Task(f, std::forward<ARGS>(args)...));
     }
     void __add_one_task(Task *);
@@ -47,7 +47,7 @@ private :
     void thread_loop();
     Task *get_one_task();
     int thread_size;
-    bool is_stated;
+    volatile bool is_started;
     std::vector<std::thread *>Threads;
     std::queue<Task *> Tasks;
     std::mutex m_mutex;
@@ -55,25 +55,23 @@ private :
     std::condition_variable m_cond;
 };
 
-ThreadPool::ThreadPool(int thread_size) : thread_size(thread_size), is_stated(false), m_mutex(), m_queue_mutex(), m_cond() {
-
-}
+ThreadPool::ThreadPool(int thread_size) : thread_size(thread_size), is_started(false), m_mutex(), m_queue_mutex(), m_cond() {}
 
 void ThreadPool::start() {
     //std::unique_lock<std::mutex> lock(m_queue_mutex);
     std::unique_lock<std::mutex> lock(m_mutex);
-    is_stated = true;
+    is_started = true;
     for (int i = 0; i < thread_size; ++i) {
         Threads.push_back(new std::thread(&ThreadPool::thread_loop, this));
     }    
 }
 
 void ThreadPool::stop() {
-        std::unique_lock<std::mutex> lock(m_mutex);
-        //std::unique_lock<std::mutex> lock(m_queue_mutex);
-        is_stated = false;
-        m_cond.notify_all();
-        m_mutex.unlock();
+    std::unique_lock<std::mutex> lock(m_mutex);
+    //std::unique_lock<std::mutex> lock(m_queue_mutex);
+    is_started = false;
+    m_cond.notify_all();
+    m_mutex.unlock();
         
     for (int i = 0; i < Threads.size(); ++i) {
         Threads[i]->join();
@@ -85,7 +83,7 @@ void ThreadPool::stop() {
 void ThreadPool::stop_wait_queue() {
     //std::unique_lock<std::mutex> lock(m_queue_mutex);
     std::unique_lock<std::mutex> lock(m_mutex);
-    is_stated = false;
+    is_started = false;
     for (int i = 0; i < Threads.size(); ++i) {
         Threads[i]->join();
         delete Threads[i];
@@ -95,7 +93,7 @@ void ThreadPool::stop_wait_queue() {
 }
 
 void ThreadPool::thread_loop() {
-    while (is_stated) {
+    while (is_started) {
         Task *t = get_one_task(); //没任务就等待,而不是占用资源
         if (t != nullptr) {
             std::cout << "thread_loop tid = " << std::this_thread::get_id() << std::endl;
@@ -110,12 +108,12 @@ ThreadPool::~ThreadPool() {
 
 Task *ThreadPool::get_one_task() {
     //std::unique_lock<std::mutex>  lock(m_queue_mutex);
-    std::unique_lock<std::mutex>  lock(m_mutex);
-    while (Tasks.empty() && is_stated) {
+    std::unique_lock<std::mutex> lock(m_mutex);
+    while (Tasks.empty() && is_started) {
         m_cond.wait(lock);
     }
     Task *t = nullptr;
-    if (!Tasks.empty() && is_stated) {
+    if (!Tasks.empty() && is_started) {
         t = Tasks.front();
         Tasks.pop();
     }

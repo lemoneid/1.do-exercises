@@ -41,12 +41,13 @@ int main(void)
   xi = rand() % maxcols;
   mvaddch(yi, xi, '.');
   /* iterate the triangle */
-  for (iter = 0; iter < ITERMAX; iter++) {
-      index = rand() % 3;
-      yi = (yi + y[index]) / 2;
-      xi = (xi + x[index]) / 2;
-      mvaddch(yi, xi, '*');
-      refresh();
+  for (iter = 0; iter < ITERMAX; iter++)
+  {
+    index = rand() % 3;
+    yi = (yi + y[index]) / 2;
+    xi = (xi + x[index]) / 2;
+    mvaddch(yi, xi, '*');
+    refresh();
   }
   /* done */
   mvaddstr(maxlines, 0, "Press any key to quit");

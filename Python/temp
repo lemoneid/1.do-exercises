@@ -1,0 +1,9 @@
+|1|\__init__(self, ...)|构造函数|
+|2|\__del__(self)$|析构函数|
+|3|\__sub__(self, b)$|重载减法运算符，$self - b$ |
+|4|\__getitem__(self, key)$|索引操作符，$x[key]$ 时调用|
+|5|\__cmp__(self, o)$|比较运算，$\lt$ 0、$=$ 0、$\gt$ 0|
+|6|\__call__(self, ...)$|重载 $()$，配合 $callable()$|
+|7|\__getattr__(s, name)$|当在对象中找不到属性时调用|
+|8|\__setattr__(s, name, val)$|当给对象属性赋值的时候调用|
+|9|\__delattr__(s, name)$|当删除对象属性的时候调用|

@@ -1,3 +1,9 @@
+/*
+ * @FilePath: /1.do-exercises/Object-C++/1.basic-learn/public.cpp
+ * @Author: yanzhiwei
+ * @Mail: 1931248856@qq.com
+ * @Date: 2020-12-14 11:37:37
+ */
 /*************************************************************************
 	> File Name: public.cpp
 	> Author: yanzhiwei 

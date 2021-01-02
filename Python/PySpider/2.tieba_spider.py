@@ -11,7 +11,9 @@ class TiebaSpier :
     def __init__(self) :
         self.kw = input('please input the keyword : ')
         self.base_url = 'https://tieba.baidu.com/f'
-        self.header = {'User-Agent':'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36 QIHU 360SE'}
+        #self.header = {'User-Agent':'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36 QIHU 360SE'}
+        #self.header = { 'User-Agent' : 'Mozilla/5.0.html (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.html.2171.71 Safari/537.36'}
+        self.header = {'User-Agent' : 'Mozilla/5.0.html (X11; Linux x86_64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.html.1271.64 Safari/537.11'}
         self.title = ''
         self.page_num = 1
         self.img_path = './data/tieba/images'
@@ -58,6 +60,7 @@ class TiebaSpier :
     def start(self) :    
         print('the spider is starting...')
         content = self.parse_txt(url = self.base_url, params = {'kw' : self.kw, 'ie' : "utf-8", 'fr' : 'search'})
+        print("-------wait--------")
         self.page(content)
 
     def save_img(self, url) :

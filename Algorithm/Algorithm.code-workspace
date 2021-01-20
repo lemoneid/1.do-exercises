@@ -7,7 +7,21 @@
 	"settings": {
 		"files.associations": {
 			"type_traits": "cpp",
-			"ostream": "cpp"
+			"ostream": "cpp",
+			"iostream": "cpp",
+			"vector": "cpp",
+			"chrono": "cpp",
+			"random": "cpp",
+			"limits": "cpp",
+			"valarray": "cpp",
+			"algorithm": "cpp",
+			"fstream": "cpp",
+			"array": "cpp",
+			"bitset": "cpp",
+			"string_view": "cpp",
+			"initializer_list": "cpp",
+			"regex": "cpp",
+			"utility": "cpp"
 		}
 	}
 }

@@ -1,7 +1,7 @@
 /*
- * @lc app=leetcode.cn id=19 lang=cpp
+ * @lc app=leetcode.cn id=83 lang=cpp
  *
- * [19] 删除链表的倒数第N个节点
+ * [83] 删除排序链表中的重复元素
  */
 
 // @lc code=start
@@ -17,16 +17,17 @@
  */
 class Solution {
 public:
-    ListNode* removeNthFromEnd(ListNode* head, int n) {
-        ListNode dummy, *p = &dummy, *q = &dummy;
-        dummy.next = head;
-        while(n--) p = p->next;
+    ListNode* deleteDuplicates(ListNode* head) {
+        if (!head) return head;
+        ListNode *p = head;
         while (p->next) {
-            p = p->next;
-            q = q->next;
+            if (p->val == p->next->val) {
+                p->next = p->next->next;
+            } else {
+                p = p->next;
+            }
         }
-        q->next = q->next->next;
-        return dummy.next;
+        return head;
     }
 };
 // @lc code=end

@@ -17,39 +17,39 @@
 #include <map>
 using namespace std;
 #define MAX_N 50000
+
 struct UnionSet {
-    int fa[MAX_N + 5], val[MAX_N + 5], n;
+    int fa[MAX_N + 5], val[MAX_N + 5];
     void init(int n) {
-        this->n = n;
-        for (int i = 1; i <= n; i++) {
+        for (int i = 1; i <= n; ++i) {
             fa[i] = i;
             val[i] = 0;
         }
-        return ;
     }
     int get(int x) {
         if (fa[x] == x) return x;
-        int ret = get(fa[x]);
+        int root = get(fa[x]);
         val[x] += val[fa[x]];
         val[x] %= 3;
-        return fa[x] = ret;
+        return fa[x] = root;
     }
     int merge(int a, int b, int c) {
-        if (a > n || b > n) return 0;
-        int aa = get(a), bb = get(b);
+        int aa =  fa[a], bb = fa[b];
         cout << endl;
         cout << a << ":" << aa << ":" << val[a] << endl;
         cout << b << ":" << bb << ":" << val[b] << endl;
         cout << c << endl;
-
         if (aa == bb) {
-            return (val[a] - val[b] - c) % 3 == 0;
+            return (val[a] - val[b] - c + 3) % 3 == 0;
         }
         fa[aa] = bb;
-        val[aa] = ((c - val[a] + val[b]) % 3 + 3) % 3;
+        val[aa] = ((val[b] + c - val[a]) % 3 + 3) % 3;
         return 1;
     }
-} u;
+
+};
+
+UnionSet u;
 
 int main() {
     int n, k, ans = 0;

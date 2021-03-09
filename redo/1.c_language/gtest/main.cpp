@@ -6,7 +6,7 @@
  ************************************************************************/
 
 #include <stdio.h>
-#include "haizei/test.h"
+#include <module/test.h>
 
 
 double add(double a, double b) {
@@ -32,4 +32,4 @@ TEST(test2, add2) {
 
 int main(int argc, char *argv[]) {
     return RUN_ALL_TESTS();
-
+}

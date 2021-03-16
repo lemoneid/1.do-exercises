@@ -37,8 +37,8 @@ int main(int argc, char **argv) {
 
     memset(share_memory->str, 0, sizeof(share_memory->str));
     if ((pid = fork()) < 0) {
-            perror("fork()");
-            exit(1);
+        perror("fork()");
+        exit(1);
     }
 
    if (pid == 0) {

@@ -1,15 +1,19 @@
 /*************************************************************************
-	> File Name: test.cpp
-	> Author: weier 
+	> File Name: 1.add.c
+	> Author: yanzhiwei
 	> Mail: 1931248856@qq.com
-	> Created Time: 2020年06月06日 星期六 18时38分51秒
+	> Created Time: 2021年03月16日 星期二 15时32分32秒
  ************************************************************************/
 
-#include <iostream>
-#include <algorithm>
-using namespace std;
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <math.h>
+#include <time.h>
 
 int main() {
-    cout << "failed\n";
+
+
+
     return 0;
 }

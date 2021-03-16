@@ -53,7 +53,10 @@ int main() {
         for (int j = 1; flag && f[j] < i; j++) {
             flag = !prime[i - f[j]];
         }
-        if (flag) sum += i;
+        if (flag) {
+            cout << i << endl;
+            sum += i;
+        }
     }
     cout << sum << endl; 
     return 0;

@@ -59,7 +59,7 @@ char *task_queue_pop(struct task_queue *taskQueue) {
     }
 
     DBG(BLUE"<POP>"NONE "in pop!");
-    //惊群效应
+    //惊讶群体效应 while 而非 if
     while (taskQueue->cnt == 0) {
         DBG(YELLOW"thread <%ld> "NONE" waiting\n", pthread_self());
         pthread_cond_wait(&taskQueue->cond, &taskQueue->mutex);

@@ -18,6 +18,11 @@
 #include <sys/types.h>
 #include <sys/wait.h>
 #include <sys/file.h>
+#include <sys/ipc.h>
+#include <pthread.h>
+#include <sys/shm.h>
+#include <signal.h>
+
 
 #ifdef _D
 #define DBG(frm, args...) printf(frm, ##args);

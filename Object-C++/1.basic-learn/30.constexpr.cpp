@@ -29,6 +29,7 @@ int main() {
     int n = 3;
     cin >> n;
     const int a = n + 123; //运行期常量,不可修改的量,只读的变量
+    cout << a << endl;
     constexpr int b = 3; //编译期常量
     constexpr int c = f(123) + 567; 
     constexpr A d(2, 3);

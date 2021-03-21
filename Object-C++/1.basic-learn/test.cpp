@@ -20,7 +20,14 @@ void func(int *b) {
     cout << "b : " << sizeof(b) << endl;
 }
 
+class Data {
+
+};
+
 int main() {
+
+    cout << sizeof(Data) << endl;
+    cout << "-------------" << endl;
     int a[100];
     cout << "a : " << sizeof(a) << endl;
     cout << "&a : " << sizeof(&a) << endl;
@@ -34,4 +41,3 @@ int main() {
 };
 
 
-'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'

@@ -15,6 +15,8 @@
 #include <vector>
 #include <map>
 using namespace std;
+
+
 class A {
 public :
     virtual ~A() {}

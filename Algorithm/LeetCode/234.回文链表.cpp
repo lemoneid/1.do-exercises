@@ -17,34 +17,33 @@ class Solution {
 public:
     bool isPalindrome(ListNode* head) {
         if (!head || !head->next) return true;
-        ListNode *p = head, *q = head, *tag = nullptr, *pre = nullptr;
-        while (q && q->next) {
-            pre = p;
-            p = p->next;
-            q = q->next->next;
+        ListNode *fast = head->next, *slow = head;
+        while (fast && fast->next) {
+            slow = slow->next;
+            fast = fast->next->next;
         }
-        pre = q ? p : pre;
-        p  = head, q = reverse(pre->next);
-        while(q) {
+        //od : slow 在前半
+        slow->next = reverse(slow->next);
+        ListNode *p = head, *q = slow->next;
+        while (q) {
             if (p->val - q->val) return false;
             p = p->next;
             q = q->next;
-        } 
-        pre->next = reverse(pre->next);
+        }
+        slow->next = reverse(slow->next);
         return true;
     }
 private :
     ListNode *reverse(ListNode *head) {
-        if (!head || !head->next) return head;
-        ListNode dummy, *p = head;
-        dummy.next = nullptr;
+        ListNode *p = new ListNode(0);
+        p->next = nullptr;
         while (head) {
             ListNode *tmp = head->next;
-            head->next = dummy.next;
-            dummy.next = head;
+            head->next = p->next;
+            p->next = head;
             head = tmp;
         }
-        return dummy.next;
+        return p->next;
     }
 };
 // @lc code=end

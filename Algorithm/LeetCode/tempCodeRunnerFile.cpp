@@ -8,25 +8,27 @@
 class UnionSet
 {
 public:
-    vector<int> size, father;
-    void init(int n) {
-        father.resize(n + 5);
-        size.resize(n + 5);
-        for (int i = 0; i <= n; i++) {
-            father[i] = i;
-            size[i] = 1;
+    vector<int> fa, size;
+    void init(int n)
+    {
+        for (int i = 0; i <= n; ++i)
+        {
+            fa.push_back(i);
+            size.push_back(1);
         }
-        return ;
     }
-    int get(int x) {
-        return father[x] = (father[x] == x ? x : get(father[x]));
+    int get(int x)
+    {
+        return fa[x] = (fa[x] == x ? x : get(fa[x]));
     }
-    void merge(int a, int b) {
-        int fa = get(a), fb = get(b);
-        if (fa == fb) return ;
-        father[fa] = fb;
-        size[fb] += size[fa];
-        return ;
+    void merge(int a, int b)
+    {
+        int aa = get(a), bb = get(b);
+        if (aa == bb)
+            return;
+        fa[aa] = bb;
+        size[bb] += size[aa];
+        return;
     }
 };
 class Solution
@@ -61,21 +63,26 @@ public:
         */
 
         unordered_map<int, int> s;
-        u.init(nums.size());
-        for (int i = 0; i < nums.size(); i++) {
-            int val = nums[i];
-            if (s.find(val) != s.end()) continue;
-            if (s.find(val - 1) != s.end()) {
-                u.merge(s[val - 1], i);
+        u.init(nums.size() + 5);
+        for (int i = 0; i < nums.size(); ++i)
+        {
+            int k = nums[i];
+            if (s.find(k) != s.end())
+                continue;
+            if (s.find(k - 1) != s.end())
+            {
+                u.merge(i, s[k - 1]);
             }
-            if (s.find(val + 1) != s.end()) {
-                u.merge(s[val + 1], i);
+            if (s.find(k + 1) != s.end())
+            {
+                u.merge(i, s[k + 1]);
             }
-            s[val] = i;
+            s[k] = i;
         }
         int ans = 0;
-        for (int i = 0; i < nums.size(); i++) {
-            ans = max(ans, u.size[i]);
+        for (int i = 0; i < nums.size(); ++i)
+        {
+            ans = max(ans, u.size[nums[i]]);
         }
         return ans;
     }

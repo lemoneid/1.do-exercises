@@ -25,6 +25,20 @@ class Solution {
 public:
     Node* copyRandomList(Node* head) {
         if (!head) return nullptr;
+        unordered_map<Node *, Node *> mmap;
+        Node *p = head, *pre = nullptr;
+        while (p) {
+            if (!mmap[p]) mmap[p] = new Node(p->val);
+            if (p->random) {
+                if (!mmap[p->random]) mmap[p->random] = new Node(p->random->val);
+                mmap[p]->random = mmap[p->random];
+            }
+            if (pre) pre->next = mmap[p];
+            pre = mmap[p];
+            p = p->next;
+        }
+        return mmap[head];
+        /*
         unordered_map<Node *, Node *> node_map;
         Node *p = head, *pre = nullptr;
         while (p) {
@@ -38,6 +52,7 @@ public:
             p = p->next;
         }
         return node_map[head];
+        */
         
     }
 };

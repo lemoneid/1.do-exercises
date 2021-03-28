@@ -24,8 +24,38 @@ class Data {
 
 };
 
-int main() {
+class Y {
+protected :
+    int member;
+    char *data;
+public :
+    Y() {
+       data = new char[10]; 
+    }
+//private :
+    virtual ~Y() {
+        cout << "Y destructor" << endl;
+    }
+};
 
+class X : public Y {
+public :
+    void Method(X &y) {
+        &y.member;
+        //&(static_cast<Y&>(y).member);
+    }
+    ~X() {
+        cout << "X destructor" << endl;
+    }
+};
+
+
+int main() {
+    Y *obj = new X[10];
+    delete[] obj;
+    cout << "-----------" << endl;
+    cout << typeid(nullptr).name() << endl;
+    cout << typeid(void *).name() << endl;
     cout << sizeof(Data) << endl;
     cout << "-------------" << endl;
     int a[100];

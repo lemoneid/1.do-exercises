@@ -56,7 +56,10 @@ struct BallStatus {
     struct Aspeed a;
     int by_team;
     char name[20];
-    //pthread_mutex_t mutex;
+    int who;
+    struct User *user;
+    int carry;
+    pthread_mutex_t mutex;
 };
 struct Score{
     int red;

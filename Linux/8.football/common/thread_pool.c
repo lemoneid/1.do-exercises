@@ -41,9 +41,17 @@ void do_work(struct User *user) {
             DBG(L_RED"%s"NONE " %s\n", user->name, msg.msg);        
         }
         strcpy(msg.name, user->name);
-        msg.team = user->team;
-        send_all(&msg);
+		msg.team = user->team;
+		Show_Message( , user, msg.msg, );
+		send(user->fd, (void *)&msg, sizeof(msg), 0);
+
     } else if (msg.type & FT_FIN) {
+        show_data_stream('e');
+		pthread_mutex_lock(&ball_status.mutex);
+		if (user == ball_status.user) ball_status.carry = 0;
+		pthread_mutex_unlock(&ball_status.mutex);
+
+
         DBG(RED"%s logout. \n", user->name);
         sprintf(buff, "%s Logout.", user->name);
         //加锁, 有线程并发问题，online为0，仍发消息

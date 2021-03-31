@@ -7,32 +7,36 @@
 // @lc code=start
 class Solution {
 public:
-    double kth(vector<int> &n1, vector<int> &n2, int k) {
-        int len1 = n1.size(), len2 = n2.size();
-        int t1 = 0, t2 = 0;
+    double getKth(vector<int> &n1, vector<int> &n2, int k) {
+        int p1 = 0, p2 = 0, len1 = n1.size(), len2 = n2.size();
         while (1) {
-            if (t1 == len1) return n2[t2 + k - 1];
-            if (t2 == len2) return n1[t1 + k - 1];
-            if (k == 1) return min(n1[t1], n2[t2]);
-            int p1 = min(t1 + k / 2 - 1, len1 - 1);
-            int p2 = min(t2 + k / 2 - 1, len2 - 1);
-            if (n1[p1] < n2[p2]) {
-                k -= p1 - t1 + 1;
-                t1 = p1 + 1;
+            if (p1 == len1) return n2[p2 + k - 1];
+            if (p2 == len2) return n1[p1 + k - 1];
+            if (k == 1) return min(n1[p1], n2[p2]);
+            int x1 = min(p1 + k / 2 - 1, len1 - 1);
+            int x2 = min(p2 + k / 2 - 1, len2 - 1);
+            if (n1[x1] < n2[x2]) {
+                k -= x1 - p1 + 1;
+                p1 = x1 + 1;
             } else {
-                k -= p2 - t2 + 1;
-                t2 = p2 + 1;
+                k -= x2 - p2 + 1;
+                p2 = x2 + 1;
             }
-        }            
+        }
+        return -1;
     }
 
     double findMedianSortedArrays(vector<int>& nums1, vector<int>& nums2) {
-        int len1 = nums1.size(), len2 = nums2.size();
-        int sum = len1 + len2;
-        double x = kth(nums1, nums2, sum / 2 + 1);
-        if (sum & 1) return x; 
-        double y = kth(nums1, nums2, sum / 2);
-        return (x + y) / 2;
+        int len = nums1.size() + nums2.size();
+        int mid = (len + 1) >> 1;
+        double x = getKth(nums1, nums2, mid);
+        if (len & 1) {
+            return x;
+        } else {
+            double y = getKth(nums1, nums2, mid + 1);
+            return (x + y) / 2;
+        }
+        return -1;
     }
 };
 // @lc code=end

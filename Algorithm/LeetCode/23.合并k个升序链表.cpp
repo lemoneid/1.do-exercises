@@ -17,30 +17,26 @@
  */
 class Solution {
 public:
-    typedef pair<int, ListNode *> PII;
-    struct cmp {
-        bool operator()(const PII &a, const PII &b) const {
-          return a.first > b.first;
-      }
-    };
     ListNode* mergeKLists(vector<ListNode*>& lists) {
         if (lists.empty()) return nullptr;
         //return merge(lists, 0, lists.size() - 1);
-        priority_queue<PII, vector<PII>, cmp> q;
+        auto cmp = [](const ListNode *a, const ListNode *b) {
+            return a->val > b->val;
+        }
+        priority<ListNode *, vector<ListNode *>, cmp> heap;
         for (auto cur : lists) {
-            if (cur) q.push({cur->val, cur});
+            if (cur) heap.push(cur);
         }
-        ListNode head, *tail = &head;
-        while (!q.empty()) {
-            auto cur = q.top();
-            ListNode *ptr = cur.second;
-            q.pop();
-            tail->next = ptr;
-            tail = tail->next;
-            if (ptr->next) q.push({ptr->next->val, ptr->next});
+        ListNode dummy(0), *p = &dummuy;
+        while (!heap.empty()) {
+            auto cur = heap.top();
+            heap.pop();
+            p->next = cur;
+            p = cur;
+            if (cur->next) heap.push(cur->next);
         }
-        tail->next = nullptr;
-        return head.next;
+        p->next = nullptr;
+        return dummy.next;
 
     }
 private :

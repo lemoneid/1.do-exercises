@@ -21,18 +21,21 @@ public:
     string serialize(TreeNode* root) {
         if (!root) return "";
         ostringstream out;
-        queue<TreeNode *> bfs;
-        bfs.push(root);
-        while (!bfs.empty()) {
-            TreeNode *cur = bfs.front();
-            bfs.pop();
-            if (cur) {
-                out << cur->val << " ";
-                bfs.push(cur->left);
-                bfs.push(cur->right);
+        queue<TreeNode *> que;
+        que.push(root);
+        while (!que.empty()) {
+            auto cur = que.front();
+            que.pop();
+            if (cur == nullptr) {
+                out << npos;
             } else {
-                out << "null ";
+                out << cur->val;
             }
+            out << " ";
+            if (!cur) continue;
+            que.push(cur->left);
+            que.push(cur->right);
+
         }
         return out.str();
     }
@@ -41,26 +44,24 @@ public:
     TreeNode* deserialize(string data) {
         if (data.empty()) return nullptr;
         istringstream input(data);
-        string info;
-        vector<TreeNode *> res;
-        while (input >> info) {
-            if (info == "null") {
-                res.push_back(nullptr);
+        vector<TreeNode *> arr;
+        int val;
+        while (input >> val) {
+            if (val == npos) {
+                arr.push_back(nullptr);
             } else {
-                res.push_back(new TreeNode(stoi(info)));
+                arr.push_back(new TreeNode(val));
             }
         }
         int pos = 1;
-        for (int i = 0;  pos < res.size(); ++i) {
-            if (!res[i]) continue;
-            res[i]->left = res[pos++];
-            if (pos < res.size()) {
-                res[i]->right = res[pos++];
-            }
+        for (int i = 0; pos < arr.size(); i++) {
+            if (!arr[i]) continue;
+            arr[i]->left = arr[pos++];
+            if (pos < arr.size()) arr[i]->right = arr[pos++];
         }
-        return res[0];
+        return arr[0];
     }
-
+    const int npos = 1111;
 };
 
 // Your Codec object will be instantiated and called as such:

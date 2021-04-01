@@ -20,14 +20,14 @@ public:
     ListNode* mergeKLists(vector<ListNode*>& lists) {
         if (lists.empty()) return nullptr;
         //return merge(lists, 0, lists.size() - 1);
-        auto cmp = [](const ListNode *a, const ListNode *b) {
+        std::function<bool(const ListNode *, const ListNode *)> cmp = [](const ListNode *a, const ListNode *b)->bool {
             return a->val > b->val;
-        }
-        priority<ListNode *, vector<ListNode *>, cmp> heap;
+        };
+        priority_queue<ListNode *, vector<ListNode *>, decltype(cmp)> heap(cmp);
         for (auto cur : lists) {
             if (cur) heap.push(cur);
         }
-        ListNode dummy(0), *p = &dummuy;
+        ListNode dummy(0), *p = &dummy;
         while (!heap.empty()) {
             auto cur = heap.top();
             heap.pop();

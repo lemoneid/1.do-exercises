@@ -1,8 +1,8 @@
 /*************************************************************************
-	> File Name: test.cpp
+	> File Name: oj-517.cpp
 	> Author: yanzhiwei
 	> Mail: 1931248856@qq.com
-	> Created Time: 2021年04月04日 星期日 09时57分50秒
+	> Created Time: 2021年04月02日 星期五 21时56分38秒
  ************************************************************************/
 
 #include <iostream>
@@ -17,17 +17,16 @@
 #include <map>
 using namespace std;
 
-int func() {
-    static int cnt = 0;
-    cout << cnt << endl;
-    cnt++;
-}
-
 int main() {
-    int n = 10;
-    for (int i = 0; i < n; i++) {
-        func();
+    int n;
+    cin >> n;
+    int ans = 0;
+    for (int i = 1, I = n / 3; i <= I; i++) {
+        for (int j = i, J = n - i; j <= J / 2; j++) {
+            int z = n - i - j;
+            if (i + j > z) ans++;
+        }
     }
-
+    cout << ans << endl;
     return 0;
 }

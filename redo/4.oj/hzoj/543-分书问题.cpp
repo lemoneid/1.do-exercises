@@ -1,8 +1,8 @@
 /*************************************************************************
-	> File Name: test.cpp
+	> File Name: 543-分书问题.cpp
 	> Author: yanzhiwei
 	> Mail: 1931248856@qq.com
-	> Created Time: 2021年03月21日 星期日 10时11分09秒
+	> Created Time: 2021年04月04日 星期日 11时11分04秒
  ************************************************************************/
 
 #include <iostream>
@@ -16,35 +16,29 @@
 #include <set>
 #include <map>
 using namespace std;
-#define MAX_N 10
-int num[MAX_N + 5], idx, n, m;
-int mask[MAX_N + 5];
+const int MAX_N = 20;
+int n, ans;
+char matrix[MAX_N + 5][MAX_N + 5];
+bool mask[MAX_N + 5];
 
-void p() {
-    for (int i = 0; i < n; i++) {
-        i && cout << " ";
-        cout << num[i];
-    }
-    cout << endl;
-}
-
-void dfs(int left) {
-    if (left == 0) {
-        p();
+void dfs(int start) {
+    if (start == n) {
+        ans++;
         return ;
     }
-    for (int i = 1; i <= n; i++) {
+    for (int i = 0; i < n; i++) {
+        if (matrix[start][i] == '0') continue;
         if (mask[i]) continue;
-        mask[i] = 1;
-        num[idx++] = i;
-        dfs(left - 1);
-        idx--;
-        mask[i] = 0;
+        mask[i] = true;
+        dfs(start + 1);
+        mask[i] = false;
     }
 }
 
 int main() {
     cin >> n;
-    dfs(n); 
+    for (int i = 0; i < n; i++) cin >> matrix[i];
+    dfs(0);
+    cout << ans << endl;
     return 0;
 }

@@ -1,8 +1,8 @@
 /*************************************************************************
-	> File Name: test.cpp
+	> File Name: oj-505.cpp
 	> Author: yanzhiwei
 	> Mail: 1931248856@qq.com
-	> Created Time: 2021年04月04日 星期日 09时57分50秒
+	> Created Time: 2021年04月02日 星期五 20时23分32秒
  ************************************************************************/
 
 #include <iostream>
@@ -17,17 +17,25 @@
 #include <map>
 using namespace std;
 
-int func() {
-    static int cnt = 0;
-    cout << cnt << endl;
-    cnt++;
-}
+struct cmp {
+    bool operator()(string &a, string &b) {
+        return a + b > b + a;
+    }
+};
 
 int main() {
-    int n = 10;
+    vector<string> arr;
+    int n;
+    cin >> n;
+    arr.resize(n);
     for (int i = 0; i < n; i++) {
-        func();
+        cin >> arr[i];
+    }
+    sort(arr.begin(), arr.end(), cmp());
+    for (int i = 0; i < arr.size(); i++) {
+        cout << arr[i];
     }
 
+    cout << endl;
     return 0;
 }

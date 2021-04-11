@@ -111,6 +111,7 @@ int socket_create(int port) {
         return -1;
     }
     int val = 1;
+    // SO_REUSEADDR 允许在bind ()过程中本地地址可重复使用
     if (setsockopt(sockfd, SOL_SOCKET, SO_REUSEADDR, &val, sizeof(int)) < 0) {
         return -1;
     }

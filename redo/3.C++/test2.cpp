@@ -17,13 +17,32 @@
 #include <map>
 using namespace std;
 
+class testClass {
+public :
+    static const int a = 5;
+    static constexpr int b = 5;
+    static constexpr double c = 5;
+    int arr[b];
+};
+//const int testClass::a = 5;
+
+void func(int x) {
+    cout << x << endl;
+}
+void handler() {
+    func('a');
+}
+void func(char x) {
+    cout << x << endl;
+}
+
 int main() {
-    if (nullptr == NULL) {
-        cout << "true" << endl;
-        cout << typeid(NULL).name() << endl;
-        cout << typeid(nullptr).name() << endl;
-    }
-    char *str = NULL;
-    cout << strlen(str) << endl;
+    testClass obj;
+    handler();
+    char c1[] = "test";
+    char *c2, *c3;
+    cout << typeid(c1).name() << endl;
+    cout << typeid(c2).name() << endl;
+    cout << typeid(c3).name() << endl;
     return 0;
 }

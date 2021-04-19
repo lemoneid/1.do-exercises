@@ -27,17 +27,17 @@ class Solution {
 public:
     Node* connect(Node* root) {
         if (!root) return nullptr;
-        Node *pre = root, *cur = nullptr;
-        while (pre) {
-            cur = pre;
+        Node *cur = root, *mostLeft = root;
+        while (mostLeft) {
+            cur = mostLeft;
             while (cur && cur->left) {
-                cur->left->next = cur->right;
+                cur->left->next= cur->right;
                 if (cur->next) {
                     cur->right->next = cur->next->left;
                 }
                 cur = cur->next;
             }
-            pre = pre->left;
+            mostLeft = mostLeft->left;
         }
         return root;
     }

@@ -22,7 +22,8 @@
 			"initializer_list": "cpp",
 			"regex": "cpp",
 			"utility": "cpp",
-			"string": "cpp"
+			"string": "cpp",
+			"unordered_map": "cpp"
 		}
 	}
 }

@@ -39,6 +39,9 @@ int f(int x) {
 
 int main() {
     
+    cout << func(5) << endl;
+
+    return 0;
     int n;
     cin >> n;
     const int t1 = n + 2;
@@ -46,6 +49,7 @@ int main() {
     const A m1(123);
     constexpr A m2(123);
 
+    return 0;
 
 
     auto x = 12.3;

@@ -8,12 +8,15 @@
 class Solution {
 public:
     int searchInsert(vector<int>& nums, int target) {
-        for (int i = 0; i < nums.size(); ++i) {
-            if (nums[i] >= target) {
-                return i;
-            }
+        if (nums[0] >= target) return 0;
+        int size = nums.size();
+        int l = 0, r = size;
+        while (l < r) {
+            int mid = (l + r) >> 1;
+            if (nums[mid] < target) l = mid + 1;
+            else r = mid;
         }
-        return nums.size();
+        return r; 
     }
 };
 // @lc code=end

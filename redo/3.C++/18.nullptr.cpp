@@ -18,13 +18,15 @@
 using namespace std;
 
 /*
-void func(double x) {
+void func(int x) {
+    cout << __PRETTY_FUNCTION__ << endl;
     cout << "int " << x << endl;
 }
 */
 
 void func(int *x) {
-    cout << " * int *" << x << endl;
+    cout << __PRETTY_FUNCTION__ << endl;
+    cout << " *x :" << x << endl;
 }
 
 int main() {
@@ -42,11 +44,11 @@ int main() {
     }
     func(nullptr);
     func(NULL);
+    func(0);
     cout << (typeid(long ).hash_code() == typeid(NULL).hash_code()) << endl;
     cout << typeid(int).name() << endl;
     cout << typeid(long ).name() << endl;
     cout << typeid(NULL).name() << endl;
     cout << typeid(nullptr).name() << endl;
-    func(0);
     return 0;
 }

@@ -59,6 +59,7 @@ void readfile(char *pathname) {
 
         for (int i = 0; i < s.length(); i++) {
             cout << s[i];
+            if (s[i] == ' ') continue;
             if (s[i] == ';' || s[i] == '.') {
                 cout << endl;
             }

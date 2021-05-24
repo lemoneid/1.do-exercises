@@ -1,0 +1,92 @@
+|$\pm         $|\pm         |
+|$\leq≤	    $|\leq        |
+|$\geq≥	    $|\geq        |
+|$\neq        $|\neq        |
+|$\approx	    $|\approx     |
+|$\equiv	    $|\equiv      |
+|$\triangleq	$|\triangleq  |
+|$\sim	    $|\sim        |
+
+
+|$\vec{a} \cdot \vec{b}=0     $|\vec{a} \cdot \vec{b}=0  |
+|$⁡ \in 2                     $| \in 2                   |
+|$\log_2 10                   $|\log_2 10                |
+|$\lg 2                       $|\lg 2                    |
+
+
+
+极限与积分
+符号    markdown    举例    显示效果
+|lim     |⁡\lim_{n…}f(x)           | \lim_{n\rightarrow+\infty}      |$\lim_{n\rightarrow+\infty}     $|
+|int        |\int^x_y f(x){\rm d}x  | \int^2_3 x^2 {\rm d}x            |$\int^2_3 x^2 {\rm d}x          $|
+|∂       |\partial               | \frac{\partial f}{\partial x}    |$\frac{\partial f}{\partial x}  $|
+|∑       |\sum^{n…}_{i…}f(x)       | \sumn_{i=1}i2                    |$\sum^n_{i=1}i^2                $|
+|∏       |\prod^{n…}_{i…}f(x)       | \prodn_{i=1}i2                    |$\prod^n_{i=1}i^2               $|
+
+
+
+|+/−        |+/-            |+/-             |$+/-            $|
+|×          |\times        |1\times 2        |$1\times 21×2   $|
+|÷          |\div        |1\div 2            |$1\div 21÷2     $|
+|小分数        |\frac{…}{…}    |\frac{1}{2}        |$\frac{1}{2}    $|
+|N次幂        |X^n            |2^3                |$2^3            $|
+|N次根式    |\sqrt[…]{…}    |\sqrt[3]{4}        |$\sqrt[3]{4}    $|
+|三角函数    |\sin        |\sin \alpha        |$\sin \alpha    $|
+|点乘⋅      |\cdot        |A \cdot B        |$A \cdot BB     $|
+|省略号⋯    |\cdots      |1+2+\cdots +n    |$1+2+\cdots +n  $|
+|垂直省略⋮  |\vdots      |\vdots            |$\vdots         $|
+|斜省略⋱    |\ddots      |\ddots            |$\ddots         $|
+
+
+
+
+
+\hat{A}
+\widehat{A} 
+\tilde{A} 
+\widetilde{A}
+\overline{A} 
+\underline{A} 
+\overbrace{AB}
+\underbrace{AB}
+\overset{a}{b}
+\underset{a}{b}
+\overleftarrow{A}
+\overrightarrow{A}
+
+
+
+
+|∧ |\land∧       |$ \land $|
+|∨ |\lor∨       |$ \lor
+|q |→ p \bar{q}|$ \to p $|
+|¬ |\lnot¬       |$ \lnot
+|¬ |q \neg q¬q |$ \neg q$|
+|∖ |\setminus∖ |$ \setminus $|
+
+
+
+
+
+
+
+
+
+
+
+
+|⊂ |\subset    |$     \subset  $|
+|⊃ |\supset    |$     \supset  $|
+|⊆ |\subseteq  |$     \subseteq$|
+|⊇ |\supseteq  |$     \supseteq$|
+|⊈ |\nsubseteq |$     \nsubseteq$|
+|⊉ |\nsupseteq |$     \nsupseteq$|
+|∪ |\cup       |$     \cup     $|
+|∩ |\cap       |$     \cap     $|
+|∨ |\vee       |$     \vee     $|
+|∧ |\wedge     |$     \wedge   $|
+|⫅ |\subseteqq |$     \subseteqq$|
+|⫆ |\supseteqq |$     \supseteqq$|
+|∀ |\forall    |$     \forall  $|
+|∃ |\exists    |$     \exists  $|
+|∞ |\infty     |$     \infty   $|

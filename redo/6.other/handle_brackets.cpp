@@ -63,6 +63,7 @@ void readfile(char *pathname) {
             if (s[i] == ';' || s[i] == '.') {
                 cout << endl;
             }
+            if (s[i] == '\n') continue;
         }
 
         memset(buff, 0, sizeof(buff));

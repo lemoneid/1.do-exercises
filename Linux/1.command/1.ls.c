@@ -1,9 +1,9 @@
 /*************************************************************************
-	> File Name: 1.ls.c
-	> Author: weier 
-	> Mail: 1931248856@qq.com
-	> Created Time: 2020年07月28日 星期二 18时57分33秒
- ************************************************************************/
+> File Name: 1.ls.c
+> Author: weier 
+> Mail: 1931248856@qq.com
+> Created Time: 2020年07月28日 星期二 18时57分33秒
+************************************************************************/
 
 #include "head.h"
 
@@ -19,12 +19,12 @@ void show_info(char *, struct stat *);
 int  l_flag = 0, a_flag = 0;
 
 int main(int argc, char **argv) {
-    int opt;
-    while ((opt = getopt(argc, argv, "la")) != -1) {
-        switch (opt) {
+int opt;
+while ((opt = getopt(argc, argv, "la")) != -1) {
+    switch (opt) {
             case 'l':
-                l_flag = 1;
-                break;
+                    l_flag = 1;
+                    break;
             case 'a':
                 a_flag = 1;
                 break;

@@ -1,0 +1,1836 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+A	3.C++/11.share_ptr.cpp	/^    A() {$/;"	f	class:test::A
+A	3.C++/11.share_ptr.cpp	/^class A {$/;"	c	namespace:test	file:
+A	3.C++/17.const.cpp	/^    constexpr A(int x) {}$/;"	f	class:A
+A	3.C++/17.const.cpp	/^class A {$/;"	c	file:
+A	3.C++/21.template.cpp	/^    A(int x) : x(x), p(nullptr) {$/;"	f	class:A
+A	3.C++/21.template.cpp	/^class A {$/;"	c	file:
+A	3.C++/26.immediately_init.cpp	/^    A(int i) : val(i) {}$/;"	f	struct:A
+A	3.C++/26.immediately_init.cpp	/^struct A {$/;"	s	file:
+A	3.C++/malloc_new.cpp	/^    A() {$/;"	f	struct:A
+A	3.C++/malloc_new.cpp	/^    A(int x) {$/;"	f	struct:A
+A	3.C++/malloc_new.cpp	/^struct A {$/;"	s	file:
+A	3.C++/test.cpp	/^    A() : x(0) {$/;"	f	struct:A
+A	3.C++/test.cpp	/^struct A {$/;"	s	file:
+APHash	3.C++/6.hashTable.cpp	/^int APHash(const char *str) {$/;"	f
+Animal	3.C++/5.virtual_table.cpp	/^    Animal() {$/;"	f	class:Animal
+Animal	3.C++/5.virtual_table.cpp	/^class Animal {$/;"	c	file:
+Array	3.C++/14.template.cpp	/^    Array(int n) : n(n) {$/;"	f	class:Array
+Array	3.C++/14.template.cpp	/^class Array {$/;"	c	file:
+Array	3.C++/2.Array.cpp	/^    Array(int x) : __size(x), __cnt(0) {$/;"	f	class:Array
+Array	3.C++/2.Array.cpp	/^class Array {$/;"	c	file:
+Array	3.C++/array.cpp	/^    Array(const Array &a) {$/;"	f	class:Array
+Array	3.C++/array.cpp	/^    Array(int n) : n(10) {$/;"	f	class:Array
+Array	3.C++/array.cpp	/^class Array {$/;"	c	file:
+B	3.C++/malloc_new.cpp	/^    B() {$/;"	f	struct:B
+B	3.C++/malloc_new.cpp	/^struct B {$/;"	s	file:
+B	3.C++/test.cpp	/^    B() {a = 2; }$/;"	f	struct:B
+B	3.C++/test.cpp	/^struct B {$/;"	s	file:
+B1	3.C++/28.POD.cpp	/^struct B1 { static int a; };$/;"	s	file:
+B2	3.C++/28.POD.cpp	/^struct B2 { int a; };$/;"	s	file:
+BASE	4.oj/282.cpp	20;"	d	file:
+BEGIN	3.C++/19.value.cpp	18;"	d	file:
+BEGIN	3.C++/21.template.cpp	20;"	d	file:
+BEGIN	3.C++/22.template_referednce.cpp	21;"	d	file:
+BEGIN	3.C++/27.tuple.cpp	20;"	d	file:
+BEGIN	4.oj/hzoj/oj-281.cpp	19;"	d	file:
+BEGINS	3.C++/cout.cpp	18;"	d	file:
+BEGIN_LETTER	4.oj/oj-637.cpp	/^const char BEGIN_LETTER = 'A';$/;"	v
+BKDRHash	3.C++/6.hashTable.cpp	/^class BKDRHash : public HashFunc {$/;"	c	file:
+BLACK	5.OS/common/color.h	10;"	d
+BLINK	5.OS/common/color.h	28;"	d
+BLUE	1.c_language/gtest/module/test.h	18;"	d
+BLUE	5.OS/common/color.h	18;"	d
+BLUE_HL	1.c_language/gtest/module/test.h	22;"	d
+BOLD	5.OS/common/color.h	26;"	d
+BROWN	5.OS/common/color.h	16;"	d
+BUFFER_SIZE	5.OS/7.socket/3.epoll.c	24;"	d	file:
+BUFFER_SIZE	5.OS/7.socket/4.epolloneshot.c	23;"	d	file:
+BUFFER_SIZE	5.OS/7.socket/5.unblock_connect.cpp	22;"	d	file:
+BUFFER_SIZE	5.OS/7.socket/6.chatroom/1.client.c	22;"	d	file:
+BUFFER_SIZE	5.OS/7.socket/6.chatroom/2.server.c	23;"	d	file:
+BUFFER_SIZE	5.OS/7.socket/9.SIURG.c	10;"	d	file:
+BUFFER_SIZE	5.OS/9.timer/1.timer-list.h	13;"	d
+BUFFER_SIZE	5.OS/9.timer/4.time_wheel_timer.cpp	13;"	d	file:
+BUFFER_SIZE	5.OS/9.timer/5.heep_timer.cpp	14;"	d	file:
+BigFloat	4.oj/hzoj/oj-474.cpp	/^    BigFloat(int x) {$/;"	f	struct:BigFloat
+BigFloat	4.oj/hzoj/oj-474.cpp	/^struct BigFloat {$/;"	s	file:
+BigInt	3.C++/1.BigInt.cpp	/^    BigInt(int x) {$/;"	f	struct:BigInt
+BigInt	3.C++/1.BigInt.cpp	/^    BigInt(vector<int> &ret) : num(ret) {}$/;"	f	struct:BigInt
+BigInt	3.C++/1.BigInt.cpp	/^struct BigInt {$/;"	s	file:
+BigInt	4.oj/1.EP/EP29.cpp	/^typedef struct BigInt {$/;"	s	file:
+BigInt	4.oj/1.EP/EP29.cpp	/^} BigInt;$/;"	t	typeref:struct:BigInt	file:
+BigInt	4.oj/hzoj/oj-256.cpp	/^    BigInt(int x) {$/;"	f	struct:BigInt
+BigInt	4.oj/hzoj/oj-256.cpp	/^    BigInt(vector<int> res) : num(res) {}$/;"	f	struct:BigInt
+BigInt	4.oj/hzoj/oj-256.cpp	/^struct BigInt {$/;"	s	file:
+CC	1.c_language/gtest/makefile	/^CC = g++$/;"	m
+CLEAR	5.OS/common/color.h	31;"	d
+CLRLINE	5.OS/common/color.h	32;"	d
+COLOR	1.c_language/gtest/module/test.h	13;"	d
+COLOR_HL	1.c_language/gtest/module/test.h	14;"	d
+CONTROL_LEN	5.OS/4.IPC/5.send_fd.cpp	/^static const int CONTROL_LEN = CMSG_LEN(sizeof(int));$/;"	v	file:
+CYAN	5.OS/common/color.h	22;"	d
+Cat	3.C++/5.virtual_table.cpp	/^class Cat : public Animal {$/;"	c	file:
+D1	3.C++/28.POD.cpp	/^struct D1 : B1 { int d; };               \/\/1  $/;"	s	file:
+D2	3.C++/28.POD.cpp	/^struct D2 : B2 { static int d; };        \/\/1$/;"	s	file:
+D3	3.C++/28.POD.cpp	/^struct D3 : B2, B1 { static int d;  };   \/\/1$/;"	s	file:
+D4	3.C++/28.POD.cpp	/^struct D4 : B2 { int d;  };              \/\/0$/;"	s	file:
+D5	3.C++/28.POD.cpp	/^struct D5 : B2, D1 {};                   \/\/0 $/;"	s	file:
+DBG	4.oj/hzoj/oj-533.cpp	30;"	d	file:
+DBG	4.oj/hzoj/oj-533.cpp	32;"	d	file:
+DBG	5.OS/common/head.h	28;"	d
+DBG	5.OS/common/head.h	30;"	d
+DBG	5.OS/common/test.h	68;"	d
+DBG	5.OS/common/test.h	70;"	d
+Data	1.c_language/4.offset.cpp	/^struct Data {$/;"	s	file:
+Data	3.C++/1.BigInt.cpp	/^struct Data {$/;"	s	file:
+Data	4.oj/304.cpp	/^struct Data {$/;"	s	file:
+Data	4.oj/hzoj/oj-229.cpp	/^struct Data {$/;"	s	file:
+Data	4.oj/hzoj/oj-230.cpp	/^struct Data {$/;"	s	file:
+Data	4.oj/hzoj/oj-256.cpp	/^struct Data {$/;"	s	file:
+Data	4.oj/hzoj/oj-302.cpp	/^struct Data {$/;"	s	file:
+Data	4.oj/hzoj/oj-303.cpp	/^struct Data {$/;"	s	file:
+Data	4.oj/hzoj/oj-305.cpp	/^struct Data {$/;"	s	file:
+Data	4.oj/hzoj/oj-306.cpp	/^struct Data {$/;"	s	file:
+Data	4.oj/hzoj/oj-375.cpp	/^struct Data {$/;"	s	file:
+Data	4.oj/hzoj/oj-404.cpp	/^struct Data {$/;"	s	file:
+Data	4.oj/hzoj/oj-527-飞跃原野.cpp	/^struct Data {$/;"	s	file:
+Data	4.oj/hzoj/oj-528.cpp	/^struct Data {$/;"	s	file:
+Data	4.oj/hzoj/oj-529.cpp	/^struct Data {$/;"	s	file:
+Data	4.oj/hzoj/oj-530.cpp	/^struct Data {$/;"	s	file:
+Data	4.oj/hzoj/oj-531.cpp	/^struct Data {$/;"	s	file:
+Data	4.oj/hzoj/oj-533.cpp	/^struct Data {$/;"	s	file:
+Data	4.oj/hzoj/oj-80.cpp	/^struct Data {$/;"	s	file:
+Data	4.oj/hzoj/oj-81.cpp	/^struct Data {$/;"	s	file:
+Data	4.oj/hzoj/test.cpp	/^struct Data {$/;"	s	file:
+Data	5.OS/4.IPC/3.sigal.cpp	/^struct Data {$/;"	s	file:
+Data	5.OS/7.socket/4.epolloneshot.c	/^typedef struct Data {$/;"	s	file:
+Data	5.OS/7.socket/4.epolloneshot.c	/^} Data;$/;"	t	typeref:struct:Data	file:
+DoubeList	4.oj/leetcode/460.cpp	/^    DoubeList() {$/;"	f	struct:DoubeList
+DoubeList	4.oj/leetcode/460.cpp	/^struct DoubeList {$/;"	s	file:
+END	3.C++/19.value.cpp	19;"	d	file:
+END	3.C++/21.template.cpp	21;"	d	file:
+END	3.C++/22.template_referednce.cpp	20;"	d	file:
+END	3.C++/27.tuple.cpp	21;"	d	file:
+ENDS	3.C++/cout.cpp	19;"	d	file:
+EXPECT	1.c_language/gtest/module/test.h	53;"	d
+EXPECT_EQ	1.c_language/gtest/module/test.h	71;"	d
+EXPECT_GE	1.c_language/gtest/module/test.h	75;"	d
+EXPECT_GT	1.c_language/gtest/module/test.h	76;"	d
+EXPECT_LE	1.c_language/gtest/module/test.h	73;"	d
+EXPECT_LT	1.c_language/gtest/module/test.h	74;"	d
+EXPECT_NE	1.c_language/gtest/module/test.h	72;"	d
+Edge	4.oj/luogu/P1144-最短路计数.cpp	/^struct Edge {$/;"	s	file:
+Edge	4.oj/luogu/P1265-公路修建.cpp	/^struct Edge {$/;"	s	file:
+Edge	4.oj/luogu/P1340-兽径管理.cpp	/^struct Edge {$/;"	s	file:
+Edge	4.oj/luogu/P1629-邮递员送信.cpp	/^struct Edge {$/;"	s	file:
+Edge	4.oj/luogu/P2504-聪明的猴子.cpp	/^struct Edge {$/;"	s	file:
+Edge	4.oj/luogu/P2865-Roadblocks-v1.cpp	/^struct Edge {$/;"	s	file:
+Edge	4.oj/luogu/P2865-Roadblocks-v2.cpp	/^struct Edge {$/;"	s	file:
+Edge	4.oj/luogu/P4047-部落划分.cpp	/^struct Edge {$/;"	s	file:
+Edge	4.oj/luogu/P4826-Superbull.cpp	/^struct Edge {$/;"	s	file:
+Edge	4.oj/luogu/p3371-单源最短路径.cpp	/^struct Edge {$/;"	s	file:
+Edge	4.oj/oj-635-神经网络.cpp	/^struct Edge {$/;"	s	file:
+Edge	4.oj/oj-636.旅行计划.cpp	/^struct Edge {$/;"	s	file:
+Edge	4.oj/oj-638.cpp	/^struct Edge {$/;"	s	file:
+Edge	4.oj/oj-640.cpp	/^struct Edge {$/;"	s	file:
+Edge	4.oj/oj-641-拓扑排序.cpp	/^struct Edge {$/;"	s	file:
+Edge	4.oj/oj-675.cpp	/^struct Edge {$/;"	s	file:
+Enum	3.C++/25.enum.cpp	/^enum class Enum : int {$/;"	c	file:
+FD_LIMIT	5.OS/7.socket/6.chatroom/2.server.c	25;"	d	file:
+FD_LIMIT	5.OS/9.timer/2.close-connect.cpp	10;"	d	file:
+FeatureSupports	3.C++/25.enum.cpp	/^enum FeatureSupports {$/;"	g	file:
+Four	3.C++/25.enum.cpp	/^    Four  = 0x00008,$/;"	e	enum:FeatureSupports	file:
+Function	1.c_language/gtest/module/test.h	/^struct Function {$/;"	s
+FunctionInfo	1.c_language/gtest/module/test.h	/^struct FunctionInfo {$/;"	s
+GRAY	5.OS/common/color.h	24;"	d
+GREEN	1.c_language/gtest/module/test.h	16;"	d
+GREEN	5.OS/common/color.h	14;"	d
+GREEN_HL	1.c_language/gtest/module/test.h	20;"	d
+GetLetterNum	4.oj/1.EP/17.cpp	/^int GetLetterNum(int i) {$/;"	f
+HIDE	5.OS/common/color.h	30;"	d
+HashFunc	3.C++/6.hashTable.cpp	/^class HashFunc {$/;"	c	file:
+HashFunc_T	3.C++/6.hashTable.cpp	/^    typedef function<int(const char *)> HashFunc_T;$/;"	t	class:HashTable	file:
+HashTable	3.C++/6.hashTable.cpp	/^HashTable::HashTable(HashFunc_T func) : p_func(func) {$/;"	f	class:HashTable
+HashTable	3.C++/6.hashTable.cpp	/^class HashTable {$/;"	c	file:
+Heptagonal	4.oj/1.EP/61.cpp	/^int Heptagonal(int n) {$/;"	f
+Hexagonal	4.oj/1.EP/61.cpp	/^int Hexagonal(int n) {$/;"	f
+INF	4.oj/luogu/P1629-邮递员送信.cpp	/^const int INF = 0x3f3f3f3f;$/;"	v
+INF	4.oj/luogu/p3371-单源最短路径.cpp	22;"	d	file:
+INS	5.OS/3.thread/2.pthread_add.c	14;"	d	file:
+INTERVAL	5.OS/9.timer/4.time_wheel_timer.cpp	/^    static const int INTERVAL = 1; \/\/一个槽代表的时间间隔$/;"	m	class:time_wheel	file:
+IQueue	3.C++/16.priority_queue.cpp	/^class IQueue {$/;"	c	file:
+IntArray	3.C++/4.IntArray.cpp	/^    IntArray(const IntArray &obj) : _size(obj._size) {$/;"	f	class:IntArray
+IntArray	3.C++/4.IntArray.cpp	/^    IntArray(int x) : _size(x) {$/;"	f	class:IntArray
+IntArray	3.C++/4.IntArray.cpp	/^class IntArray {$/;"	c	file:
+InttoSint	4.oj/1.EP/49.cpp	/^int InttoSint(int n) {$/;"	f
+LFUCache	4.oj/leetcode/460.cpp	/^    LFUCache(int capacity) {$/;"	f	class:LFUCache
+LFUCache	4.oj/leetcode/460.cpp	/^class LFUCache {$/;"	c	file:
+LST_TIMER	5.OS/9.timer/1.timer-list.h	9;"	d
+L_BLACK	5.OS/common/color.h	11;"	d
+L_BLUE	5.OS/common/color.h	19;"	d
+L_CYAN	5.OS/common/color.h	23;"	d
+L_GREEN	5.OS/common/color.h	15;"	d
+L_PINK	5.OS/common/color.h	21;"	d
+L_RED	5.OS/common/color.h	13;"	d
+MAINOBJ	1.c_language/gtest/makefile	/^MAINOBJ = main.cpp$/;"	m
+MASK	5.OS/9.timer/bit.cpp	/^    static const int MASK = 0x7;$/;"	m	class:my_sigset	file:
+MAX	3.C++/25.enum.cpp	/^    MAX   = 0x00010,$/;"	e	enum:FeatureSupports	file:
+MAX	5.OS/4.IPC/sem/server.c	23;"	d	file:
+MAX_BUFF	5.OS/1.file/3.cp-file.c	13;"	d	file:
+MAX_BUFF	5.OS/1.file/4.cp-fd.c	13;"	d	file:
+MAX_EVENTS_NUMBER	5.OS/7.socket/3.epoll.c	23;"	d	file:
+MAX_EVENT_NUMBER	5.OS/4.IPC/process_pool.cpp	/^    static const int MAX_EVENT_NUMBER = 100000;$/;"	m	class:processpool	file:
+MAX_EVENT_NUMBER	5.OS/7.socket/4.epolloneshot.c	22;"	d	file:
+MAX_EVENT_NUMBER	5.OS/7.socket/7.echo.cpp	22;"	d	file:
+MAX_EVENT_NUMBER	5.OS/7.socket/8.signal.cpp	23;"	d	file:
+MAX_EVENT_NUMBER	5.OS/9.timer/2.close-connect.cpp	11;"	d	file:
+MAX_M	4.oj/1.EP/24.cpp	19;"	d	file:
+MAX_M	4.oj/1.EP/29.cpp	20;"	d	file:
+MAX_M	4.oj/1.EP/31.cpp	20;"	d	file:
+MAX_M	4.oj/hzoj/oj-530.cpp	21;"	d	file:
+MAX_M	4.oj/hzoj/oj-541.cpp	/^const int MAX_M = 200;$/;"	v
+MAX_M	4.oj/luogu/P1144-最短路计数.cpp	/^const int MAX_M = 4000000;$/;"	v
+MAX_M	4.oj/luogu/P1340-兽径管理.cpp	/^const int MAX_M = 6000;$/;"	v
+MAX_M	4.oj/luogu/P1629-邮递员送信.cpp	/^const int MAX_M = 100000;$/;"	v
+MAX_M	4.oj/luogu/P2504-聪明的猴子.cpp	/^const int MAX_M = 500;$/;"	v
+MAX_M	4.oj/luogu/P2865-Roadblocks-v1.cpp	/^const int MAX_M = 200000;$/;"	v
+MAX_M	4.oj/luogu/P2865-Roadblocks-v2.cpp	/^const int MAX_M = 200000;$/;"	v
+MAX_M	4.oj/luogu/p3371-单源最短路径.cpp	20;"	d	file:
+MAX_M	4.oj/oj-636.旅行计划.cpp	/^const int MAX_M = 200000;$/;"	v
+MAX_M	4.oj/oj-638.cpp	/^const int MAX_M = 50000;$/;"	v
+MAX_M	4.oj/oj-640.cpp	/^const int MAX_M = 500000;$/;"	v
+MAX_N	2.DS/stack_queue/oj-261.cpp	20;"	d	file:
+MAX_N	2.DS/stack_queue/oj-262.cpp	19;"	d	file:
+MAX_N	2.DS/stack_queue/oj-264.cpp	19;"	d	file:
+MAX_N	2.DS/stack_queue/oj-266.cpp	19;"	d	file:
+MAX_N	2.DS/stack_queue/oj-267.cpp	19;"	d	file:
+MAX_N	2.DS/stack_queue/oj-268.cpp	20;"	d	file:
+MAX_N	2.DS/stack_queue/oj-372.cpp	19;"	d	file:
+MAX_N	4.oj/1.EP/0.random.cpp	17;"	d	file:
+MAX_N	4.oj/1.EP/1.cpp	/^const int MAX_N = 999;$/;"	v
+MAX_N	4.oj/1.EP/10-2.cpp	20;"	d	file:
+MAX_N	4.oj/1.EP/10.cpp	20;"	d	file:
+MAX_N	4.oj/1.EP/11.cpp	19;"	d	file:
+MAX_N	4.oj/1.EP/12.cpp	19;"	d	file:
+MAX_N	4.oj/1.EP/13.cpp	19;"	d	file:
+MAX_N	4.oj/1.EP/14.cpp	19;"	d	file:
+MAX_N	4.oj/1.EP/16.cpp	19;"	d	file:
+MAX_N	4.oj/1.EP/18.cpp	19;"	d	file:
+MAX_N	4.oj/1.EP/2.cpp	19;"	d	file:
+MAX_N	4.oj/1.EP/21.cpp	19;"	d	file:
+MAX_N	4.oj/1.EP/23.cpp	19;"	d	file:
+MAX_N	4.oj/1.EP/29.cpp	19;"	d	file:
+MAX_N	4.oj/1.EP/30.cpp	20;"	d	file:
+MAX_N	4.oj/1.EP/31.cpp	19;"	d	file:
+MAX_N	4.oj/1.EP/36.cpp	19;"	d	file:
+MAX_N	4.oj/1.EP/38.cpp	19;"	d	file:
+MAX_N	4.oj/1.EP/39.cpp	19;"	d	file:
+MAX_N	4.oj/1.EP/46.cpp	19;"	d	file:
+MAX_N	4.oj/1.EP/47.cpp	19;"	d	file:
+MAX_N	4.oj/1.EP/49-1.cpp	19;"	d	file:
+MAX_N	4.oj/1.EP/49.cpp	19;"	d	file:
+MAX_N	4.oj/1.EP/50.cpp	19;"	d	file:
+MAX_N	4.oj/1.EP/7.cpp	20;"	d	file:
+MAX_N	4.oj/1.EP/8.cpp	19;"	d	file:
+MAX_N	4.oj/1.EP/EP29.cpp	20;"	d	file:
+MAX_N	4.oj/1.EP/EP53.cpp	19;"	d	file:
+MAX_N	4.oj/1.EP/random.cpp	19;"	d	file:
+MAX_N	4.oj/282.cpp	19;"	d	file:
+MAX_N	4.oj/304.cpp	20;"	d	file:
+MAX_N	4.oj/82.cpp	19;"	d	file:
+MAX_N	4.oj/hzoj/543-分书问题.cpp	/^const int MAX_N = 20;$/;"	v
+MAX_N	4.oj/hzoj/oj-171.cpp	19;"	d	file:
+MAX_N	4.oj/hzoj/oj-229.cpp	20;"	d	file:
+MAX_N	4.oj/hzoj/oj-230.cpp	20;"	d	file:
+MAX_N	4.oj/hzoj/oj-233.cpp	19;"	d	file:
+MAX_N	4.oj/hzoj/oj-240.cpp	19;"	d	file:
+MAX_N	4.oj/hzoj/oj-256.cpp	19;"	d	file:
+MAX_N	4.oj/hzoj/oj-260.cpp	20;"	d	file:
+MAX_N	4.oj/hzoj/oj-270.cpp	19;"	d	file:
+MAX_N	4.oj/hzoj/oj-281.cpp	20;"	d	file:
+MAX_N	4.oj/hzoj/oj-283.cpp	19;"	d	file:
+MAX_N	4.oj/hzoj/oj-290.cpp	21;"	d	file:
+MAX_N	4.oj/hzoj/oj-302.cpp	20;"	d	file:
+MAX_N	4.oj/hzoj/oj-303.cpp	20;"	d	file:
+MAX_N	4.oj/hzoj/oj-305.cpp	20;"	d	file:
+MAX_N	4.oj/hzoj/oj-310.cpp	19;"	d	file:
+MAX_N	4.oj/hzoj/oj-375.cpp	19;"	d	file:
+MAX_N	4.oj/hzoj/oj-376.cpp	20;"	d	file:
+MAX_N	4.oj/hzoj/oj-391.cpp	19;"	d	file:
+MAX_N	4.oj/hzoj/oj-396.cpp	19;"	d	file:
+MAX_N	4.oj/hzoj/oj-397.cpp	19;"	d	file:
+MAX_N	4.oj/hzoj/oj-402.cpp	20;"	d	file:
+MAX_N	4.oj/hzoj/oj-404.cpp	20;"	d	file:
+MAX_N	4.oj/hzoj/oj-508.cpp	/^const int MAX_N = 1000;$/;"	v
+MAX_N	4.oj/hzoj/oj-514.cpp	/^const int MAX_N = 800;$/;"	v
+MAX_N	4.oj/hzoj/oj-516.cpp	/^const int MAX_N = 100000;$/;"	v
+MAX_N	4.oj/hzoj/oj-521.cpp	/^const int MAX_N = 3000000;$/;"	v
+MAX_N	4.oj/hzoj/oj-527-飞跃原野.cpp	/^const int MAX_N = 100;$/;"	v
+MAX_N	4.oj/hzoj/oj-528.cpp	20;"	d	file:
+MAX_N	4.oj/hzoj/oj-529.cpp	20;"	d	file:
+MAX_N	4.oj/hzoj/oj-530.cpp	20;"	d	file:
+MAX_N	4.oj/hzoj/oj-531.cpp	20;"	d	file:
+MAX_N	4.oj/hzoj/oj-533.cpp	/^const int MAX_N = 100;$/;"	v
+MAX_N	4.oj/hzoj/oj-535.cpp	19;"	d	file:
+MAX_N	4.oj/hzoj/oj-536.cpp	19;"	d	file:
+MAX_N	4.oj/hzoj/oj-540.cpp	20;"	d	file:
+MAX_N	4.oj/hzoj/oj-541.cpp	/^const int MAX_N = 16;$/;"	v
+MAX_N	4.oj/hzoj/oj-542-奶酪.cpp	/^const int MAX_N = 1000;$/;"	v
+MAX_N	4.oj/hzoj/oj-78.cpp	19;"	d	file:
+MAX_N	4.oj/hzoj/oj-80.cpp	20;"	d	file:
+MAX_N	4.oj/hzoj/oj-81.cpp	20;"	d	file:
+MAX_N	4.oj/hzoj/test.cpp	/^const int MAX_N = 5;$/;"	v
+MAX_N	4.oj/luogu/P1144-最短路计数.cpp	/^const int MAX_N = 1000000;$/;"	v
+MAX_N	4.oj/luogu/P1265-公路修建.cpp	/^const int MAX_N = 5000;$/;"	v
+MAX_N	4.oj/luogu/P1340-兽径管理.cpp	/^const int MAX_N = 200;$/;"	v
+MAX_N	4.oj/luogu/P1546-最短网络.cpp	/^const int MAX_N = 100;$/;"	v
+MAX_N	4.oj/luogu/P1629-邮递员送信.cpp	/^const int MAX_N = 1000;$/;"	v
+MAX_N	4.oj/luogu/P2504-聪明的猴子.cpp	/^const int MAX_N = 1000;$/;"	v
+MAX_N	4.oj/luogu/P2865-Roadblocks-v1.cpp	/^const int MAX_N = 5000;$/;"	v
+MAX_N	4.oj/luogu/P2865-Roadblocks-v2.cpp	/^const int MAX_N = 5000;$/;"	v
+MAX_N	4.oj/luogu/P4047-部落划分.cpp	/^const int MAX_N = 1000;$/;"	v
+MAX_N	4.oj/luogu/P4826-Superbull.cpp	/^const int MAX_N = 2000;$/;"	v
+MAX_N	4.oj/luogu/p3371-单源最短路径.cpp	21;"	d	file:
+MAX_N	4.oj/oj-635-神经网络.cpp	20;"	d	file:
+MAX_N	4.oj/oj-636.旅行计划.cpp	/^const int MAX_N = 100000;$/;"	v
+MAX_N	4.oj/oj-637.cpp	/^const int MAX_N = 26;$/;"	v
+MAX_N	4.oj/oj-638.cpp	/^const int MAX_N = 1500;$/;"	v
+MAX_N	4.oj/oj-640.cpp	/^const int MAX_N = 5000;$/;"	v
+MAX_N	4.oj/oj-641-拓扑排序.cpp	/^const int MAX_N = 2000;$/;"	v
+MAX_N	4.oj/oj-674-宿舍楼里的电竞赛.cpp	19;"	d	file:
+MAX_N	4.oj/oj-675.cpp	/^const int MAX_N = 100000;$/;"	v
+MAX_N	5.OS/7.socket/test.cpp	15;"	d	file:
+MAX_N	6.other/handle_brackets.cpp	/^const int MAX_N = 100000;$/;"	v
+MAX_PROCESS_NUMBER	5.OS/4.IPC/process_pool.cpp	/^    static const int MAX_PROCESS_NUMBER = 16;$/;"	m	class:processpool	file:
+MAX_SEQ	5.OS/4.IPC/sem/server.c	24;"	d	file:
+MOD	4.oj/luogu/P1144-最短路计数.cpp	/^const int MOD = 100003;$/;"	v
+MOD	4.oj/oj-640.cpp	/^const int MOD = 100000007;$/;"	v
+MyString	3.C++/15.string.cpp	/^MyString::MyString() : _size(0), _capacity(0), _data(new char[1]{'\\0'}) {}$/;"	f	class:MyString
+MyString	3.C++/15.string.cpp	/^MyString::MyString(const MyString &obj) {$/;"	f	class:MyString
+MyString	3.C++/15.string.cpp	/^MyString::MyString(const char * str) : _size(getLen(str)), _capacity(_size * 2 + 1), _data(new char[_size + 1]{'\\0'}) {$/;"	f	class:MyString
+MyString	3.C++/15.string.cpp	/^class MyString {$/;"	c	file:
+N	5.OS/9.timer/4.time_wheel_timer.cpp	/^    static const int N = 60; \/\/槽总数$/;"	m	class:time_wheel	file:
+NONE	5.OS/common/color.h	9;"	d
+Name	1.c_language/gtest/module/test.h	25;"	d
+NoTrivial	3.C++/28.POD.cpp	/^struct NoTrivial {$/;"	s	file:
+Node	2.DS/stack_queue/oj-268-2.cpp	/^struct Node {$/;"	s	file:
+Node	3.C++/6.hashTable.cpp	/^    Node() : flag(false), str(nullptr) {}$/;"	f	class:Node
+Node	3.C++/6.hashTable.cpp	/^class Node {$/;"	c	file:
+Node	4.oj/282.cpp	/^struct Node {$/;"	s	file:
+Node	4.oj/hzoj/oj-281.cpp	/^struct Node{$/;"	s	file:
+Node	4.oj/hzoj/oj-283.cpp	/^struct Node {$/;"	s	file:
+Node	4.oj/hzoj/oj-542-奶酪.cpp	/^struct Node {$/;"	s	file:
+Node	4.oj/leetcode/460.cpp	/^    Node() : Node(0, 0, 0) {}$/;"	f	struct:Node
+Node	4.oj/leetcode/460.cpp	/^    Node(int key, int value, int cnt) : key(key), value(value), cnt(cnt) {}$/;"	f	struct:Node
+Node	4.oj/leetcode/460.cpp	/^struct Node {$/;"	s	file:
+Node	4.oj/luogu/P1144-最短路计数.cpp	/^struct Node {$/;"	s	file:
+Node	4.oj/luogu/P1546-最短网络.cpp	/^struct Node {$/;"	s	file:
+Node	4.oj/luogu/P1629-邮递员送信.cpp	/^struct Node {$/;"	s	file:
+Node	4.oj/luogu/P2865-Roadblocks-v1.cpp	/^struct Node {$/;"	s	file:
+Node	4.oj/luogu/P2865-Roadblocks-v2.cpp	/^struct Node {$/;"	s	file:
+Node	4.oj/luogu/P4826-Superbull.cpp	/^struct Node {$/;"	s	file:
+Node	4.oj/luogu/p3371-单源最短路径.cpp	/^struct Node {$/;"	s	file:
+Node	4.oj/oj-641-拓扑排序.cpp	/^struct Node {$/;"	s	file:
+Num	5.OS/2.process/4.add.c	/^struct Num {$/;"	s	file:
+Num	5.OS/4.IPC/1.shm_add.c	/^struct Num {$/;"	s	file:
+Octagonal	4.oj/1.EP/61.cpp	/^int Octagonal(int n) {$/;"	f
+One	3.C++/25.enum.cpp	/^    One   = 0x00001,$/;"	e	enum:FeatureSupports	file:
+P	1.c_language/gtest/module/test.h	46;"	d
+PINK	5.OS/common/color.h	20;"	d
+PUTC	1.c_language/3.myPrintf.cpp	36;"	d	file:
+PUTC	1.c_language/3.myPrintf.cpp	67;"	d	file:
+Pentagonal	4.oj/1.EP/61.cpp	/^int Pentagonal(int n) {$/;"	f
+Point	3.C++/3.operator.cpp	/^    Point() : x(0), y(0) {};$/;"	f	class:Point
+Point	3.C++/3.operator.cpp	/^    Point(int x, int y) : x(x), y(y) {}$/;"	f	class:Point
+Point	3.C++/3.operator.cpp	/^class Point {$/;"	c	file:
+Queue	2.DS/stack_queue/oj-268-2.cpp	/^    Queue() {$/;"	f	class:Queue
+Queue	2.DS/stack_queue/oj-268-2.cpp	/^class Queue {$/;"	c	file:
+RED	1.c_language/gtest/module/test.h	17;"	d
+RED	5.OS/common/color.h	12;"	d
+RED_HL	1.c_language/gtest/module/test.h	21;"	d
+REVERSE	5.OS/common/color.h	29;"	d
+RUN_ALL_TESTS	1.c_language/gtest/module/test.cc	/^int RUN_ALL_TESTS() {$/;"	f
+SIGSET_SIZE	5.OS/9.timer/bit.cpp	/^    static const int SIGSET_SIZE = 5;$/;"	m	class:my_sigset	file:
+Solution	4.oj/leetcode/215-topK-heap.cpp	/^class Solution {$/;"	c	file:
+Solution	4.oj/leetcode/215-topK.cpp	/^class Solution {$/;"	c	file:
+Square	4.oj/1.EP/61.cpp	/^int Square(int n) {$/;"	f
+Str	1.c_language/gtest/module/test.h	26;"	d
+TCP_BUFFER_SIZE	5.OS/7.socket/7.echo.cpp	23;"	d	file:
+TDConstructed	3.C++/delagation_constructor.cpp	/^    TDConstructed(T first, T last) : l(first, last) {}$/;"	f	class:TDConstructed	file:
+TDConstructed	3.C++/delagation_constructor.cpp	/^    TDConstructed(deque<int> &d) :TDConstructed(d.begin(), d.end()) {}$/;"	f	class:TDConstructed
+TDConstructed	3.C++/delagation_constructor.cpp	/^    TDConstructed(vector<short> &v) : TDConstructed(v.begin(), v.end()) {}$/;"	f	class:TDConstructed
+TDConstructed	3.C++/delagation_constructor.cpp	/^class TDConstructed {$/;"	c	file:
+TEST	1.c_language/gtest/main.cpp	/^TEST(test1, add) {$/;"	f
+TEST	1.c_language/gtest/main.cpp	/^TEST(test2, add2) {$/;"	f
+TEST	1.c_language/gtest/module/test.h	28;"	d
+TIMEOUT	5.OS/9.timer/3.IO-clocking.cpp	10;"	d	file:
+TIMESLOT	5.OS/9.timer/2.close-connect.cpp	12;"	d	file:
+TYPE_STR	1.c_language/gtest/module/test.h	36;"	d
+TestFuncT	1.c_language/gtest/module/test.h	/^typedef void (*TestFuncT)();$/;"	t
+Three	3.C++/25.enum.cpp	/^    Three = 0x00004,$/;"	e	enum:FeatureSupports	file:
+Triangle	4.oj/1.EP/61.cpp	/^int Triangle(int n) {$/;"	f
+Trivial	3.C++/28.POD.cpp	/^struct Trivial {$/;"	s	file:
+Tuple	4.oj/1.EP/29.cpp	/^struct Tuple {$/;"	s	file:
+Tuple	4.oj/1.EP/EP29.cpp	/^typedef struct Tuple {$/;"	s	file:
+Tuple	4.oj/1.EP/EP29.cpp	/^} Tuple;$/;"	t	typeref:struct:Tuple	file:
+Two	3.C++/25.enum.cpp	/^    Two   = 0x00002,$/;"	e	enum:FeatureSupports	file:
+UDP_BUFFER_SIZE	5.OS/7.socket/7.echo.cpp	24;"	d	file:
+UNDERLINE	5.OS/common/color.h	27;"	d
+USER_LIMIT	5.OS/7.socket/6.chatroom/2.server.c	24;"	d	file:
+USER_PER_PROCESS	5.OS/4.IPC/process_pool.cpp	/^    static const int USER_PER_PROCESS = 65536;$/;"	m	class:processpool	file:
+UnionSet	4.oj/luogu/P1265-公路修建.cpp	/^struct UnionSet {$/;"	s	file:
+UnionSet	4.oj/luogu/P1340-兽径管理.cpp	/^struct UnionSet {$/;"	s	file:
+UnionSet	4.oj/luogu/P2504-聪明的猴子.cpp	/^struct UnionSet {$/;"	s	file:
+UnionSet	4.oj/luogu/P4047-部落划分.cpp	/^struct UnionSet {$/;"	s	file:
+WHITE	5.OS/common/color.h	25;"	d
+YELLOW	1.c_language/gtest/module/test.h	19;"	d
+YELLOW	5.OS/common/color.h	17;"	d
+YELLOW_HL	1.c_language/gtest/module/test.h	23;"	d
+_COLOR_H_	5.OS/common/color.h	8;"	d
+_GNU_SOURCE	5.OS/7.socket/6.chatroom/1.client.c	7;"	d	file:
+_GNU_SOURCE	5.OS/7.socket/6.chatroom/2.server.c	8;"	d	file:
+_HEAD_H	5.OS/7.socket/head.h	9;"	d
+_HEAD_H	5.OS/9.timer/head.h	9;"	d
+_HEAD_H	5.OS/common/head.h	9;"	d
+_HEAD_H	5.OS/common/test.h	9;"	d
+_HEAP_TIMER	5.OS/9.timer/5.heep_timer.cpp	9;"	d	file:
+_LOCKER_H	5.OS/4.IPC/locker.cpp	9;"	d	file:
+_TEST_H	1.c_language/gtest/module/test.h	9;"	d
+_THREAD_POOL_H	5.OS/5.thread_pool/thread_pool.h	9;"	d
+_TIME_WHEEL_TIMER_H	5.OS/9.timer/4.time_wheel_timer.cpp	9;"	d	file:
+__buf	5.OS/4.IPC/4.sem.cpp	/^    struct seminto *__buf;$/;"	m	union:semun	typeref:struct:semun::seminto	file:
+__buf	5.OS/4.IPC/sem/server.c	/^    struct seminfo  *__buf;  \/* Buffer for IPC_INFO$/;"	m	union:semun	typeref:struct:semun::seminfo	file:
+__capacity	3.C++/21.template.cpp	/^    int __capacity;$/;"	m	class:vector	file:
+__cnt	3.C++/2.Array.cpp	/^    int __size, __cnt;$/;"	m	class:Array	file:
+__end	3.C++/14.template.cpp	/^    T __end;$/;"	m	class:Array	file:
+__func	3.C++/24.stack.cpp	/^void __func(T &&x, const char *str) {$/;"	f
+__func	3.C++/24.stack.cpp	/^void __func(T &x, const char *str) {$/;"	f
+__size	3.C++/19.value.cpp	/^    int __size;$/;"	m	class:vector	file:
+__size	3.C++/2.Array.cpp	/^    int __size, __cnt;$/;"	m	class:Array	file:
+__size	3.C++/21.template.cpp	/^    int __size;$/;"	m	class:vector	file:
+_capacity	3.C++/15.string.cpp	/^    int _capacity;$/;"	m	class:MyString	file:
+_data	3.C++/15.string.cpp	/^    char *_data;$/;"	m	class:MyString	file:
+_size	3.C++/15.string.cpp	/^    int _size;$/;"	m	class:MyString	file:
+_size	3.C++/4.IntArray.cpp	/^    int *num, _size;$/;"	m	class:IntArray	file:
+_size	3.C++/6.hashTable.cpp	/^    int _size;$/;"	m	class:HashTable	file:
+a	1.c_language/4.offset.cpp	/^    char a;$/;"	m	struct:Data	file:
+a	2.DS/stack_queue/oj-263.cpp	/^int a[30], s[30], top;$/;"	v
+a	2.DS/stack_queue/oj-264.cpp	/^int a[MAX_N + 5];$/;"	v
+a	2.DS/stack_queue/oj-372.cpp	/^int a[MAX_N + 5], b[MAX_N + 5];$/;"	v
+a	3.C++/1.BigInt.cpp	/^    int a, b;$/;"	m	struct:Data	file:
+a	3.C++/25.enum.cpp	/^    a, b, c, d$/;"	m	class:Enum	file:
+a	3.C++/28.POD.cpp	/^    int a;$/;"	m	struct:Trivial	file:
+a	3.C++/28.POD.cpp	/^struct B1 { static int a; };$/;"	m	struct:B1	file:
+a	3.C++/28.POD.cpp	/^struct B2 { int a; };$/;"	m	struct:B2	file:
+a	3.C++/test.cpp	/^    A a;$/;"	m	struct:B	file:
+a	3.C++/test2.cpp	/^    static const int a = 5;$/;"	m	class:testClass	file:
+a	4.oj/1.EP/13.cpp	/^int a[MAX_N + 5];$/;"	v
+a	4.oj/1.EP/16.cpp	/^int a[MAX_N + 5];$/;"	v
+a	4.oj/1.EP/20.cpp	/^int a[10000];$/;"	v
+a	4.oj/hzoj/oj-256.cpp	/^    int a, b;$/;"	m	struct:Data	file:
+a	4.oj/hzoj/oj-290.cpp	/^vector<int> e[MAX_N + 5], a;$/;"	v
+a	4.oj/hzoj/oj-78.cpp	/^int a[MAX_N + 5];$/;"	v
+a_num	4.oj/1.EP/0.random.cpp	/^static int my_seed = 37, a_num, b_num;$/;"	v	file:
+a_num	4.oj/1.EP/random.cpp	/^static int my_seed = 37, a_num, b_num;$/;"	v	file:
+add	1.c_language/gtest/main.cpp	/^double add(double a, double b) {$/;"	f
+add	3.C++/14.template.cpp	/^T add(T a, T b) {$/;"	f
+add	4.oj/1.EP/EP29.cpp	/^void add(int a, int b) {$/;"	f
+add	5.OS/3.thread/2.pthread_add.c	/^void *add(void *arg) {$/;"	f
+add	5.OS/9.timer/bit.cpp	/^    void add(int val) {$/;"	f	class:my_sigset
+addEdge	4.oj/luogu/P1144-最短路计数.cpp	/^inline void addEdge(int u, int v) {$/;"	f
+addEdge	4.oj/luogu/P1265-公路修建.cpp	/^inline void addEdge(int u, int v, double w) {$/;"	f
+addEdge	4.oj/luogu/P1629-邮递员送信.cpp	/^inline void addEdge(int k, int u, int v, int w) {$/;"	f
+addEdge	4.oj/luogu/P2504-聪明的猴子.cpp	/^inline void addEdge(int u, int v, double w) {$/;"	f
+addEdge	4.oj/luogu/P2865-Roadblocks-v1.cpp	/^inline void addEdge(int u, int v, int w) {$/;"	f
+addEdge	4.oj/luogu/P2865-Roadblocks-v2.cpp	/^inline void addEdge(int u, int v, int w) {$/;"	f
+addEdge	4.oj/luogu/P4047-部落划分.cpp	/^inline void addEdge(int u, int v, double w) {$/;"	f
+addEdge	4.oj/luogu/P4826-Superbull.cpp	/^inline void addEdge(int u, int v, int w) {$/;"	f
+addEdge	4.oj/luogu/p3371-单源最短路径.cpp	/^inline void addEdge(int u, int v, int w) {$/;"	f
+addEdge	4.oj/oj-638.cpp	/^inline void addEdge(int u, int v, int w) {$/;"	f
+add_event	5.OS/7.socket/3.epoll.c	/^void add_event(int epollfd, int fd, int enable_et) {$/;"	f
+add_event	5.OS/7.socket/4.epolloneshot.c	/^void add_event(int epollfd, int fd, int oneshot) {$/;"	f
+add_event	5.OS/7.socket/7.echo.cpp	/^void add_event(int epollfd, int fd, bool enable_et) {$/;"	f
+add_event	5.OS/7.socket/8.signal.cpp	/^void add_event(int epollfd, int fd, bool enable_et ) {$/;"	f
+add_event	5.OS/9.timer/2.close-connect.cpp	/^void add_event(int epollfd, int fd, bool enable_et) {$/;"	f
+add_function	1.c_language/gtest/module/test.cc	/^void add_function(TestFuncT func, const char *str) {$/;"	f
+add_sig	5.OS/7.socket/8.signal.cpp	/^void add_sig(int sig) {$/;"	f
+add_sig	5.OS/7.socket/9.SIURG.c	/^void add_sig(int sig, void(*sig_handler)(int)) {$/;"	f
+add_sig	5.OS/9.timer/2.close-connect.cpp	/^void add_sig(int sig) {$/;"	f
+add_timer	5.OS/9.timer/1.timer-list.h	/^void sort_timer_list::add_timer(util_timer *timer) {$/;"	f	class:sort_timer_list
+add_timer	5.OS/9.timer/1.timer-list.h	/^void sort_timer_list::add_timer(util_timer *timer, util_timer *now) {$/;"	f	class:sort_timer_list
+add_timer	5.OS/9.timer/4.time_wheel_timer.cpp	/^tw_timer *time_wheel::add_timer(int timeout) {$/;"	f	class:time_wheel
+add_timer	5.OS/9.timer/5.heep_timer.cpp	/^void time_heap::add_timer(heap_timer *timer) throw(std::exception()) {$/;"	f	class:time_heap
+addfd	5.OS/4.IPC/process_pool.cpp	/^static void addfd(int epollfd, int fd) {$/;"	f	file:
+address	5.OS/7.socket/6.chatroom/2.server.c	/^    struct sockaddr_in address;$/;"	m	struct:client_data	typeref:struct:client_data::sockaddr_in	file:
+address	5.OS/9.timer/1.timer-list.h	/^    struct sockaddr_in address;$/;"	m	struct:client_data	typeref:struct:client_data::sockaddr_in
+address	5.OS/9.timer/4.time_wheel_timer.cpp	/^    struct sockaddr_in address;$/;"	m	class:client_data	typeref:struct:client_data::sockaddr_in	file:
+address	5.OS/9.timer/5.heep_timer.cpp	/^    struct sockaddr_in address;$/;"	m	class:client_data	typeref:struct:client_data::sockaddr_in	file:
+addsig	5.OS/4.IPC/process_pool.cpp	/^static void addsig(int sig, void (handler)(int), bool restart = true) {$/;"	f	file:
+adjust_timer	5.OS/9.timer/1.timer-list.h	/^void sort_timer_list::adjust_timer(util_timer *timer) {$/;"	f	class:sort_timer_list
+alreaday	4.oj/luogu/P1265-公路修建.cpp	/^int cnt,alreaday, n;$/;"	v
+alreaday	4.oj/luogu/P1340-兽径管理.cpp	/^int n, m, alreaday;$/;"	v
+already	4.oj/luogu/P1546-最短网络.cpp	/^int already, ans;$/;"	v
+alreday	4.oj/luogu/P2504-聪明的猴子.cpp	/^int n, m, cnt, alreday;$/;"	v
+ans	4.oj/hzoj/543-分书问题.cpp	/^int n, ans;$/;"	v
+ans	4.oj/hzoj/oj-290.cpp	/^int num[MAX_N + 5], ans[MAX_N + 5];$/;"	v
+ans	4.oj/hzoj/oj-303.cpp	/^int ans[MAX_N + 5][MAX_N + 5];$/;"	v
+ans	4.oj/hzoj/oj-376.cpp	/^int ans = 0;$/;"	v
+ans	4.oj/hzoj/oj-521.cpp	/^int ans = 0;$/;"	v
+ans	4.oj/hzoj/oj-536.cpp	/^int n, m, ans, cnt;$/;"	v
+ans	4.oj/hzoj/oj-537.cpp	/^char ans[30];$/;"	v
+ans	4.oj/hzoj/oj-541.cpp	/^int ans[2][1000005];$/;"	v
+ans	4.oj/luogu/P1144-最短路计数.cpp	/^int head[MAX_N + 5], dist[MAX_N + 5], ans[MAX_N + 5];$/;"	v
+ans	4.oj/luogu/P1265-公路修建.cpp	/^double ans;$/;"	v
+ans	4.oj/luogu/P1546-最短网络.cpp	/^int already, ans;$/;"	v
+ans	4.oj/oj-636.旅行计划.cpp	/^int ans[MAX_N + 5], head[MAX_N + 5], in_degree[MAX_N + 5];$/;"	v
+ans	4.oj/oj-637.cpp	/^int ans[MAX_N + 5][MAX_N + 5], matrix[MAX_N + 5][MAX_N + 5];$/;"	v
+ans	4.oj/oj-640.cpp	/^int ans[MAX_N + 5];$/;"	v
+ans	4.oj/oj-674-宿舍楼里的电竞赛.cpp	/^int n, m, ans[MAX_N + 5][MAX_N + 5];$/;"	v
+arr	3.C++/1.BigInt.cpp	/^vector<Data> arr;$/;"	v
+arr	3.C++/test2.cpp	/^    int arr[b];$/;"	m	class:testClass	file:
+arr	4.oj/1.EP/11.cpp	/^int arr[MAX_N + 5][MAX_N + 5];$/;"	v
+arr	4.oj/1.EP/14.cpp	/^int arr[MAX_N + 5];$/;"	v
+arr	4.oj/1.EP/18.cpp	/^int arr[MAX_N + 5][MAX_N + 5];$/;"	v
+arr	4.oj/1.EP/23.cpp	/^int arr[MAX_N + 5];$/;"	v
+arr	4.oj/1.EP/8.cpp	/^char arr[MAX_N + 5];$/;"	v
+arr	4.oj/282.cpp	/^int arr[MAX_N + 5];$/;"	v
+arr	4.oj/hzoj/oj-233.cpp	/^int arr[MAX_N + 5];$/;"	v
+arr	4.oj/hzoj/oj-234.cpp	/^int arr[15][5];$/;"	v
+arr	4.oj/hzoj/oj-270.cpp	/^int arr[MAX_N + 5];$/;"	v
+arr	4.oj/hzoj/oj-375.cpp	/^} arr[MAX_N + 5];$/;"	v	typeref:struct:Data
+arr	4.oj/hzoj/oj-391.cpp	/^long long arr[MAX_N + 5];$/;"	v
+arr	4.oj/hzoj/oj-402.cpp	/^int arr[MAX_N + 5];$/;"	v
+arr	4.oj/hzoj/oj-404.cpp	/^vector<pair<int, int> > arr;$/;"	v
+arr	4.oj/hzoj/oj-508.cpp	/^int arr[MAX_N + 5];$/;"	v
+arr	4.oj/hzoj/oj-514.cpp	/^int arr[10] = {6, 2, 5, 5, 4, 5, 6, 3, 7, 6};$/;"	v
+arr	4.oj/hzoj/oj-516.cpp	/^char arr[MAX_N + 5];$/;"	v
+arr	4.oj/hzoj/oj-521.cpp	/^int arr[35];$/;"	v
+arr	4.oj/hzoj/oj-528.cpp	/^int arr[MAX_N + 5][MAX_N + 5];$/;"	v
+arr	4.oj/hzoj/oj-531.cpp	/^int arr[MAX_N + 5];$/;"	v
+arr	4.oj/hzoj/oj-540.cpp	/^long long  arr[MAX_N + 5];$/;"	v
+arr	4.oj/hzoj/oj-542-奶酪.cpp	/^} arr[MAX_N + 5];$/;"	v	typeref:struct:Node
+array	5.OS/4.IPC/4.sem.cpp	/^    unsigned short int* array;$/;"	m	union:semun	file:
+array	5.OS/4.IPC/sem/server.c	/^    unsigned short  *array;  \/* Array for GETALL, SETALL *\/$/;"	m	union:semun	file:
+array	5.OS/9.timer/5.heep_timer.cpp	/^    heap_timer **array;$/;"	m	class:time_heap	file:
+assert_static	3.C++/25.enum.cpp	21;"	d	file:
+atoi	1.c_language/1.atoi.cpp	/^int atoi(const char *str) {$/;"	f
+b	1.c_language/4.offset.cpp	/^    double b;$/;"	m	struct:Data	file:
+b	2.DS/stack_queue/oj-372.cpp	/^int a[MAX_N + 5], b[MAX_N + 5];$/;"	v
+b	3.C++/1.BigInt.cpp	/^    int a, b;$/;"	m	struct:Data	file:
+b	3.C++/25.enum.cpp	/^    a, b, c, d$/;"	m	class:Enum	file:
+b	3.C++/28.POD.cpp	/^    int b;$/;"	m	struct:Trivial	file:
+b	3.C++/test2.cpp	/^    static constexpr int b = 5;$/;"	m	class:testClass	file:
+b	4.oj/hzoj/oj-256.cpp	/^    int a, b;$/;"	m	struct:Data	file:
+b	4.oj/hzoj/oj-78.cpp	/^int b[MAX_N + 5];$/;"	v
+b_num	4.oj/1.EP/0.random.cpp	/^static int my_seed = 37, a_num, b_num;$/;"	v	file:
+b_num	4.oj/1.EP/random.cpp	/^static int my_seed = 37, a_num, b_num;$/;"	v	file:
+bellman	4.oj/luogu/P2865-Roadblocks-v1.cpp	/^void bellman(int start, int k) {$/;"	f
+bellman	4.oj/luogu/P2865-Roadblocks-v2.cpp	/^void bellman(int start) {$/;"	f
+bellman	4.oj/oj-638.cpp	/^int bellman(int start) {$/;"	f
+bfs	4.oj/hzoj/oj-404.cpp	/^void bfs(int sx, int sy) {$/;"	f
+binary_search	4.oj/1.EP/45.cpp	/^long long binary_search(func f, long long x) {$/;"	f
+binary_search	4.oj/1.EP/46.cpp	/^bool binary_search(int (*f)(int), int x) {$/;"	f
+binary_search	4.oj/1.EP/61.cpp	/^int binary_search(int (*func)(int), int y) {$/;"	f
+bit	4.oj/hzoj/oj-290.cpp	/^bitset<MAX_N + 5>  bit[MAX_N + 5];$/;"	v
+buf	5.OS/4.IPC/4.sem.cpp	/^    struct semid_ds *buf;$/;"	m	union:semun	typeref:struct:semun::semid_ds	file:
+buf	5.OS/4.IPC/sem/server.c	/^    struct semid_ds *buf;    \/* Buffer for IPC_STAT, IPC_SET *\/$/;"	m	union:semun	typeref:struct:semun::semid_ds	file:
+buf	5.OS/7.socket/6.chatroom/2.server.c	/^    char buf[BUFFER_SIZE];$/;"	m	struct:client_data	file:
+buf	5.OS/9.timer/1.timer-list.h	/^    char buf[BUFFER_SIZE];$/;"	m	struct:client_data
+buf	5.OS/9.timer/4.time_wheel_timer.cpp	/^    char buf[BUFFER_SIZE];$/;"	m	class:client_data	file:
+buf	5.OS/9.timer/5.heep_timer.cpp	/^    char buf[BUFFER_SIZE];$/;"	m	class:client_data	file:
+buff	6.other/handle_brackets.cpp	/^char buff[MAX_N];$/;"	v
+build	4.oj/leetcode/215-topK-heap.cpp	/^    int build(int *nums, int k, int size) {$/;"	f	class:Solution
+c	1.c_language/4.offset.cpp	/^    int c;$/;"	m	struct:Data	file:
+c	3.C++/25.enum.cpp	/^    a, b, c, d$/;"	m	class:Enum	file:
+c	3.C++/test2.cpp	/^    static constexpr double c = 5;$/;"	m	class:testClass	file:
+c	4.oj/hzoj/oj-537.cpp	/^int l, c, cnt, yuan_num, fu_num, idx;$/;"	v
+c	4.oj/oj-635-神经网络.cpp	/^int c[MAX_N + 5], u[MAX_N + 5];$/;"	v
+c	4.oj/oj-675.cpp	/^int n, m, c;$/;"	v
+cache	4.oj/leetcode/460.cpp	/^    unordered_map<int , Node*> cache;$/;"	m	class:LFUCache	file:
+calc	2.DS/stack_queue/oj-266.cpp	/^int calc(const char *exp, int l, int r) {$/;"	f
+calc	4.oj/1.EP/1.cpp	/^int calc(int x) {$/;"	f
+calc	4.oj/1.EP/11.cpp	/^int calc(int x, int y) {$/;"	f
+calc	4.oj/1.EP/19.cpp	/^int calc(int x) {$/;"	f
+calc	4.oj/1.EP/40.cpp	/^int calc(int n) {$/;"	f
+calc	4.oj/82.cpp	/^int calc(int x) {$/;"	f
+capacity	4.oj/leetcode/460.cpp	/^    int min, capacity, size;$/;"	m	class:LFUCache	file:
+capacity	5.OS/9.timer/5.heep_timer.cpp	/^    int capacity;$/;"	m	class:time_heap	file:
+cb_func	5.OS/9.timer/1.timer-list.h	/^    void (*cb_func)(client_data *);$/;"	m	class:util_timer
+cb_func	5.OS/9.timer/2.close-connect.cpp	/^void cb_func(client_data *user_data) {$/;"	f
+cb_func	5.OS/9.timer/4.time_wheel_timer.cpp	/^    void (*cb_func)(client_data *);$/;"	m	class:tw_timer	file:
+cb_func	5.OS/9.timer/5.heep_timer.cpp	/^    void (*cb_func)(client_data *);$/;"	m	class:heap_timer	file:
+ch	4.oj/hzoj/oj-537.cpp	/^char ch[30];$/;"	v
+check	4.oj/1.EP/0.random.cpp	/^void check(int a, int b) {$/;"	f
+check	4.oj/1.EP/23.cpp	/^int check[MAX_N + 5];$/;"	v
+check	4.oj/1.EP/24.cpp	/^int check[MAX_M + 5];$/;"	v
+check	4.oj/1.EP/46.cpp	/^int check[MAX_N + 5];$/;"	v
+check	4.oj/1.EP/49-1.cpp	/^bool check[MAX_N + 5];$/;"	v
+check	4.oj/1.EP/50.cpp	/^int check[MAX_N + 5];$/;"	v
+check	4.oj/hzoj/oj-229.cpp	/^int check[MAX_N + 5];$/;"	v
+check	4.oj/hzoj/oj-230.cpp	/^int check[MAX_N + 5];$/;"	v
+check	4.oj/hzoj/oj-234.cpp	/^int check[15];$/;"	v
+check	4.oj/hzoj/oj-237.cpp	/^int check[15];$/;"	v
+check	4.oj/hzoj/oj-391.cpp	/^bool check(long long x) {$/;"	f
+check	4.oj/hzoj/oj-402.cpp	/^int check[MAX_N + 5];$/;"	v
+check	4.oj/hzoj/oj-404.cpp	/^int check[MAX_N + 5][MAX_N + 5];$/;"	v
+check	4.oj/hzoj/oj-521.cpp	/^int check[MAX_N + 5] = {1, 1};$/;"	v
+check	4.oj/hzoj/oj-527-飞跃原野.cpp	/^bool check[MAX_N + 5][MAX_N + 5][MAX_N + 5];$/;"	v
+check	4.oj/hzoj/oj-528.cpp	/^int check[MAX_N + 5];$/;"	v
+check	4.oj/hzoj/oj-529.cpp	/^int check[MAX_N + 5][MAX_N + 5];$/;"	v
+check	4.oj/hzoj/oj-530.cpp	/^int check[MAX_N + 5][MAX_N + 5];$/;"	v
+check	4.oj/hzoj/oj-531.cpp	/^int check[21000000];$/;"	v
+check	4.oj/hzoj/oj-533.cpp	/^int check[MAX_N + 5][MAX_N + 5];$/;"	v
+check	4.oj/hzoj/oj-542-奶酪.cpp	/^bool check(Node &a, Node &b) {$/;"	f
+check	4.oj/hzoj/oj-81.cpp	/^int check[MAX_N + 5][MAX_N + 5];$/;"	v
+check	4.oj/hzoj/test.cpp	/^bool check[1 << 25];$/;"	v
+city	4.oj/luogu/P1265-公路修建.cpp	/^int head[MAX_N + 5], city[MAX_N + 5][2];$/;"	v
+clear	3.C++/6.hashTable.cpp	/^    void clear() {$/;"	f	class:Node
+clear	5.OS/9.timer/bit.cpp	/^    void clear(int val) {$/;"	f	class:my_sigset
+client_data	5.OS/7.socket/6.chatroom/2.server.c	/^struct client_data {$/;"	s	file:
+client_data	5.OS/9.timer/1.timer-list.h	/^struct client_data {$/;"	s
+client_data	5.OS/9.timer/4.time_wheel_timer.cpp	/^class client_data {$/;"	c	file:
+client_data	5.OS/9.timer/5.heep_timer.cpp	/^class client_data {$/;"	c	file:
+cmp	4.oj/1.EP/49.cpp	/^bool cmp(sLnt a, sLnt b) {$/;"	f
+cmp	4.oj/1.EP/EP29.cpp	/^int cmp(const void *a, const void *b) {$/;"	f
+cmp	4.oj/hzoj/oj-287.cpp	/^struct cmp {$/;"	s	file:
+cmp	4.oj/hzoj/oj-505.cpp	/^struct cmp {$/;"	s	file:
+cnt	3.C++/11.share_ptr.cpp	/^    int *cnt;$/;"	m	class:test::shared_ptr	file:
+cnt	4.oj/1.EP/12.cpp	/^int cnt[MAX_N + 5]; \/\/最小素因子个数$/;"	v
+cnt	4.oj/1.EP/21.cpp	/^int cnt[MAX_N + 5];$/;"	v
+cnt	4.oj/1.EP/29.cpp	/^int cnt;$/;"	v
+cnt	4.oj/1.EP/39.cpp	/^int cnt[MAX_N + 5];$/;"	v
+cnt	4.oj/282.cpp	/^int cnt = 1;$/;"	v
+cnt	4.oj/hzoj/oj-235.cpp	/^int n, num[15], cnt;$/;"	v
+cnt	4.oj/hzoj/oj-236.cpp	/^int num[15], cnt = 0;$/;"	v
+cnt	4.oj/hzoj/oj-237.cpp	/^int cnt;$/;"	v
+cnt	4.oj/hzoj/oj-283.cpp	/^int cnt = 1;$/;"	v
+cnt	4.oj/hzoj/oj-535.cpp	/^int n, m, cnt, sx, sy;$/;"	v
+cnt	4.oj/hzoj/oj-536.cpp	/^int n, m, ans, cnt;$/;"	v
+cnt	4.oj/hzoj/oj-537.cpp	/^int l, c, cnt, yuan_num, fu_num, idx;$/;"	v
+cnt	4.oj/leetcode/460.cpp	/^    int key, value, cnt;$/;"	m	struct:Node	file:
+cnt	4.oj/luogu/P1144-最短路计数.cpp	/^int n, m, cnt;$/;"	v
+cnt	4.oj/luogu/P1265-公路修建.cpp	/^int cnt,alreaday, n;$/;"	v
+cnt	4.oj/luogu/P1629-邮递员送信.cpp	/^int cnt[2], n, m;$/;"	v
+cnt	4.oj/luogu/P2504-聪明的猴子.cpp	/^int n, m, cnt, alreday;$/;"	v
+cnt	4.oj/luogu/P2865-Roadblocks-v1.cpp	/^int cnt = 0, n, m;$/;"	v
+cnt	4.oj/luogu/P2865-Roadblocks-v2.cpp	/^int cnt, n, m;$/;"	v
+cnt	4.oj/luogu/P4047-部落划分.cpp	/^int n, k, cnt;$/;"	v
+cnt	4.oj/luogu/P4826-Superbull.cpp	/^int n, cnt;$/;"	v
+cnt	4.oj/luogu/p3371-单源最短路径.cpp	/^int cnt = 0;$/;"	v
+cond	5.OS/4.IPC/locker.cpp	/^    cond() {$/;"	f	class:cond
+cond	5.OS/4.IPC/locker.cpp	/^class cond {$/;"	c	file:
+cond	5.OS/5.thread_pool/thread_pool.h	/^    pthread_cond_t cond;$/;"	m	struct:task_queue
+connfd	5.OS/7.socket/9.SIURG.c	/^static int connfd;$/;"	v	file:
+cost	4.oj/hzoj/oj-533.cpp	/^    int x, y, cost, last;$/;"	m	struct:Data	file:
+cout	3.C++/cout.cpp	/^ostream cout;$/;"	v
+create	5.OS/4.IPC/process_pool.cpp	/^    static processpool<T> *create(int listenfd, int process_number = 0) {$/;"	f	class:processpool
+cur_size	5.OS/9.timer/5.heep_timer.cpp	/^    int cur_size;$/;"	m	class:time_heap	file:
+cur_slot	5.OS/9.timer/4.time_wheel_timer.cpp	/^    int cur_slot;$/;"	m	class:time_wheel	file:
+d	3.C++/28.POD.cpp	/^struct D1 : B1 { int d; };               \/\/1  $/;"	m	struct:D1	file:
+d	3.C++/28.POD.cpp	/^struct D2 : B2 { static int d; };        \/\/1$/;"	m	struct:D2	file:
+d	3.C++/28.POD.cpp	/^struct D3 : B2, B1 { static int d;  };   \/\/1$/;"	m	struct:D3	file:
+d	3.C++/28.POD.cpp	/^struct D4 : B2 { int d;  };              \/\/0$/;"	m	struct:D4	file:
+d	4.oj/1.EP/49.cpp	/^sLnt d[MAX_N + 5];$/;"	v
+d	4.oj/hzoj/oj-302.cpp	/^    int step, d;$/;"	m	struct:Data	file:
+d	4.oj/hzoj/oj-527-飞跃原野.cpp	/^    int x, y, d, time;$/;"	m	struct:Data	file:
+dLen	4.oj/1.EP/49.cpp	/^int dLen = 0;$/;"	v
+data	3.C++/19.value.cpp	/^    int *data;$/;"	m	class:vector	file:
+data	3.C++/2.Array.cpp	/^    T *data;$/;"	m	class:Array	file:
+data	3.C++/21.template.cpp	/^    T *data;$/;"	m	class:vector	file:
+data	3.C++/6.hashTable.cpp	/^    Node *data;$/;"	m	class:HashTable	file:
+data	3.C++/array.cpp	/^    int *data, end;$/;"	m	class:Array	file:
+data	3.C++/ptr.cpp	/^    int *data;$/;"	m	class:ptrMem	file:
+data	5.OS/5.thread_pool/thread_pool.h	/^    char **data;$/;"	m	struct:task_queue
+data	5.OS/9.timer/bit.cpp	/^    unsigned long int data[SIGSET_SIZE];$/;"	m	class:my_sigset	file:
+default_path	6.other/handle_brackets.cpp	/^const char *default_path = ".\/input";$/;"	v
+del_semvalue	5.OS/4.IPC/sem/server.c	/^static void del_semvalue() {$/;"	f	file:
+del_timer	5.OS/9.timer/1.timer-list.h	/^void sort_timer_list::del_timer(util_timer *timer) {$/;"	f	class:sort_timer_list
+del_timer	5.OS/9.timer/4.time_wheel_timer.cpp	/^void time_wheel::del_timer(tw_timer *timer) {$/;"	f	class:time_wheel
+del_timer	5.OS/9.timer/5.heep_timer.cpp	/^void time_heap::del_timer(heap_timer *timer) {$/;"	f	class:time_heap
+dep	4.oj/hzoj/oj-297.cpp	/^int n, num[55], dep;$/;"	v
+dfs	4.oj/hzoj/543-分书问题.cpp	/^void dfs(int start) {$/;"	f
+dfs	4.oj/hzoj/oj-297.cpp	/^bool dfs(int x) {$/;"	f
+dfs	4.oj/hzoj/oj-396.cpp	/^int dfs(int x, int y) {$/;"	f
+dfs	4.oj/hzoj/oj-397.cpp	/^void dfs(int x, int y) {$/;"	f
+dfs	4.oj/hzoj/oj-521.cpp	/^void dfs(int *arr, int start, int left, int n, int sum) {$/;"	f
+dfs	4.oj/hzoj/oj-535.cpp	/^void dfs(int x, int y) {$/;"	f
+dfs	4.oj/hzoj/oj-536.cpp	/^void dfs(int x, int y) {$/;"	f
+dfs	4.oj/hzoj/oj-537.cpp	/^int dfs(int s, int left) {$/;"	f
+dfs	4.oj/hzoj/oj-540.cpp	/^void dfs(long long  s, long long  e, long long  sum, long long  k) {$/;"	f
+dfs	4.oj/hzoj/oj-542-奶酪.cpp	/^int dfs(int now) {$/;"	f
+dfs	4.oj/hzoj/oj-83.cpp	/^int dfs(int cur, int sum, int left) {$/;"	f
+digit	4.oj/hzoj/oj-531.cpp	/^int digit[MAX_N + 5];$/;"	v
+dijskstra	4.oj/luogu/P1144-最短路计数.cpp	/^void dijskstra(int start) {$/;"	f
+dijskstra	4.oj/luogu/P1629-邮递员送信.cpp	/^void dijskstra(int k) {$/;"	f
+dijskstra	4.oj/luogu/p3371-单源最短路径.cpp	/^void dijskstra() {$/;"	f
+dir	4.oj/1.EP/11.cpp	/^int dir[4][2] = {0, 1, 1, 0, 1, 1, 1, -1};$/;"	v
+dir	4.oj/304.cpp	/^int dir[8][2] = {-2, 1, -2, -1, $/;"	v
+dir	4.oj/hzoj/oj-230.cpp	/^int dir[5][2] = {0 , 1, 1, 0, 0, -1, -1, 0, 0, 0};$/;"	v
+dir	4.oj/hzoj/oj-302.cpp	/^int dir[5][2] = {0, 1, 1, 0, 0, -1, -1, 0, 0, 0};$/;"	v
+dir	4.oj/hzoj/oj-303.cpp	/^int dir[4][2] = {0, 1, 1, 0, 0, -1, -1, 0};$/;"	v
+dir	4.oj/hzoj/oj-305.cpp	/^int dir[8][2] = {0, 1, 1, 0, 0, -1, -1, 0, 1, 1, 1, -1, -1, 1, -1, -1};$/;"	v
+dir	4.oj/hzoj/oj-306.cpp	/^string dir[7][2];$/;"	v
+dir	4.oj/hzoj/oj-396.cpp	/^int dir[4][2] = {0, 1, 1, 0, 0, -1, -1, 0};$/;"	v
+dir	4.oj/hzoj/oj-397.cpp	/^int dir[4][2] = {0, 1, 1, 0, -1, -1, 0};$/;"	v
+dir	4.oj/hzoj/oj-404.cpp	/^int dir[4][2] = {0, 1, 1, 0, 0, -1, -1, 0};$/;"	v
+dir	4.oj/hzoj/oj-527-飞跃原野.cpp	/^int dir[4][2] = {0, 1, 1, 0, 0, -1, -1, 0};$/;"	v
+dir	4.oj/hzoj/oj-529.cpp	/^int dir[8][2] = {0, 1, 1, 0, 0, -1, -1, 0,$/;"	v
+dir	4.oj/hzoj/oj-530.cpp	/^int dir[4][2] = {-1, 0, 1, 0, 0, -1, 0, 1};$/;"	v
+dir	4.oj/hzoj/oj-533.cpp	/^int dir[4][2] = {0, 1, 1, 0, 0, -1, -1, 0};$/;"	v
+dir	4.oj/hzoj/oj-535.cpp	/^int dir[4][2] = {0, 1, 1, 0, 0, -1, -1, 0};$/;"	v
+dir	4.oj/hzoj/oj-536.cpp	/^int dir[4][2] = {0, 1, 1, 0, 0, -1, -1, 0};$/;"	v
+dir	4.oj/hzoj/oj-80.cpp	/^int dir[4][2] = {0, 1, 1, 0, 0, -1, -1, 0};$/;"	v
+dir	4.oj/hzoj/oj-81.cpp	/^int dir[4][2] = {0, 1, 1, 0, 0, -1, -1, 0};$/;"	v
+dir	4.oj/hzoj/test.cpp	/^int dir[5][2] = {0, 1, 1, 0, 0, -1, -1, 0, 0, 0};$/;"	v
+dist	4.oj/luogu/P1144-最短路计数.cpp	/^int head[MAX_N + 5], dist[MAX_N + 5], ans[MAX_N + 5];$/;"	v
+dist	4.oj/luogu/P1546-最短网络.cpp	/^int dist[MAX_N + 5];$/;"	v
+dist	4.oj/luogu/P1629-邮递员送信.cpp	/^int head[2][MAX_N + 5], dist[2][MAX_N + 5];$/;"	v
+dist	4.oj/luogu/P2865-Roadblocks-v1.cpp	/^int head[MAX_N + 5], dist[2][MAX_N + 5];$/;"	v
+dist	4.oj/luogu/P2865-Roadblocks-v2.cpp	/^int head[MAX_N + 5], dist[2][MAX_N + 5];$/;"	v
+dist	4.oj/luogu/P4826-Superbull.cpp	/^int head[MAX_N + 5], dist[MAX_N + 5], num[MAX_N + 5];$/;"	v
+dist	4.oj/luogu/p3371-单源最短路径.cpp	/^int head[MAX_N + 5], dist[MAX_N + 5];$/;"	v
+dist	4.oj/oj-638.cpp	/^int head[MAX_N + 5], dist[MAX_N + 5], in_degree[MAX_N + 5];$/;"	v
+do_add	5.OS/2.process/4.add.c	/^void do_add(int max, int x) {$/;"	f
+do_add	5.OS/4.IPC/1.shm_add.c	/^void do_add(int max, int x) {$/;"	f
+do_print	5.OS/4.IPC/3.sigal.cpp	/^void *do_print(int signum) {$/;"	f
+down	4.oj/hzoj/oj-297.cpp	/^vector<int> up, down;$/;"	v
+downUpdata	5.OS/9.timer/5.heep_timer.cpp	/^void time_heap::downUpdata(int ind) {$/;"	f	class:time_heap
+downUpdate	4.oj/leetcode/215-topK-heap.cpp	/^    void downUpdate(int *nums, int ind, int size) {$/;"	f	class:Solution
+down_maintain	3.C++/16.priority_queue.cpp	/^    void down_maintain(int ind) {$/;"	f	class:heap_queue	file:
+dp	4.oj/hzoj/oj-231.cpp	/^int f[15], dp[15];$/;"	v
+e	4.oj/hzoj/oj-290.cpp	/^vector<int> e[MAX_N + 5], a;$/;"	v
+e	4.oj/hzoj/oj-542-奶酪.cpp	/^int s[MAX_N + 5], e[MAX_N + 5];$/;"	v
+e	4.oj/luogu/P1144-最短路计数.cpp	/^Edge e[MAX_M + 5];$/;"	v
+e	4.oj/luogu/P1265-公路修建.cpp	/^Edge e[MAX_N * MAX_N + 5];$/;"	v
+e	4.oj/luogu/P1340-兽径管理.cpp	/^Edge e[MAX_M + 5];$/;"	v
+e	4.oj/luogu/P1629-邮递员送信.cpp	/^Edge e[2][MAX_M + 5];$/;"	v
+e	4.oj/luogu/P2504-聪明的猴子.cpp	/^Edge e[MAX_N * MAX_N + 5];$/;"	v
+e	4.oj/luogu/P2865-Roadblocks-v1.cpp	/^Edge e[MAX_M + 5];$/;"	v
+e	4.oj/luogu/P2865-Roadblocks-v2.cpp	/^Edge e[MAX_M + 5];$/;"	v
+e	4.oj/luogu/P4047-部落划分.cpp	/^Edge e[MAX_N * MAX_N + 5];$/;"	v
+e	4.oj/luogu/P4826-Superbull.cpp	/^Edge e[MAX_N * MAX_N * 2 + 5];$/;"	v
+e	4.oj/luogu/p3371-单源最短路径.cpp	/^Edge e[MAX_M + 5];$/;"	v
+e	4.oj/oj-635-神经网络.cpp	/^Edge e[MAX_N * MAX_N + 5];$/;"	v
+e	4.oj/oj-636.旅行计划.cpp	/^Edge e[MAX_M + 5];$/;"	v
+e	4.oj/oj-638.cpp	/^Edge e[MAX_M + 5];$/;"	v
+e	4.oj/oj-640.cpp	/^Edge e[MAX_M + 5];$/;"	v
+e	4.oj/oj-675.cpp	/^Edge e[MAX_N + 5];$/;"	v
+e1	4.oj/hzoj/oj-529.cpp	/^int n, m, s1, e1, s2, e2;$/;"	v
+e2	4.oj/hzoj/oj-529.cpp	/^int n, m, s1, e1, s2, e2;$/;"	v
+edge	4.oj/oj-641-拓扑排序.cpp	/^Edge edge[MAX_N * MAX_N + 5];$/;"	v
+empty	3.C++/6.hashTable.cpp	/^    bool empty() { return this->flag == false; }$/;"	f	class:Node
+empty	5.OS/9.timer/5.heep_timer.cpp	/^bool time_heap::empty() const {$/;"	f	class:time_heap
+end	3.C++/array.cpp	/^    int *data, end;$/;"	m	class:Array	file:
+end	5.OS/9.timer/3.IO-clocking.cpp	/^time_t end = time(NULL);$/;"	v
+endl	3.C++/cout.cpp	/^char endl = '\\n';$/;"	v
+epollfd	5.OS/7.socket/4.epolloneshot.c	/^    int epollfd, sockfd;$/;"	m	struct:Data	file:
+epollfd	5.OS/9.timer/2.close-connect.cpp	/^static int epollfd = 0;$/;"	v	file:
+et	5.OS/7.socket/3.epoll.c	/^void et(struct epoll_event *events, int number, int epollfd, int listenfd) {$/;"	f
+ex_gcd	4.oj/1.EP/ep-05.cpp	/^int ex_gcd(int a, int b, int *x, int *y) {$/;"	f
+expand	3.C++/15.string.cpp	/^    bool expand(const char *data, int oldSize, int newSize) {$/;"	f	class:MyString	file:
+expire	5.OS/9.timer/1.timer-list.h	/^    time_t expire;$/;"	m	class:util_timer
+expire	5.OS/9.timer/5.heep_timer.cpp	/^    time_t expire;$/;"	m	class:heap_timer	file:
+f	2.DS/stack_queue/oj-261.cpp	/^long long f[MAX_N + 5];$/;"	v
+f	2.DS/stack_queue/oj-262.cpp	/^long long f[MAX_N + 5];$/;"	v
+f	2.DS/stack_queue/oj-267.cpp	/^int f[MAX_N + 5][MAX_N + 5];$/;"	v
+f	3.C++/17.const.cpp	/^int f(int x) {$/;"	f
+f	4.oj/1.EP/12.cpp	/^int f[MAX_N + 5]; \/\/因子数$/;"	v
+f	4.oj/1.EP/21.cpp	/^int f[MAX_N + 5];$/;"	v
+f	4.oj/1.EP/23.cpp	/^int f[MAX_N + 5];$/;"	v
+f	4.oj/1.EP/24.cpp	/^int f[max_n + 5];$/;"	v
+f	4.oj/1.EP/31.cpp	/^int f[MAX_M + 5];$/;"	v
+f	4.oj/1.EP/40.cpp	/^int f[10];$/;"	v
+f	4.oj/1.EP/47.cpp	/^int f[MAX_N + 5];$/;"	v
+f	4.oj/1.EP/EP53.cpp	/^int f[MAX_N + 5][MAX_N + 5];$/;"	v
+f	4.oj/hzoj/1.cpp	/^void f(int k) {$/;"	f
+f	4.oj/hzoj/oj-231.cpp	/^int f[15], dp[15];$/;"	v
+fa	4.oj/luogu/P1265-公路修建.cpp	/^    vector<int> fa;$/;"	m	struct:UnionSet	file:
+fa	4.oj/luogu/P1340-兽径管理.cpp	/^    vector<int> fa;$/;"	m	struct:UnionSet	file:
+fa	4.oj/luogu/P2504-聪明的猴子.cpp	/^    vector<int> fa;$/;"	m	struct:UnionSet	file:
+fa	4.oj/luogu/P4047-部落划分.cpp	/^    vector<int> fa;$/;"	m	struct:UnionSet	file:
+filename	5.OS/2.process/3.test.c	10;"	d	file:
+find	3.C++/6.hashTable.cpp	/^bool HashTable::find(const char *str) {$/;"	f	class:HashTable
+findKthLargest	4.oj/leetcode/215-topK-heap.cpp	/^    int findKthLargest(vector<int>& nums, int k) {$/;"	f	class:Solution
+findKthLargest	4.oj/leetcode/215-topK.cpp	/^    int findKthLargest(vector<int>& nums, int k) {$/;"	f	class:Solution
+find_position	3.C++/6.hashTable.cpp	/^Node &HashTable::find_position(const char *str) {$/;"	f	class:HashTable
+flag	3.C++/6.hashTable.cpp	/^    bool flag;$/;"	m	class:Node	file:
+flag	4.oj/hzoj/oj-281.cpp	/^    int flag;$/;"	m	struct:Node	file:
+flag	4.oj/hzoj/oj-283.cpp	/^    int flag;$/;"	m	struct:Node	file:
+flag	4.oj/hzoj/oj-81.cpp	/^    int x, y, step, flag;$/;"	m	struct:Data	file:
+flag	5.OS/1.file/2.cat.c	/^int n = 1, flag = 0;$/;"	v
+floyed	4.oj/oj-637.cpp	/^int floyed(int n) {$/;"	f
+foo	3.C++/foo.cc	/^int foo(bool x) {$/;"	f
+foo	3.C++/foo.cc	/^int foo(int x) {$/;"	f
+fu_num	4.oj/hzoj/oj-537.cpp	/^int l, c, cnt, yuan_num, fu_num, idx;$/;"	v
+func	1.c_language/gtest/module/test.h	/^    TestFuncT func;$/;"	m	struct:Function
+func	3.C++/17.const.cpp	/^constexpr int func(int a) {$/;"	f
+func	3.C++/18.nullptr.cpp	/^void func(int *x) {$/;"	f
+func	3.C++/19.bind_order.cpp	/^void func(int &x) {$/;"	f
+func	3.C++/24.stack.cpp	22;"	d	file:
+func	3.C++/5.virtual_table.cpp	/^typedef void(*func)(void *, int x);$/;"	t	file:
+func	3.C++/test2.cpp	/^void func(char x) {$/;"	f
+func	3.C++/test2.cpp	/^void func(int x) {$/;"	f
+func	4.oj/1.EP/45.cpp	/^typedef long long (*func)(long long);$/;"	t	file:
+func	4.oj/1.EP/46.cpp	/^int func(int x) {$/;"	f
+func	4.oj/hzoj/oj-235.cpp	/^int func(int start) {$/;"	f
+func	4.oj/hzoj/oj-236.cpp	/^void func(int start, int left) {$/;"	f
+func	4.oj/hzoj/oj-237.cpp	/^void func(int left, int n) {$/;"	f
+func	4.oj/hzoj/oj-541.cpp	/^void func(int now, int op, int time) {$/;"	f
+func	4.oj/test.cpp	/^int func() {$/;"	f
+func1	4.oj/1.EP/45.cpp	/^long long func1(long long n) {$/;"	f
+func2	4.oj/1.EP/45.cpp	/^long long func2(long long n) {$/;"	f
+func3	4.oj/1.EP/45.cpp	/^long long func3(long long n) {$/;"	f
+func_arr	1.c_language/gtest/module/test.cc	/^struct Function func_arr[100];$/;"	v	typeref:struct:Function
+func_cnt	1.c_language/gtest/module/test.cc	/^int func_cnt = 0;$/;"	v
+g	4.oj/304.cpp	/^char g[MAX_N + 5][MAX_N + 5];$/;"	v
+g	4.oj/hzoj/oj-305.cpp	/^char g[MAX_N + 5][MAX_N + 5];$/;"	v
+gcd	4.oj/1.EP/39.cpp	/^inline int gcd(int a, int b) {$/;"	f
+gcd	4.oj/1.EP/5.cpp	/^int gcd(int a, int b) {$/;"	f
+gcd	4.oj/1.EP/9.cpp	/^int gcd(int a, int b) {$/;"	f
+gcd	4.oj/hzoj/oj-515.cpp	/^int gcd(int a, int b) {$/;"	f
+get	4.oj/leetcode/460.cpp	/^    int get(int key) {$/;"	f	class:LFUCache
+get	4.oj/luogu/P1265-公路修建.cpp	/^    int get(int x) {$/;"	f	struct:UnionSet
+get	4.oj/luogu/P1340-兽径管理.cpp	/^    int get(int x) {$/;"	f	struct:UnionSet
+get	4.oj/luogu/P2504-聪明的猴子.cpp	/^    int get(int x) {$/;"	f	struct:UnionSet
+get	4.oj/luogu/P4047-部落划分.cpp	/^    int get(int x) {$/;"	f	struct:UnionSet
+getCnt	4.oj/hzoj/oj-514.cpp	/^inline int getCnt(int val) {$/;"	f
+getFlag	2.DS/stack_queue/oj-266.cpp	/^int getFlag(const char *exp, int l, int id) {$/;"	f
+getLen	3.C++/15.string.cpp	/^int MyString::getLen(const char *str) {$/;"	f	class:MyString
+getLen	4.oj/hzoj/oj-519.cpp	/^int getLen(long long val) {$/;"	f
+getNewNode	4.oj/hzoj/oj-281.cpp	/^Node *getNewNode() {$/;"	f
+getNode	4.oj/282.cpp	/^inline int getNode() { return ++cnt; };$/;"	f
+getNode	4.oj/hzoj/oj-283.cpp	/^inline int getNode() { return ++cnt; };$/;"	f
+get_a_and_b	4.oj/1.EP/0.random.cpp	/^void get_a_and_b(int *a, int *b) {$/;"	f
+get_len	4.oj/1.EP/0.random.cpp	/^int get_len(int a, int b) {$/;"	f
+get_len	4.oj/1.EP/14.cpp	/^long long get_len(long long n) {$/;"	f
+get_len	4.oj/1.EP/random.cpp	/^int get_len(int a, int b) {$/;"	f
+get_msg	5.OS/4.IPC/msg.cpp	/^get_msg(int qid, int msgtype)$/;"	f	file:
+get_num	4.oj/1.EP/24.cpp	/^int get_num(int k, int val, int &x) {$/;"	f
+get_num	4.oj/1.EP/29.cpp	/^void get_num(int a, int b, Tuple *temp) {$/;"	f
+get_num	5.OS/2.process/4.add.c	/^size_t get_num(struct Num *num) {$/;"	f
+graph	4.oj/hzoj/oj-303.cpp	/^char graph[MAX_N + 5][MAX_N + 5];$/;"	v
+grid	4.oj/hzoj/oj-302.cpp	/^char grid[MAX_N + 5][MAX_N +5];$/;"	v
+grid	4.oj/hzoj/oj-80.cpp	/^char grid[MAX_N + 5][MAX_N + 5];$/;"	v
+grid	4.oj/hzoj/oj-81.cpp	/^char  grid[MAX_N + 5][MAX_N + 5];$/;"	v
+h	4.oj/82.cpp	/^int h[MAX_N + 5];$/;"	v
+h	4.oj/hzoj/oj-542-奶酪.cpp	/^int n, h, r;$/;"	v
+hand_error	5.OS/6.IO/1.sendfile.c	24;"	d	file:
+handle	6.other/handle_brackets.cpp	/^void handle(string &s, string from, string to) {$/;"	f
+handle_errno	5.OS/7.socket/8.signal.cpp	24;"	d	file:
+handle_error	5.OS/7.socket/2.select.c	22;"	d	file:
+handle_error_en	5.OS/4.IPC/one_thread_signal.cpp	17;"	d	file:
+handler	3.C++/test2.cpp	/^void handler() {$/;"	f
+haveCycle	4.oj/oj-637.cpp	/^int haveCycle(int n) {$/;"	f
+head	2.DS/stack_queue/oj-268-2.cpp	/^    Node *head, *tail;$/;"	m	class:Queue	file:
+head	4.oj/hzoj/oj-270.cpp	/^int head, tail;$/;"	v
+head	4.oj/leetcode/460.cpp	/^    Node head, tail;  $/;"	m	struct:DoubeList	file:
+head	4.oj/luogu/P1144-最短路计数.cpp	/^int head[MAX_N + 5], dist[MAX_N + 5], ans[MAX_N + 5];$/;"	v
+head	4.oj/luogu/P1265-公路修建.cpp	/^int head[MAX_N + 5], city[MAX_N + 5][2];$/;"	v
+head	4.oj/luogu/P1629-邮递员送信.cpp	/^int head[2][MAX_N + 5], dist[2][MAX_N + 5];$/;"	v
+head	4.oj/luogu/P2504-聪明的猴子.cpp	/^int head[MAX_N + 5], monkey[MAX_M + 5], tree[MAX_N + 5][2];$/;"	v
+head	4.oj/luogu/P2865-Roadblocks-v1.cpp	/^int head[MAX_N + 5], dist[2][MAX_N + 5];$/;"	v
+head	4.oj/luogu/P2865-Roadblocks-v2.cpp	/^int head[MAX_N + 5], dist[2][MAX_N + 5];$/;"	v
+head	4.oj/luogu/P4826-Superbull.cpp	/^int head[MAX_N + 5], dist[MAX_N + 5], num[MAX_N + 5];$/;"	v
+head	4.oj/luogu/p3371-单源最短路径.cpp	/^int head[MAX_N + 5], dist[MAX_N + 5];$/;"	v
+head	4.oj/oj-635-神经网络.cpp	/^int head[MAX_N + 5], in_degree[MAX_N + 5], out_degree[MAX_N + 5];$/;"	v
+head	4.oj/oj-636.旅行计划.cpp	/^int ans[MAX_N + 5], head[MAX_N + 5], in_degree[MAX_N + 5];$/;"	v
+head	4.oj/oj-638.cpp	/^int head[MAX_N + 5], dist[MAX_N + 5], in_degree[MAX_N + 5];$/;"	v
+head	4.oj/oj-640.cpp	/^int head[MAX_N + 5], in_degree[MAX_N + 5], out_degree[MAX_N + 5];$/;"	v
+head	4.oj/oj-641-拓扑排序.cpp	/^int n, m, head[MAX_N + 5], in_degree[MAX_N + 5];$/;"	v
+head	4.oj/oj-675.cpp	/^int head[MAX_N + 5], s[MAX_N + 5], in_degree[MAX_N + 5];$/;"	v
+head	5.OS/5.thread_pool/thread_pool.h	/^    int size, total, head, tail;$/;"	m	struct:task_queue
+head	5.OS/9.timer/1.timer-list.h	/^    util_timer *head, *tail;$/;"	m	class:sort_timer_list
+heap_queue	3.C++/16.priority_queue.cpp	/^class heap_queue : public IQueue, public vector<int> {$/;"	c	file:
+heap_timer	5.OS/9.timer/5.heep_timer.cpp	/^    heap_timer(int delay) {$/;"	f	class:heap_timer
+heap_timer	5.OS/9.timer/5.heep_timer.cpp	/^class heap_timer {$/;"	c	file:
+helper	3.C++/23.try_catch.cpp	/^class helper : public std::exception {$/;"	c	file:
+i	4.oj/1.EP/0.random.cpp	27;"	d	file:
+i	4.oj/1.EP/0.random.cpp	32;"	d	file:
+i	4.oj/1.EP/random.cpp	28;"	d	file:
+i	4.oj/1.EP/random.cpp	33;"	d	file:
+id	4.oj/hzoj/oj-375.cpp	/^    int sum,  x, id;$/;"	m	struct:Data	file:
+idx	4.oj/hzoj/oj-537.cpp	/^int l, c, cnt, yuan_num, fu_num, idx;$/;"	v
+in_degree	4.oj/oj-635-神经网络.cpp	/^int head[MAX_N + 5], in_degree[MAX_N + 5], out_degree[MAX_N + 5];$/;"	v
+in_degree	4.oj/oj-636.旅行计划.cpp	/^int ans[MAX_N + 5], head[MAX_N + 5], in_degree[MAX_N + 5];$/;"	v
+in_degree	4.oj/oj-637.cpp	/^int l[MAX_N + 5], r[MAX_N + 5], in_degree[MAX_N + 5];$/;"	v
+in_degree	4.oj/oj-638.cpp	/^int head[MAX_N + 5], dist[MAX_N + 5], in_degree[MAX_N + 5];$/;"	v
+in_degree	4.oj/oj-640.cpp	/^int head[MAX_N + 5], in_degree[MAX_N + 5], out_degree[MAX_N + 5];$/;"	v
+in_degree	4.oj/oj-641-拓扑排序.cpp	/^int n, m, head[MAX_N + 5], in_degree[MAX_N + 5];$/;"	v
+in_degree	4.oj/oj-675.cpp	/^int head[MAX_N + 5], s[MAX_N + 5], in_degree[MAX_N + 5];$/;"	v
+increase	4.oj/leetcode/460.cpp	/^    void increase(Node *p) {$/;"	f	class:LFUCache
+ind	2.DS/stack_queue/oj-268-2.cpp	/^map<int, int> ind;$/;"	v
+ind	4.oj/leetcode/460.cpp	/^    unordered_map<int , DoubeList*> ind;$/;"	m	class:LFUCache	file:
+info	1.c_language/gtest/module/test.cc	/^struct FunctionInfo info;$/;"	v	typeref:struct:FunctionInfo
+init	3.C++/26.immediately_init.cpp	/^struct init {$/;"	s	file:
+init	4.oj/1.EP/10-2.cpp	/^void init() {$/;"	f
+init	4.oj/1.EP/10.cpp	/^void init() {$/;"	f
+init	4.oj/1.EP/12.cpp	/^void init() {$/;"	f
+init	4.oj/1.EP/21.cpp	/^void init() {$/;"	f
+init	4.oj/1.EP/23.cpp	/^void init() {$/;"	f
+init	4.oj/1.EP/24.cpp	/^void init() {$/;"	f
+init	4.oj/1.EP/29.cpp	/^void init() {$/;"	f
+init	4.oj/1.EP/34.cpp	/^void init(int *num) {$/;"	f
+init	4.oj/1.EP/40.cpp	/^void init() {$/;"	f
+init	4.oj/1.EP/46.cpp	/^void init() {$/;"	f
+init	4.oj/1.EP/47.cpp	/^void init() {$/;"	f
+init	4.oj/1.EP/49-1.cpp	/^void init() {$/;"	f
+init	4.oj/1.EP/49.cpp	/^void init() {$/;"	f
+init	4.oj/1.EP/50.cpp	/^void init() {$/;"	f
+init	4.oj/1.EP/7.cpp	/^void init() {$/;"	f
+init	4.oj/1.EP/EP29.cpp	/^void init() {$/;"	f
+init	4.oj/hzoj/oj-229.cpp	/^void init() {$/;"	f
+init	4.oj/hzoj/oj-230.cpp	/^void init() {$/;"	f
+init	4.oj/hzoj/oj-260.cpp	/^void init() {$/;"	f
+init	4.oj/hzoj/oj-521.cpp	/^void init() {$/;"	f
+init	4.oj/hzoj/oj-529.cpp	/^void init(int sx, int sy) {$/;"	f
+init	4.oj/hzoj/oj-531.cpp	/^void init() {$/;"	f
+init	4.oj/hzoj/test.cpp	/^void init() {$/;"	f
+init	4.oj/luogu/P1144-最短路计数.cpp	/^void init() {$/;"	f
+init	4.oj/luogu/P1265-公路修建.cpp	/^    void init(int n) {$/;"	f	struct:UnionSet
+init	4.oj/luogu/P1265-公路修建.cpp	/^void init() {$/;"	f
+init	4.oj/luogu/P1340-兽径管理.cpp	/^    void init(int n) {$/;"	f	struct:UnionSet
+init	4.oj/luogu/P1546-最短网络.cpp	/^void init() {$/;"	f
+init	4.oj/luogu/P1629-邮递员送信.cpp	/^void init() {$/;"	f
+init	4.oj/luogu/P2504-聪明的猴子.cpp	/^    void init(int n) {$/;"	f	struct:UnionSet
+init	4.oj/luogu/P2504-聪明的猴子.cpp	/^void init() {$/;"	f
+init	4.oj/luogu/P2865-Roadblocks-v1.cpp	/^void init() {$/;"	f
+init	4.oj/luogu/P2865-Roadblocks-v2.cpp	/^void init() {$/;"	f
+init	4.oj/luogu/P4047-部落划分.cpp	/^    void init(int n) {$/;"	f	struct:UnionSet
+init	4.oj/luogu/P4826-Superbull.cpp	/^void init() {$/;"	f
+init	4.oj/luogu/p3371-单源最短路径.cpp	/^void init() {$/;"	f
+init	4.oj/oj-638.cpp	/^void init() {$/;"	f
+init	4.oj/oj-640.cpp	/^void init() {$/;"	f
+init_prime	4.oj/1.EP/0.random.cpp	/^void init_prime() {$/;"	f
+inner	3.C++/23.try_catch.cpp	/^void inner () {$/;"	f
+input	3.C++/24.stack.cpp	/^enum class open_modes{input, output = 2, append};$/;"	m	class:open_modes	file:
+insert	3.C++/6.hashTable.cpp	/^    void insert(const char *str) {$/;"	f	class:Node
+insert	3.C++/6.hashTable.cpp	/^bool HashTable::insert(const char *str) {$/;"	f	class:HashTable
+insert	4.oj/282.cpp	/^void insert(int num) {$/;"	f
+insert	4.oj/hzoj/oj-281.cpp	/^void insert(Node *root, char *str) {$/;"	f
+insert	4.oj/hzoj/oj-283.cpp	/^bool insert(char *str) {$/;"	f
+insert_node	4.oj/leetcode/460.cpp	/^    void insert_node(Node *p) {$/;"	f	struct:DoubeList
+int_to_str	1.c_language/3.myPrintf.cpp	/^int int_to_str(char *num, long long  x) {$/;"	f
+is_member	5.OS/9.timer/bit.cpp	/^    bool is_member(int val) {$/;"	f	class:my_sigset
+is_val	4.oj/1.EP/34.cpp	/^int is_val(int x) {$/;"	f
+is_val	4.oj/1.EP/36.cpp	/^bool is_val(int x, int base)  {$/;"	f
+is_val	4.oj/1.EP/38.cpp	/^int is_val(int n, int *result) {$/;"	f
+is_val	4.oj/1.EP/46.cpp	/^int is_val(int x) {$/;"	f
+is_valid	2.DS/stack_queue/oj-263.cpp	/^bool is_valid(int *a, int n) {$/;"	f
+is_valid	4.oj/1.EP/19.cpp	/^int is_valid(int x) {$/;"	f
+is_valid	4.oj/1.EP/4.cpp	/^bool is_valid(int x) {$/;"	f
+judge	4.oj/1.EP/49-1.cpp	/^int judge(int a, int b) {$/;"	f
+k	4.oj/hzoj/oj-404.cpp	/^int n, m, k;$/;"	v
+k	4.oj/hzoj/oj-530.cpp	/^int n, m, k;$/;"	v
+k	4.oj/luogu/P4047-部落划分.cpp	/^int n, k, cnt;$/;"	v
+keep	4.oj/1.EP/14.cpp	/^int keep[MAX_N + 5];$/;"	v
+key	4.oj/leetcode/460.cpp	/^    int key, value, cnt;$/;"	m	struct:Node	file:
+l	3.C++/delagation_constructor.cpp	/^    list<int> l;$/;"	m	class:TDConstructed	file:
+l	4.oj/hzoj/oj-516.cpp	/^int l[MAX_N + 5], r[MAX_N + 5];$/;"	v
+l	4.oj/hzoj/oj-537.cpp	/^int l, c, cnt, yuan_num, fu_num, idx;$/;"	v
+l	4.oj/oj-637.cpp	/^int l[MAX_N + 5], r[MAX_N + 5], in_degree[MAX_N + 5];$/;"	v
+l	4.oj/oj-674-宿舍楼里的电竞赛.cpp	/^int l[MAX_N + 5], r[MAX_N + 5];$/;"	v
+last	4.oj/hzoj/oj-533.cpp	/^    int x, y, cost, last;$/;"	m	struct:Data	file:
+locate	4.oj/luogu/P4047-部落划分.cpp	/^int locate[MAX_N + 5][2];$/;"	v
+lock	5.OS/4.IPC/locker.cpp	/^    bool lock() {$/;"	f	class:locker
+lock_file	5.OS/2.process/4.add.c	/^char lock_file[] = ".\/.lock";$/;"	v
+locker	5.OS/4.IPC/locker.cpp	/^    locker() {$/;"	f	class:locker
+locker	5.OS/4.IPC/locker.cpp	/^class locker {$/;"	c	file:
+log	1.c_language/1.atoi.cpp	21;"	d	file:
+log	4.oj/1.EP/29.cpp	23;"	d	file:
+lpart	4.oj/hzoj/oj-474.cpp	/^    deque<int> lpart, rpart;$/;"	m	struct:BigFloat	file:
+lt	5.OS/7.socket/3.epoll.c	/^void lt(struct epoll_event *events, int number, int epollfd, int listenfd) {$/;"	f
+m	2.DS/stack_queue/oj-267.cpp	/^int n, m;$/;"	v
+m	4.oj/304.cpp	/^int n, m;$/;"	v
+m	4.oj/82.cpp	/^long long n, m;$/;"	v
+m	4.oj/hzoj/oj-236.cpp	/^int n, m;$/;"	v
+m	4.oj/hzoj/oj-302.cpp	/^int n, m;$/;"	v
+m	4.oj/hzoj/oj-303.cpp	/^int n, m;$/;"	v
+m	4.oj/hzoj/oj-391.cpp	/^int n, m;$/;"	v
+m	4.oj/hzoj/oj-396.cpp	/^int n, m;$/;"	v
+m	4.oj/hzoj/oj-397.cpp	/^int n, m;$/;"	v
+m	4.oj/hzoj/oj-404.cpp	/^int n, m, k;$/;"	v
+m	4.oj/hzoj/oj-529.cpp	/^int n, m, s1, e1, s2, e2;$/;"	v
+m	4.oj/hzoj/oj-530.cpp	/^int n, m, k;$/;"	v
+m	4.oj/hzoj/oj-535.cpp	/^int n, m, cnt, sx, sy;$/;"	v
+m	4.oj/hzoj/oj-536.cpp	/^int n, m, ans, cnt;$/;"	v
+m	4.oj/hzoj/oj-540.cpp	/^long long  n, m;$/;"	v
+m	4.oj/hzoj/oj-541.cpp	/^int n, m;$/;"	v
+m	4.oj/hzoj/oj-80.cpp	/^int n, m;$/;"	v
+m	4.oj/hzoj/oj-81.cpp	/^int n, m;$/;"	v
+m	4.oj/luogu/P1144-最短路计数.cpp	/^int n, m, cnt;$/;"	v
+m	4.oj/luogu/P1340-兽径管理.cpp	/^int n, m, alreaday;$/;"	v
+m	4.oj/luogu/P1629-邮递员送信.cpp	/^int cnt[2], n, m;$/;"	v
+m	4.oj/luogu/P2504-聪明的猴子.cpp	/^int n, m, cnt, alreday;$/;"	v
+m	4.oj/luogu/P2865-Roadblocks-v1.cpp	/^int cnt = 0, n, m;$/;"	v
+m	4.oj/luogu/P2865-Roadblocks-v2.cpp	/^int cnt, n, m;$/;"	v
+m	4.oj/luogu/p3371-单源最短路径.cpp	/^int n, m, start;$/;"	v
+m	4.oj/oj-636.旅行计划.cpp	/^int n, m;$/;"	v
+m	4.oj/oj-637.cpp	/^int n, m;$/;"	v
+m	4.oj/oj-638.cpp	/^int n, m;$/;"	v
+m	4.oj/oj-640.cpp	/^int n, m;$/;"	v
+m	4.oj/oj-641-拓扑排序.cpp	/^int n, m, head[MAX_N + 5], in_degree[MAX_N + 5];$/;"	v
+m	4.oj/oj-674-宿舍楼里的电竞赛.cpp	/^int n, m, ans[MAX_N + 5][MAX_N + 5];$/;"	v
+m	4.oj/oj-675.cpp	/^int n, m, c;$/;"	v
+m_cond	5.OS/4.IPC/locker.cpp	/^    pthread_cond_t m_cond;$/;"	m	class:cond	file:
+m_epollfd	5.OS/4.IPC/process_pool.cpp	/^    int m_epollfd;$/;"	m	class:processpool	file:
+m_flag	5.OS/2.process/3.test.c	/^int m_flag = 0;$/;"	v
+m_idx	5.OS/4.IPC/process_pool.cpp	/^    int m_idx;$/;"	m	class:processpool	file:
+m_instance	5.OS/4.IPC/process_pool.cpp	/^    static processpool< T > *m_instance;$/;"	m	class:processpool	file:
+m_instance	5.OS/4.IPC/process_pool.cpp	/^processpool< T > *processpool< T >::m_instance = NULL;$/;"	m	class:processpool	file:
+m_listenfd	5.OS/4.IPC/process_pool.cpp	/^    int m_listenfd;$/;"	m	class:processpool	file:
+m_mutex	5.OS/4.IPC/locker.cpp	/^    pthread_mutex_t m_mutex;$/;"	m	class:cond	file:
+m_mutex	5.OS/4.IPC/locker.cpp	/^    pthread_mutex_t m_mutex;$/;"	m	class:locker	file:
+m_pid	5.OS/4.IPC/process_pool.cpp	/^    pid_t m_pid;$/;"	m	class:process	file:
+m_pipefd	5.OS/4.IPC/process_pool.cpp	/^    int m_pipefd[2];$/;"	m	class:process	file:
+m_process_number	5.OS/4.IPC/process_pool.cpp	/^    int m_process_number;$/;"	m	class:processpool	file:
+m_sem	5.OS/4.IPC/locker.cpp	/^    sem_t m_sem;$/;"	m	class:sem	file:
+m_stop	5.OS/4.IPC/process_pool.cpp	/^    int m_stop;$/;"	m	class:processpool	file:
+m_sub_process	5.OS/4.IPC/process_pool.cpp	/^    process *m_sub_process;$/;"	m	class:processpool	file:
+main	1.c_language/1.atoi.cpp	/^int main() {$/;"	f
+main	1.c_language/2.大小端.cpp	/^int main() {$/;"	f
+main	1.c_language/3.myPrintf.cpp	/^int main() {$/;"	f
+main	1.c_language/4.offset.cpp	/^int main() {$/;"	f
+main	1.c_language/5.main.cpp	/^int main(int argc, char **argv, char **env) {$/;"	f
+main	1.c_language/gtest/main.cpp	/^int main(int argc, char *argv[]) {$/;"	f
+main	2.DS/stack_queue/oj-261.cpp	/^int main() {$/;"	f
+main	2.DS/stack_queue/oj-262.cpp	/^int main() {$/;"	f
+main	2.DS/stack_queue/oj-263.cpp	/^int main() {$/;"	f
+main	2.DS/stack_queue/oj-264.cpp	/^int main() {$/;"	f
+main	2.DS/stack_queue/oj-265.cpp	/^int main() {$/;"	f
+main	2.DS/stack_queue/oj-266.cpp	/^int main() {$/;"	f
+main	2.DS/stack_queue/oj-267.cpp	/^int main() {$/;"	f
+main	2.DS/stack_queue/oj-268-2.cpp	/^int main() {$/;"	f
+main	2.DS/stack_queue/oj-268.cpp	/^int main() {$/;"	f
+main	2.DS/stack_queue/oj-372.cpp	/^int main() {$/;"	f
+main	3.C++/1.BigInt.cpp	/^int main() {$/;"	f
+main	3.C++/11.share_ptr.cpp	/^int main() {$/;"	f
+main	3.C++/14.template.cpp	/^int main() {$/;"	f
+main	3.C++/15.string.cpp	/^int main() {$/;"	f
+main	3.C++/16.priority_queue.cpp	/^int main() {$/;"	f
+main	3.C++/17.const.cpp	/^int main() {$/;"	f
+main	3.C++/18.nullptr.cpp	/^int main() {$/;"	f
+main	3.C++/19.bind_order.cpp	/^int main() {$/;"	f
+main	3.C++/19.value.cpp	/^int main() {$/;"	f
+main	3.C++/2.Array.cpp	/^int main() {$/;"	f
+main	3.C++/21.template.cpp	/^int main() {$/;"	f
+main	3.C++/22.template_referednce.cpp	/^int main() {$/;"	f
+main	3.C++/23.try_catch.cpp	/^int main() {$/;"	f
+main	3.C++/24.stack.cpp	/^int main() {$/;"	f
+main	3.C++/25.enum.cpp	/^int main() {$/;"	f
+main	3.C++/26.immediately_init.cpp	/^int main() {$/;"	f
+main	3.C++/27.tuple.cpp	/^int main() {$/;"	f
+main	3.C++/28.POD.cpp	/^int main() {$/;"	f
+main	3.C++/29.lambda.cpp	/^int main() {$/;"	f
+main	3.C++/3.operator.cpp	/^int main() {$/;"	f
+main	3.C++/4.IntArray.cpp	/^int main() {$/;"	f
+main	3.C++/5.virtual_table.cpp	/^int main() {$/;"	f
+main	3.C++/6.hashTable.cpp	/^int main() {$/;"	f
+main	3.C++/array.cpp	/^int main() {$/;"	f
+main	3.C++/cout.cpp	/^int main() {$/;"	f
+main	3.C++/delagation_constructor.cpp	/^int main() {$/;"	f
+main	3.C++/malloc_new.cpp	/^int main() {$/;"	f
+main	3.C++/ptr.cpp	/^int main() {$/;"	f
+main	3.C++/test.cpp	/^int main() {$/;"	f
+main	3.C++/test2.cpp	/^int main() {$/;"	f
+main	3.C++/test4.cpp	/^int main() {$/;"	f
+main	4.oj/1.EP/0.random.cpp	/^int main() {$/;"	f
+main	4.oj/1.EP/1.cpp	/^int main() {$/;"	f
+main	4.oj/1.EP/10-2.cpp	/^int main() {$/;"	f
+main	4.oj/1.EP/10.cpp	/^int main() {$/;"	f
+main	4.oj/1.EP/11.cpp	/^int main() {$/;"	f
+main	4.oj/1.EP/12.cpp	/^int main() {$/;"	f
+main	4.oj/1.EP/13.cpp	/^int main() {$/;"	f
+main	4.oj/1.EP/14.cpp	/^int main() {$/;"	f
+main	4.oj/1.EP/15.cpp	/^int main() {$/;"	f
+main	4.oj/1.EP/16.cpp	/^int main() {$/;"	f
+main	4.oj/1.EP/17.cpp	/^int main() {$/;"	f
+main	4.oj/1.EP/18.cpp	/^int main() {$/;"	f
+main	4.oj/1.EP/19.cpp	/^int main() {$/;"	f
+main	4.oj/1.EP/2.cpp	/^int main() {$/;"	f
+main	4.oj/1.EP/20.cpp	/^int main() {$/;"	f
+main	4.oj/1.EP/21.cpp	/^int main() {$/;"	f
+main	4.oj/1.EP/23.cpp	/^int main() {$/;"	f
+main	4.oj/1.EP/24.cpp	/^int main() {$/;"	f
+main	4.oj/1.EP/28.cpp	/^int main() {$/;"	f
+main	4.oj/1.EP/29.cpp	/^int main() {$/;"	f
+main	4.oj/1.EP/3.cpp	/^int main() {$/;"	f
+main	4.oj/1.EP/30.cpp	/^int main() {$/;"	f
+main	4.oj/1.EP/31.cpp	/^int main() {$/;"	f
+main	4.oj/1.EP/34.cpp	/^int main() {$/;"	f
+main	4.oj/1.EP/36.cpp	/^int main() {$/;"	f
+main	4.oj/1.EP/37.cpp	/^int main() {$/;"	f
+main	4.oj/1.EP/38.cpp	/^int main() {$/;"	f
+main	4.oj/1.EP/39.cpp	/^int main() {$/;"	f
+main	4.oj/1.EP/4.cpp	/^int main() {$/;"	f
+main	4.oj/1.EP/40.cpp	/^int main() {$/;"	f
+main	4.oj/1.EP/45.cpp	/^int main() {$/;"	f
+main	4.oj/1.EP/46.cpp	/^int main() {$/;"	f
+main	4.oj/1.EP/47.cpp	/^int main() {$/;"	f
+main	4.oj/1.EP/48.cpp	/^int main() {$/;"	f
+main	4.oj/1.EP/49-1.cpp	/^int main() {$/;"	f
+main	4.oj/1.EP/49.cpp	/^int main() {$/;"	f
+main	4.oj/1.EP/5.cpp	/^int main() {$/;"	f
+main	4.oj/1.EP/50.cpp	/^int main() {$/;"	f
+main	4.oj/1.EP/6.cpp	/^int main() {$/;"	f
+main	4.oj/1.EP/61.cpp	/^int main() {$/;"	f
+main	4.oj/1.EP/7.cpp	/^int main() {$/;"	f
+main	4.oj/1.EP/8.cpp	/^int main() {$/;"	f
+main	4.oj/1.EP/9.cpp	/^int main() {$/;"	f
+main	4.oj/1.EP/EP29.cpp	/^int main() {$/;"	f
+main	4.oj/1.EP/EP53.cpp	/^int main() {$/;"	f
+main	4.oj/1.EP/ep-05.cpp	/^int main() {$/;"	f
+main	4.oj/1.EP/random.cpp	/^int main() {$/;"	f
+main	4.oj/282.cpp	/^int main() {$/;"	f
+main	4.oj/304.cpp	/^int main() {$/;"	f
+main	4.oj/82.cpp	/^int main() {$/;"	f
+main	4.oj/hzoj/1.cpp	/^int main() {$/;"	f
+main	4.oj/hzoj/543-分书问题.cpp	/^int main() {$/;"	f
+main	4.oj/hzoj/oj-166.cpp	/^int main() {$/;"	f
+main	4.oj/hzoj/oj-171.cpp	/^int main() {$/;"	f
+main	4.oj/hzoj/oj-226.cpp	/^int main() {$/;"	f
+main	4.oj/hzoj/oj-229.cpp	/^int main() {$/;"	f
+main	4.oj/hzoj/oj-230.cpp	/^int main() {$/;"	f
+main	4.oj/hzoj/oj-231.cpp	/^int main() {$/;"	f
+main	4.oj/hzoj/oj-233.cpp	/^int main() {$/;"	f
+main	4.oj/hzoj/oj-234.cpp	/^int main() {$/;"	f
+main	4.oj/hzoj/oj-235.cpp	/^int main() {$/;"	f
+main	4.oj/hzoj/oj-236.cpp	/^int main() {$/;"	f
+main	4.oj/hzoj/oj-237.cpp	/^int main() {$/;"	f
+main	4.oj/hzoj/oj-240.cpp	/^int main() {$/;"	f
+main	4.oj/hzoj/oj-245.cpp	/^int main() {$/;"	f
+main	4.oj/hzoj/oj-256.cpp	/^int main() {$/;"	f
+main	4.oj/hzoj/oj-260.cpp	/^int main() {$/;"	f
+main	4.oj/hzoj/oj-265.cpp	/^int main() {$/;"	f
+main	4.oj/hzoj/oj-270.cpp	/^int main() {$/;"	f
+main	4.oj/hzoj/oj-281.cpp	/^int main() {$/;"	f
+main	4.oj/hzoj/oj-283.cpp	/^int main() {$/;"	f
+main	4.oj/hzoj/oj-287.cpp	/^int main() {$/;"	f
+main	4.oj/hzoj/oj-290.cpp	/^int main() {$/;"	f
+main	4.oj/hzoj/oj-297.cpp	/^int main() {$/;"	f
+main	4.oj/hzoj/oj-302.cpp	/^int main() {$/;"	f
+main	4.oj/hzoj/oj-303.cpp	/^int main() {$/;"	f
+main	4.oj/hzoj/oj-304-骑士风度的牛.cpp	/^int main() {$/;"	f
+main	4.oj/hzoj/oj-305.cpp	/^int main() {$/;"	f
+main	4.oj/hzoj/oj-306.cpp	/^int main() {$/;"	f
+main	4.oj/hzoj/oj-310.cpp	/^int main() {$/;"	f
+main	4.oj/hzoj/oj-375.cpp	/^int main() {$/;"	f
+main	4.oj/hzoj/oj-376.cpp	/^int main() {$/;"	f
+main	4.oj/hzoj/oj-391.cpp	/^int main() {$/;"	f
+main	4.oj/hzoj/oj-396.cpp	/^int main() {$/;"	f
+main	4.oj/hzoj/oj-397.cpp	/^int main() {$/;"	f
+main	4.oj/hzoj/oj-402.cpp	/^int main() {$/;"	f
+main	4.oj/hzoj/oj-404.cpp	/^int main() {$/;"	f
+main	4.oj/hzoj/oj-474.cpp	/^int main() {$/;"	f
+main	4.oj/hzoj/oj-487.cpp	/^int main() {$/;"	f
+main	4.oj/hzoj/oj-504.cpp	/^int main() {$/;"	f
+main	4.oj/hzoj/oj-505.cpp	/^int main() {$/;"	f
+main	4.oj/hzoj/oj-508.cpp	/^int main() {$/;"	f
+main	4.oj/hzoj/oj-514.cpp	/^int main() {$/;"	f
+main	4.oj/hzoj/oj-515.cpp	/^int main() {$/;"	f
+main	4.oj/hzoj/oj-516.cpp	/^int main() {$/;"	f
+main	4.oj/hzoj/oj-517.cpp	/^int main() {$/;"	f
+main	4.oj/hzoj/oj-519.cpp	/^int main() {$/;"	f
+main	4.oj/hzoj/oj-521.cpp	/^int main() {$/;"	f
+main	4.oj/hzoj/oj-527-飞跃原野.cpp	/^int main() {$/;"	f
+main	4.oj/hzoj/oj-528.cpp	/^int main() {$/;"	f
+main	4.oj/hzoj/oj-529.cpp	/^int main() {$/;"	f
+main	4.oj/hzoj/oj-530.cpp	/^int main() {$/;"	f
+main	4.oj/hzoj/oj-531.cpp	/^int main() {$/;"	f
+main	4.oj/hzoj/oj-533.cpp	/^int main() {$/;"	f
+main	4.oj/hzoj/oj-535.cpp	/^int main() {$/;"	f
+main	4.oj/hzoj/oj-536.cpp	/^int main() {$/;"	f
+main	4.oj/hzoj/oj-537.cpp	/^int main() {$/;"	f
+main	4.oj/hzoj/oj-540.cpp	/^int main() {$/;"	f
+main	4.oj/hzoj/oj-541.cpp	/^int main() {$/;"	f
+main	4.oj/hzoj/oj-542-奶酪.cpp	/^int main() {$/;"	f
+main	4.oj/hzoj/oj-78.cpp	/^int main() {$/;"	f
+main	4.oj/hzoj/oj-79.cpp	/^int main() {$/;"	f
+main	4.oj/hzoj/oj-80.cpp	/^int main() {$/;"	f
+main	4.oj/hzoj/oj-81.cpp	/^int main() {$/;"	f
+main	4.oj/hzoj/oj-83.cpp	/^int main() {$/;"	f
+main	4.oj/hzoj/test.cpp	/^int main() {$/;"	f
+main	4.oj/leetcode/215-topK-heap.cpp	/^int main() {$/;"	f
+main	4.oj/leetcode/215-topK.cpp	/^int main() {$/;"	f
+main	4.oj/leetcode/460.cpp	/^int main() {$/;"	f
+main	4.oj/luogu/P1144-最短路计数.cpp	/^int main() {$/;"	f
+main	4.oj/luogu/P1265-公路修建.cpp	/^int main() {$/;"	f
+main	4.oj/luogu/P1340-兽径管理.cpp	/^int main() {$/;"	f
+main	4.oj/luogu/P1546-最短网络.cpp	/^int main() {$/;"	f
+main	4.oj/luogu/P1629-邮递员送信.cpp	/^int main() {$/;"	f
+main	4.oj/luogu/P2504-聪明的猴子.cpp	/^int main() {$/;"	f
+main	4.oj/luogu/P2865-Roadblocks-v1.cpp	/^int main() {$/;"	f
+main	4.oj/luogu/P2865-Roadblocks-v2.cpp	/^int main() {$/;"	f
+main	4.oj/luogu/P4047-部落划分.cpp	/^int main() {$/;"	f
+main	4.oj/luogu/P4826-Superbull.cpp	/^int main() {$/;"	f
+main	4.oj/luogu/p3371-单源最短路径.cpp	/^int main() {$/;"	f
+main	4.oj/oj-635-神经网络.cpp	/^int main() {$/;"	f
+main	4.oj/oj-636.旅行计划.cpp	/^int main() {$/;"	f
+main	4.oj/oj-637.cpp	/^int main() {$/;"	f
+main	4.oj/oj-638.cpp	/^int main() {$/;"	f
+main	4.oj/oj-640.cpp	/^int main() {$/;"	f
+main	4.oj/oj-641-拓扑排序.cpp	/^int main() {$/;"	f
+main	4.oj/oj-674-宿舍楼里的电竞赛.cpp	/^int main() {$/;"	f
+main	4.oj/oj-675.cpp	/^int main() {$/;"	f
+main	4.oj/test.cpp	/^int main() {$/;"	f
+main	5.OS/1.file/1.ls.c	/^int main(int argc, char **argv) {$/;"	f
+main	5.OS/1.file/2.cat.c	/^int main(int argc, char **argv) {$/;"	f
+main	5.OS/1.file/3.cp-file.c	/^int main(int argc, char **argv) {$/;"	f
+main	5.OS/1.file/4.cp-fd.c	/^int main(int argc, char **argv) {$/;"	f
+main	5.OS/1.file/test.c	/^int main() {$/;"	f
+main	5.OS/2.process/1.fork.c	/^int main() {$/;"	f
+main	5.OS/2.process/2.git.c	/^int main(int argc, char **argv) {$/;"	f
+main	5.OS/2.process/3.test.c	/^int main(int argc, char **argv) {$/;"	f
+main	5.OS/2.process/4.add.c	/^int main(int argc, char **argv) {$/;"	f
+main	5.OS/3.thread/1.add.c	/^int main() {$/;"	f
+main	5.OS/3.thread/2.pthread_add.c	/^int main(int argc, char **argv) {$/;"	f
+main	5.OS/4.IPC/1.shm_add.c	/^int main(int argc, char **argv) {$/;"	f
+main	5.OS/4.IPC/3.sigal.cpp	/^int main() {$/;"	f
+main	5.OS/4.IPC/4.sem.cpp	/^int main(int argc, char *argv[]) {$/;"	f
+main	5.OS/4.IPC/msg.cpp	/^main(int argc, char *argv[])$/;"	f
+main	5.OS/4.IPC/one_thread_signal.cpp	/^int main() {$/;"	f
+main	5.OS/4.IPC/sem/server.c	/^int main(int argc, char **argv) {$/;"	f
+main	5.OS/6.IO/1.sendfile.c	/^int main(int argc, char **argv) {$/;"	f
+main	5.OS/7.socket/1.IO-模型/0.one_thread.c	/^int main(int argc, char **argv) {$/;"	f
+main	5.OS/7.socket/1.IO-模型/1.fork_io_worker.c	/^int main(int argc, char **argv) {$/;"	f
+main	5.OS/7.socket/2.select.c	/^int main(int argc, char **argv) {$/;"	f
+main	5.OS/7.socket/3.epoll.c	/^int main(int argc, char **argv) {$/;"	f
+main	5.OS/7.socket/4.epolloneshot.c	/^int main(int argc, char *argv[]) {$/;"	f
+main	5.OS/7.socket/5.unblock_connect.cpp	/^int main(int argc, char *argv[]) {$/;"	f
+main	5.OS/7.socket/6.chatroom/1.client.c	/^int main(int argc, char *argv[]) {$/;"	f
+main	5.OS/7.socket/6.chatroom/2.server.c	/^int main(int argc, char *argv[]) {$/;"	f
+main	5.OS/7.socket/7.echo.cpp	/^int main(int argc, char *argv[]) {$/;"	f
+main	5.OS/7.socket/8.signal.cpp	/^int main(int argc, char *argv[]) {$/;"	f
+main	5.OS/7.socket/9.SIURG.c	/^int main(int argc, char *argv[]) {$/;"	f
+main	5.OS/7.socket/test.cpp	/^int main() {$/;"	f
+main	5.OS/8.test/1.test.cpp	/^int main() {$/;"	f
+main	5.OS/9.timer/2.close-connect.cpp	/^int main(int argc, char *argv[]) {$/;"	f
+main	5.OS/9.timer/bit.cpp	/^int main() {$/;"	f
+main	6.other/2.操作系统导论/23.fork.cpp	/^int main() {$/;"	f
+main	6.other/2.操作系统导论/24.test.cpp	/^int main() {$/;"	f
+main	6.other/code/1.calc.cpp	/^int main(int argc, char **argv) {$/;"	f
+main	6.other/handle_brackets.cpp	/^int main(int argc, char *argv[]) {$/;"	f
+main_q	2.DS/stack_queue/oj-268.cpp	/^queue<int> main_q;$/;"	v
+make_block	5.OS/4.IPC/sem/server.c	/^int make_block(int fd) {$/;"	f
+make_block	5.OS/7.socket/common.c	/^int make_block(int fd) {$/;"	f
+make_non_block	5.OS/4.IPC/sem/server.c	/^int make_non_block(int fd) {$/;"	f
+make_non_block	5.OS/7.socket/common.c	/^int make_non_block(int fd) {$/;"	f
+make_nonblock	5.OS/7.socket/3.epoll.c	/^int make_nonblock(int fd) {$/;"	f
+make_nonblock	5.OS/7.socket/4.epolloneshot.c	/^void make_nonblock(int fd) {$/;"	f
+mark	4.oj/hzoj/oj-529.cpp	/^int mark[MAX_N + 5][MAX_N + 5];$/;"	v
+mask	4.oj/hzoj/543-分书问题.cpp	/^bool mask[MAX_N + 5];$/;"	v
+mask	4.oj/hzoj/oj-376.cpp	/^int mask[MAX_N + 5];$/;"	v
+mask	4.oj/hzoj/oj-542-奶酪.cpp	/^bool mask[MAX_N + 5];$/;"	v
+mask	4.oj/luogu/P1340-兽径管理.cpp	/^int mask[MAX_M + 5];$/;"	v
+mask	4.oj/oj-638.cpp	/^bool mask[MAX_N + 5];$/;"	v
+matrix	4.oj/hzoj/543-分书问题.cpp	/^char matrix[MAX_N + 5][MAX_N + 5];$/;"	v
+matrix	4.oj/hzoj/oj-396.cpp	/^int matrix[MAX_N + 5][MAX_N + 5];$/;"	v
+matrix	4.oj/hzoj/oj-397.cpp	/^int matrix[MAX_N + 5][MAX_N + 5];$/;"	v
+matrix	4.oj/hzoj/oj-404.cpp	/^char matrix[MAX_N + 5][MAX_N + 5];$/;"	v
+matrix	4.oj/hzoj/oj-527-飞跃原野.cpp	/^char matrix[MAX_N + 5][MAX_N + 5];$/;"	v
+matrix	4.oj/hzoj/oj-529.cpp	/^char matrix[MAX_N + 5][MAX_N + 5];$/;"	v
+matrix	4.oj/hzoj/oj-530.cpp	/^char matrix[MAX_N + 5][MAX_N + 5];$/;"	v
+matrix	4.oj/hzoj/oj-533.cpp	/^int matrix[MAX_N + 5][MAX_N + 5];$/;"	v
+matrix	4.oj/hzoj/oj-535.cpp	/^char matrix[MAX_N + 5][MAX_N + 5];$/;"	v
+matrix	4.oj/hzoj/oj-536.cpp	/^char matrix[MAX_N + 5][MAX_N + 5];$/;"	v
+matrix	4.oj/hzoj/oj-541.cpp	/^int matrix[2][MAX_N + 5][MAX_N + 5];$/;"	v
+matrix	4.oj/hzoj/test.cpp	/^char matrix[MAX_N + 5][MAX_N + 5];$/;"	v
+matrix	4.oj/luogu/P1546-最短网络.cpp	/^int matrix[MAX_N + 5][MAX_N + 5];$/;"	v
+matrix	4.oj/oj-637.cpp	/^int ans[MAX_N + 5][MAX_N + 5], matrix[MAX_N + 5][MAX_N + 5];$/;"	v
+maxEdge	4.oj/luogu/P2504-聪明的猴子.cpp	/^double maxEdge;$/;"	v
+max_m	4.oj/1.EP/3.cpp	20;"	d	file:
+max_n	4.oj/1.EP/24.cpp	20;"	d	file:
+max_n	4.oj/hzoj/oj-537.cpp	/^const int max_n = 25000;$/;"	v
+merge	4.oj/luogu/P1265-公路修建.cpp	/^    void merge(int a, int b) {$/;"	f	struct:UnionSet
+merge	4.oj/luogu/P1340-兽径管理.cpp	/^    void merge(int a, int b) {$/;"	f	struct:UnionSet
+merge	4.oj/luogu/P2504-聪明的猴子.cpp	/^    void merge(int a, int b) {$/;"	f	struct:UnionSet
+merge	4.oj/luogu/P4047-部落划分.cpp	/^    void merge(int a, int b) {$/;"	f	struct:UnionSet
+min	4.oj/leetcode/460.cpp	/^    int min, capacity, size;$/;"	m	class:LFUCache	file:
+mmap	2.DS/stack_queue/oj-268-2.cpp	/^    map<int, Node *> mmap;$/;"	m	class:Queue	file:
+mmap	4.oj/hzoj/oj-240.cpp	/^char mmap[MAX_N + 5][MAX_N + 5];$/;"	v
+mmap	4.oj/hzoj/oj-540.cpp	/^unordered_map<long long , bool> mmap[2];$/;"	v
+mmap	6.other/handle_brackets.cpp	/^map<string , string> mmap = {{"：", ":"}, {"，", ","},$/;"	v
+mod	4.oj/1.EP/48.cpp	/^const long long mod = 10000000000LL;$/;"	v
+monkey	4.oj/luogu/P2504-聪明的猴子.cpp	/^int head[MAX_N + 5], monkey[MAX_M + 5], tree[MAX_N + 5][2];$/;"	v
+msgbuf	5.OS/4.IPC/msg.cpp	/^struct msgbuf {$/;"	s	file:
+mtext	5.OS/4.IPC/msg.cpp	/^    char mtext[80];$/;"	m	struct:msgbuf	file:
+mtype	5.OS/4.IPC/msg.cpp	/^    long mtype;$/;"	m	struct:msgbuf	file:
+mul	4.oj/1.EP/23.cpp	/^int mul[MAX_N + 5];$/;"	v
+multi	4.oj/1.EP/48.cpp	/^long long multi(long long a, long long b) {$/;"	f
+mutex	5.OS/3.thread/2.pthread_add.c	/^pthread_mutex_t mutex = PTHREAD_MUTEX_INITIALIZER;$/;"	v
+mutex	5.OS/4.IPC/1.shm_add.c	/^    pthread_mutex_t mutex;$/;"	m	struct:Num	file:
+mutex	5.OS/4.IPC/3.sigal.cpp	/^    pthread_mutex_t mutex;$/;"	m	struct:Data	file:
+mutex	5.OS/5.thread_pool/thread_pool.h	/^    pthread_mutex_t mutex;$/;"	m	struct:task_queue
+my_printf	1.c_language/3.myPrintf.cpp	/^int my_printf(const char *frm, ...) {$/;"	f
+my_rand	4.oj/1.EP/0.random.cpp	/^int my_rand() {$/;"	f
+my_rand	4.oj/1.EP/random.cpp	/^int my_rand() {$/;"	f
+my_seed	4.oj/1.EP/0.random.cpp	/^static int my_seed = 37, a_num, b_num;$/;"	v	file:
+my_seed	4.oj/1.EP/random.cpp	/^static int my_seed = 37, a_num, b_num;$/;"	v	file:
+my_sigset	5.OS/9.timer/bit.cpp	/^    my_sigset() {$/;"	f	class:my_sigset
+my_sigset	5.OS/9.timer/bit.cpp	/^class my_sigset {$/;"	c	file:
+my_srand	4.oj/1.EP/0.random.cpp	/^void my_srand(int x) {$/;"	f
+my_srand	4.oj/1.EP/random.cpp	/^void my_srand(int x) {$/;"	f
+n	2.DS/stack_queue/oj-267.cpp	/^int n, m;$/;"	v
+n	3.C++/14.template.cpp	/^    int n;$/;"	m	class:Array	file:
+n	3.C++/array.cpp	/^    size_t n;$/;"	m	class:Array	file:
+n	4.oj/304.cpp	/^int n, m;$/;"	v
+n	4.oj/82.cpp	/^long long n, m;$/;"	v
+n	4.oj/hzoj/543-分书问题.cpp	/^int n, ans;$/;"	v
+n	4.oj/hzoj/oj-235.cpp	/^int n, num[15], cnt;$/;"	v
+n	4.oj/hzoj/oj-236.cpp	/^int n, m;$/;"	v
+n	4.oj/hzoj/oj-297.cpp	/^int n, num[55], dep;$/;"	v
+n	4.oj/hzoj/oj-302.cpp	/^int n, m;$/;"	v
+n	4.oj/hzoj/oj-303.cpp	/^int n, m;$/;"	v
+n	4.oj/hzoj/oj-391.cpp	/^int n, m;$/;"	v
+n	4.oj/hzoj/oj-396.cpp	/^int n, m;$/;"	v
+n	4.oj/hzoj/oj-397.cpp	/^int n, m;$/;"	v
+n	4.oj/hzoj/oj-404.cpp	/^int n, m, k;$/;"	v
+n	4.oj/hzoj/oj-528.cpp	/^int n;$/;"	v
+n	4.oj/hzoj/oj-529.cpp	/^int n, m, s1, e1, s2, e2;$/;"	v
+n	4.oj/hzoj/oj-530.cpp	/^int n, m, k;$/;"	v
+n	4.oj/hzoj/oj-531.cpp	/^int n, start;$/;"	v
+n	4.oj/hzoj/oj-535.cpp	/^int n, m, cnt, sx, sy;$/;"	v
+n	4.oj/hzoj/oj-536.cpp	/^int n, m, ans, cnt;$/;"	v
+n	4.oj/hzoj/oj-540.cpp	/^long long  n, m;$/;"	v
+n	4.oj/hzoj/oj-541.cpp	/^int n, m;$/;"	v
+n	4.oj/hzoj/oj-542-奶酪.cpp	/^int n, h, r;$/;"	v
+n	4.oj/hzoj/oj-80.cpp	/^int n, m;$/;"	v
+n	4.oj/hzoj/oj-81.cpp	/^int n, m;$/;"	v
+n	4.oj/luogu/P1144-最短路计数.cpp	/^int n, m, cnt;$/;"	v
+n	4.oj/luogu/P1265-公路修建.cpp	/^int cnt,alreaday, n;$/;"	v
+n	4.oj/luogu/P1340-兽径管理.cpp	/^int n, m, alreaday;$/;"	v
+n	4.oj/luogu/P1629-邮递员送信.cpp	/^int cnt[2], n, m;$/;"	v
+n	4.oj/luogu/P2504-聪明的猴子.cpp	/^int n, m, cnt, alreday;$/;"	v
+n	4.oj/luogu/P2865-Roadblocks-v1.cpp	/^int cnt = 0, n, m;$/;"	v
+n	4.oj/luogu/P2865-Roadblocks-v2.cpp	/^int cnt, n, m;$/;"	v
+n	4.oj/luogu/P4047-部落划分.cpp	/^int n, k, cnt;$/;"	v
+n	4.oj/luogu/P4826-Superbull.cpp	/^int n, cnt;$/;"	v
+n	4.oj/luogu/p3371-单源最短路径.cpp	/^int n, m, start;$/;"	v
+n	4.oj/oj-635-神经网络.cpp	/^int n, p;$/;"	v
+n	4.oj/oj-636.旅行计划.cpp	/^int n, m;$/;"	v
+n	4.oj/oj-637.cpp	/^int n, m;$/;"	v
+n	4.oj/oj-638.cpp	/^int n, m;$/;"	v
+n	4.oj/oj-640.cpp	/^int n, m;$/;"	v
+n	4.oj/oj-641-拓扑排序.cpp	/^int n, m, head[MAX_N + 5], in_degree[MAX_N + 5];$/;"	v
+n	4.oj/oj-674-宿舍楼里的电竞赛.cpp	/^int n, m, ans[MAX_N + 5][MAX_N + 5];$/;"	v
+n	4.oj/oj-675.cpp	/^int n, m, c;$/;"	v
+n	5.OS/1.file/2.cat.c	/^int n = 1, flag = 0;$/;"	v
+next	2.DS/stack_queue/oj-268-2.cpp	/^    Node *next;$/;"	m	struct:Node	file:
+next	4.oj/282.cpp	/^    int next[2];$/;"	m	struct:Node	file:
+next	4.oj/hzoj/oj-281.cpp	/^    struct Node *next[MAX_N];$/;"	m	struct:Node	typeref:struct:Node::Node	file:
+next	4.oj/hzoj/oj-283.cpp	/^    int next[10];$/;"	m	struct:Node	file:
+next	4.oj/leetcode/460.cpp	/^    Node *pre, *next;$/;"	m	struct:Node	file:
+next	4.oj/luogu/P1144-最短路计数.cpp	/^    int v, next;$/;"	m	struct:Edge	file:
+next	4.oj/luogu/P1265-公路修建.cpp	/^    int u, v, next;$/;"	m	struct:Edge	file:
+next	4.oj/luogu/P1629-邮递员送信.cpp	/^    int v, w, next;$/;"	m	struct:Edge	file:
+next	4.oj/luogu/P2504-聪明的猴子.cpp	/^    int u, v, next;$/;"	m	struct:Edge	file:
+next	4.oj/luogu/P2865-Roadblocks-v1.cpp	/^    int u, v, w, next;$/;"	m	struct:Edge	file:
+next	4.oj/luogu/P2865-Roadblocks-v2.cpp	/^    int v, w, next;$/;"	m	struct:Edge	file:
+next	4.oj/luogu/P4826-Superbull.cpp	/^    int v, w, next;$/;"	m	struct:Edge	file:
+next	4.oj/luogu/p3371-单源最短路径.cpp	/^    int v, w, next;$/;"	m	struct:Edge	file:
+next	4.oj/oj-635-神经网络.cpp	/^    int v, w, next;$/;"	m	struct:Edge	file:
+next	4.oj/oj-636.旅行计划.cpp	/^    int v, next;$/;"	m	struct:Edge	file:
+next	4.oj/oj-638.cpp	/^    int v, w, next;$/;"	m	struct:Edge	file:
+next	4.oj/oj-640.cpp	/^    int v, next;$/;"	m	struct:Edge	file:
+next	4.oj/oj-641-拓扑排序.cpp	/^    int v, next;$/;"	m	struct:Edge	file:
+next	4.oj/oj-675.cpp	/^    int v, w, next;$/;"	m	struct:Edge	file:
+next	5.OS/9.timer/1.timer-list.h	/^    util_timer *prev, *next;$/;"	m	class:util_timer
+next	5.OS/9.timer/4.time_wheel_timer.cpp	/^    tw_timer *prev, *next;$/;"	m	class:tw_timer	file:
+nineM	4.oj/1.EP/34-plt.py	/^nineM = 1$/;"	v
+now	4.oj/hzoj/oj-528.cpp	/^    int now, step;$/;"	m	struct:Data	file:
+now	4.oj/luogu/P1144-最短路计数.cpp	/^    int now, w;$/;"	m	struct:Node	file:
+now	4.oj/luogu/P1546-最短网络.cpp	/^    int now, w;$/;"	m	struct:Node	file:
+now	4.oj/luogu/P1629-邮递员送信.cpp	/^    int now, w;$/;"	m	struct:Node	file:
+now	4.oj/luogu/P2865-Roadblocks-v1.cpp	/^    int now, w;$/;"	m	struct:Node	file:
+now	4.oj/luogu/P2865-Roadblocks-v2.cpp	/^    int now, w;$/;"	m	struct:Node	file:
+now	4.oj/luogu/P4826-Superbull.cpp	/^    int now, w;$/;"	m	struct:Node	file:
+now	4.oj/luogu/p3371-单源最短路径.cpp	/^    int now, w;$/;"	m	struct:Node	file:
+now	5.OS/2.process/4.add.c	/^    int now;$/;"	m	struct:Num	file:
+now	5.OS/3.thread/2.pthread_add.c	/^int now, sum;$/;"	v
+now	5.OS/4.IPC/1.shm_add.c	/^    int now;$/;"	m	struct:Num	file:
+num	3.C++/1.BigInt.cpp	/^    vector<int> num;$/;"	m	struct:BigInt	file:
+num	3.C++/4.IntArray.cpp	/^    int *num, _size;$/;"	m	class:IntArray	file:
+num	4.oj/1.EP/29.cpp	/^} num[MAX_N * MAX_N][4];$/;"	v	typeref:struct:Tuple
+num	4.oj/1.EP/34.cpp	/^int num[10];$/;"	v
+num	4.oj/1.EP/49.cpp	/^    int num, rnum;$/;"	m	struct:sLnt	file:
+num	4.oj/1.EP/EP29.cpp	/^BigInt num[MAX_N * MAX_N];$/;"	v
+num	4.oj/282.cpp	/^    int num;$/;"	m	struct:Node	file:
+num	4.oj/hzoj/oj-229.cpp	/^    int num, step;$/;"	m	struct:Data	file:
+num	4.oj/hzoj/oj-229.cpp	/^int num[4][4];$/;"	v
+num	4.oj/hzoj/oj-230.cpp	/^    int num, step;$/;"	m	struct:Data	file:
+num	4.oj/hzoj/oj-230.cpp	/^int num[5][5];$/;"	v
+num	4.oj/hzoj/oj-235.cpp	/^int n, num[15], cnt;$/;"	v
+num	4.oj/hzoj/oj-236.cpp	/^int num[15], cnt = 0;$/;"	v
+num	4.oj/hzoj/oj-237.cpp	/^int num[15];$/;"	v
+num	4.oj/hzoj/oj-240.cpp	/^int num[10] = {0, 1};$/;"	v
+num	4.oj/hzoj/oj-256.cpp	/^    vector<int> num;$/;"	m	struct:BigInt	file:
+num	4.oj/hzoj/oj-290.cpp	/^int num[MAX_N + 5], ans[MAX_N + 5];$/;"	v
+num	4.oj/hzoj/oj-297.cpp	/^int n, num[55], dep;$/;"	v
+num	4.oj/hzoj/oj-540.cpp	/^long long  num[2][MAX_N + 5];$/;"	v
+num	4.oj/hzoj/test.cpp	/^int num[MAX_N + 5][MAX_N + 5];$/;"	v
+num	4.oj/luogu/P4826-Superbull.cpp	/^int head[MAX_N + 5], dist[MAX_N + 5], num[MAX_N + 5];$/;"	v
+num_file	5.OS/2.process/4.add.c	/^char num_file[] = ".\/.num";$/;"	v
+num_len	4.oj/1.EP/EP29.cpp	/^int num_len;$/;"	v
+obj	3.C++/11.share_ptr.cpp	/^    A *obj;$/;"	m	class:test::shared_ptr	file:
+obj	3.C++/23.try_catch.cpp	/^    helper(const helper &obj) = default;$/;"	m	class:helper	file:
+offset	1.c_language/4.offset.cpp	20;"	d	file:
+op	4.oj/hzoj/oj-530.cpp	/^int op[MAX_M + 5];$/;"	v
+open_modes	3.C++/24.stack.cpp	/^enum class open_modes{input, output = 2, append};$/;"	c	file:
+operator !=	3.C++/15.string.cpp	/^bool MyString::operator!=(const MyString &obj) {$/;"	f	class:MyString
+operator !=	3.C++/6.hashTable.cpp	/^    bool operator!=(const char *str) {$/;"	f	class:Node
+operator ()	3.C++/3.operator.cpp	/^    int operator()(int num) {$/;"	f	class:Point
+operator ()	3.C++/6.hashTable.cpp	/^    int operator()(const char *str) const {$/;"	f	class:BKDRHash
+operator ()	4.oj/hzoj/oj-287.cpp	/^    bool operator()(int &a, int &b) {$/;"	f	struct:cmp
+operator ()	4.oj/hzoj/oj-505.cpp	/^    bool operator()(string &a, string &b) {$/;"	f	struct:cmp
+operator *=	3.C++/1.BigInt.cpp	/^    BigInt operator*=(const BigInt &obj) {$/;"	f	struct:BigInt
+operator *=	4.oj/hzoj/oj-256.cpp	/^    void operator*=(int x) {$/;"	f	struct:BigInt
+operator *=	4.oj/hzoj/oj-474.cpp	/^    void operator*=(int x) {$/;"	f	struct:BigFloat
+operator +	3.C++/15.string.cpp	/^MyString MyString::operator+(const char *str) {$/;"	f	class:MyString
+operator +	3.C++/19.value.cpp	/^    vector operator+(const vector &v) {$/;"	f	class:vector
+operator +	3.C++/3.operator.cpp	/^Point operator+(const Point &a, const Point &b) {$/;"	f
+operator ++	3.C++/4.IntArray.cpp	/^    IntArray &operator++() {$/;"	f	class:IntArray
+operator ++	3.C++/4.IntArray.cpp	/^    IntArray operator++(int x) {$/;"	f	class:IntArray
+operator +=	3.C++/15.string.cpp	/^MyString MyString::operator+=(const char *str) {$/;"	f	class:MyString
+operator +=	3.C++/4.IntArray.cpp	/^    void operator+=(int x) {$/;"	f	class:IntArray
+operator -	3.C++/3.operator.cpp	/^    Point operator-(const Point &obj) {$/;"	f	class:Point
+operator /	3.C++/1.BigInt.cpp	/^    BigInt operator\/(int x) {$/;"	f	struct:BigInt
+operator /	4.oj/hzoj/oj-256.cpp	/^    BigInt operator\/(int x) {$/;"	f	struct:BigInt
+operator <	3.C++/1.BigInt.cpp	/^    bool operator<(const Data &obj) const {$/;"	f	struct:Data
+operator <	3.C++/15.string.cpp	/^bool MyString::operator<(const MyString &obj) {$/;"	f	class:MyString
+operator <	4.oj/hzoj/oj-256.cpp	/^    bool operator<(const Data &obj) const {$/;"	f	struct:Data
+operator <	4.oj/luogu/P1144-最短路计数.cpp	/^    bool operator<(const Node &obj) const {$/;"	f	struct:Node
+operator <	4.oj/luogu/P1546-最短网络.cpp	/^    bool operator<(const Node &obj) const {$/;"	f	struct:Node
+operator <	4.oj/luogu/P1629-邮递员送信.cpp	/^    bool operator<(const Node &obj) const {$/;"	f	struct:Node
+operator <	4.oj/luogu/P2865-Roadblocks-v1.cpp	/^    bool operator<(const Node &obj) const {$/;"	f	struct:Node
+operator <	4.oj/luogu/P2865-Roadblocks-v2.cpp	/^    bool operator<(const Node &obj) const {$/;"	f	struct:Node
+operator <	4.oj/luogu/P4826-Superbull.cpp	/^    bool operator<(const Node &obj) const {$/;"	f	struct:Node
+operator <	4.oj/luogu/p3371-单源最短路径.cpp	/^    bool operator<(const Node &obj) const {$/;"	f	struct:Node
+operator <	4.oj/oj-641-拓扑排序.cpp	/^    bool operator<(const Node &obj) const {$/;"	f	struct:Node
+operator <<	3.C++/1.BigInt.cpp	/^ostream &operator<<(ostream &out, const BigInt &obj) {$/;"	f
+operator <<	3.C++/11.share_ptr.cpp	/^    friend ostream& operator<<(ostream &out, const A &obj) {$/;"	f	class:test::A
+operator <<	3.C++/15.string.cpp	/^ostream& operator<<(ostream &out, const MyString &obj) {$/;"	f
+operator <<	3.C++/19.value.cpp	/^ostream &operator<<(ostream &out, const worst::vector &obj) {$/;"	f
+operator <<	3.C++/21.template.cpp	/^ostream& operator<<(ostream &out, const A &obj) {$/;"	f
+operator <<	3.C++/3.operator.cpp	/^ostream &operator<<(ostream &out, const Point &a) {$/;"	f
+operator <<	3.C++/4.IntArray.cpp	/^ostream &operator<<(ostream &out, const IntArray &obj) {$/;"	f
+operator <<	3.C++/array.cpp	/^ostream&  operator<<(ostream &out, const Array &obj) {$/;"	f
+operator <<	3.C++/cout.cpp	/^ostream &ostream::operator<<(const char *x) {$/;"	f	class:ostream
+operator <<	3.C++/cout.cpp	/^ostream &ostream::operator<<(int x) {$/;"	f	class:ostream
+operator <<	4.oj/hzoj/oj-256.cpp	/^ostream &operator<<(ostream &out, const BigInt &obj) {$/;"	f
+operator <<	4.oj/hzoj/oj-474.cpp	/^ostream &operator<<(ostream &out, const BigFloat &obj) {$/;"	f
+operator =	3.C++/test.cpp	/^    A operator=(int x) {$/;"	f	struct:A
+operator ==	3.C++/15.string.cpp	/^bool MyString::operator==(const MyString &obj) {$/;"	f	class:MyString
+operator ==	3.C++/6.hashTable.cpp	/^    bool operator==(const char *str) {$/;"	f	class:Node
+operator >	3.C++/1.BigInt.cpp	/^    bool operator>(const BigInt &obj) {$/;"	f	struct:BigInt
+operator >	3.C++/15.string.cpp	/^bool MyString::operator>(const MyString &obj) {$/;"	f	class:MyString
+operator >	4.oj/hzoj/oj-256.cpp	/^    bool operator>(const BigInt &obj) {$/;"	f	struct:BigInt
+operator >>	3.C++/15.string.cpp	/^istream& operator>>(istream &input, MyString &obj) {$/;"	f
+operator >>=	4.oj/hzoj/oj-474.cpp	/^    void operator>>=(int x) {$/;"	f	struct:BigFloat
+operator []	3.C++/14.template.cpp	/^    T &operator[](int ind) {$/;"	f	class:Array
+operator []	3.C++/15.string.cpp	/^char &MyString::operator[](int idx) const {$/;"	f	class:MyString
+operator []	3.C++/19.value.cpp	/^    int &operator[](int ind) const {$/;"	f	class:vector
+operator []	3.C++/2.Array.cpp	/^    int operator[](int x) {$/;"	f	class:Array
+operator []	3.C++/21.template.cpp	/^T &vector<T>::operator[](int ind){$/;"	f	class:vector
+operator []	3.C++/21.template.cpp	/^const T &vector<T>::operator[](int ind) const {$/;"	f	class:vector
+operator []	3.C++/3.operator.cpp	/^    int operator[](string s) {$/;"	f	class:Point
+operator []	3.C++/4.IntArray.cpp	/^    int &operator[](int ind) {$/;"	f	class:IntArray
+operator []	3.C++/array.cpp	/^    int &operator[](int ind) {$/;"	f	class:Array
+ostream	3.C++/cout.cpp	/^class ostream {$/;"	c	file:
+out_degree	4.oj/oj-635-神经网络.cpp	/^int head[MAX_N + 5], in_degree[MAX_N + 5], out_degree[MAX_N + 5];$/;"	v
+out_degree	4.oj/oj-640.cpp	/^int head[MAX_N + 5], in_degree[MAX_N + 5], out_degree[MAX_N + 5];$/;"	v
+output	1.c_language/5.main.cpp	/^void output(int argc, char **argv, char **env) {$/;"	f
+output	3.C++/24.stack.cpp	/^enum class open_modes{input, output = 2, append};$/;"	m	class:open_modes	file:
+output	6.other/handle_brackets.cpp	/^char output[MAX_N];$/;"	v
+output_raw_data	3.C++/5.virtual_table.cpp	/^void output_raw_data(void *q, int n) {$/;"	f
+p	3.C++/21.template.cpp	/^    int x, *p;$/;"	m	class:A	file:
+p	4.oj/1.EP/29.cpp	/^    int p, times;$/;"	m	struct:Tuple	file:
+p	4.oj/1.EP/EP29.cpp	/^    int p, times;$/;"	m	struct:Tuple	file:
+p	4.oj/1.EP/EP29.cpp	/^   Tuple p[4];$/;"	m	struct:BigInt	file:
+p	4.oj/hzoj/oj-235.cpp	/^void p() {$/;"	f
+p	4.oj/hzoj/oj-236.cpp	/^void p() {$/;"	f
+p	4.oj/hzoj/oj-237.cpp	/^void p(int n) {$/;"	f
+p	4.oj/oj-635-神经网络.cpp	/^int n, p;$/;"	v
+p1	4.oj/1.EP/34-plt.py	/^p1 = plt.plot(x, y1, label = "$f(n)=10^n$")$/;"	v
+p1	4.oj/1.EP/plt.py	/^p1 = plt.plot(x, y1, label="$f(n)=10^{n-1}$");$/;"	v
+p2	4.oj/1.EP/34-plt.py	/^p2 = plt.plot(x, y2, label = "$g(n)=9!*n$")$/;"	v
+p2	4.oj/1.EP/plt.py	/^p2 = plt.plot(x, y2, label="$g(n)=9^5 * n$");$/;"	v
+pSint	4.oj/1.EP/49.cpp	/^int pSint[MAX_N + 5];$/;"	v
+p_func	3.C++/6.hashTable.cpp	/^    HashFunc_T p_func;$/;"	m	class:HashTable	file:
+p_num	4.oj/1.EP/EP29.cpp	/^   int p_num;$/;"	m	struct:BigInt	file:
+partition	4.oj/leetcode/215-topK.cpp	/^    int partition(vector<int> &a, int l, int r) {$/;"	f	class:Solution
+pipefd	5.OS/7.socket/8.signal.cpp	/^static int pipefd[2];$/;"	v	file:
+pipefd	5.OS/9.timer/2.close-connect.cpp	/^static int pipefd[2];$/;"	v	file:
+pop	2.DS/stack_queue/oj-268-2.cpp	/^    int pop(map<int, int> &ind) {$/;"	f	class:Queue
+pop_timer	5.OS/9.timer/5.heep_timer.cpp	/^void time_heap::pop_timer() {$/;"	f	class:time_heap
+post	5.OS/4.IPC/locker.cpp	/^    bool post() {$/;"	f	class:sem
+pre	4.oj/leetcode/460.cpp	/^    Node *pre, *next;$/;"	m	struct:Node	file:
+prev	5.OS/9.timer/1.timer-list.h	/^    util_timer *prev, *next;$/;"	m	class:util_timer
+prev	5.OS/9.timer/4.time_wheel_timer.cpp	/^    tw_timer *prev, *next;$/;"	m	class:tw_timer	file:
+prime	4.oj/1.EP/0.random.cpp	/^int prime[MAX_N + 5] = {0};$/;"	v
+prime	4.oj/1.EP/10-2.cpp	/^int prime[MAX_N + 5];$/;"	v
+prime	4.oj/1.EP/10.cpp	/^int prime[MAX_N + 5];$/;"	v
+prime	4.oj/1.EP/12.cpp	/^int prime[MAX_N + 5];$/;"	v
+prime	4.oj/1.EP/21.cpp	/^int prime[MAX_N + 5];$/;"	v
+prime	4.oj/1.EP/23.cpp	/^int prime[MAX_N + 5];$/;"	v
+prime	4.oj/1.EP/29.cpp	/^int prime[MAX_N * MAX_N + 5];$/;"	v
+prime	4.oj/1.EP/46.cpp	/^int prime[MAX_N + 5];$/;"	v
+prime	4.oj/1.EP/47.cpp	/^int prime[MAX_N + 5];$/;"	v
+prime	4.oj/1.EP/49-1.cpp	/^int prime[MAX_N + 5];$/;"	v
+prime	4.oj/1.EP/49.cpp	/^int prime[MAX_N + 5];$/;"	v
+prime	4.oj/1.EP/50.cpp	/^int prime[MAX_N + 5];$/;"	v
+prime	4.oj/1.EP/7.cpp	/^int prime[MAX_N + 5];$/;"	v
+prime	4.oj/1.EP/EP29.cpp	/^int prime[MAX_N + 5];$/;"	v
+prime	4.oj/1.EP/random.cpp	/^int prime[MAX_N + 5] = {0};$/;"	v
+prime	4.oj/hzoj/oj-310.cpp	/^int prime[MAX_N + 5];$/;"	v
+prime	4.oj/hzoj/oj-521.cpp	/^int prime[MAX_N + 5];$/;"	v
+prime	4.oj/luogu/P1340-兽径管理.cpp	/^int prime(int time) {$/;"	f
+prime	4.oj/luogu/P4826-Superbull.cpp	/^int prime(int start) {$/;"	f
+print	4.oj/hzoj/oj-240.cpp	/^int print(int x, int y, int n) {$/;"	f
+print	5.OS/3.thread/1.add.c	/^void *print(void *arg) {$/;"	f
+print	5.OS/9.timer/bit.cpp	/^    void print() {$/;"	f	class:my_sigset
+printf	3.C++/27.tuple.cpp	/^void printf(const char *s) {$/;"	f
+printf	3.C++/27.tuple.cpp	/^void printf(const char *s, T value, Args... args) {$/;"	f
+process	5.OS/4.IPC/process_pool.cpp	/^    process() : m_pid(01) {}$/;"	f	class:process
+process	5.OS/4.IPC/process_pool.cpp	/^class process {$/;"	c	file:
+process_digit	3.C++/1.BigInt.cpp	/^    void process_digit() {$/;"	f	struct:BigInt
+process_digit	4.oj/hzoj/oj-256.cpp	/^    void process_digit() {$/;"	f	struct:BigInt
+process_digit	4.oj/hzoj/oj-474.cpp	/^    void process_digit() {$/;"	f	struct:BigFloat
+processpool	5.OS/4.IPC/process_pool.cpp	/^class processpool {$/;"	c	file:
+ptrMem	3.C++/ptr.cpp	/^    ptrMem() : data(new int[0]) {$/;"	f	class:ptrMem
+ptrMem	3.C++/ptr.cpp	/^class ptrMem {$/;"	c	file:
+push	2.DS/stack_queue/oj-268-2.cpp	/^    void push(int k, map<int, int> &ind) {$/;"	f	class:Queue
+push_back	3.C++/2.Array.cpp	/^    void push_back(const T &a) {$/;"	f	class:Array
+push_back	3.C++/21.template.cpp	/^void vector<T>::push_back(T&& obj) {$/;"	f	class:vector
+push_back	3.C++/21.template.cpp	/^void vector<T>::push_back(const T&obj) {$/;"	f	class:vector
+put	4.oj/leetcode/460.cpp	/^    void put(int key, int value) {$/;"	f	class:LFUCache
+pv	5.OS/4.IPC/4.sem.cpp	/^void pv(int sem_id, int op) {$/;"	f
+q	2.DS/stack_queue/oj-268.cpp	/^queue<int> q[MAX_N + 5];$/;"	v
+que	4.oj/hzoj/oj-270.cpp	/^int que[MAX_N + 5];$/;"	v
+que	4.oj/hzoj/oj-287.cpp	/^priority_queue<int, vector<int>, cmp> que;$/;"	v
+que	4.oj/hzoj/oj-290.cpp	/^queue<int> que;$/;"	v
+que	4.oj/hzoj/oj-376.cpp	/^queue<int> que;$/;"	v
+query	4.oj/282.cpp	/^int query(int num) {$/;"	f
+query	4.oj/hzoj/oj-281.cpp	/^int query(Node *root, char *str) {$/;"	f
+quickSelect	4.oj/leetcode/215-topK.cpp	/^    int quickSelect(vector<int> &a, int l, int r, int kth) {$/;"	f	class:Solution
+quick_mod	4.oj/1.EP/0.random.cpp	/^int quick_mod(int a, int b, int c) {$/;"	f
+quick_mod	4.oj/1.EP/random.cpp	/^int quick_mod(int a, int b, int c) {$/;"	f
+quick_multi	4.oj/hzoj/oj-226.cpp	/^long long quick_multi(long long a, long long b, long long p) {$/;"	f
+quick_pow	4.oj/1.EP/48.cpp	/^long long quick_pow(long long a, long long b) {$/;"	f
+quick_pow	4.oj/hzoj/oj-226.cpp	/^long long quick_pow(long long a, long long b, long long p) {$/;"	f
+r	4.oj/hzoj/oj-516.cpp	/^int l[MAX_N + 5], r[MAX_N + 5];$/;"	v
+r	4.oj/hzoj/oj-542-奶酪.cpp	/^int n, h, r;$/;"	v
+r	4.oj/oj-637.cpp	/^int l[MAX_N + 5], r[MAX_N + 5], in_degree[MAX_N + 5];$/;"	v
+r	4.oj/oj-674-宿舍楼里的电竞赛.cpp	/^int l[MAX_N + 5], r[MAX_N + 5];$/;"	v
+randomPartition	4.oj/leetcode/215-topK.cpp	/^    int randomPartition(vector<int> &a, int l, int r) {$/;"	f	class:Solution
+read_file	5.OS/1.file/2.cat.c	/^void read_file(char *pathname) {$/;"	f
+readfile	6.other/handle_brackets.cpp	/^void readfile(char *pathname) {$/;"	f
+remove_node	4.oj/leetcode/460.cpp	/^    void remove_node(Node *p) {$/;"	f	struct:DoubeList
+removefd	5.OS/4.IPC/process_pool.cpp	/^static void removefd(int epollfd, int fd) {$/;"	f	file:
+reset_oneshot	5.OS/7.socket/4.epolloneshot.c	/^void reset_oneshot(int epollfd, int fd) {$/;"	f
+resize	5.OS/9.timer/5.heep_timer.cpp	/^void time_heap::resize() throw(std::exception()) {$/;"	f	class:time_heap
+rnum	4.oj/1.EP/49.cpp	/^    int num, rnum;$/;"	m	struct:sLnt	file:
+root	4.oj/282.cpp	/^const int root = 1;$/;"	v
+root	4.oj/hzoj/oj-283.cpp	/^const int root = 1;$/;"	v
+rotation	5.OS/9.timer/4.time_wheel_timer.cpp	/^    int rotation; \/\/转多少圈生效$/;"	m	class:tw_timer	file:
+rpart	4.oj/hzoj/oj-474.cpp	/^    deque<int> lpart, rpart;$/;"	m	struct:BigFloat	file:
+s	2.DS/stack_queue/oj-263.cpp	/^int a[30], s[30], top;$/;"	v
+s	2.DS/stack_queue/oj-264.cpp	/^int s[MAX_N + 5];$/;"	v
+s	2.DS/stack_queue/oj-267.cpp	/^int s[MAX_N + 5], top = -1;$/;"	v
+s	4.oj/hzoj/oj-281.cpp	/^char s[1000000];$/;"	v
+s	4.oj/hzoj/oj-542-奶酪.cpp	/^int s[MAX_N + 5], e[MAX_N + 5];$/;"	v
+s	4.oj/oj-675.cpp	/^int head[MAX_N + 5], s[MAX_N + 5], in_degree[MAX_N + 5];$/;"	v
+s1	4.oj/hzoj/oj-529.cpp	/^int n, m, s1, e1, s2, e2;$/;"	v
+s2	4.oj/hzoj/oj-529.cpp	/^int n, m, s1, e1, s2, e2;$/;"	v
+sLnt	4.oj/1.EP/49.cpp	/^struct sLnt {$/;"	s	file:
+say	3.C++/5.virtual_table.cpp	/^    virtual void say(int x) {$/;"	f	class:Animal
+sem	5.OS/4.IPC/locker.cpp	/^    sem() {$/;"	f	class:sem
+sem	5.OS/4.IPC/locker.cpp	/^class sem {$/;"	c	file:
+sem_id	5.OS/4.IPC/sem/server.c	/^static int sem_id = 0;$/;"	v	file:
+semaphore_p	5.OS/4.IPC/sem/server.c	/^static int semaphore_p() {$/;"	f	file:
+semaphore_v	5.OS/4.IPC/sem/server.c	/^static int semaphore_v() {$/;"	f	file:
+semun	5.OS/4.IPC/4.sem.cpp	/^union semun {$/;"	u	file:
+semun	5.OS/4.IPC/sem/server.c	/^union semun {$/;"	u	file:
+send_fd	5.OS/4.IPC/5.send_fd.cpp	/^void send_fd(int fd, int fd_to_send) {$/;"	f
+send_msg	5.OS/4.IPC/msg.cpp	/^send_msg(int qid, int msgtype)$/;"	f	file:
+seq	4.oj/oj-637.cpp	/^char seq[MAX_N + 5];$/;"	v
+set_block	5.OS/7.socket/5.unblock_connect.cpp	/^int set_block(int fd) {$/;"	f
+set_nonblock	5.OS/7.socket/5.unblock_connect.cpp	/^int set_nonblock(int fd) {$/;"	f
+set_num	5.OS/2.process/4.add.c	/^size_t set_num(struct Num *num) {$/;"	f
+set_semvalue	5.OS/4.IPC/sem/server.c	/^static int set_semvalue() {$/;"	f	file:
+setnonblock	5.OS/4.IPC/process_pool.cpp	/^static int setnonblock(int fd) {$/;"	f	file:
+setnonblock	5.OS/7.socket/6.chatroom/2.server.c	/^void setnonblock(int fd) {$/;"	f
+setnonblock	5.OS/7.socket/7.echo.cpp	/^void setnonblock(int fd) {$/;"	f
+setnonblock	5.OS/7.socket/8.signal.cpp	/^void setnonblock(int fd) {$/;"	f
+setnonblock	5.OS/9.timer/2.close-connect.cpp	/^int setnonblock(int fd) {$/;"	f
+share_memory	5.OS/4.IPC/1.shm_add.c	/^struct Num *share_memory;$/;"	v	typeref:struct:Num
+share_memory	5.OS/4.IPC/3.sigal.cpp	/^Data *share_memory;$/;"	v
+shared_ptr	3.C++/11.share_ptr.cpp	/^class shared_ptr {$/;"	c	namespace:test	file:
+shared_ptr	3.C++/11.share_ptr.cpp	/^shared_ptr::shared_ptr() : obj(nullptr), cnt(nullptr) {}$/;"	f	class:test::shared_ptr
+shared_ptr	3.C++/11.share_ptr.cpp	/^shared_ptr::shared_ptr(A *obj) : obj(obj), cnt(new int(1)) {};$/;"	f	class:test::shared_ptr
+shared_ptr	3.C++/11.share_ptr.cpp	/^shared_ptr::shared_ptr(const shared_ptr &p) : obj(p.obj), cnt(p.cnt) { *p.cnt += 1; }$/;"	f	class:test::shared_ptr
+sig_handle	5.OS/4.IPC/process_pool.cpp	/^static void sig_handle(int sig) {$/;"	f	file:
+sig_handler	5.OS/7.socket/8.signal.cpp	/^void sig_handler(int sig) {$/;"	f
+sig_handler	5.OS/9.timer/2.close-connect.cpp	/^void sig_handler(int sig) {$/;"	f
+sig_pipefd	5.OS/4.IPC/process_pool.cpp	/^static int sig_pipefd[2];$/;"	v	file:
+sig_thread	5.OS/4.IPC/one_thread_signal.cpp	/^static void *sig_thread(void *arg) {$/;"	f	file:
+sig_urg	5.OS/7.socket/9.SIURG.c	/^void sig_urg(int sig) {$/;"	f
+signal	5.OS/4.IPC/locker.cpp	/^    bool signal() {$/;"	f	class:cond
+size	3.C++/15.string.cpp	/^int MyString::size() const {$/;"	f	class:MyString
+size	3.C++/19.value.cpp	/^    int size() const {$/;"	f	class:vector
+size	3.C++/2.Array.cpp	/^    int size() {$/;"	f	class:Array
+size	3.C++/21.template.cpp	/^int vector<T>::size() const {$/;"	f	class:vector
+size	3.C++/array.cpp	/^    size_t size() {return this->n; }$/;"	f	class:Array
+size	4.oj/leetcode/460.cpp	/^    int min, capacity, size;$/;"	m	class:LFUCache	file:
+size	5.OS/5.thread_pool/thread_pool.h	/^    int size, total, head, tail;$/;"	m	struct:task_queue
+slots	5.OS/9.timer/4.time_wheel_timer.cpp	/^    tw_timer *slots[N];$/;"	m	class:time_wheel	file:
+socket_connect	5.OS/7.socket/common.c	/^int socket_connect(const char *ip, int port) {$/;"	f
+socket_create	5.OS/4.IPC/sem/server.c	/^int socket_create(int port) {$/;"	f
+socket_create	5.OS/7.socket/common.c	/^int socket_create(int port) {$/;"	f
+sockfd	5.OS/7.socket/4.epolloneshot.c	/^    int epollfd, sockfd;$/;"	m	struct:Data	file:
+sockfd	5.OS/9.timer/1.timer-list.h	/^    int sockfd;$/;"	m	struct:client_data
+sockfd	5.OS/9.timer/4.time_wheel_timer.cpp	/^    int sockfd;$/;"	m	class:client_data	file:
+sockfd	5.OS/9.timer/5.heep_timer.cpp	/^    int sockfd;$/;"	m	class:client_data	file:
+solve	4.oj/hzoj/oj-230.cpp	/^int solve() {$/;"	f
+solve	4.oj/hzoj/oj-529.cpp	/^int solve() {$/;"	f
+solve	4.oj/hzoj/oj-542-奶酪.cpp	/^void solve() {$/;"	f
+solve	4.oj/hzoj/test.cpp	/^int solve() {$/;"	f
+solve	5.OS/9.timer/3.IO-clocking.cpp	/^int solve() {$/;"	f
+sort_timer_list	5.OS/9.timer/1.timer-list.h	/^    sort_timer_list() : head(nullptr), tail(nullptr) {}$/;"	f	class:sort_timer_list
+sort_timer_list	5.OS/9.timer/1.timer-list.h	/^class sort_timer_list {$/;"	c
+start	4.oj/hzoj/oj-531.cpp	/^int n, start;$/;"	v
+start	4.oj/luogu/p3371-单源最短路径.cpp	/^int n, m, start;$/;"	v
+start	5.OS/9.timer/3.IO-clocking.cpp	/^time_t start = time(NULL);$/;"	v
+status	4.oj/hzoj/oj-531.cpp	/^    int status, step;$/;"	m	struct:Data	file:
+status	4.oj/hzoj/test.cpp	/^    int status, step;$/;"	m	struct:Data	file:
+step	4.oj/304.cpp	/^    int x, y, step;$/;"	m	struct:Data	file:
+step	4.oj/hzoj/oj-229.cpp	/^    int num, step;$/;"	m	struct:Data	file:
+step	4.oj/hzoj/oj-230.cpp	/^    int num, step;$/;"	m	struct:Data	file:
+step	4.oj/hzoj/oj-302.cpp	/^    int step, d;$/;"	m	struct:Data	file:
+step	4.oj/hzoj/oj-303.cpp	/^    int x, y, step;$/;"	m	struct:Data	file:
+step	4.oj/hzoj/oj-305.cpp	/^    int x, y, step;$/;"	m	struct:Data	file:
+step	4.oj/hzoj/oj-306.cpp	/^    int step;$/;"	m	struct:Data	file:
+step	4.oj/hzoj/oj-528.cpp	/^    int now, step;$/;"	m	struct:Data	file:
+step	4.oj/hzoj/oj-529.cpp	/^    int x, y, step;$/;"	m	struct:Data	file:
+step	4.oj/hzoj/oj-530.cpp	/^    int x, y, step;$/;"	m	struct:Data	file:
+step	4.oj/hzoj/oj-531.cpp	/^    int status, step;$/;"	m	struct:Data	file:
+step	4.oj/hzoj/oj-80.cpp	/^    int x, y, step;$/;"	m	struct:Data	file:
+step	4.oj/hzoj/oj-81.cpp	/^    int x, y, step, flag;$/;"	m	struct:Data	file:
+step	4.oj/hzoj/test.cpp	/^    int status, step;$/;"	m	struct:Data	file:
+str	1.c_language/gtest/module/test.h	/^    const char *str;$/;"	m	struct:Function
+str	2.DS/stack_queue/oj-266.cpp	/^char str[MAX_N + 5];$/;"	v
+str	3.C++/6.hashTable.cpp	/^    char *str;$/;"	m	class:Node	file:
+str	4.oj/1.EP/13.cpp	/^char str[MAX_N + 5];$/;"	v
+str	4.oj/hzoj/oj-283.cpp	/^char str[100];$/;"	v
+str	4.oj/hzoj/oj-306.cpp	/^    string str;$/;"	m	struct:Data	file:
+str	4.oj/hzoj/oj-530.cpp	/^char str[20];$/;"	v
+str	5.OS/4.IPC/3.sigal.cpp	/^    char str[1000];$/;"	m	struct:Data	file:
+success	1.c_language/gtest/module/test.h	/^    int total, success;$/;"	m	struct:FunctionInfo
+sum	2.DS/stack_queue/oj-261.cpp	/^long long sum[MAX_N + 5];$/;"	v
+sum	4.oj/1.EP/50.cpp	/^long long sum[MAX_N + 5];$/;"	v
+sum	4.oj/hzoj/oj-375.cpp	/^    int sum,  x, id;$/;"	m	struct:Data	file:
+sum	5.OS/2.process/4.add.c	/^    int sum;$/;"	m	struct:Num	file:
+sum	5.OS/3.thread/2.pthread_add.c	/^int now, sum;$/;"	v
+sum	5.OS/4.IPC/1.shm_add.c	/^    int sum;$/;"	m	struct:Num	file:
+swap	3.C++/22.template_referednce.cpp	/^void swap(T &&a, T &&b) { \/\/&&表示传引用：左值和右值引用; &表示左值引用$/;"	f
+sx	4.oj/hzoj/oj-535.cpp	/^int n, m, cnt, sx, sy;$/;"	v
+sy	4.oj/hzoj/oj-535.cpp	/^int n, m, cnt, sx, sy;$/;"	v
+t	4.oj/luogu/P1340-兽径管理.cpp	/^    int u, v, w, t;$/;"	m	struct:Edge	file:
+tail	2.DS/stack_queue/oj-268-2.cpp	/^    Node *head, *tail;$/;"	m	class:Queue	file:
+tail	4.oj/hzoj/oj-270.cpp	/^int head, tail;$/;"	v
+tail	4.oj/leetcode/460.cpp	/^    Node head, tail;  $/;"	m	struct:DoubeList	file:
+tail	5.OS/5.thread_pool/thread_pool.h	/^    int size, total, head, tail;$/;"	m	struct:task_queue
+tail	5.OS/9.timer/1.timer-list.h	/^    util_timer *head, *tail;$/;"	m	class:sort_timer_list
+task_queue	5.OS/5.thread_pool/thread_pool.h	/^struct task_queue {$/;"	s
+task_queue_init	5.OS/5.thread_pool/thread_pool.c	/^void task_queue_init(struct task_queue *taskQueue, int size) {$/;"	f
+task_queue_pop	5.OS/5.thread_pool/thread_pool.c	/^char *task_queue_pop(struct task_queue *taskQueue) {$/;"	f
+task_queue_push	5.OS/5.thread_pool/thread_pool.c	/^void task_queue_push(struct task_queue *taskQueue, char *str) {$/;"	f
+test	3.C++/11.share_ptr.cpp	/^namespace test {$/;"	n	file:
+testClass	3.C++/17.const.cpp	/^class testClass{$/;"	c	file:
+testClass	3.C++/test2.cpp	/^class testClass {$/;"	c	file:
+test_func	3.C++/24.stack.cpp	/^void test_func(std::initializer_list<T> arg) {$/;"	f
+tick	5.OS/9.timer/1.timer-list.h	/^void sort_timer_list::tick() {$/;"	f	class:sort_timer_list
+tick	5.OS/9.timer/4.time_wheel_timer.cpp	/^void time_wheel::tick() {$/;"	f	class:time_wheel
+tick	5.OS/9.timer/5.heep_timer.cpp	/^void time_heap::tick() {$/;"	f	class:time_heap
+time	4.oj/hzoj/oj-527-飞跃原野.cpp	/^    int x, y, d, time;$/;"	m	struct:Data	file:
+time_heap	5.OS/9.timer/5.heep_timer.cpp	/^class time_heap {$/;"	c	file:
+time_heap	5.OS/9.timer/5.heep_timer.cpp	/^time_heap::time_heap(heap_timer** init_array, int size, int capacity) throw(std::exception) :$/;"	f	class:time_heap
+time_heap	5.OS/9.timer/5.heep_timer.cpp	/^time_heap::time_heap(int capacity) throw(std::exception) : $/;"	f	class:time_heap
+time_slot	5.OS/9.timer/4.time_wheel_timer.cpp	/^    int time_slot; \/\/对应槽$/;"	m	class:tw_timer	file:
+time_wheel	5.OS/9.timer/4.time_wheel_timer.cpp	/^class time_wheel {$/;"	c	file:
+time_wheel	5.OS/9.timer/4.time_wheel_timer.cpp	/^time_wheel::time_wheel() : cur_slot(0) {}$/;"	f	class:time_wheel
+timeout	5.OS/9.timer/3.IO-clocking.cpp	/^int timeout = TIMEOUT;$/;"	v
+timer	5.OS/9.timer/1.timer-list.h	/^    util_timer *timer;$/;"	m	struct:client_data
+timer	5.OS/9.timer/4.time_wheel_timer.cpp	/^    tw_timer* timer;$/;"	m	class:client_data	file:
+timer	5.OS/9.timer/5.heep_timer.cpp	/^    heap_timer *timer;$/;"	m	class:client_data	file:
+timer_handler	5.OS/9.timer/2.close-connect.cpp	/^void timer_handler() {$/;"	f
+timer_list	5.OS/9.timer/2.close-connect.cpp	/^static sort_timer_list timer_list;$/;"	v	file:
+times	4.oj/1.EP/29.cpp	/^    int p, times;$/;"	m	struct:Tuple	file:
+times	4.oj/1.EP/EP29.cpp	/^    int p, times;$/;"	m	struct:Tuple	file:
+to_10	4.oj/hzoj/oj-260.cpp	/^int to_10[100], to_62[100];$/;"	v
+to_62	4.oj/hzoj/oj-260.cpp	/^int to_10[100], to_62[100];$/;"	v
+top	2.DS/stack_queue/oj-263.cpp	/^int a[30], s[30], top;$/;"	v
+top	2.DS/stack_queue/oj-264.cpp	/^int top = -1;$/;"	v
+top	2.DS/stack_queue/oj-267.cpp	/^int s[MAX_N + 5], top = -1;$/;"	v
+top	5.OS/9.timer/5.heep_timer.cpp	/^heap_timer* time_heap::top() const {$/;"	f	class:time_heap
+total	1.c_language/gtest/module/test.h	/^    int total, success;$/;"	m	struct:FunctionInfo
+total	5.OS/4.IPC/sem/server.c	/^static int total = 0;$/;"	v	file:
+total	5.OS/5.thread_pool/thread_pool.h	/^    int size, total, head, tail;$/;"	m	struct:task_queue
+tree	4.oj/282.cpp	/^} tree[MAX_N + 5];$/;"	v	typeref:struct:Node
+tree	4.oj/hzoj/oj-283.cpp	/^} tree[MAX_N * 10 + 5];$/;"	v	typeref:struct:Node
+tree	4.oj/luogu/P2504-聪明的猴子.cpp	/^int head[MAX_N + 5], monkey[MAX_M + 5], tree[MAX_N + 5][2];$/;"	v
+trim	4.oj/hzoj/oj-474.cpp	/^    void trim() {$/;"	f	struct:BigFloat
+tw_timer	5.OS/9.timer/4.time_wheel_timer.cpp	/^    tw_timer(int rot, int ts) : next(nullptr), prev(nullptr), rotation(rot), time_slot(ts) {}$/;"	f	class:tw_timer
+tw_timer	5.OS/9.timer/4.time_wheel_timer.cpp	/^class tw_timer {$/;"	c	file:
+u	4.oj/luogu/P1265-公路修建.cpp	/^    int u, v, next;$/;"	m	struct:Edge	file:
+u	4.oj/luogu/P1340-兽径管理.cpp	/^    int u, v, w, t;$/;"	m	struct:Edge	file:
+u	4.oj/luogu/P2504-聪明的猴子.cpp	/^    int u, v, next;$/;"	m	struct:Edge	file:
+u	4.oj/luogu/P2865-Roadblocks-v1.cpp	/^    int u, v, w, next;$/;"	m	struct:Edge	file:
+u	4.oj/luogu/P4047-部落划分.cpp	/^    int u, v;$/;"	m	struct:Edge	file:
+u	4.oj/oj-635-神经网络.cpp	/^int c[MAX_N + 5], u[MAX_N + 5];$/;"	v
+unblock_connect	5.OS/7.socket/5.unblock_connect.cpp	/^int unblock_connect(const char *ip, int port, int time) {$/;"	f
+union_set	4.oj/luogu/P1265-公路修建.cpp	/^} union_set;$/;"	v	typeref:struct:UnionSet
+unlock	5.OS/4.IPC/locker.cpp	/^    bool unlock() {$/;"	f	class:locker
+up	4.oj/hzoj/oj-297.cpp	/^vector<int> up, down;$/;"	v
+up_maintain	3.C++/16.priority_queue.cpp	/^    void up_maintain(int ind) {$/;"	f	class:heap_queue	file:
+usage	5.OS/4.IPC/msg.cpp	/^usage(char *prog_name, char *msg)$/;"	f	file:
+user_data	5.OS/9.timer/1.timer-list.h	/^    client_data *user_data;$/;"	m	class:util_timer
+user_data	5.OS/9.timer/4.time_wheel_timer.cpp	/^    client_data *user_data;$/;"	m	class:tw_timer	file:
+user_data	5.OS/9.timer/5.heep_timer.cpp	/^    client_data *user_data;$/;"	m	class:heap_timer	file:
+uset	4.oj/luogu/P1340-兽径管理.cpp	/^} uset;$/;"	v	typeref:struct:UnionSet
+uset	4.oj/luogu/P2504-聪明的猴子.cpp	/^UnionSet uset;$/;"	v
+uset	4.oj/luogu/P4047-部落划分.cpp	/^} uset;$/;"	v	typeref:struct:UnionSet
+util_timer	5.OS/9.timer/1.timer-list.h	/^    util_timer() : prev(nullptr), next(nullptr) {}$/;"	f	class:util_timer
+util_timer	5.OS/9.timer/1.timer-list.h	/^class util_timer {$/;"	c
+v	4.oj/luogu/P1144-最短路计数.cpp	/^    int v, next;$/;"	m	struct:Edge	file:
+v	4.oj/luogu/P1265-公路修建.cpp	/^    int u, v, next;$/;"	m	struct:Edge	file:
+v	4.oj/luogu/P1340-兽径管理.cpp	/^    int u, v, w, t;$/;"	m	struct:Edge	file:
+v	4.oj/luogu/P1629-邮递员送信.cpp	/^    int v, w, next;$/;"	m	struct:Edge	file:
+v	4.oj/luogu/P2504-聪明的猴子.cpp	/^    int u, v, next;$/;"	m	struct:Edge	file:
+v	4.oj/luogu/P2865-Roadblocks-v1.cpp	/^    int u, v, w, next;$/;"	m	struct:Edge	file:
+v	4.oj/luogu/P2865-Roadblocks-v2.cpp	/^    int v, w, next;$/;"	m	struct:Edge	file:
+v	4.oj/luogu/P4047-部落划分.cpp	/^    int u, v;$/;"	m	struct:Edge	file:
+v	4.oj/luogu/P4826-Superbull.cpp	/^    int v, w, next;$/;"	m	struct:Edge	file:
+v	4.oj/luogu/p3371-单源最短路径.cpp	/^    int v, w, next;$/;"	m	struct:Edge	file:
+v	4.oj/oj-635-神经网络.cpp	/^    int v, w, next;$/;"	m	struct:Edge	file:
+v	4.oj/oj-636.旅行计划.cpp	/^    int v, next;$/;"	m	struct:Edge	file:
+v	4.oj/oj-638.cpp	/^    int v, w, next;$/;"	m	struct:Edge	file:
+v	4.oj/oj-640.cpp	/^    int v, next;$/;"	m	struct:Edge	file:
+v	4.oj/oj-641-拓扑排序.cpp	/^    int v, next;$/;"	m	struct:Edge	file:
+v	4.oj/oj-675.cpp	/^    int v, w, next;$/;"	m	struct:Edge	file:
+val	2.DS/stack_queue/oj-268-2.cpp	/^    int val;$/;"	m	struct:Node	file:
+val	3.C++/26.immediately_init.cpp	/^    int val;$/;"	m	struct:A	file:
+val	4.oj/hzoj/oj-404.cpp	/^    char val;$/;"	m	struct:Data	file:
+val	5.OS/4.IPC/4.sem.cpp	/^    int val;$/;"	m	union:semun	file:
+val	5.OS/4.IPC/sem/server.c	/^    int              val;    \/* Value for SETVAL *\/$/;"	m	union:semun	file:
+value	4.oj/leetcode/460.cpp	/^    int key, value, cnt;$/;"	m	struct:Node	file:
+vector	3.C++/19.value.cpp	/^    vector(const vector &v) : __size(v.__size), data(new int[__size]) {$/;"	f	class:vector
+vector	3.C++/19.value.cpp	/^    vector(int n = 10) : __size(n), data(new int[n]) {$/;"	f	class:vector
+vector	3.C++/19.value.cpp	/^    vector(vector&& v) : __size(v.size()), data(v.data) {$/;"	f	class:vector
+vector	3.C++/19.value.cpp	/^class vector {$/;"	c	file:
+vector	3.C++/21.template.cpp	/^class vector {$/;"	c	file:
+vector	3.C++/21.template.cpp	/^vector<T>::vector(const vector<T> &v) {$/;"	f	class:vector
+vector	3.C++/21.template.cpp	/^vector<T>::vector(int n) : __capacity(n), __size(0), data(nullptr) {$/;"	f	class:vector
+vector	3.C++/21.template.cpp	/^vector<T>::vector(vector<T>&& v) : __size(v.__size), __capacity(v.capacity), data(v.data) {$/;"	f	class:vector
+vector_queue	3.C++/16.priority_queue.cpp	/^class vector_queue : public IQueue, public vector<int> {$/;"	c	file:
+visit	4.oj/luogu/P1144-最短路计数.cpp	/^bool visit[MAX_N + 5];$/;"	v
+visit	4.oj/luogu/P1546-最短网络.cpp	/^bool visit[MAX_N + 5];$/;"	v
+visit	4.oj/luogu/P1629-邮递员送信.cpp	/^bool visit[MAX_N + 5];$/;"	v
+visit	4.oj/luogu/P2865-Roadblocks-v1.cpp	/^bool visit[MAX_N + 5];$/;"	v
+visit	4.oj/luogu/P2865-Roadblocks-v2.cpp	/^bool visit[MAX_N + 5];$/;"	v
+visit	4.oj/luogu/P4826-Superbull.cpp	/^bool visit[MAX_N + 5];$/;"	v
+visit	4.oj/luogu/p3371-单源最短路径.cpp	/^bool visit[MAX_N + 5];$/;"	v
+w	4.oj/1.EP/31.cpp	/^int w[MAX_N + 5] = {1, 2, 5, 10, 20, 50, 100, 200};$/;"	v
+w	4.oj/luogu/P1144-最短路计数.cpp	/^    int now, w;$/;"	m	struct:Node	file:
+w	4.oj/luogu/P1265-公路修建.cpp	/^    double w;$/;"	m	struct:Edge	file:
+w	4.oj/luogu/P1340-兽径管理.cpp	/^    int u, v, w, t;$/;"	m	struct:Edge	file:
+w	4.oj/luogu/P1546-最短网络.cpp	/^    int now, w;$/;"	m	struct:Node	file:
+w	4.oj/luogu/P1629-邮递员送信.cpp	/^    int now, w;$/;"	m	struct:Node	file:
+w	4.oj/luogu/P1629-邮递员送信.cpp	/^    int v, w, next;$/;"	m	struct:Edge	file:
+w	4.oj/luogu/P2504-聪明的猴子.cpp	/^    double w;$/;"	m	struct:Edge	file:
+w	4.oj/luogu/P2865-Roadblocks-v1.cpp	/^    int now, w;$/;"	m	struct:Node	file:
+w	4.oj/luogu/P2865-Roadblocks-v1.cpp	/^    int u, v, w, next;$/;"	m	struct:Edge	file:
+w	4.oj/luogu/P2865-Roadblocks-v2.cpp	/^    int now, w;$/;"	m	struct:Node	file:
+w	4.oj/luogu/P2865-Roadblocks-v2.cpp	/^    int v, w, next;$/;"	m	struct:Edge	file:
+w	4.oj/luogu/P4047-部落划分.cpp	/^    double w;$/;"	m	struct:Edge	file:
+w	4.oj/luogu/P4826-Superbull.cpp	/^    int now, w;$/;"	m	struct:Node	file:
+w	4.oj/luogu/P4826-Superbull.cpp	/^    int v, w, next;$/;"	m	struct:Edge	file:
+w	4.oj/luogu/p3371-单源最短路径.cpp	/^    int now, w;$/;"	m	struct:Node	file:
+w	4.oj/luogu/p3371-单源最短路径.cpp	/^    int v, w, next;$/;"	m	struct:Edge	file:
+w	4.oj/oj-635-神经网络.cpp	/^    int v, w, next;$/;"	m	struct:Edge	file:
+w	4.oj/oj-638.cpp	/^    int v, w, next;$/;"	m	struct:Edge	file:
+w	4.oj/oj-675.cpp	/^    int v, w, next;$/;"	m	struct:Edge	file:
+wait	5.OS/4.IPC/locker.cpp	/^    bool wait() {$/;"	f	class:cond
+wait	5.OS/4.IPC/locker.cpp	/^    bool wait() {$/;"	f	class:sem
+what	3.C++/23.try_catch.cpp	/^    const char *what() const {$/;"	f	class:helper
+work	5.OS/4.IPC/sem/server.c	/^void *work(void *arg) {$/;"	f
+worker	5.OS/7.socket/4.epolloneshot.c	/^void *worker(void *arg) {$/;"	f
+write_buf	5.OS/7.socket/6.chatroom/2.server.c	/^    char *write_buf;$/;"	m	struct:client_data	file:
+x	3.C++/17.const.cpp	/^    int x = 123;$/;"	m	class:testClass	file:
+x	3.C++/21.template.cpp	/^    int x, *p;$/;"	m	class:A	file:
+x	3.C++/26.immediately_init.cpp	/^    A x = 1; \/\/ok$/;"	m	struct:init	file:
+x	3.C++/3.operator.cpp	/^    int x, y;$/;"	m	class:Point	file:
+x	3.C++/5.virtual_table.cpp	/^    int x, y;$/;"	m	class:Animal	file:
+x	3.C++/test.cpp	/^    int x;$/;"	m	struct:A	file:
+x	4.oj/1.EP/34-plt.py	/^x = np.linspace(0, 7, 600)$/;"	v
+x	4.oj/1.EP/plt.py	/^x = np.linspace(0, 7, 300) # 在0--6范围之间，生成300个点$/;"	v
+x	4.oj/304.cpp	/^    int x, y, step;$/;"	m	struct:Data	file:
+x	4.oj/hzoj/oj-302.cpp	/^    int x, y;$/;"	m	struct:Data	file:
+x	4.oj/hzoj/oj-303.cpp	/^    int x, y, step;$/;"	m	struct:Data	file:
+x	4.oj/hzoj/oj-305.cpp	/^    int x, y, step;$/;"	m	struct:Data	file:
+x	4.oj/hzoj/oj-375.cpp	/^    int sum,  x, id;$/;"	m	struct:Data	file:
+x	4.oj/hzoj/oj-404.cpp	/^    int x, y;$/;"	m	struct:Data	file:
+x	4.oj/hzoj/oj-527-飞跃原野.cpp	/^    int x, y, d, time;$/;"	m	struct:Data	file:
+x	4.oj/hzoj/oj-529.cpp	/^    int x, y, step;$/;"	m	struct:Data	file:
+x	4.oj/hzoj/oj-530.cpp	/^    int x, y, step;$/;"	m	struct:Data	file:
+x	4.oj/hzoj/oj-533.cpp	/^    int x, y, cost, last;$/;"	m	struct:Data	file:
+x	4.oj/hzoj/oj-542-奶酪.cpp	/^    int x, y, z;$/;"	m	struct:Node	file:
+x	4.oj/hzoj/oj-80.cpp	/^    int x, y, step;$/;"	m	struct:Data	file:
+x	4.oj/hzoj/oj-81.cpp	/^    int x, y, step, flag;$/;"	m	struct:Data	file:
+x	4.oj/oj-641-拓扑排序.cpp	/^    int x;$/;"	m	struct:Node	file:
+y	3.C++/17.const.cpp	/^    static constexpr auto y = 123;$/;"	m	class:testClass	file:
+y	3.C++/3.operator.cpp	/^    int x, y;$/;"	m	class:Point	file:
+y	3.C++/5.virtual_table.cpp	/^    int x, y;$/;"	m	class:Animal	file:
+y	4.oj/304.cpp	/^    int x, y, step;$/;"	m	struct:Data	file:
+y	4.oj/hzoj/oj-302.cpp	/^    int x, y;$/;"	m	struct:Data	file:
+y	4.oj/hzoj/oj-303.cpp	/^    int x, y, step;$/;"	m	struct:Data	file:
+y	4.oj/hzoj/oj-305.cpp	/^    int x, y, step;$/;"	m	struct:Data	file:
+y	4.oj/hzoj/oj-404.cpp	/^    int x, y;$/;"	m	struct:Data	file:
+y	4.oj/hzoj/oj-527-飞跃原野.cpp	/^    int x, y, d, time;$/;"	m	struct:Data	file:
+y	4.oj/hzoj/oj-529.cpp	/^    int x, y, step;$/;"	m	struct:Data	file:
+y	4.oj/hzoj/oj-530.cpp	/^    int x, y, step;$/;"	m	struct:Data	file:
+y	4.oj/hzoj/oj-533.cpp	/^    int x, y, cost, last;$/;"	m	struct:Data	file:
+y	4.oj/hzoj/oj-542-奶酪.cpp	/^    int x, y, z;$/;"	m	struct:Node	file:
+y	4.oj/hzoj/oj-80.cpp	/^    int x, y, step;$/;"	m	struct:Data	file:
+y	4.oj/hzoj/oj-81.cpp	/^    int x, y, step, flag;$/;"	m	struct:Data	file:
+y1	4.oj/1.EP/34-plt.py	/^y1 =  [10**z for z in x]$/;"	v
+y1	4.oj/1.EP/plt.py	/^y1 = [10**(z - 1) for z in x]    # 得到 f(n) 函数的 y 值数组$/;"	v
+y2	4.oj/1.EP/34-plt.py	/^y2 = [nineM * z for z in x]$/;"	v
+y2	4.oj/1.EP/plt.py	/^y2 = [(9**5)*z for z in x] # 得到 g(n) 函数的 y 值数组$/;"	v
+yuan_num	4.oj/hzoj/oj-537.cpp	/^int l, c, cnt, yuan_num, fu_num, idx;$/;"	v
+z	4.oj/hzoj/oj-542-奶酪.cpp	/^    int x, y, z;$/;"	m	struct:Node	file:
+~A	3.C++/11.share_ptr.cpp	/^    ~A() {$/;"	f	class:test::A
+~A	3.C++/21.template.cpp	/^    ~A() {$/;"	f	class:A
+~A	3.C++/malloc_new.cpp	/^    ~A() {$/;"	f	struct:A
+~Array	3.C++/array.cpp	/^    ~Array() {$/;"	f	class:Array
+~B	3.C++/malloc_new.cpp	/^    ~B() {$/;"	f	struct:B
+~HashTable	3.C++/6.hashTable.cpp	/^HashTable::~HashTable() {$/;"	f	class:HashTable
+~IntArray	3.C++/4.IntArray.cpp	/^    ~IntArray() {$/;"	f	class:IntArray
+~NoTrivial	3.C++/28.POD.cpp	/^    ~NoTrivial() {}$/;"	f	struct:NoTrivial
+~Node	3.C++/6.hashTable.cpp	/^    ~Node() {$/;"	f	class:Node
+~Queue	2.DS/stack_queue/oj-268-2.cpp	/^    ~Queue() {$/;"	f	class:Queue
+~cond	5.OS/4.IPC/locker.cpp	/^    ~cond() {$/;"	f	class:cond
+~locker	5.OS/4.IPC/locker.cpp	/^    ~locker() {$/;"	f	class:locker
+~processpool	5.OS/4.IPC/process_pool.cpp	/^    ~processpool() {$/;"	f	class:processpool
+~ptrMem	3.C++/ptr.cpp	/^    ~ptrMem() {$/;"	f	class:ptrMem
+~sem	5.OS/4.IPC/locker.cpp	/^    ~sem() {$/;"	f	class:sem
+~shared_ptr	3.C++/11.share_ptr.cpp	/^shared_ptr::~shared_ptr() {$/;"	f	class:test::shared_ptr
+~sort_timer_list	5.OS/9.timer/1.timer-list.h	/^sort_timer_list::~sort_timer_list() {$/;"	f	class:sort_timer_list
+~time_heap	5.OS/9.timer/5.heep_timer.cpp	/^time_heap::~time_heap() {$/;"	f	class:time_heap
+~time_wheel	5.OS/9.timer/4.time_wheel_timer.cpp	/^time_wheel::~time_wheel() {$/;"	f	class:time_wheel
+~vector	3.C++/19.value.cpp	/^    ~vector() {$/;"	f	class:vector
+~vector	3.C++/21.template.cpp	/^ vector<T>::~vector() {$/;"	f	class:vector

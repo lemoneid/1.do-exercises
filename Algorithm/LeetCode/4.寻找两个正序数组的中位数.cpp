@@ -7,7 +7,17 @@
 // @lc code=start
 class Solution {
 public:
-    double getKth(vector<int> &n1, vector<int> &n2, int k) {
+    double findMedianSortedArrays(vector<int>& nums1, vector<int>& nums2) {
+        int total = nums1.size() + nums2.size();
+        if (total & 0x1) {
+          return getKth(nums1, nums2, total / 2 + 1);
+        } else {
+          return (getKth(nums1, nums2, total / 2) + getKth(nums1, nums2, total / 2 + 1)) / 2.0;
+        }
+        return -1;
+    }
+private:
+   double getKth(vector<int> &n1, vector<int> &n2, int k) {
         int p1 = 0, p2 = 0, len1 = n1.size(), len2 = n2.size();
         while (1) {
             if (p1 == len1) return n2[p2 + k - 1];
@@ -26,18 +36,6 @@ public:
         return -1;
     }
 
-    double findMedianSortedArrays(vector<int>& nums1, vector<int>& nums2) {
-        int len = nums1.size() + nums2.size();
-        int mid = (len + 1) >> 1;
-        double x = getKth(nums1, nums2, mid);
-        if (len & 1) {
-            return x;
-        } else {
-            double y = getKth(nums1, nums2, mid + 1);
-            return (x + y) / 2;
-        }
-        return -1;
-    }
 };
 // @lc code=end
 

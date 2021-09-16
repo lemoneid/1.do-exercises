@@ -5,14 +5,14 @@
  */
 
 // @lc code=start
-class UnionSet
-{
+
+class UnionSet {
 public:
     vector<int> size, father;
     void init(int n) {
-        father.resize(n + 5);
-        size.resize(n + 5);
-        for (int i = 0; i <= n; i++) {
+        father.resize(n);
+        size.resize(n);
+        for (int i = 0; i < n; i++) {
             father[i] = i;
             size[i] = 1;
         }
@@ -23,43 +23,18 @@ public:
     }
     void merge(int a, int b) {
         int fa = get(a), fb = get(b);
-        if (fa == fb) return ;
+        if (fa == fb) return;
         father[fa] = fb;
         size[fb] += size[fa];
         return ;
     }
+
 };
 class Solution
 {
 public:
     int longestConsecutive(vector<int> &nums)
     {
-        /*
-        int maxCount = 0, lCount = 0, rCount = 0;
-        unordered_map<int, int> s;
-        for (auto nums[i] : nums) {
-            if (s[nums[i]]) continue;
-            int l = s[nums[i] - 1], r = s[nums[i] + 1];
-            int sum = l + r + 1;
-            s[nums[i]] = s[nums[i] - l] = s[nums[i] + r] = sum;
-            maxCount = max(maxCount, sum);
-        }
-        return maxCount;
-        */
-        /*
-        unordered_set<int> set(nums.begin(), nums.end());
-        int res = 0;
-        for (auto nums[i] : nums) {
-            if (!set.count(nums[i])) continue;
-            set.erase(nums[i]); 
-            int pre = nums[i] - 1, next = nums[i] + 1;
-            while (set.count(pre)) set.erase(pre--);
-            while (set.count(next)) set.erase(next++);
-            res = max(res, next - pre - 1);
-        }
-        return res;
-        */
-
         unordered_map<int, int> s;
         u.init(nums.size());
         for (int i = 0; i < nums.size(); i++) {
@@ -79,8 +54,8 @@ public:
         }
         return ans;
     }
-
-private:
+private : 
     UnionSet u;
+
 };
 // @lc code=end

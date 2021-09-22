@@ -8,27 +8,20 @@
 class Solution {
 public:
     int candy(vector<int>& ratings) {
-        int n = ratings.size();
-        vector<int> arr(n, 0);
-        arr[0] = 1;
-        for (int i = 1; i < n; i++) {
+        int size = ratings.size();
+        if (size == 1) return 1;
+        vector<int> num(size, 1);
+        for (int i = 1; i < size; i++) {
             if (ratings[i] > ratings[i - 1]) {
-                arr[i] = arr[i - 1] + 1;
-                continue;
+                num[i] = num[i - 1] + 1;
             }
-            
-            if (ratings[i] < ratings[i - 1] && arr[i - 1] == 1) {
-                for (int j = 0; j < i; j++) {
-                    arr[j] += 1;
-                }
+        }
+        for (int i = size - 2; i >= 0; i--) {
+            if (ratings[i] > ratings[i + 1] && num[i] <= num[i + 1]) {
+                num[i] = num[i + 1] + 1;
             }
-            arr[i] = 1; 
         }
-        int ans = 0;
-        for (int i = 0; i < n; i++) {
-            ans += arr[i];
-        }
-        return ans;
+        return accumulate(num.begin(), num.end(), 0);
     }
 };
 // @lc code=end

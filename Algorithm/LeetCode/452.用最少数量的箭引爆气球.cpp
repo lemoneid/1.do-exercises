@@ -10,11 +10,22 @@ public:
     int findMinArrowShots(vector<vector<int>>& points) {
         if (points.empty()) return 0;
         int size = points.size();
-        if (size < 2) return 1;
-        sort(points.begin(), points.end(), [](const vector<int>& a, const vector<int>& b) {
-            if (a[0] != b[0]) return a[0] < b[0];
-            return a[1] < b[1];
-        });
+        sort(points.begin(), points.end(), cmp);
+        int ans = 1, right = points[0][1];
+        for (int i = 1; i < size; i++) {
+            if (points[i][0] > right) {
+                ans++;
+                right = points[i][1];
+            } else {
+                right = min(points[i][1], right);
+            }
+        }
+        return ans;
+
+    }
+private : 
+static bool cmp(const vector<int> &a, const vector<int> &b) {
+        return a[0] < b[0];
     }
 };
 // @lc code=end

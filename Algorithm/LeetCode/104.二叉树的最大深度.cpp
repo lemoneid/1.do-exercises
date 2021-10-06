@@ -1,7 +1,7 @@
 /*
- * @lc app=leetcode.cn id=222 lang=cpp
+ * @lc app=leetcode.cn id=104 lang=cpp
  *
- * [222] 完全二叉树的节点个数
+ * [104] 二叉树的最大深度
  */
 
 // @lc code=start
@@ -18,9 +18,9 @@
  */
 class Solution {
 public:
-    int countNodes(TreeNode* root) {
+    int maxDepth(TreeNode* root) {
         if (!root) return 0;
-        return 1 + countNodes(root->left) + countNodes(root->right);
+        //return max(maxDepth(root->left), maxDepth(root->right)) + 1;
     }
 };
 // @lc code=end

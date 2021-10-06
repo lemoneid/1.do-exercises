@@ -1,7 +1,7 @@
 /*
- * @lc app=leetcode.cn id=222 lang=cpp
+ * @lc app=leetcode.cn id=110 lang=cpp
  *
- * [222] 完全二叉树的节点个数
+ * [110] 平衡二叉树
  */
 
 // @lc code=start
@@ -18,9 +18,8 @@
  */
 class Solution {
 public:
-    int countNodes(TreeNode* root) {
-        if (!root) return 0;
-        return 1 + countNodes(root->left) + countNodes(root->right);
+    bool isBalanced(TreeNode* root) {
+
     }
 };
 // @lc code=end

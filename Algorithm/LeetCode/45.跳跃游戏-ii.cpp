@@ -7,10 +7,23 @@
 // @lc code=start
 class Solution {
 public:
+    int jump(vector<int>& nums) {
+        int end = 0;
+        int maxPos = 0;
+        int steps = 0;
+        for (int i = 0; i < nums.size() - 1; i++) {
+            maxPos = max(maxPos, nums[i] + i);
+            if (i == end) {
+                end = maxPos;
+                steps++;
+            }
+        }
+        return steps;
+    }
     struct Node {
         int ind, step;
     };
-    int jump(vector<int>& nums) {
+    int jump_1(vector<int>& nums) {
         int n = nums.size();
         if (n <= 1) return 0;
         vector<bool> check(n, false);

@@ -13,9 +13,8 @@ public:
     }
     vector<vector<int>> reconstructQueue(vector<vector<int>>& people) {
         vector<vector<int>> result;
-        if (people.empty()) return result;
-        sort(people.begin(), people.end(), cmp);
         list<vector<int>> que;
+        sort(people.begin(), people.end(), cmp);
         for (int i = 0; i < people.size(); i++) {
             int pos = people[i][1];
             std::list<vector<int>>::iterator it = que.begin();

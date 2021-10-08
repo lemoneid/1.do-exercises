@@ -1,13 +1,13 @@
 /*
- * @lc app=leetcode.cn id=1143 lang=cpp
+ * @lc app=leetcode.cn id=1035 lang=cpp
  *
- * [1143] 最长公共子序列
+ * [1035] 不相交的线
  */
 
 // @lc code=start
 class Solution {
 public:
-    int longestCommonSubsequence(string text1, string text2) {
+    int maxUncrossedLines(vector<int>& text1, vector<int>& text2) {
         int len1 = text1.size(), len2 = text2.size();
         vector<int> dp(len2 + 5, 0);
         for (int j = 1; j <= len2; j++) {
@@ -26,6 +26,7 @@ public:
             }
         }
         return dp[len2];
+
     }
 };
 // @lc code=end

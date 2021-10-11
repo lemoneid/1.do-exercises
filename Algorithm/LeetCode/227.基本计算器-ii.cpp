@@ -8,33 +8,41 @@
 class Solution {
 public:
     int calculate(string s) {
-        return parseExpr(s, 0);
-    }
-    int parseExpr(const string &s, int i) {
         char op = '+';
-        long left = 0, right = 0;
-        while (i < s.length()) {
-            if (s[i] == ' ') continue;
-            long n = parseNum(s, i);
+        std::stack<int> nums;
+        int length = s.size();
+        int value = 0;
+        for (int i = 0; i < length; i++) {
+            if (::isdigit(s[i])) {
+              while (i < s.length() && isdigit(s[i])) {
+                value = value * 10 + (s[i++] - '0');
+              }
+            }
+            if (!(s[i] != ' ' || i == length - 1)) continue;
             switch (op) {
-                case '+' : left += right; right = n; break;
-                case '-' : left += right; right = -n; break;
-                case '*' : right *= n; break;
-                case '/' : right /= n; break;
+                cout << "s[i] = " << s[i] << " | " << op << endl;
+                case '+' : nums.push(value); break;
+                case '-' : nums.push(-value); break;
+                case '*' : {
+                    int firstNumber = nums.top(); 
+                    nums.pop();
+                    nums.push(firstNumber * value);
+                }; break;
+                case '/' : {
+                    int firstNumber = nums.top(); 
+                    nums.pop();
+                    nums.push(firstNumber / value);
+                }; break;
             }
-            if (i < s.length()) {
-                op = s[i];
-            }
-            ++i;
+            op = s[i];
+            value = 0;
         }
-        return left + right;
-    }
-    long parseNum(const string &s, int &i) {
-        long n = 0;
-        while (i < s.length() && isdigit(s[i])) {
-            n = n * 10 + (s[i++] - '0');
+        int result = 0;
+        while (!nums.empty()) {
+            result += nums.top();
+            nums.pop();
         }
-        return n;
+        return result;
     }
 };
 // @lc code=end

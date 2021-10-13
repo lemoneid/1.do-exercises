@@ -8,10 +8,19 @@
 class Solution {
 public:
     vector<vector<int>> subsets(vector<int>& nums) {
-        result.clear();
-        path.clear();
-        backtracking(nums, 0);
+        int size = nums.size();
+        result.resize(1 << size);
+        for (int i = 0, I = 1 << size; i < I; i++) {
+            for (int j = 0; j < size; j++) {
+                if ((i  >> j) & 1) {
+                    result[i].push_back(nums[j]);
+                }
+            }
+        }
         return result;
+        //result.clear();
+        //path.clear();
+        //backtracking(nums, 0);
     }
 private:
     vector<vector<int>> result;

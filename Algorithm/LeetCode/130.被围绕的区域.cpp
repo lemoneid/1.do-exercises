@@ -5,60 +5,47 @@
  */
 
 // @lc code=start
-class UnionSet {
-public :
-    vector<int> father;
-    void init(int n) {
-        father.clear();
-        for (int i = 0; i <= n; ++i) {
-            father.push_back(i);
-        }
-    }
-    int get(int x) {
-        return father[x] = (father[x] == x ? x : get(father[x]));
-    }
-    void merge(int a, int b) {
-        father[get(a)] = get(b);
-    }
-};
-
 class Solution {
 public:
     void solve(vector<vector<char>>& board) {
         if (!board.size() || !board[0].size()) return ;
-        n = board.size();
-        m = board[0].size();
-        u.init(n * m);
-        for (int i = 0; i < n; ++i) {
-            for (int j = 0; j < m; ++j) {
-                cout << i << ":" << j << endl;
-                if (board[i][j] != 'O') continue;
-                if (!i || !j || i == n - 1 || j == m - 1) {
-                    u.merge(ind(i, j), 0);
-                }
-                if (i && board[i - 1][j] == 'O') {
-                    u.merge(ind(i, j), ind(i - 1, j));
-                }
-                if (j && board[i][j - 1] == 'O') {
-                    u.merge(ind(i, j), ind(i, j - 1));
-                }
-            }
+        int n = board.size();
+        int m = board[0].size();
+        queue<PII> que;
+        for (int i = 0; i < n; i++) {
+            if (board[i][0] == 'O') que.push(PII(i, 0));
+            if (board[i][m - 1] == 'O') que.push(PII(i, m - 1));
         }
-        for (int i = 0; i < n; ++i) {
-            for (int j = 0; j < m; ++j) {
-                if (board[i][j] != 'O') continue;
-                if (u.get(ind(i, j)) != u.get(0)) {
+        for (int j = 0; j < m; j++) {
+            if (board[0][j] == 'O') que.push(PII(0, j));
+            if (board[n - 1][j] == 'O') que.push(PII(n - 1, j));
+        }
+        while (!que.empty()) {
+            PII cur = que.front();
+             que.pop();
+             board[cur.first][cur.second] = 'A';
+             for (int i = 0; i < 4; i++) {
+                 int x = cur.first + dir[i][0];
+                 int y = cur.second + dir[i][1];
+                 if (x < 0 || y < 0 || x >= n || y >= m) continue;
+                 if (board[x][y] != 'O') continue;
+                 que.push(PII(x, y));
+             }
+        }
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m; j++) {
+                if (board[i][j] == 'O') {
                     board[i][j] = 'X';
+                } else if (board[i][j] == 'A') {
+                    board[i][j] = 'O';
                 }
             }
         }
+        return ;
     }
-    inline int ind(int i, int j) {
-        return i * m + j + 1;
-    }
-private :
-    int n, m;
-    UnionSet u;
+private:
+    typedef pair<int,int> PII;
+    int dir[4][2] = {0, 1, 1, 0, 0, -1, -1, 0};
 };
 // @lc code=end
 

@@ -1,0 +1,28 @@
+|Port|
+|Server|
+|Client|
+|SAP（Service Access Point）|
+|OSI（Open System Interconnection）|
+|Physical layer|
+|Data link layer|
+|Network layer|
+|Transport layer|
+|Session layer|
+|Presentation layer|
+|Application layer|
+|TCP / IP protocol|
+|Channel capacity|
+|Shannon|
+|Nyquist|
+|UTP（Unshielded Twisted Paired）|
+|Coaxial cable|
+|Optical fiber|
+|NRZ（Non Return to Zero）|
+|Manchester coding|
+|Modulation|
+|PCM（Pulse Code Modulation）|
+|DM（Delta Modulation）|
+|Synchronous transmission / ATM（Asynchronous transmission）|
+|CRC（Cyclic Redundancy Check）|
+|Flow control|
+|Sliding window|

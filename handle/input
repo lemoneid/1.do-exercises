@@ -1,0 +1,11 @@
+|CLOSED | 表示初始状态|
+|LISTEN | 表示服务器端的某个SOCKET|
+|SYN_RCVD | 表示接收到了SYN报文|
+|SYN_SENT | 表示客户端已发送SYN报文|
+|ESTABLISHED | 表示连接已经建立了|
+|FIN_WAIT_1 | |
+|FIN_WAIT_2 | 表示等待对方的FIN报文。FIN_WAIT_1状态实际上是当SOCKET在ESTABLISHED|
+|TIME_WAIT | 表示收到了对方的FIN报文，并发送出了ACK报文，就等2MSL|
+|CLOSING | 表示双方都正在关闭SOCKET连接|
+|CLOSE_WAIT | 表示在等待关闭|
+|LAST_ACK | 被动关闭一方在发送FIN报文后，最后等待对方的ACK报文。当收到ACK|

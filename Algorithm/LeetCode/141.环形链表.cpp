@@ -21,10 +21,9 @@ public:
         do {
             p = p->next;
             q = q->next;
-            if (!q || !q->next) return false;
-            q = q->next->next;
-
-        } while(p != q);
+            if (!q || !(q->next)) return false;
+            q = q->next;
+        } while (p != q);
         return true;
     }
 };

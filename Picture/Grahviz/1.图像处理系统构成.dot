@@ -1,0 +1,6 @@
+digraph action {
+   node [shape=box color=blue]
+   node0 [shape = box label="mind"]
+
+
+}
